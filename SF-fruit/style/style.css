@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+@import"font.css";
+
+.wrap {position: relative; z-index: 1; background: #f5f5f5}
+/*搜索框*/
+.searchBox {margin: 0 auto; background: #ffc408; padding: 2% 3%;  height: 2rem; }
+.searchBox .logoBox { width: 4rem; margin-right: 4%; }
+.searchBox .logoBox img {display: block;}
+.searchBox .searchHref {background: #fff; }
+.searchHref a {display: block; width: 100%; height: 100%; text-align: center;}
+.searchHref em {font-size: 1.6rem;}
+.searchHref span {text-align: center; display: inline-block; height: 2rem; line-height: 2rem; vertical-align: middle; }
+
+.searchArea { height: 2rem; }
+.searchArea em {background: #ccc; display: block; }
+.searchArea input[type=text] {display: block; padding: 0 4px;  height: 2rem;  line-height: 2rem; }
+.searchArea span {display: block; line-height: 2rem; height: 2rem; width: 35px; padding-left:12px; color: #fff; text-align: center; }
+
+/*头部导航*/
+.headerNav { width: 100%; height: 2.5rem; margin-bottom: 1px; background: #fff;}
+.headerNav li {text-align: center; line-height: 2.5rem; text-align: center;}
+.headerNav li a {display: block; width: 100%; }
+.headerNav li.active a {color: #ffc408; border-bottom: 1px solid #ffc408}
+
+/*底部导航*/
+.footer {position: fixed; z-index: 100; bottom: 0; width: 100%; height: 4rem; background: #f00;}
+.footer li {text-align: center; line-height: 4rem;}
+.footer li a {display: block; height: 100%;}
+.footer li em {font-size: 2.4rem; color: #000; margin-right: 1rem; position: relative; }
+.footer li span {text-align: center; display: inline-block; height: 2rem; line-height: 2rem; vertical-align: middle; }
+
+
+
+
+
+
+/*公共样式*/
+.icoStyle {height: 2rem; width: 2rem;  display: inline-block; vertical-align: middle;  line-height: 2rem}
