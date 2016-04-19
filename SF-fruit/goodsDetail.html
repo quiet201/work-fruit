@@ -1,0 +1,86 @@
+<!doctype html>
+<html class="">
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+<!-- 网站开启对web app程序的支持 -->
+<meta content="yes" name="apple-mobile-web-app-capable"></meta>
+<!--忽略将页面中的数字识别为电话号码。-->
+<meta name="format-detection" content="telephone=no" />
+<meta name="Author" content="顺丰速运科技有限公司" />
+<meta name="Keywords" content="顺丰速运" />
+<meta name="Description" content="顺丰速运科技有限公司" />
+
+<link rel="stylesheet" type="text/css" href="style/MobReset.css" >
+<link rel="stylesheet" type="text/css" href="style/style.css" >
+<link rel="stylesheet" type="text/css" href="style/plug/swiper.css" >
+<style type="text/css">
+    .swiper-container {height: 100%; width: 100%;}
+    .swiper-slide {height: 100%; width: 100%;}
+    .swiper-slide a {display: block; height: 100%; width: 100%;}
+    .swiper-pagination-bullet-active {background: #ff9600;}
+    .swiper-lazy-preloader {opacity: 0.4}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+    <section class="detailsBox contain js_contain">
+        <div class="conIScroll">
+            <section class="">
+                <!-- 轮播 -->
+                <section class="silderBox" style="margin-top: 0;">
+                    <div class="swiper-container js_detailsImg">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img data-src="image/goodsSilde.jpg" class="swiper-lazy" src="image/loadImg640-550.png">
+                                <div class="swiper-lazy-preloader"></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img data-src="image/goodsSilde.jpg" class="swiper-lazy" src="image/loadImg640-550.png">
+                                <div class="swiper-lazy-preloader"></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img data-src="image/goodsSilde.jpg" class="swiper-lazy" src="image/loadImg640-550.png">
+                                <div class="swiper-lazy-preloader"></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img data-src="image/goodsSilde.jpg" class="swiper-lazy" src="image/loadImg640-550.png">
+                                <div class="swiper-lazy-preloader"></div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination js_pagin"></div>
+                        <div class="swiper-button-next swiper-button-white js_BNext" style="display: none;"></div>
+                        <div class="swiper-button-prev swiper-button-white js_BPrev" style="display: none;"></div>
+                    </div>
+                </section>
+                <section class="" style="height: 2000px;" ></section>
+                <section class="">
+                    <div class="detailImg">
+                        <img src="image/goodsDetail.jpg">
+                    </div>
+                </section>
+            </section>
+        </div>
+    </section>
+    <!-- 底部 -->
+    <section class="footer detailsBot ">
+        <nav>
+            <ul class="HBox">
+                <li class="Bflex1"><a href="myOrder.html"><em class="icoStyle  icon-MyOrder"></em><span>我的订单</span></a><i class="splitline"></i></li>
+                <li class="Bflex1"><a href="shopCar.html"><em class="icoStyle icon-MyShopCar"><i class="userNum">100</i></em><span>购物车</span></a></li>
+                <li class=" deButton deAddCar js_deAddCar"><a href="javascript:;">加入购物车</a></li>
+                <li class=" deButton deBuyOnce js_deBuyOnce"><a href="javascript:;">立即购买</a></li>
+            </ul>
+        </nav>
+    </section>
+</div>
+<script type="text/javascript" src="js/plug/sea/sea.min.js"></script>
+<script type="text/javascript" src="js/plug/jquery.min.js"></script>
+<script type="text/javascript">
+    seajs.use(['./js/slide.js','./js/global.js'],function() {});
+</script>
+</body>
+</html>
+

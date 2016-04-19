@@ -1,9 +1,5 @@
 @charset "utf-8";
 
-/* =============================================================================
-   HTML5 显示定义
-   ========================================================================== */
-
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block;  margin: 0; padding: 0; border: 0;}
 audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
 audio:not([controls]) { display: none; }
@@ -29,19 +25,7 @@ fieldset { border: 0; margin: 0; padding: 0; }
 /* 指示“label”会将焦点移至相关联的表单元素 */
 label { cursor: pointer; }
 
-
-/*
- * 1. 纠正所有浏览器中非继承的字体大小
- * 2. 删除 FF3/4 S5 Chrome 中的边距
- * 3. 定义在所有浏览器中一致地垂直对齐显示
- */
-
 button, input, select, textarea { margin: 0; vertical-align: baseline; *vertical-align: middle; border-width: 1px;}
-
-/*
- * 1. 将行高定义为正常，以匹配 FF3/4（使用 UA 样式表中的 !important 设置）
- * 2. 纠正 IE6/7 中显示异常的内边距
- */
 
 button, input { line-height: normal; *overflow: visible; }
 
@@ -58,9 +42,7 @@ table button, table input { *overflow: auto; }
 
 button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
 
-/*
- * 一致的框大小和外观
- */
+/* 一致的框大小和外观 */
 
 input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
 input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
@@ -83,18 +65,8 @@ textarea { overflow: auto; vertical-align: top; resize: vertical; }
 input:valid, textarea:valid {  }
 input:invalid, textarea:invalid { background-color: #f0dddd; }
 
-
-/* =============================================================================
-   表格
-   ========================================================================== */
-
 table { border-collapse: collapse; border-spacing: 0; }
 td { vertical-align: top; }
-
-
-/* ==|== 主要样式 =====================================================
-   作者:
-   ========================================================================== */
 
 /* structural elements 结构元素 */
 body, div, h1, h2, h3, h4, h5, h6, hr, p, blockquote,
@@ -120,7 +92,7 @@ ul, ol { list-style: none; }
 
 a { color: #888888; text-decoration: none;}
 a:visited { color: #888888; }
-a:hover { color: #ffc408; }
+a:hover { color: #888888; }
 a:focus { outline: none; }
 
 a:hover, a:active { outline: 0; }
@@ -137,6 +109,7 @@ a:hover, a:active { outline: 0; }
 /*浮动公用样式*/
 .fl {float:left;}
 .fr {float:right;}
+i{ font-style:normal}
 
 /*文字超出框显示省略号*/
 .Omit {white-space:nowrap;text-overflow:ellipsis;}

@@ -1,8 +1,8 @@
-﻿<!doctype html>
+<!doctype html>
 <html class="">
 <head>
 <meta charset="utf-8">
-<title>首页-精选</title>
+<title>首页-当季鲜果</title>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
 <!-- 网站开启对web app程序的支持 -->
 <meta content="yes" name="apple-mobile-web-app-capable"></meta>
@@ -16,11 +16,6 @@
 <link rel="stylesheet" type="text/css" href="style/style.css" >
 <link rel="stylesheet" type="text/css" href="style/plug/swiper.css" >
 <style type="text/css">
-    .swiper-container {height: 100%; width: 100%;}
-    .swiper-slide {height: 100%; width: 100%;}
-    .swiper-slide a {display: block; height: 100%; width: 100%;}
-    .swiper-pagination-bullet-active {background: #ff9600;}
-    .swiper-lazy-preloader {opacity: 0.4}
 </style>
 
 </head>
@@ -51,46 +46,30 @@
                 <section class="header" >
                     <nav class="headerNav ">
                         <ul class="HBox">
-                            <li class="Bflex1 active "><a href="index.html">精选</a></li>
+                            <li class="Bflex1 "><a href="index.html">精选</a></li>
                             <li class="Bflex1"><a href="seasonFruit.html">当季鲜果</a></li>
                             <li class="Bflex1"><a href="seafood.html">海鲜肉蛋</a></li>
-                            <li class="Bflex1"><a href="cereals.html">五谷干货</a></li>
+                            <li class="Bflex1 active"><a href="cereals.html">五谷干货</a></li>
                             <li class="Bflex1"><a href="drink.html">酒茶饮品</a></li>
                         </ul>
                     </nav>
-                    <section class="navSecList js_navSecList" style="display: none"><ul></ul></section>
+                    <section class="navSecList js_navSecList ">
+                        <ul class="clearfix">
+                            <li class="seletLi"><span class="active">芒果</span></li>
+                            <li class="seletLi"><span>芒果</span></li>
+                            <li class="seletLi"><span>芒果</span></li>
+                            <li class="seletLi"><span>芒果</span></li>
+                            <li class="seletLi"><span>芒果</span></li>
+                            <li class="seletLi"><span>芒果</span></li>
+                            <li class="seletLi"><span>芒果</span></li>
+                        </ul>
+                    </section>
                 </section>
                 <!-- 主题 -->
                 <section class="main">
-                    <!-- 轮播 -->
-                    <section class="silderBox">
-                        <div class="swiper-container js_silderImg">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <a href="goodsDetail.html"><img data-src="image/silder/silder1.jpg" class="swiper-lazy" src="image/silder/wait.jpg"></a>
-                                    <div class="swiper-lazy-preloader"></div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="goodsDetail.html"><img data-src="image/silder/silder2.jpg" class="swiper-lazy" src="image/silder/wait.jpg"></a>
-                                    <div class="swiper-lazy-preloader"></div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="goodsDetail.html"><img data-src="image/silder/silder3.jpg" class="swiper-lazy" src="image/silder/wait.jpg"></a>
-                                    <div class="swiper-lazy-preloader"></div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="goodsDetail.html"><img data-src="image/silder/silder4.jpg" class="swiper-lazy" src="image/silder/wait.jpg"></a>
-                                    <div class="swiper-lazy-preloader"></div>
-                                </div>
-                            </div>
-                            <div class="swiper-pagination js_pagin"></div>
-                            <div class="swiper-button-next swiper-button-white js_BNext" style="display: none;"></div>
-                            <div class="swiper-button-prev swiper-button-white js_BPrev" style="display: none;"></div>
-                        </div>
-                    </section>
                     <!-- 今日推荐 -->
                     <section class="goodsShow">
-                        <div class="goodsTitle">
+                        <div class="goodsTitle" style="display: none;">
                             <h3><em></em><span>今日推荐</span><em></em></h3>
                             <figure class="adImgBox">
                                 <a href="goodsDetail.html"><img src="image/adImg.jpg"></a>
@@ -101,7 +80,7 @@
                             <ul>
                                 <li class="picList">
                                     <figure>
-                                        <a href="goodsDetail.html"><img src="image/loadImg.png"></a>
+                                        <a href="goodsDetail.html"><img src="image/goods.jpg"></a>
                                     </figure>
                                     <aside class="priceArea">
                                         <h4>智利进口蓝莓智利进口蓝莓智利进口蓝莓智利进口蓝莓</h4>
@@ -156,7 +135,7 @@
                     </section>
                     <!-- 本周爆款 -->
                     <section class="goodsShow">
-                        <div class="goodsTitle">
+                        <div class="goodsTitle" style="display: none;">
                             <h3><em></em><span>本周爆款</span><em></em></h3>
                             <figure class="adImgBox">
                                 <a href="goodsDetail.html"><img src="image/adImg.jpg"></a>
@@ -265,6 +244,7 @@
                             <li>苹果</li>
                             <li>西瓜</li>
                             <li>香梨</li>
+
                         </ul>
                     </div>
                 </section>
@@ -291,7 +271,7 @@
 <script type="text/javascript" src="js/plug/sea/sea.min.js"></script>
 <script type="text/javascript" src="js/plug/jquery.min.js"></script>
 <script type="text/javascript">
-    seajs.use(['./js/slide.js','./js/global.js'],function() {});
+    seajs.use(['./js/global.js'],function() {});
 </script>
 </body>
 </html>
