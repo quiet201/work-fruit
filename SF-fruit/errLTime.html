@@ -1,0 +1,56 @@
+<!doctype html>
+<html class="">
+<head>
+<meta charset="utf-8">
+<title>系统维护</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+<!-- 网站开启对web app程序的支持 -->
+<meta content="yes" name="apple-mobile-web-app-capable"></meta>
+<!--忽略将页面中的数字识别为电话号码。-->
+<meta name="format-detection" content="telephone=no" />
+<meta name="Author" content="顺丰速运科技有限公司" />
+<meta name="Keywords" content="顺丰速运" />
+<meta name="Description" content="顺丰速运科技有限公司" />
+
+<link rel="stylesheet" type="text/css" href="style/MobReset.css" >
+<link rel="stylesheet" type="text/css" href="style/style.css" >
+<style type="text/css">
+</style>
+
+</head>
+<body >
+<div class="wrap">
+    <section class="contain containAll" >
+        <div class="errIcon icon-longTime myRotate"></div>
+        <div class="errText">
+            <h2>登录失效！</h2>
+            <p>请在服务号菜单中打开</p>
+            <p class="tip"><span id="timer">3</span>秒后自动跳转到首页</p>
+            <a href="index.html">返回首页</a>
+        </div>
+    </section>
+    <div class="icoStyle  icon-arrow-up goTopIcon js_goTop" style="display: none"></div>
+</div>
+<script type="text/javascript">
+    window.onload = function() {
+        var times = null;
+        var iNow = 3;
+        var oTime = document.getElementById('timer');
+        clearInterval(times);
+        setInterval(function() {
+            if(iNow < 2) {
+                clearInterval(times);
+                window.location.href = "index.html";
+            }
+            else {
+                iNow--;
+                oTime.innerHTML = iNow;
+            }
+        },1000);
+
+
+    };
+</script>
+</body>
+</html>
+

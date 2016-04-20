@@ -28,10 +28,10 @@ define(function(require,exports,module) {
         this.obj = new IScroll(obj,sOptions);
     };
     //刷新滚动条
-        ScrollBar.prototype.ReScroll = function () {
-            this.obj.refresh();
-            //console.log(this.obj)
-        };
+    ScrollBar.prototype.ReScroll = function () {
+        this.obj.refresh();
+        //console.log(this.obj)
+    };
 
     //删除滚动条
     ScrollBar.prototype.DelScroll = function () {
@@ -49,15 +49,31 @@ define(function(require,exports,module) {
     //滚动结束事件
     ScrollBar.prototype.ScrollEnd = function (fn) {
         var _this = this.obj;
-        this.obj.on('scrollEnd', function () {
-            //console.log(this.y)
-            //console.log(_this.maxScrollY)
-            //如果滑动到底部，则加载更多数据
-            if ((this.y - this.maxScrollY) < 20) {
-                fn();
-            }
-        });
+        _this.on('scrollEnd', fn);
+        //console.log(_this)
+        //console.log(_this.maxScrollY)
+        //如果滑动到底部，则加载更多数据
+        // if ((this.y - this.maxScrollY) < 20) {
+        //     fn(_this);
+        // }
     };
+
+     //滚动监听
+    ScrollBar.prototype.ScrollIng = function (fn) {
+        var _this = this.obj;
+        this.obj.on('scroll', fn);
+    };
+     //滚动下拉slideDown
+    // ScrollBar.prototype.SlideDown = function (fn) {
+    //     var _this = this.obj;
+    //     this.obj.on('slideDown', fn);
+    // };
+    // //滚动上拉slideUp
+    // ScrollBar.prototype.SlideUp = function (fn) {
+    //     var _this = this.obj;
+    //     this.obj.on('slideUp', fn);
+    // };
+
     exports.ScrollBar = ScrollBar;
 });
 

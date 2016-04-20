@@ -5,7 +5,7 @@ seajs.use('./js/plug/swiper.jquery.min.js',function() {
         var oBNext = $('.js_BNext'); //下一个
         var oBPrev = $('.js_BPrev'); //上一个
         var oPagin = $('.js_pagin'); //个数点
-        var oDetailsImg = $('.js_detailsImg');
+        var oDetailsImg = $('.js_detailsImg'); //详情轮播
 
         //首页轮播
         var indexSwiper = oSilderImg.swiper({
@@ -23,12 +23,13 @@ seajs.use('./js/plug/swiper.jquery.min.js',function() {
                 }, 4000);
             },
         });
-
         var detailsSwiper = oDetailsImg.swiper({
             pagination: oPagin,
             paginationClickable: true,
             lazyLoading: true,
         });
+
+
 
     });
 

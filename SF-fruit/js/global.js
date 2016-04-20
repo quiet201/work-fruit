@@ -21,18 +21,80 @@ seajs.use(['hammer','iscroll','layer','public'], function(myHam,myIsc,myLay,myPu
         var oSCancel = $('.js_sCancel');            //取消梭梭按钮
         var oBtnAddCar = $('.js_addCar');           //加入购物车按钮
         var oMoveIcon = $('.js_moveIcon');          //加入购物车动态标记
-
-        var conScroll = new myPub.ScrollBar();      //页面滚动
-        var secScroll = new myPub.ScrollBar();      //二级导航滚动
-
+        var oPage1 = $('.js_page1');
+        var oPage2 = $('.js_page2');
 
 
-        if(oContain.length>0) { conScroll.AddScroll(oContain[0],{click:true}); }
+/**********************************  添加滚动条 start   *************************************/
+        //页面滚动
+        if(oContain.length>0) {
+            var conScroll = new myPub.ScrollBar();
+            conScroll.AddScroll(oContain[0],{click:true,mouseWheel:true});
+        }
+        //二级导航滚动
         if(oNavSecList.length>0) {
             oNavSecUl.css({width:oNavSecLi.width() * oNavSecLi.length});
-            secScroll.AddScroll(oNavSecList[0],{scrollX: true, scrollY: false, click:true});
+            var secScroll = new myPub.ScrollBar();
+            secScroll.AddScroll(oNavSecList[0],{scrollX: true, scrollY: false, click:true,mouseWheel:true});
+        }
+        //详情滚动
+        if(oPage1.length>0 && oPage2.length>0) {
+            var maxY = 100;
+            var oPullTip = $('.js_pullTip');
+            var H1 = oPage1.height();
+            var H2 = oPage2.height();
+            var pageScroll1 = new IScroll(oPage1[0], { probeType: 3, mouseWheel: true });
+            var pageScroll2 = new IScroll(oPage2[0], { probeType: 3, mouseWheel: true });
+
+            pageScroll1.on('scroll',function() {
+                var _disY = this.maxScrollY - this.y;
+                if(_disY >= maxY) {
+                    oPage1.find('.js_pullTip').addClass('changIcon');
+                }
+                else {
+                    oPullTip.removeClass('changIcon');
+                }
+            });
+
+            pageScroll2.on('scroll',function() {
+                if(this.y >= maxY) {
+                    oPage2.find('.js_pullTip').addClass('changIcon');
+                }
+                else {
+                    oPullTip.removeClass('changIcon');
+                }
+            });
+
+
+            //上拉
+            pageScroll1.on('slideUp',function() {
+                //console.log("1:"+this.y);
+                if(this.maxScrollY - this.y > maxY) {
+                    oPage1.stop().animate({height:0,opacity:0},300);
+                    oPage2.stop().animate({height:H2,opacity:1},500,function() {
+                        pageScroll2.refresh();
+                    });
+
+                }
+            });
+            //下拉
+            pageScroll2.on('slideDown',function() {
+                //console.log('2:'+this.y);
+                if(this.y > maxY) {
+                    oPullTip.removeClass('changIcon');
+                    oPage2.find('.js_pullTip').addClass('changIcon');
+                    oPage1.stop().animate({height:H1,opacity:1},500,function() {
+                        pageScroll1.refresh();
+                    });
+                    oPage2.stop().animate({height:0,opacity:0},300);
+
+                }
+            });
+
         }
 
+
+/**********************************  添加滚动条 end    *************************************/
 
         //显示搜索框
         oSStart.hammer().on('tap',function(e) {

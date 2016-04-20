@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-    src:    url('fonts/icomoon.eot?co5cu9');
-    src:    url('fonts/icomoon.eot?co5cu9#iefix') format('embedded-opentype'),
-        url('fonts/icomoon.ttf?co5cu9') format('truetype'),
-        url('fonts/icomoon.woff?co5cu9') format('woff'),
-        url('fonts/icomoon.svg?co5cu9#icomoon') format('svg');
+    src:    url('fonts/icomoon.eot?pekukj');
+    src:    url('fonts/icomoon.eot?pekukj#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?pekukj') format('truetype'),
+        url('fonts/icomoon.woff?pekukj') format('woff'),
+        url('fonts/icomoon.svg?pekukj#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -24,27 +24,6 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-search:before {
-    content: "\e036";
-}
-.icon-circle-cross:before {
-    content: "\e043";
-}
-.icon-arrow-left:before {
-    content: "\e094";
-}
-.icon-arrow-right:before {
-    content: "\e095";
-}
-.icon-arrow-up:before {
-    content: "\e096";
-}
-.icon-arrow-down:before {
-    content: "\e097";
-}
-.icon-menu:before {
-    content: "\e120";
-}
 .icon-longTime:before {
     content: "\e900";
 }
@@ -114,41 +93,65 @@
 .icon-OK:before {
     content: "\e911";
 }
-.icon-service:before {
+.icon-putDown:before {
     content: "\e912";
 }
-.icon-Tel:before {
+.icon-service:before {
     content: "\e913";
 }
-.icon-unFind .path1:before {
+.icon-Tel:before {
     content: "\e914";
+}
+.icon-unFind .path1:before {
+    content: "\e915";
     color: rgb(93, 94, 94);
 }
 .icon-unFind .path2:before {
-    content: "\e915";
+    content: "\e916";
     margin-left: -1em;
     color: rgb(175, 175, 175);
 }
 .icon-unFind .path3:before {
-    content: "\e916";
-    margin-left: -1em;
-    color: rgb(115, 115, 115);
-}
-.icon-unFind .path4:before {
     content: "\e917";
     margin-left: -1em;
     color: rgb(115, 115, 115);
 }
-.icon-WaitGet:before {
+.icon-unFind .path4:before {
     content: "\e918";
+    margin-left: -1em;
+    color: rgb(115, 115, 115);
 }
-.icon-WaitPay:before {
+.icon-WaitGet:before {
     content: "\e919";
 }
-.icon-WaitSend:before {
+.icon-WaitPay:before {
     content: "\e91a";
 }
-.icon-WX:before {
+.icon-WaitSend:before {
     content: "\e91b";
+}
+.icon-WX:before {
+    content: "\e91c";
+}
+.icon-search:before {
+    content: "\e036";
+}
+.icon-circle-cross:before {
+    content: "\e043";
+}
+.icon-arrow-left:before {
+    content: "\e094";
+}
+.icon-arrow-right:before {
+    content: "\e095";
+}
+.icon-arrow-up:before {
+    content: "\e096";
+}
+.icon-arrow-down:before {
+    content: "\e097";
+}
+.icon-menu:before {
+    content: "\e120";
 }
 
