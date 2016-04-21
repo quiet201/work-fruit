@@ -79,8 +79,8 @@ transform: rotate(-90deg);
 .adImgBox i {display: block; background: url(../image/tip_djjx.png); height: 5rem; width: 5rem; bottom: 0; right: 0; position: absolute; background-size: 100% 100%;}
 
 /* 产品列表 */
-.goodsList {background: #fff}
-.picList {box-sizing: border-box; float: left; width: 50%; padding:1px; overflow: hidden; position: relative; border-width: 1px; border-style: solid; border-color: transparent; border-right-color: #dfdfdf;  border-bottom-color:#dfdfdf;;  }
+.goodsList {}
+.picList {box-sizing: border-box; float: left; width: 50%; padding:1px; overflow: hidden; position: relative; border-width: 1px; border-style: solid; border-color: transparent; border-right-color: #dfdfdf;  border-bottom-color:#dfdfdf; background: #fff;  }
 .picList:nth-child(2n) {border-right-color:transparent;}
 .picList a {height: 100%; display: block;}
 .picList figure {/*max-height: 20rem; max-width: 20rem;*/ box-sizing: border-box; /*padding: 2.4rem 0 1.5rem;*/ background:url(../image/loadImg.png) no-repeat center center; background-size:contain;  margin: 0 auto; overflow: hidden;}
@@ -91,7 +91,15 @@ transform: rotate(-90deg);
 .priceArea p span {display: inline-block;}
 .priceArea p i {font-size: 1.4rem; vertical-align: top; float: left;}
 .priceArea p span {float: left; margin-left: 2px;}
-.priceArea .goodsWeight {color: #b0b0b0; font-size: 1.4rem; padding-top: 6px; }
+.priceArea .goodsWeight {color: #888888; font-size: 1.4rem; padding-top: 6px; }
+.priceArea .goodsWeight em {color:#252525;}
+
+/* 推荐产品 */
+.recommendList {padding-bottom: 2rem;}
+.recommendList ul {overflow: hidden;}
+.recommendList li {width: 15.5rem; border-bottom-color:#dfdfdf; border-top-color:#dfdfdf; border-right-color:transparent; border-left-color:#dfdfdf; }
+.recommendList .picList:nth-child(2n) {border-right-color:none;}
+.recommendList .picList:last-child {border-right-color:#dfdfdf;}
 
 /* 快捷加入购物车 */
 .addCar {position: absolute; z-index: 20; bottom: 1.4rem; right: 0; font-size: 2.4rem; margin-top: -0.6rem; color: #252525; font-weight: bold;   height:2.5rem; width: 6rem; text-align: center; line-height: 3rem; }
@@ -105,22 +113,37 @@ transform: rotate(-90deg);
 /* 详情页面1 */
 .goodsInfo {text-align: center; padding-top:2rem; margin: 0 auto; background: #fff;}
 .goodsInfo h2 {font-size: 2rem; color: #252525; line-height: 2rem; font-weight: 100;}
-.goodsInfo .sideInfo {font-size: 1.6rem; color: #ff9600; line-height: 2rem; margin-top: 1rem;}
+.goodsInfo .sideInfo {font-size: 1.6rem; color: #ff9600; line-height: 2rem; margin: 1rem 0;}
 .goodsInfo .sendWay {line-height: 3rem; color: #888888; position: relative;}
 .goodsInfo .sendWay i {right: 50%; height: 1.5rem; margin-top: -0.75rem;}
-.priceBox {color: #fa4b4b; font-size: 3rem; line-height: 4rem; border-bottom: 1px solid #dfdfdf;}
+.goodsInfo .sendWay span {color: #252525;}
+.priceBox {color: #fa4b4b; font-size: 3rem; line-height: 4rem; border-bottom: 1px solid #dfdfdf; margin:0.5rem 0;}
 
 /* 服务专线 */
 .serviceInfo {margin-top: 1rem; background: #fffff4; padding:1.6rem; color: #888888;}
 .serviceInfo h3 {font-weight: 100; font-size: 1.8rem; line-height: 2rem;}
 .serviceInfo p {line-height: 3rem; margin: 0.8rem 0;}
 .serviceInfo p a {font-size: 1.6rem;-}
-.serviceInfo p a em {margin-right: 1rem; color: #ff9600; }
-.serviceInfo p .btnA {padding: 0.1rem 1.5rem; color: #fff; background: #ff9600; box-sizing: border-box; border-radius: 8px;}
+.serviceInfo p em {margin-right: 1rem; color: #ff9600; }
+.serviceInfo p .btnA {padding: 0.1rem 1.5rem; color: #fff; background: #ff9600; box-sizing: border-box; border-radius: 8px; width: 100px; text-align: center;}
 .serviceBot {background: #fff; padding:1rem ; border-top: 1px solid #dfdfdf;}
 .serviceBot a {display: block; color:#ff9600; font-size: 1.6rem; line-height: 3rem; margin-bottom: 1rem;}
 .serviceBot a.btnA { border:1px solid #ff9600; border-radius: 8px; text-align: center; width: 75%;}
 .serviceBot span {display: block; color: #888888; font-size: 1.4rem; line-height: 1.4rem;}
+
+/* 商家信息 */
+.storeBox {margin-top: 1rem; background: #fff; padding:0 0.5rem; min-height:8rem;  }
+.storeArea {position: relative; padding: 1.5rem 0;}
+.storeArea .storeImg {height: 6rem; width: 6rem; border:1px solid transparent; box-sizing: border-box; border-radius: 50%; margin-right: 1rem; }
+.storeArea .storeImg img {display: block; width: 100%;}
+.storeArea .storeName {margin-right: 0.8rem}
+.storeArea .storeName h4 {font-weight: 100; font-size: 1.8rem; color: #888888; margin-bottom: 1rem;}
+.storeArea .storeName p {color: #252525; font-size: 1.6rem; max-height: 3rem; overflow: hidden;}
+
+.storeBox .storeInfo {position: relative; font-size: 1.3rem; color: #888888; line-height: 1.4rem; padding:1.5rem 0;}
+.storeBox .storeInfo i {right: 0; left: -0.8rem; height: 4rem; margin-top:-2rem;}
+
+
 
 /* 详情页面2 */
 .detailImg {padding:0 1.5rem; background: #fff; box-sizing: border-box;}
@@ -128,9 +151,9 @@ transform: rotate(-90deg);
 /* 上下拉提示 */
 .pullTip {position: absolute; left: 0; width: 100%; text-align: center; z-index: -1; opacity: 0.7}
 .pullTip span {vertical-align: middle; line-height: 2rem; }
-.pullTip em {transition: all 0.5s ease 0s;
-    -webkit-transition:all 0.5s ease 0s;
-    -o-transition:all 0.5s ease 0s;
+.pullTip em {transition: all 0.3s ease 0s;
+    -webkit-transition:all 0.3s ease 0s;
+    -o-transition:all 0.3s ease 0s;
 }
 .pullTip-top {top:-3rem;}
 .pullTip-bottom {bottom:-3rem;}
@@ -140,14 +163,44 @@ transform: rotate(-90deg);
 .detailsBot {background: #fff; box-sizing: border-box; }
 .detailsBot .icoStyle {display: block;}
 .detailsBot li{/*border-top: 1px solid #dfdfdf;*/}
-.detailsBot li em {text-align: center; width: auto; margin-right: 0; line-height: 3.6rem;}
-.detailsBot li span {font-size: 1.4rem; line-height: 3rem; height: auto; display: block;}
+.detailsBot li em {text-align: center; width: auto; margin-right: 0; margin-top: 1rem;}
+.detailsBot li span {font-size: 1.4rem;   height: auto; display: block;}
 .detailsBot .userNum {right: 1rem; top: 0.2rem;}
 .detailsBot .deButton {width: 30%;}
 .detailsBot .deButton a {color: #fff; font-size: 1.6rem; }
 .deAddCar {background: #ff9600; }
 .deBuyOnce {background: #fa4b4b; }
 
+/* 规格选择框 */
+.seletSide {background: #fff; position: fixed; min-height:28rem; width: 100%; z-index: 120; bottom: 0; padding: 0 1.2rem; box-sizing: border-box;}
+/* 标题统一 */
+.seletSide section {border-bottom: 1px solid #dfdfdf; padding: 1rem 0;}
+.secName {color: #252525;}
+.seletSide .oBuyNum {border-bottom-color:transparent; }
+
+/* 产品小图 */
+.goodImg_small {height: 7.5rem; width: 7.5rem; border:1px solid #dfdfdf; margin-right: 2rem}
+
+/* 产品规格选择 */
+.goodsSize ul {margin-left: -1rem;}
+.goodsSize li {float: left; position: relative; box-sizing: border-box; border:1px solid #dfdfdf; padding:4px 8px; width: auto; margin-left: 1rem; margin-top: 1rem;}
+.goodsSize li.active {border:1px solid #ff9600; }
+.goodsSize li.active i {position: absolute; right: 0; bottom: 0; background: url(../image/tip_seleted.png) no-repeat; background-size: 100% 100%; width: 1.6rem; height: 1.6rem;}
+
+
+/* 下拉箭头 */
+.arrDownBtn {background: url(../image/arrDownIcon.png) no-repeat center; background-size: 100% 100%; width: 3rem; height: 1rem; margin: 1rem auto 0;}
+/* 关闭按钮 */
+.closeBtn {position: absolute; right: 0px; top: 0; z-index: 5; height: 3rem; width: 3rem; background: url(../image/closeBg.png) no-repeat center; background-size: 100% 100%;}
+
+/* 增加减少 */
+.box-amount{display:-webkit-box;margin-right:0.5rem;background:#fff;height:2.6rem;width: 10rem;}
+.box-amount a{position:relative;display:block; border:.1rem solid #dfdfdf;;width:3rem;height:2.6rem; font-size:2.5rem; text-align:center;}
+.addBtn em,.subBtn em{display:block;position:absolute;top:50%;margin-top:-0.5rem;left:50%;margin-left: -0.5rem; background:url(../image/tip_control.png) no-repeat;width:1rem;height:1rem;background-size:1rem; text-indent:-9999rem;}
+.subBtn em{background-position:0 -1.1rem;}
+.sumNum{display:block;  width:3.3rem; height:2.6rem;cursor: pointer;height:100%; text-align:center;font-size:1.6rem; outline:none; border-top:.1rem solid #dfdfdf;border-bottom:.1rem solid #dfdfdf;}
+/* 确定按钮 */
+.btnTrue {background: #ff9600; color: #fff; line-height: 4rem; font-size: 1.6rem; border-radius: 8px; margin-bottom: 0.5rem;}
 
 /* 轮播图 */
 /* silderBox  ipad 需要调试 图片变型 */
@@ -158,16 +211,21 @@ transform: rotate(-90deg);
 /*图标*/
 .icoStyle {height: 2rem; width: 2rem;  display: inline-block; vertical-align: middle;  line-height: 2rem}
 /*分割线*/
-.splitline {height: 2rem; width: 1px; background: #dfdfdf; right: -1px; top: 50%; margin-top: -1rem; position: absolute; }
+.splitline {height: 2rem; width: 1px; background: #dfdfdf; right: 0px; top: 50%; margin-top: -1rem; position: absolute; }
 /*购物车数量统计*/
 .userNum {right: -12px; top: -10px; height: 1.6rem; width: 1.6rem; background: #fa4b4b; border-radius: 50%; color: #fff; font-size: 1.4rem; line-height: 1.8rem; white-space:nowrap;text-overflow:ellipsis; overflow: hidden; text-align: center; font-weight: bold; font-family: 'SimHei'; }
 /*加入购物车动画标记*/
 .moveIcon {height: 14px; width: 14px; background: #ffa320; position: fixed; top: 95%; left: 74%;  z-index: 10; border-radius: 50%; color: #fff; line-height: 14px; text-align: center; font-weight: bold; opacity: 0; }
 .moveIcon.MAnimate {
-    -webkit-transition:0.5s left linear,0.5s top ease-in, 1.5s opacity linear,0.1s 0.5s visibility linear ;
-    -o-transition: 0.5s left linear,0.5s top ease-in, 1.5s opacity linear,0.1s 0.5s visibility linear;
-    transition: 0.5s left linear,0.5s top ease-in, 1.5s opacity linear,0.1s 0.5s visibility linear;
+    -webkit-transition:0.8s left linear,0.8s top ease-in, 1.5s opacity linear,0.1s 0.5s visibility linear ;
+    -o-transition: 0.8s left linear,0.8s top ease-in, 1.5s opacity linear,0.1s 0.5s visibility linear;
+    transition: 0.8s left linear,0.8s top ease-in, 1.5s opacity linear,0.1s 0.5s visibility linear;
 }
+
+/* 阴影 */
+.shadow {position: fixed; background: rgba(0,0,0,.5) repeat;  height: 100%; width: 100%; z-index: 110;}
+
+
 
 /* 错误信息 */
 .errIcon {position: absolute; top: 20%; left: 50%; margin-left: -30%; width: 60%; text-align: center; font-size: 15rem; color: #888888; box-sizing: border-box; overflow: hidden;
@@ -187,7 +245,10 @@ transform: rotate(-90deg);
 
 
 /* 返回顶部 */
-.goTopIcon {height: 3.5rem; width: 3.5rem; position: fixed; z-index: 100; bottom: 8rem; right: 2rem; text-align: center; color: #fff; line-height:3.5rem;font-size: 1.8rem; background: rgba(0,0,0,.4);}
+.goTopIcon {height: 4rem; width: 4rem; position: fixed; z-index: 100; bottom: 8rem; right: 2rem; text-align: center; color: #fff; line-height:4rem; font-size: 1.8rem; background: rgba(0,0,0,.4); border-radius: 50%;}
+/* 返回首页 */
+.reHome {position: absolute; top: 3.5rem; left: 2rem; height: 4rem; width: 4rem;  z-index: 100;}
+.reHome a,.reHome img {display: block; width: 100%; }
 
 /* 运动旋转 */
 .myRotate{

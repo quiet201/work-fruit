@@ -21,13 +21,20 @@
 </head>
 <body>
 <div class="wrap">
-
+    <p class="js_selet">1111111111111111111111111111111111111111</p>
+    <p class="js_selet">对于 keypress 事件，该属性声明了被敲击的键生成的 Unicode 字符码。对于 keydown 和 keyup 事件，它指定了被敲击的键的虚拟键盘码。虚拟键盘码可能和使用的键盘的布局相关。</p>
 </div>
 
 <script type="text/javascript" src="js/plug/sea/sea.min.js"></script>
 <script type="text/javascript" src="js/plug/jquery.min.js"></script>
 <script type="text/javascript" src="js/global.js"></script>
-<script type="text/javascript"></script>
+<script type="text/javascript">
+    $(function() {
+        $('.js_selet').on('touchmove',function(e) {
+            console.log(e)
+        });
+    })
+</script>
 </body>
 </html>
 
