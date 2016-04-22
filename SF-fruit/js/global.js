@@ -34,18 +34,18 @@ seajs.use(['hammer','iscroll','layer','public'], function(myHam,myIsc,myLay,myPu
         var oBotCloseBtn = $('.js_closeBtn');    //关闭按钮
         var oSeletSideH = oSeletSide.outerHeight(true);
 
-/**********************************  下滑窗口 start   *************************************/
-        // $('.js_goodsSmall').hammer({event:'swipe swipedown',direction:Hammer.DIRECTION_VERTICAL}).on('swipe',function(e) {
-        //     console.log(e);
-        // });
+        var oShadow = $('.js_shadow');          //阴影
 
-        myPub.onHammerSwiper($('.js_goodsSmall')[0],'swipedown',function(e) {
+/**********************************  下滑窗口 start   *************************************/
+        myPub.onHammerSwiper(oSeletSide[0],'swipedown',function(e) {
             oSeletSide.stop().animate({bottom:-oSeletSideH},500);
         });
 
         oBotCloseBtn.hammer().on('tap',function() {
             oSeletSide.stop().animate({bottom:-oSeletSideH},500);
         });
+
+
 
 /**********************************  下滑窗口 start   *************************************/
 
