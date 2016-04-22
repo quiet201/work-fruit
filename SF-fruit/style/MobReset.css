@@ -1,4 +1,8 @@
 @charset "utf-8";
+@font-face {
+    font-family: SYHeiTi;
+    /*src: url('SYHeiTi.otf');*/
+}
 
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block;  margin: 0; padding: 0; border: 0;}
 audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
@@ -83,7 +87,7 @@ img { border: 0; margin: 0; padding: 0; -ms-interpolation-mode: bicubic; vertica
 
 /** 设置默认字体 **/
 html {font-size: 62.5%;}
-body,button, input, select, textarea { font: 1.5rem 'SimHei',Helvetica,Arial, sans-serif;   }
+body,button, input, select, textarea { font: 1.5rem 'SYHeiTi',SimHei,Helvetica,Arial, sans-serif;   }
 h1, h2, h3, h4, h5, h6 { font-size: 100%; }
 em{font-style:normal;}
 

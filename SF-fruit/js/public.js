@@ -78,6 +78,20 @@ define(function(require,exports,module) {
      /*************** 弹框效果 s***************/
      /*************** 弹框效果 e***************/
 
+    //平滑事件
+    function onHammerSwiper(obj,type,fn) {
+        var mc = new Hammer.Manager(obj);
+            mc.add(new Hammer.Swipe({threshold:10,direction:Hammer.DIRECTION_ALL}));
+            //mc.off(type);
+            mc.on(type,function(e) {
+                if(fn) fn(e);
+                //e.preventDefault();
+                //e.stopPropagation();
+            });
+    }
+
+    exports.onHammerSwiper = onHammerSwiper;
+
 });
 
 

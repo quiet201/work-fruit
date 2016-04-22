@@ -8,7 +8,7 @@ seajs.config({
 });
 
 seajs.use(['hammer','iscroll','layer','public'], function(myHam,myIsc,myLay,myPub) {
-   // $(function () {
+   $(function () {
         var oContain = $('.js_contain');            //内容
         var oFooter = $('.js_footer');              //底部
         var oNavSecList = $('.js_navSecList');      //二级导航
@@ -30,6 +30,31 @@ seajs.use(['hammer','iscroll','layer','public'], function(myHam,myIsc,myLay,myPu
         var oRecomUL = oRecommendList.find('ul');   //推荐列表ul
         var oRecomLi = oRecommendList.find('li');   //推荐列表li
 
+        var oSeletSide = $('.js_seletSide');     //下滑窗口
+        var oBotCloseBtn = $('.js_closeBtn');    //关闭按钮
+        var oSeletSideH = oSeletSide.outerHeight(true);
+
+/**********************************  下滑窗口 start   *************************************/
+        // $('.js_goodsSmall').hammer({event:'swipe swipedown',direction:Hammer.DIRECTION_VERTICAL}).on('swipe',function(e) {
+        //     console.log(e);
+        // });
+
+        myPub.onHammerSwiper($('.js_goodsSmall')[0],'swipedown',function(e) {
+            oSeletSide.stop().animate({bottom:-oSeletSideH},500);
+        });
+
+        oBotCloseBtn.hammer().on('tap',function() {
+            oSeletSide.stop().animate({bottom:-oSeletSideH},500);
+        });
+
+/**********************************  下滑窗口 start   *************************************/
+
+
+
+
+        oNavSecUl.css({width:oNavSecLi.outerWidth(true) * oNavSecLi.length});
+        oRecomUL.css({width:oRecomLi.outerWidth(true) * oRecomLi.length, height:oRecomLi.outerHeight(true)});
+
 
 /**********************************  添加滚动条 start   *************************************/
         //页面滚动
@@ -42,83 +67,111 @@ seajs.use(['hammer','iscroll','layer','public'], function(myHam,myIsc,myLay,myPu
             // 阻止其他元素拖动
             $(document).on('touchmove',function(e) { e.preventDefault();});
 
+             oGoTop.hammer().on('tap',function(e) {
+                conScroll.GotoScroll('js_contain');
+                myPub.HamstopPropaga();
+            });
+
         }
         //二级导航滚动
         if(oNavSecList.length>0) {
-            oNavSecUl.css({width:oNavSecLi.outerWidth(true) * oNavSecLi.length});
             var secScroll = new myPub.ScrollBar();
             secScroll.AddScroll(oNavSecList[0],{scrollX: true, scrollY: false, click:true,mouseWheel:true});
         }
+
+
+
+
+
         //详情滚动
         if(oPage1.length>0 && oPage2.length>0) {
             var maxY = 40;
             var oPullTip = $('.js_pullTip');
-            var H1 = oPage1.height();
-            var H2 = oPage2.height();
+            var oTipH = oPullTip.outerHeight(true);
 
-           // oPage2.css({top:H1});
-            var pageScroll1 = new IScroll(oPage1[0], { probeType: 3, mouseWheel: true, click:true,});
-            var pageScroll2 = new IScroll(oPage2[0], { probeType: 3, mouseWheel: true, click:true,});
+            var pageScroll1 = new IScroll(oPage1[0], { probeType: 3, mouseWheel: true, click:true,preventDefault:false});
+
+            var pageScroll2 = new IScroll(oPage2[0], { probeType: 3, mouseWheel: true, click:true,stopPropagation:false});
+            var H1 = pageScroll1.scrollerHeight;
+
+             oPage2.css({top:H1});
+
+
+
+            // 阻止其他元素拖动
+            $(document).on('touchmove',function(e) {
+                oPage2.css({opacity:1});
+                e.preventDefault();
+                //e.stopPropagation();
+            });
+
+
+
 
             pageScroll1.on('scroll',function() {
                 var _disY = this.maxScrollY - this.y;
-                if(_disY >= maxY) {
-                    oPage1.find('.js_pullTip').addClass('changIcon');
-                }
-                else {
-                    oPullTip.removeClass('changIcon');
-                }
+                // if(_disY >= maxY) {
+                //     oPage1.find('.js_pullTip').addClass('changIcon');
+                // }
+                // else {
+                //     oPullTip.removeClass('changIcon');
+                // }
             });
 
-            pageScroll2.on('scroll',function() {
-                if(this.y >= maxY) {
-                    oPage2.find('.js_pullTip').addClass('changIcon');
-                }
-                else {
-                    oPullTip.removeClass('changIcon');
-                }
+
+            pageScroll2.on('scroll',function(e) {
+                // if(this.y >= maxY) {
+                //     oPage2.find('.js_pullTip').addClass('changIcon');
+                // }
+                // else {
+                //     oPullTip.removeClass('changIcon');
+                // }
+                //console.log(pageScroll2)
+                //this.obj.stopPropagation();
             });
 
 
             //上拉
             pageScroll1.on('slideUp',function() {
-                //console.log("1:"+this.y);
-                if(this.maxScrollY - this.y > maxY) {
-                    oPage1.stop().animate({'z-index':2,'top':-H1},250);
-                    oPage2.stop().animate({'z-index':3,'top':0},250,function() {
-                        pageScroll2.refresh();
-                    });
+                var _disY = this.maxScrollY - this.y;
+                var _T = null;
+                if( _disY > maxY) {
 
+                    //pageScroll1.destroy();
+
+                    oPage1.css({'top':-(H1)});
+                    //oPage2.css({'top':H1});
+                    clearTimeout(_T);
+                    _T = setTimeout(function() {
+                        pageScroll1.scrollTo(0,0,100);
+                        pageScroll2.scrollTo(0,0,200);
+                    },500);
                 }
+
             });
-            //下拉
-            pageScroll2.on('slideDown',function() {
-                //console.log('2:'+this.y);
-                if(this.y > maxY) {
-                    oPullTip.removeClass('changIcon');
-                    oPage2.find('.js_pullTip').addClass('changIcon');
-                    oPage1.stop().animate({'z-index':3,'top':0},250,function() {
-                        pageScroll1.refresh();
-                    });
-                    oPage2.stop().animate({'z-index':2,'top':H1},250);
 
-                }
+
+
+            // //下拉
+            pageScroll2.on('slideDown',function() {
+                // if(this.y > maxY) {
+                //     // oPullTip.removeClass('changIcon');
+                //     // oPage2.find('.js_pullTip').addClass('changIcon');
+                //     pageScroll2.scrollTo(0,0,10);
+                //     oPage1.css({'top':0});
+                //    // oPage2.css({'top':H1});
+
+                // }
             });
 
         }
 
-        //推荐滚动
+
+        //推荐滚动 (必须必详情滚动前)
         if(oRecommendList.length>0) {
-            oRecomUL.css({width:oRecomLi.outerWidth(true) * oRecomLi.length});
             var recomScroll = new myPub.ScrollBar();
             recomScroll.AddScroll(oRecommendList[0],{scrollX: true, scrollY: false, click:true,mouseWheel:true});
         }
-
-        oGoTop.hammer().on('tap',function(e) {
-            conScroll.GotoScroll('js_contain');
-            myPub.HamstopPropaga();
-        });
-
 
 
 /**********************************  添加滚动条 end    *************************************/
@@ -146,9 +199,9 @@ seajs.use(['hammer','iscroll','layer','public'], function(myHam,myIsc,myLay,myPu
         //添加购物车动画
         myPub.AddCarAnimate(oBtnAddCar,oMoveIcon);
 
-   // });
 
 
+   });
 });
 
 
