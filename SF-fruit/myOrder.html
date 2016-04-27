@@ -2,7 +2,7 @@
 <html class="">
 <head>
 <meta charset="utf-8">
-<title></title>
+<title>我的订单</title>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
 <!-- 网站开启对web app程序的支持 -->
 <meta content="yes" name="apple-mobile-web-app-capable"></meta>
@@ -14,19 +14,816 @@
 
 <link rel="stylesheet" type="text/css" href="style/MobReset.css" >
 <link rel="stylesheet" type="text/css" href="style/style.css" >
+<link rel="stylesheet" type="text/css" href="style/plug/swiper.css" >
+<link rel="stylesheet" type="text/css" href="style/animate.min.css">
 <style type="text/css">
 
 </style>
 
 </head>
 <body>
-<div class="wrap">
+<div class="wrap" style="height: auto" >
+    <!-- 导航 -->
+    <div class="HBox BoxCenter orderHead js_orderHead" style="display: none1">
+        <!-- <p class="Bflex1 BoxCenter icoStyle icon-allOrder "><span>全部</span></p>
+        <p class="Bflex1 BoxCenter icoStyle icon-WaitPay "><span>待付款</span><i>100</i></p>
+        <p class="Bflex1 BoxCenter icoStyle icon-WaitSend "><span>待发货</span><i>2</i></p>
+        <p class="Bflex1 BoxCenter icoStyle icon-WaitGet "><span>待收货</span><i>3</i></p>
+        <p class="Bflex1 BoxCenter icoStyle icon-OK "><span>交易成功</span></p> -->
+    </div>
 
+    <!-- 轮播 -->
+    <section class="contain containPos" style="padding-top: 8rem; display: none1" >
+        <div class="conIScroll">
+            <section class="swiper-container orderInfoBox js_orderInfoBox" >
+                <div class="swiper-wrapper">
+                    <!-- 全部订单 slide-->
+                    <div class="swiper-slide">
+                        <!-- 待付款-->
+                        <section class="carListBox">
+                            <!-- 店家信息 待付款-->
+                            <section class="carListHead HBox BoxCenter">
+                                <div class="storeOwner Bflex1 storeArea HBox BoxCenter">
+                                    <!-- <figure class="storeImg" style="display: none">
+                                        <img src="image/storeImg.png">
+                                    </figure> -->
+                                    <div class="storeName Bflex1  ">
+                                        <p><span class="icon-store"></span><span>不二小姐</span></p>
+                                    </div>
+                                </div>
+                                <div class="ordStateTxt">
+                                    <p class="statCol_red">待付款</p>
+                                </div>
+                            </section>
+                            <!-- 对应订单 -->
+                            <section class="carList orderList">
+                                <ul>
+                                    <li>
+                                        <section class="HBox BoxCenter carListArea">
+                                            <a href="myOrderDetail.html">
+                                                <div class="Bflex1 HBox BoxCenter listBox">
+                                                    <figure class="listImg">
+                                                        <img src="image/goods1.jpg">
+                                                    </figure>
+                                                    <div class="Bflex1 listInfor priceArea">
+                                                        <h4>新西兰阳光金奇异果</h4>
+                                                        <p class="goodsWeight">规格：<span>尝鲜2斤装</span></p>
+                                                        <p class="goodsPrice"><em class="">¥</em><span class="">29.90<i>X</i>1</span></p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </section>
+                                        <section class="orderInfo">
+                                            <div class="seletPrice">
+                                                <p>共<i>2</i>件商品 合计：<em>¥</em><span class="sumPrice">29.90</span></p>
+                                            </div>
+                                            <div class="HBox BoxCenter btnBox">
+                                                <a class="Bflex1 btnStyle" href="tel:123456">联系商家</a>
+                                                <a class="Bflex1 btnStyle" href="#">取消订单</a>
+                                                <a class="Bflex1 btnStyle btn_Bgred" href="#">立即付款</a>
+                                                <!-- <a class="Bflex1 btnStyle" href="apply_service.html">申请售后</a> -->
+                                                <!-- <a class="Bflex1 btnStyle btn_BgOrg" href="#">查看物流</a> -->
+                                                <!-- <a class="Bflex1 btnStyle btn_BgOrg " href="#">确认收货</a> -->
+                                                <!-- <a class="Bflex1 btnStyle" href="#">删除订单</a> -->
+                                            </div>
+                                        </section>
+                                    </li>
+                                </ul>
+                            </section>
+                        </section>
+                        <!-- 交易关闭-->
+                        <section class="carListBox">
+                            <!-- 店家信息 交易关闭-->
+                            <section class="carListHead HBox BoxCenter">
+                                <div class="storeOwner Bflex1 storeArea HBox BoxCenter">
+                                    <!-- <figure class="storeImg" style="display: none">
+                                        <img src="image/storeImg.png">
+                                    </figure> -->
+                                    <div class="storeName Bflex1  ">
+                                        <p><span class="icon-store"></span><span>不二小姐</span></p>
+                                    </div>
+                                </div>
+                                <div class="ordStateTxt">
+                                    <p class="statCol_org">交易关闭</p>
+                                </div>
+                            </section>
+                            <!-- 对应订单 -->
+                            <section class="carList orderList">
+                                <ul>
+                                    <li>
+                                        <section class="HBox BoxCenter carListArea">
+                                            <a href="myOrderDetail.html">
+                                                <div class="Bflex1 HBox BoxCenter listBox">
+                                                    <figure class="listImg">
+                                                        <img src="image/goods1.jpg">
+                                                    </figure>
+                                                    <div class="Bflex1 listInfor priceArea">
+                                                        <h4>新西兰阳光金奇异果</h4>
+                                                        <p class="goodsWeight">规格：<span>尝鲜2斤装</span></p>
+                                                        <p class="goodsPrice"><em class="">¥</em><span class="">29.90<i>X</i>1</span></p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </section>
+                                        <section class="orderInfo">
+                                            <div class="seletPrice">
+                                                <p>共<i>2</i>件商品 合计：<em>¥</em><span class="sumPrice">29.90</span></p>
+                                            </div>
+                                            <div class="HBox BoxCenter btnBox">
+                                                <a class="Bflex1"></a>
+                                                <a class="Bflex1"></a>
+                                                <a class="Bflex1 btnStyle" href="#">删除订单</a>
+                                            </div>
+                                        </section>
+                                    </li>
+                                </ul>
+                            </section>
+                        </section>
+                        <!-- 交易成功-->
+                        <section class="carListBox">
+                            <!-- 店家信息 交易成功-->
+                            <section class="carListHead HBox BoxCenter">
+                                <div class="storeOwner Bflex1 storeArea HBox BoxCenter">
+                                    <!-- <figure class="storeImg" style="display: none">
+                                        <img src="image/storeImg.png">
+                                    </figure> -->
+                                    <div class="storeName Bflex1  ">
+                                        <p><span class="icon-store"></span><span>不二小姐</span></p>
+                                    </div>
+                                </div>
+                                <div class="ordStateTxt">
+                                    <p class="statCol_org">交易成功</p>
+                                </div>
+                            </section>
+                            <!-- 对应订单 -->
+                            <section class="carList orderList">
+                                <ul>
+                                    <li>
+                                        <section class="HBox BoxCenter carListArea">
+                                            <a href="myOrderDetail.html">
+                                                <div class="Bflex1 HBox BoxCenter listBox">
+                                                    <figure class="listImg">
+                                                        <img src="image/goods1.jpg">
+                                                    </figure>
+                                                    <div class="Bflex1 listInfor priceArea">
+                                                        <h4>新西兰阳光金奇异果</h4>
+                                                        <p class="goodsWeight">规格：<span>尝鲜2斤装</span></p>
+                                                        <p class="goodsPrice"><em class="">¥</em><span class="">29.90<i>X</i>1</span></p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </section>
+
+                                        <section class="orderInfo">
+                                            <div class="seletPrice">
+                                                <p>共<i>2</i>件商品 合计：<em>¥</em><span class="sumPrice">29.90</span></p>
+                                            </div>
+                                            <div class="HBox BoxCenter btnBox">
+                                                <a class="Bflex1 btnStyle" href="#">删除订单</a>
+                                                <a class="Bflex1 btnStyle" href="tel:123456">联系商家</a>
+                                                <!-- <a class="Bflex1 btnStyle" href="#">取消订单</a> -->
+                                                <!-- <a class="Bflex1 btnStyle btn_Bgred" href="#">立即付款</a> -->
+                                                <!-- <a class="Bflex1 btnStyle" href="apply_service.html">申请售后</a>-->
+                                                <a class="Bflex1 btnStyle btn_BgOrg" href="#">查看物流</a>
+                                                <!-- <a class="Bflex1 btnStyle btn_BgOrg " href="#">确认收货</a> -->
+
+                                            </div>
+                                        </section>
+                                    </li>
+                                </ul>
+                            </section>
+                        </section>
+                        <!-- 待发货-->
+                        <section class="carListBox">
+                            <!-- 店家信息 待发货-->
+                            <section class="carListHead HBox BoxCenter">
+                                <div class="storeOwner Bflex1 storeArea HBox BoxCenter">
+                                    <!-- <figure class="storeImg" style="display: none">
+                                        <img src="image/storeImg.png">
+                                    </figure> -->
+                                    <div class="storeName Bflex1  ">
+                                        <p><span class="icon-store"></span><span>不二小姐</span></p>
+                                    </div>
+                                </div>
+                                <div class="ordStateTxt">
+                                    <p class="statCol_org">待发货</p>
+                                </div>
+                            </section>
+                            <!-- 对应订单 -->
+                            <section class="carList orderList">
+                                <ul>
+                                    <li>
+                                        <section class="HBox BoxCenter carListArea">
+                                            <a href="myOrderDetail.html">
+                                                <div class="Bflex1 HBox BoxCenter listBox">
+                                                    <figure class="listImg">
+                                                        <img src="image/goods1.jpg">
+                                                    </figure>
+                                                    <div class="Bflex1 listInfor priceArea">
+                                                        <h4>新西兰阳光金奇异果</h4>
+                                                        <p class="goodsWeight">规格：<span>尝鲜2斤装</span></p>
+                                                        <p class="goodsPrice"><em class="">¥</em><span class="">29.90<i>X</i>1</span></p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </section>
+
+                                        <section class="orderInfo">
+                                            <div class="seletPrice">
+                                                <p>共<i>2</i>件商品 合计：<em>¥</em><span class="sumPrice">29.90</span></p>
+                                            </div>
+                                            <div class="HBox BoxCenter btnBox">
+                                                <a class="Bflex1"></a>
+                                                <a class="Bflex1 btnStyle" href="apply_service.html">申请售后</a>
+
+                                                <a class="Bflex1 btnStyle" href="tel:123456">联系商家</a>
+                                                <!-- <a class="Bflex1 btnStyle" href="#">取消订单</a> -->
+                                                <!-- <a class="Bflex1 btnStyle btn_Bgred" href="#">立即付款</a> -->
+                                                <!-- <a class="Bflex1 btnStyle" href="#">删除订单</a> -->
+                                                <!-- <a class="Bflex1 btnStyle btn_BgOrg" href="#">查看物流</a> -->
+                                                <!-- <a class="Bflex1 btnStyle btn_BgOrg " href="#">确认收货</a> -->
+
+                                            </div>
+                                        </section>
+                                    </li>
+                                </ul>
+                            </section>
+                        </section>
+                        <!-- 待收货-->
+                        <section class="carListBox">
+                            <!-- 店家信息 待收货-->
+                            <section class="carListHead HBox BoxCenter">
+                                <div class="storeOwner Bflex1 storeArea HBox BoxCenter">
+                                    <!-- <figure class="storeImg" style="display: none">
+                                        <img src="image/storeImg.png">
+                                    </figure> -->
+                                    <div class="storeName Bflex1  ">
+                                        <p><span class="icon-store"></span><span>不二小姐</span></p>
+                                    </div>
+                                </div>
+                                <div class="ordStateTxt">
+                                    <p class="statCol_org">待收货</p>
+                                </div>
+                            </section>
+                            <!-- 对应订单 -->
+                            <section class="carList orderList">
+                                <ul>
+                                    <li>
+                                        <section class="HBox BoxCenter carListArea">
+                                            <a href="myOrderDetail.html">
+                                                <div class="Bflex1 HBox BoxCenter listBox">
+                                                    <figure class="listImg">
+                                                        <img src="image/goods1.jpg">
+                                                    </figure>
+                                                    <div class="Bflex1 listInfor priceArea">
+                                                        <h4>新西兰阳光金奇异果</h4>
+                                                        <p class="goodsWeight">规格：<span>尝鲜2斤装</span></p>
+                                                        <p class="goodsPrice"><em class="">¥</em><span class="">29.90<i>X</i>1</span></p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </section>
+                                        <section class="orderInfo">
+                                            <div class="seletPrice">
+                                                <p>共<i>2</i>件商品 合计：<em>¥</em><span class="sumPrice">29.90</span></p>
+                                            </div>
+                                            <div class="HBox BoxCenter btnBox">
+                                                <a class="Bflex1 btnStyle" href="tel:123456">联系商家</a>
+                                                <a class="Bflex1 btnStyle btn_BgOrg" href="#">查看物流</a>
+                                                <a class="Bflex1 btnStyle btn_BgOrg " href="#">确认收货</a>
+                                            </div>
+                                        </section>
+                                    </li>
+                                </ul>
+                            </section>
+                        </section>
+                        <!-- 订单为空 -->
+                        <section class="emptyOrder" style="display: none;">
+                            <div class="errIcon js_emptyIcon  icon-unOrder  animated" style="">
+                                <span class="path1"><span class="path2"><span class="path3"><span class="path4"><span class="path5"><span class="path6"><span class="path7"><span class="path8"></span></span></span></span></span></span></span></span>
+                            </div>
+                            <div class="errText">
+                                <h2>暂无订单</h2>
+                                <p></p>
+                                <p class="tip">赶紧去找好吃的</p>
+                                <a href="index.html">返回首页</a>
+                            </div>
+                        </section>
+                    </div>
+                    <!-- 代付款 slide-->
+                    <div class="swiper-slide">
+                        <!-- 待付款-->
+                        <section class="carListBox" style="display: none;">
+                            <!-- 店家信息 待付款-->
+                            <section class="carListHead HBox BoxCenter">
+                                <div class="storeOwner Bflex1 storeArea HBox BoxCenter">
+                                    <!-- <figure class="storeImg" style="display: none">
+                                        <img src="image/storeImg.png">
+                                    </figure> -->
+                                    <div class="storeName Bflex1  ">
+                                        <p><span class="icon-store"></span><span>不二小姐</span></p>
+                                    </div>
+                                </div>
+                                <div class="ordStateTxt">
+                                    <p class="statCol_red">待付款</p>
+                                </div>
+                            </section>
+                            <!-- 对应订单 -->
+                            <section class="carList orderList">
+                                <ul>
+                                    <li>
+                                        <section class="HBox BoxCenter carListArea">
+                                            <a href="myOrderDetail.html">
+                                                <div class="Bflex1 HBox BoxCenter listBox">
+                                                    <figure class="listImg">
+                                                        <img src="image/goods1.jpg">
+                                                    </figure>
+                                                    <div class="Bflex1 listInfor priceArea">
+                                                        <h4>新西兰阳光金奇异果</h4>
+                                                        <p class="goodsWeight">规格：<span>尝鲜2斤装</span></p>
+                                                        <p class="goodsPrice"><em class="">¥</em><span class="">29.90<i>X</i>1</span></p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </section>
+                                        <section class="orderInfo">
+                                            <div class="seletPrice">
+                                                <p>共<i>2</i>件商品 合计：<em>¥</em><span class="sumPrice">29.90</span></p>
+                                            </div>
+                                            <div class="HBox BoxCenter btnBox">
+                                                <a class="Bflex1 btnStyle" href="tel:123456">联系商家</a>
+                                                <a class="Bflex1 btnStyle" href="#">取消订单</a>
+                                                <a class="Bflex1 btnStyle btn_Bgred" href="#">立即付款</a>
+                                                <!-- <a class="Bflex1 btnStyle" href="apply_service.html">申请售后</a> -->
+                                                <!-- <a class="Bflex1 btnStyle btn_BgOrg" href="#">查看物流</a> -->
+                                                <!-- <a class="Bflex1 btnStyle btn_BgOrg " href="#">确认收货</a> -->
+                                                <!-- <a class="Bflex1 btnStyle" href="#">删除订单</a> -->
+                                            </div>
+                                        </section>
+                                    </li>
+                                </ul>
+                            </section>
+                        </section>
+                        <!-- 待付款-->
+                        <section class="carListBox"  style="display: none;">
+                            <!-- 店家信息 待付款-->
+                            <section class="carListHead HBox BoxCenter">
+                                <div class="storeOwner Bflex1 storeArea HBox BoxCenter">
+                                    <!-- <figure class="storeImg" style="display: none">
+                                        <img src="image/storeImg.png">
+                                    </figure> -->
+                                    <div class="storeName Bflex1  ">
+                                        <p><span class="icon-store"></span><span>不二小姐</span></p>
+                                    </div>
+                                </div>
+                                <div class="ordStateTxt">
+                                    <p class="statCol_red">待付款</p>
+                                </div>
+                            </section>
+                            <!-- 对应订单 -->
+                            <section class="carList orderList">
+                                <ul>
+                                    <li>
+                                        <section class="HBox BoxCenter carListArea">
+                                            <a href="myOrderDetail.html">
+                                                <div class="Bflex1 HBox BoxCenter listBox">
+                                                    <figure class="listImg">
+                                                        <img src="image/goods1.jpg">
+                                                    </figure>
+                                                    <div class="Bflex1 listInfor priceArea">
+                                                        <h4>新西兰阳光金奇异果</h4>
+                                                        <p class="goodsWeight">规格：<span>尝鲜2斤装</span></p>
+                                                        <p class="goodsPrice"><em class="">¥</em><span class="">29.90<i>X</i>1</span></p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </section>
+                                        <section class="orderInfo">
+                                            <div class="seletPrice">
+                                                <p>共<i>2</i>件商品 合计：<em>¥</em><span class="sumPrice">29.90</span></p>
+                                            </div>
+                                            <div class="HBox BoxCenter btnBox">
+                                                <a class="Bflex1 btnStyle" href="tel:123456">联系商家</a>
+                                                <a class="Bflex1 btnStyle" href="#">取消订单</a>
+                                                <a class="Bflex1 btnStyle btn_Bgred" href="#">立即付款</a>
+                                                <!-- <a class="Bflex1 btnStyle" href="apply_service.html">申请售后</a> -->
+                                                <!-- <a class="Bflex1 btnStyle btn_BgOrg" href="#">查看物流</a> -->
+                                                <!-- <a class="Bflex1 btnStyle btn_BgOrg " href="#">确认收货</a> -->
+                                                <!-- <a class="Bflex1 btnStyle" href="#">删除订单</a> -->
+                                            </div>
+                                        </section>
+                                    </li>
+                                </ul>
+                            </section>
+                        </section>
+
+                        <!-- 订单为空 -->
+                        <section class="emptyOrder" style="display: none1;">
+                            <div class="errIcon js_emptyIcon  icon-unOrder  animated" style="">
+                                <span class="path1"><span class="path2"><span class="path3"><span class="path4"><span class="path5"><span class="path6"><span class="path7"><span class="path8"></span></span></span></span></span></span></span></span>
+                            </div>
+                            <div class="errText">
+                                <h2>暂无订单</h2>
+                                <p></p>
+                                <p class="tip">赶紧去找好吃的</p>
+                                <a href="index.html">返回首页</a>
+                            </div>
+                        </section>
+                    </div>
+                    <!-- 待发货 slide-->
+                    <div class="swiper-slide">
+                        <!-- 待发货-->
+                        <section class="carListBox" style="display: none;">
+                            <!-- 店家信息 待发货-->
+                            <section class="carListHead HBox BoxCenter">
+                                <div class="storeOwner Bflex1 storeArea HBox BoxCenter">
+                                    <!-- <figure class="storeImg" style="display: none">
+                                        <img src="image/storeImg.png">
+                                    </figure> -->
+                                    <div class="storeName Bflex1  ">
+                                        <p><span class="icon-store"></span><span>不二小姐</span></p>
+                                    </div>
+                                </div>
+                                <div class="ordStateTxt">
+                                    <p class="statCol_org">待发货</p>
+                                </div>
+                            </section>
+                            <!-- 对应订单 -->
+                            <section class="carList orderList">
+                                <ul>
+                                    <li>
+                                        <section class="HBox BoxCenter carListArea">
+                                            <a href="myOrderDetail.html">
+                                                <div class="Bflex1 HBox BoxCenter listBox">
+                                                    <figure class="listImg">
+                                                        <img src="image/goods1.jpg">
+                                                    </figure>
+                                                    <div class="Bflex1 listInfor priceArea">
+                                                        <h4>新西兰阳光金奇异果</h4>
+                                                        <p class="goodsWeight">规格：<span>尝鲜2斤装</span></p>
+                                                        <p class="goodsPrice"><em class="">¥</em><span class="">29.90<i>X</i>1</span></p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </section>
+                                        <section class="orderInfo">
+                                            <div class="seletPrice">
+                                                <p>共<i>2</i>件商品 合计：<em>¥</em><span class="sumPrice">29.90</span></p>
+                                            </div>
+                                            <div class="HBox BoxCenter btnBox">
+                                                <a class="Bflex1"></a>
+                                                <a class="Bflex1 btnStyle" href="apply_service.html">申请售后</a>
+
+                                                <a class="Bflex1 btnStyle" href="tel:123456">联系商家</a>
+                                                <!-- <a class="Bflex1 btnStyle" href="#">取消订单</a> -->
+                                                <!-- <a class="Bflex1 btnStyle btn_Bgred" href="#">立即付款</a> -->
+                                                <!-- <a class="Bflex1 btnStyle" href="#">删除订单</a> -->
+                                                <!-- <a class="Bflex1 btnStyle btn_BgOrg" href="#">查看物流</a> -->
+                                                <!-- <a class="Bflex1 btnStyle btn_BgOrg " href="#">确认收货</a> -->
+
+                                            </div>
+                                        </section>
+                                    </li>
+                                </ul>
+                            </section>
+                        </section>
+                        <!-- 待发货-->
+                        <section class="carListBox" style="display: none;">
+                            <!-- 店家信息 待发货-->
+                            <section class="carListHead HBox BoxCenter">
+                                <div class="storeOwner Bflex1 storeArea HBox BoxCenter">
+                                    <!-- <figure class="storeImg" style="display: none">
+                                        <img src="image/storeImg.png">
+                                    </figure> -->
+                                    <div class="storeName Bflex1  ">
+                                        <p><span class="icon-store"></span><span>不二小姐</span></p>
+                                    </div>
+                                </div>
+                                <div class="ordStateTxt">
+                                    <p class="statCol_org">待发货</p>
+                                </div>
+                            </section>
+                            <!-- 对应订单 -->
+                            <section class="carList orderList">
+                                <ul>
+                                    <li>
+                                        <section class="HBox BoxCenter carListArea">
+                                            <a href="myOrderDetail.html">
+                                                <div class="Bflex1 HBox BoxCenter listBox">
+                                                    <figure class="listImg">
+                                                        <img src="image/goods1.jpg">
+                                                    </figure>
+                                                    <div class="Bflex1 listInfor priceArea">
+                                                        <h4>新西兰阳光金奇异果</h4>
+                                                        <p class="goodsWeight">规格：<span>尝鲜2斤装</span></p>
+                                                        <p class="goodsPrice"><em class="">¥</em><span class="">29.90<i>X</i>1</span></p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </section>
+                                        <section class="orderInfo">
+                                            <div class="seletPrice">
+                                                <p>共<i>2</i>件商品 合计：<em>¥</em><span class="sumPrice">29.90</span></p>
+                                            </div>
+                                            <div class="HBox BoxCenter btnBox">
+                                                <a class="Bflex1"></a>
+                                                <a class="Bflex1 btnStyle" href="apply_service.html">申请售后</a>
+
+                                                <a class="Bflex1 btnStyle" href="tel:123456">联系商家</a>
+                                                <!-- <a class="Bflex1 btnStyle" href="#">取消订单</a> -->
+                                                <!-- <a class="Bflex1 btnStyle btn_Bgred" href="#">立即付款</a> -->
+                                                <!-- <a class="Bflex1 btnStyle" href="#">删除订单</a> -->
+                                                <!-- <a class="Bflex1 btnStyle btn_BgOrg" href="#">查看物流</a> -->
+                                                <!-- <a class="Bflex1 btnStyle btn_BgOrg " href="#">确认收货</a> -->
+
+                                            </div>
+                                        </section>
+                                    </li>
+                                </ul>
+                            </section>
+                        </section>
+                        <!-- 订单为空 -->
+                        <section class="emptyOrder" style="display: none1;">
+                            <div class="errIcon js_emptyIcon  icon-unOrder  animated" style="">
+                                <span class="path1"><span class="path2"><span class="path3"><span class="path4"><span class="path5"><span class="path6"><span class="path7"><span class="path8"></span></span></span></span></span></span></span></span>
+                            </div>
+                            <div class="errText">
+                                <h2>暂无订单</h2>
+                                <p></p>
+                                <p class="tip">赶紧去找好吃的</p>
+                                <a href="index.html">返回首页</a>
+                            </div>
+                        </section>
+                    </div>
+                    <!-- 待收货 slide-->
+                    <div class="swiper-slide">
+                        <!-- 待收货-->
+                        <section class="carListBox">
+                            <!-- 店家信息 待收货-->
+                            <section class="carListHead HBox BoxCenter">
+                                <div class="storeOwner Bflex1 storeArea HBox BoxCenter">
+                                    <!-- <figure class="storeImg" style="display: none">
+                                        <img src="image/storeImg.png">
+                                    </figure> -->
+                                    <div class="storeName Bflex1  ">
+                                        <p><span class="icon-store"></span><span>不二小姐</span></p>
+                                    </div>
+                                </div>
+                                <div class="ordStateTxt">
+                                    <p class="statCol_org">待收货</p>
+                                </div>
+                            </section>
+                            <!-- 对应订单 -->
+                            <section class="carList orderList">
+                                <ul>
+                                    <li>
+                                        <section class="HBox BoxCenter carListArea">
+                                            <a href="myOrderDetail.html">
+                                                <div class="Bflex1 HBox BoxCenter listBox">
+                                                    <figure class="listImg">
+                                                        <img src="image/goods1.jpg">
+                                                    </figure>
+                                                    <div class="Bflex1 listInfor priceArea">
+                                                        <h4>新西兰阳光金奇异果</h4>
+                                                        <p class="goodsWeight">规格：<span>尝鲜2斤装</span></p>
+                                                        <p class="goodsPrice"><em class="">¥</em><span class="">29.90<i>X</i>1</span></p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </section>
+                                        <section class="orderInfo">
+                                            <div class="seletPrice">
+                                                <p>共<i>2</i>件商品 合计：<em>¥</em><span class="sumPrice">29.90</span></p>
+                                            </div>
+                                            <div class="HBox BoxCenter btnBox">
+                                                <!-- <a class="Bflex1"></a> -->
+                                                <!-- <a class="Bflex1 btnStyle" href="apply_service.html">申请售后</a> -->
+
+                                                <a class="Bflex1 btnStyle" href="tel:123456">联系商家</a>
+                                                <!-- <a class="Bflex1 btnStyle" href="#">取消订单</a> -->
+                                                <!-- <a class="Bflex1 btnStyle btn_Bgred" href="#">立即付款</a> -->
+                                                <!-- <a class="Bflex1 btnStyle" href="#">删除订单</a> -->
+                                                <a class="Bflex1 btnStyle btn_BgOrg" href="#">查看物流</a>
+                                                <a class="Bflex1 btnStyle btn_BgOrg " href="#">确认收货</a>
+
+                                            </div>
+                                        </section>
+                                    </li>
+                                </ul>
+                            </section>
+                        </section>
+                        <!-- 待收货-->
+                        <section class="carListBox">
+                            <!-- 店家信息 待收货-->
+                            <section class="carListHead HBox BoxCenter">
+                                <div class="storeOwner Bflex1 storeArea HBox BoxCenter">
+                                    <!-- <figure class="storeImg" style="display: none">
+                                        <img src="image/storeImg.png">
+                                    </figure> -->
+                                    <div class="storeName Bflex1  ">
+                                        <p><span class="icon-store"></span><span>不二小姐</span></p>
+                                    </div>
+                                </div>
+                                <div class="ordStateTxt">
+                                    <p class="statCol_org">待收货</p>
+                                </div>
+                            </section>
+                            <!-- 对应订单 -->
+                            <section class="carList orderList">
+                                <ul>
+                                    <li>
+                                        <section class="HBox BoxCenter carListArea">
+                                            <a href="myOrderDetail.html">
+                                                <div class="Bflex1 HBox BoxCenter listBox">
+                                                    <figure class="listImg">
+                                                        <img src="image/goods1.jpg">
+                                                    </figure>
+                                                    <div class="Bflex1 listInfor priceArea">
+                                                        <h4>新西兰阳光金奇异果</h4>
+                                                        <p class="goodsWeight">规格：<span>尝鲜2斤装</span></p>
+                                                        <p class="goodsPrice"><em class="">¥</em><span class="">29.90<i>X</i>1</span></p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </section>
+                                        <section class="orderInfo">
+                                            <div class="seletPrice">
+                                                <p>共<i>2</i>件商品 合计：<em>¥</em><span class="sumPrice">29.90</span></p>
+                                            </div>
+                                            <div class="HBox BoxCenter btnBox">
+                                                <!-- <a class="Bflex1"></a> -->
+                                                <!-- <a class="Bflex1 btnStyle" href="apply_service.html">申请售后</a> -->
+
+                                                <a class="Bflex1 btnStyle" href="tel:123456">联系商家</a>
+                                                <!-- <a class="Bflex1 btnStyle" href="#">取消订单</a> -->
+                                                <!-- <a class="Bflex1 btnStyle btn_Bgred" href="#">立即付款</a> -->
+                                                <!-- <a class="Bflex1 btnStyle" href="#">删除订单</a> -->
+                                                <a class="Bflex1 btnStyle btn_BgOrg" href="#">查看物流</a>
+                                                <a class="Bflex1 btnStyle btn_BgOrg " href="#">确认收货</a>
+
+                                            </div>
+                                        </section>
+                                    </li>
+                                </ul>
+                            </section>
+                        </section>
+                        <!-- 订单为空 -->
+                        <section class="emptyOrder" style="display: none;">
+                            <div class="errIcon js_emptyIcon  icon-unOrder  animated" style="">
+                                <span class="path1"><span class="path2"><span class="path3"><span class="path4"><span class="path5"><span class="path6"><span class="path7"><span class="path8"></span></span></span></span></span></span></span></span>
+                            </div>
+                            <div class="errText">
+                                <h2>暂无订单</h2>
+                                <p></p>
+                                <p class="tip">赶紧去找好吃的</p>
+                                <a href="index.html">返回首页</a>
+                            </div>
+                        </section>
+                    </div>
+                    <!-- 交易成功 slide-->
+                    <div class="swiper-slide">
+                        <!-- 交易成功-->
+                        <section class="carListBox" style="display: none;">
+                            <!-- 店家信息 交易成功-->
+                            <section class="carListHead HBox BoxCenter">
+                                <div class="storeOwner Bflex1 storeArea HBox BoxCenter">
+                                    <!-- <figure class="storeImg" style="display: none">
+                                        <img src="image/storeImg.png">
+                                    </figure> -->
+                                    <div class="storeName Bflex1  ">
+                                        <p><span class="icon-store"></span><span>不二小姐</span></p>
+                                    </div>
+                                </div>
+                                <div class="ordStateTxt">
+                                    <p class="statCol_org">交易成功</p>
+                                </div>
+                            </section>
+                            <!-- 对应订单 -->
+                            <section class="carList orderList">
+                                <ul>
+                                    <li>
+                                        <section class="HBox BoxCenter carListArea">
+                                            <a href="myOrderDetail.html">
+                                                <div class="Bflex1 HBox BoxCenter listBox">
+                                                    <figure class="listImg">
+                                                        <img src="image/goods1.jpg">
+                                                    </figure>
+                                                    <div class="Bflex1 listInfor priceArea">
+                                                        <h4>新西兰阳光金奇异果</h4>
+                                                        <p class="goodsWeight">规格：<span>尝鲜2斤装</span></p>
+                                                        <p class="goodsPrice"><em class="">¥</em><span class="">29.90<i>X</i>1</span></p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </section>
+                                        <section class="orderInfo">
+                                            <div class="seletPrice">
+                                                <p>共<i>2</i>件商品 合计：<em>¥</em><span class="sumPrice">29.90</span></p>
+                                            </div>
+                                            <div class="HBox BoxCenter btnBox">
+                                                <a class="Bflex1 btnStyle" href="#">删除订单</a>
+                                                <a class="Bflex1 btnStyle" href="tel:123456">联系商家</a>
+                                                <!-- <a class="Bflex1 btnStyle" href="#">取消订单</a> -->
+                                                <!-- <a class="Bflex1 btnStyle btn_Bgred" href="#">立即付款</a> -->
+                                                <!-- <a class="Bflex1 btnStyle" href="apply_service.html">申请售后</a>-->
+                                                <a class="Bflex1 btnStyle btn_BgOrg" href="#">查看物流</a>
+                                                <!-- <a class="Bflex1 btnStyle btn_BgOrg " href="#">确认收货</a> -->
+
+                                            </div>
+                                        </section>
+                                    </li>
+                                </ul>
+                            </section>
+                        </section>
+                        <!-- 交易成功-->
+                        <section class="carListBox" style="display: none;">
+                            <!-- 店家信息 交易成功-->
+                            <section class="carListHead HBox BoxCenter">
+                                <div class="storeOwner Bflex1 storeArea HBox BoxCenter">
+                                    <!-- <figure class="storeImg" style="display: none">
+                                        <img src="image/storeImg.png">
+                                    </figure> -->
+                                    <div class="storeName Bflex1  ">
+                                        <p><span class="icon-store"></span><span>不二小姐</span></p>
+                                    </div>
+                                </div>
+                                <div class="ordStateTxt">
+                                    <p class="statCol_org">交易成功</p>
+                                </div>
+                            </section>
+                            <!-- 对应订单 -->
+                            <section class="carList orderList">
+                                <ul>
+                                    <li>
+                                        <section class="HBox BoxCenter carListArea">
+                                            <a href="myOrderDetail.html">
+                                                <div class="Bflex1 HBox BoxCenter listBox">
+                                                    <figure class="listImg">
+                                                        <img src="image/goods1.jpg">
+                                                    </figure>
+                                                    <div class="Bflex1 listInfor priceArea">
+                                                        <h4>新西兰阳光金奇异果</h4>
+                                                        <p class="goodsWeight">规格：<span>尝鲜2斤装</span></p>
+                                                        <p class="goodsPrice"><em class="">¥</em><span class="">29.90<i>X</i>1</span></p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </section>
+                                        <section class="orderInfo">
+                                            <div class="seletPrice">
+                                                <p>共<i>2</i>件商品 合计：<em>¥</em><span class="sumPrice">29.90</span></p>
+                                            </div>
+                                            <div class="HBox BoxCenter btnBox">
+                                                <a class="Bflex1 btnStyle" href="#">删除订单</a>
+                                                <a class="Bflex1 btnStyle" href="tel:123456">联系商家</a>
+                                                <!-- <a class="Bflex1 btnStyle" href="#">取消订单</a> -->
+                                                <!-- <a class="Bflex1 btnStyle btn_Bgred" href="#">立即付款</a> -->
+                                                <!-- <a class="Bflex1 btnStyle" href="apply_service.html">申请售后</a>-->
+                                                <a class="Bflex1 btnStyle btn_BgOrg" href="#">查看物流</a>
+                                                <!-- <a class="Bflex1 btnStyle btn_BgOrg " href="#">确认收货</a> -->
+
+                                            </div>
+                                        </section>
+                                    </li>
+                                </ul>
+                            </section>
+                        </section>
+                        <!-- 订单为空 -->
+                        <section class="emptyOrder" style="display: none1;">
+                            <div class="errIcon js_emptyIcon  icon-unOrder  animated" style="">
+                                <span class="path1"><span class="path2"><span class="path3"><span class="path4"><span class="path5"><span class="path6"><span class="path7"><span class="path8"></span></span></span></span></span></span></span></span>
+                            </div>
+                            <div class="errText">
+                                <h2>暂无订单</h2>
+                                <p></p>
+                                <p class="tip">赶紧去找好吃的</p>
+                                <a href="index.html">返回首页</a>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    <!-- 底部 -->
+    <section class="footer js_footer">
+        <nav>
+            <ul class="HBox">
+                <li class="Bflex1"><a href="index.html"><em class="icoStyle  icon-home"></em><span>首页</span></a><i class="splitline"></i></li>
+                <li class="Bflex1"><a href="service.html"><em class="icoStyle icon-service"></em><span>平台服务中心</span></a></li>
+            </ul>
+        </nav>
+    </section>
+    <div class="icoStyle  icon-arrow-up goTopIcon js_goTop" style="display: none"></div>
 </div>
+
+
 
 <script type="text/javascript" src="js/plug/sea/sea.min.js"></script>
 <script type="text/javascript" src="js/plug/jquery.min.js"></script>
-<script type="text/javascript"></script>
+<script type="text/javascript">
+    seajs.use(['./js/slide.js'],function() {});
+</script>
 </body>
 </html>
 

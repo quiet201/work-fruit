@@ -1,0 +1,147 @@
+<!doctype html>
+<html class="">
+<head>
+<meta charset="utf-8">
+<title>平台服务中心</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+<!-- 网站开启对web app程序的支持 -->
+<meta content="yes" name="apple-mobile-web-app-capable"></meta>
+<!--忽略将页面中的数字识别为电话号码。-->
+<meta name="format-detection" content="telephone=no" />
+<meta name="Author" content="顺丰速运科技有限公司" />
+<meta name="Keywords" content="顺丰速运" />
+<meta name="Description" content="顺丰速运科技有限公司" />
+
+<link rel="stylesheet" type="text/css" href="style/MobReset.css" >
+<link rel="stylesheet" type="text/css" href="style/style.css" >
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+<div class="wrap" style="display: none1">
+    <div class="contain containPos" style="padding-bottom: 7rem;" >
+        <section class="serviceIntro js_serviceIntro" >
+            <h4>订单问题</h4>
+            <section>
+                <article>
+                    <h5 class="clearfix">订单修改及取消 <em class="icon-arrow rotate180"></em></h5>
+                    <aside>
+                        因为现在市场竞争激烈，很多客户只关心价格，而不关心保修问题，所以我们特地强调，我们是唯一一家为保修承担一半运费的商家，并且彻底的贯彻为用户着想，想用户所想的服务理念。
+                    </aside>
+                </article>
+                <article>
+                    <h5 class="clearfix">订单发货及物流<em class="icon-arrow rotate180"></em></h5>
+                    <aside>
+                        因为现在市场竞争激烈，很多客户只关心价格 。
+                    </aside>
+                </article>
+                <article>
+                    <h5 class="clearfix">签收与验货 <em class="icon-arrow rotate180"></em></h5>
+                    <aside>
+                        因为现在市场竞争激烈，很多客户只关心价格，而不关心保修问题，所以我们特地强调，我们是唯一一家为保修承担一半运费的商家，并且彻底的贯彻为用户着想，想用户所想的服务理念。
+                    </aside>
+                </article>
+            </section>
+
+
+            <h4>售后服务</h4>
+            <section>
+                <article>
+                    <h5 class="clearfix">退换货及售后说明  <em class="icon-arrow rotate180"></em></h5>
+                    <aside>
+                        而不关心保修问题，所以我们特地强调，我们是唯一一家为保修承担一半运费的商家，并且彻底的贯彻为用户着想，想用户所想的服务理念。
+                    </aside>
+                </article>
+                <article>
+                    <h5 class="clearfix">关于收到商品与订单商品不一致 <em class="icon-arrow rotate180"></em></h5>
+                    <aside>
+                        因为现在市场竞争激烈，很多客户只关心价格，而不关心保修问题，所以我们特地强调，我们是唯一一家为保修承担一半运费的商家
+                    </aside>
+                </article>
+                <article>
+                    <h5 class="clearfix">如何自助售后  <em class="icon-arrow rotate180"></em></h5>
+                    <aside>
+                        因为现在市场竞争激烈，很多客户只关心价格，而不关心保修问题，所以我们特地强调，我们是唯一一家为保修承担一半运费的商家，并且彻底的贯彻为用户着想，想用户所想的服务理念。
+                    </aside>
+                </article>
+                <article>
+                    <h5 class="clearfix">退款说明<em class="icon-arrow rotate180"></em></h5>
+                    <aside>
+                        因为现在市场竞争激烈，很多客户只关心价格，而不关心保修问题，所以我们特地强调，我们是唯一一家为保修承担一半运费的商家，并且彻
+                    </aside>
+                </article>
+            </section>
+
+            <h4>其他</h4>
+            <section >
+                <article>
+                    <h5 class="clearfix">温馨提示  <em class="icon-arrow rotate180"></em></h5>
+                    <aside>
+                        因为现在市场竞争激烈，
+                    </aside>
+                </article>
+            </section>
+
+            <h4></h4>
+            <section>
+                <article style="border: 0">
+                    <h5 class="clearfix">
+                    <span class="icon-message fl"></span>
+                    平台在线客服（工作日9:00-21：00）
+                    <em class="icon-arrow rotate90"></em></h5>
+                </article>
+            </section>
+
+        </section>
+
+    </div>
+
+    <!-- 底部 -->
+    <section class="footer js_footer">
+        <nav>
+            <ul class="HBox">
+                <li class="Bflex1"><a href="index.html"><em class="icoStyle  icon-home"></em><span>首页</span></a><i class="splitline"></i></li>
+                <li class="Bflex1"><a href="myOrder.html"><em class="icoStyle icon-MyOrder"></em><span>我的订单</span></a></li>
+            </ul>
+        </nav>
+    </section>
+    <div class="icoStyle  icon-arrow-up goTopIcon js_goTop" style="display: none"></div>
+</div>
+
+<script type="text/javascript" src="js/plug/jquery.min.js"></script>
+<script type="text/javascript">
+$(function () {
+    var oServiceIntro = $('.js_serviceIntro');
+    var oTitle = oServiceIntro.find('h5');
+    var iConArrow = oTitle.find('.icon-arrow');
+    var oAside = oServiceIntro.find('aside');
+    var _height = [];
+    oAside.each(function(i) {
+        _height.push(oAside.eq(i).outerHeight(true));
+        return _height;
+    }).css({height:0});
+    oTitle.on('click',function() {
+        var index = oTitle.index(this);
+        if(index == oTitle.length-1) {
+            $(this).off('click');
+        }
+        else {
+            if(iConArrow.eq(index).hasClass('rotate180')) {
+                iConArrow.eq(index).removeClass('rotate180');
+                oAside.eq(index).stop().animate({'height':_height[index]},500);
+            }
+            else {
+                iConArrow.eq(index).addClass('rotate180');
+                oAside.eq(index).stop().animate({'height':0},500);
+            }
+        }
+
+    });
+
+});
+</script>
+</body>
+</html>
+
