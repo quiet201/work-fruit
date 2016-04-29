@@ -73,7 +73,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 td { vertical-align: top; }
 
 /* structural elements 结构元素 */
-body, div, h1, h2, h3, h4, h5, h6, hr, p, blockquote,
+body,  h1, h2, h3, h4, h5, h6, hr, p, blockquote,
 /* list elements 列表元素 */
 dl, dt, dd, ul, ol, li,
 /* text formatting elements 文本格式元素 */
@@ -83,7 +83,7 @@ form, fieldset, legend, button, input, textarea,
 /* table elements 表格元素 */
 th, td,
 /* img elements 图片元素 */
-img { border: 0; margin: 0; padding: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; width: 100%; }
+img { border: 0; margin: 0; padding: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; width: 100%  }
 
 /** 设置默认字体 **/
 html {font-size: 62.5%;}

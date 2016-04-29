@@ -1,5 +1,5 @@
 ﻿@charset "UTF-8";
-
+@import"plug/layer.css";
 @import"font.css";
 html,body, .wrap {position: relative; height: 100%; max-width: 900px; margin:0 auto;}
 body {background: #F5F5F5;}
@@ -9,13 +9,13 @@ body {background: #F5F5F5;}
 .containPos {position: static; padding-bottom: 5rem;}
 .conIScroll {position: relative;}
 /*搜索框*/
-.searchBox { background: #ff9600; padding: 1rem 3%;  position: absolute; z-index: 100; left: 0; top: 0; width: 100%; overflow: hidden; box-sizing: border-box;}
+.searchBox { background: #ff0033; padding: 1rem 3%;  position: absolute; z-index: 100; left: 0; top: 0; width: 100%; overflow: hidden; box-sizing: border-box;}
 .searchBox .logoBox { width: 6rem; margin-right: 4%; }
-.searchBox .logoBox img {display: block;}
+.searchBox .logoBox img {display: block; margin-top: 0.5rem;}
 .searchBox .searchHref {background: #fff; }
 .searchHref a {display: block; width: 100%; height: 100%; text-align: center;}
-.searchHref em {font-size: 1.6rem;}
-.searchHref span {text-align: center; display: inline-block; vertical-align: middle; line-height: 3rem}
+.searchHref em {font-size: 1.6rem; color: #aaaaaa}
+.searchHref span {text-align: center; display: inline-block; vertical-align: middle; line-height: 3rem; color: #aaaaaa;}
 
 .searchArea i {display: block; text-align: center; color: #fff; height: auto; font-size: 2.3rem;;
 -webkit-transform: rotate(-90deg);
@@ -29,24 +29,25 @@ transform: rotate(-90deg);
 .searchArea span {display: block; line-height: 3rem;  width: 35px; padding-left:12px; color: #fff; text-align: center; font-size: 1.6rem; }
 
 /*头部导航*/
+.header {position: absolute; top: 5rem; left: 0; width: 100%; z-index: 100;}
 .headerNav { width: 100%; margin-bottom: 1px; background: #fff; box-sizing: border-box;}
 .headerNav li {text-align: center; line-height:4rem; text-align: center;}
 .headerNav li a {display: block; width: 100%; }
-.headerNav li.active a {color: #ff9600; border-bottom: 2px solid #ff9600}
+.headerNav li.active a {color: #ff0033; border-bottom: 2px solid #ff0033}
 
 /* 二级导航 */
 .navSecList {overflow: hidden; }
 .navSecList ul { height: 4rem; overflow: hidden;}
 .navSecList li {width: 8rem; line-height: 3rem;}
 .navSecList li span {background: #fff; width: 96%; margin: 0.4rem auto; color: #666666;}
-.navSecList li span.active {border:1px solid #76ac25; color: #ff9600}
+.navSecList li span.active {border:1px solid #76ac25; color: #ff0033}
 
 /*底部导航*/
 .footer {position: fixed; z-index: 100; bottom: 0; left: 0; width: 100%; box-sizing: border-box;  background: #ffffff;}
 .footer li {text-align: center; line-height: 5rem; position: relative;}
 .footer li a {display: block; height: 100%;}
-.footer li em {font-size: 2.6rem; color: #666666; margin-right: 1rem; position: relative; }
-.footer li span {text-align: center; display: inline-block; height: 2rem; line-height: 2rem; vertical-align: middle; font-size: 1.8rem;}
+.footer li em {font-size: 2.2rem; color: #666666; margin-right: 1rem; position: relative; }
+.footer li span {text-align: center; display: inline-block; height: 2rem; line-height: 2rem; vertical-align: middle; font-size: 1.6rem;}
 .footer li i {position: absolute; display: block;}
 
 
@@ -58,35 +59,38 @@ transform: rotate(-90deg);
 .HotSearch {background: #fff; padding:0 1rem;}
 .hotList {padding: 0.8rem 0 1.6rem; min-height: 10.5rem; }
 .hotList li {width: 30%; margin: 0.4rem;}
-.hotList li span.active {border: 1px solid #d1e3b6}
+.hotList li span.active {border: 1px solid #ff0033}
 
 /* 历史记录 */
 .HistorySearch {background: #fff; padding:0 1rem 1rem 1rem; margin-top: 1rem; min-height: 36rem;}
-.historyList li {width: 100%; color: #9f9f9f; line-height: 5.5rem; height: 4.5rem; box-sizing: border-box; border-bottom: 1px solid #dfdfdf; }
+.historyList li {width: 100%; color: #252525; line-height: 5.5rem; height: 4.5rem; box-sizing: border-box; border-bottom: 1px solid #dfdfdf; }
 
 .HClearBtn { position: fixed; left: 0; bottom:0; padding-bottom: 0.8rem; width: 100%; background: #fff;}
-.HClearBtn button {border-radius: 6px; border: 1px solid #252525; background: #fff; color: #252525; line-height:4rem; font-size: 1.8rem; font-weight: 100; display: block; margin: 0 auto; width: 94%;}
+.HClearBtn button {border-radius: 6px; border: 1px solid #ff0033; background: #ff0033; color: #fff; line-height:4rem; font-size: 1.8rem; font-weight: 100; display: block; margin: 0 auto; width: 94%;}
 
 /* 产品显示 */
 .goodsShow {overflow: hidden;}
 .goodsTitle {}
 .goodsTitle h3 {font-weight: 100; text-align: center; line-height: 4rem; }
-.goodsTitle h3 em {width: 2.5rem; height: 1px; background: #ff9600; display: inline-block;  vertical-align: middle;}
-.goodsTitle h3 span {color: #ff9600; margin: 0 1rem;  font-size: 1.6rem; vertical-align: middle;}
-.goodsTitle h3 .icon-gift {font-size: 2.6rem; color: #ff9600; margin-left: 1rem;  vertical-align: middle; margin-right: -0.8rem;}
+.goodsTitle h3 em {width: 2.5rem; height: 1px; background: #ff0033; display: inline-block;  vertical-align: middle;}
+.goodsTitle h3 span {color: #ff0033; margin: 0 1rem;  font-size: 1.6rem; vertical-align: middle;}
+.goodsTitle h3 .icon-gift {font-size: 2.6rem; color: #ff0033; margin-left: 1rem;  vertical-align: middle; margin-right: -0.8rem;}
 
 /* 活动图片 */
 .goodsTitle .adImgBox {width: 100%; /*height: 12.2rem;*/ position: relative; border-top: 1px solid #dfdfdf; border-bottom: 1px solid #dfdfdf;}
 .adImgBox a{display: block; height: 100%;}
 .adImgBox img {width: 100%; height: 100%; display: block;}
-.adImgBox i {display: block; background: url(../image/tip_djjx.png); height: 5rem; width: 5rem; bottom: 0; right: 0; position: absolute; background-size: 100% 100%;}
+/* 活动标记 */
+/*.adImgBox i {display: block; background: url(../image/tip_djjx.png); height: 5rem; width: 5rem; bottom: 0; right: 0; position: absolute; background-size: 100% 100%;}*/
 
 /* 产品列表 */
 .goodsList {}
-.picList {box-sizing: border-box; float: left; width: 50%; padding:1px; overflow: hidden; position: relative; border-width: 1px; border-style: solid; border-color: transparent; border-right-color: #dfdfdf;  border-bottom-color:#dfdfdf; background: #fff;  }
+.picList {box-sizing: border-box; float: left; width: 50%; padding:1px;  position: relative; border-width: 1px; border-style: solid; border-color: transparent; border-right-color: #dfdfdf;  border-bottom-color:#dfdfdf; background: #fff;  }
 .picList:nth-child(2n) {border-right-color:transparent;}
 .picList a {height: 100%; display: block;}
-.picList figure {/*max-height: 20rem; max-width: 20rem;*/ box-sizing: border-box; /*padding: 2.4rem 0 1.5rem;*/ background:url(../image/loadImg.png) no-repeat center center; background-size:contain;  margin: 0 auto; overflow: hidden;}
+.picList figure {/*max-height: 20rem; max-width: 20rem;*/ box-sizing: border-box; /*padding: 2.4rem 0 1.5rem;*/ background:url(../image/loadImg.png) no-repeat center center; background-size:contain;  margin: 0 auto; position: relative;}
+.picList figure i {position: absolute; height: 3rem; width: 4rem; left: -2px; top: -5px; z-index: 5;}
+.picList figure .timeAct { width: 9rem;}
 .picList img {display: block; width: 100%; height: 100%; }
 .picList .priceArea {padding:1rem 0.8rem; font-size: 1.6rem}
 .priceArea h4 {font-size: 1.6rem; color: #252525; line-height: 36px; font-weight: 100; white-space:nowrap;text-overflow:ellipsis; overflow: hidden;}
@@ -98,16 +102,16 @@ transform: rotate(-90deg);
 .priceArea .goodsWeight em {color:#252525;}
 
 /* 推荐产品 */
-.recommendList {}
+/*.recommendList {}
 .recommendList ul {overflow: hidden; background: #fff;}
 .recommendList li {width: 15.5rem; margin-bottom: 2rem; border-bottom-color:#dfdfdf; border-top-color:#dfdfdf; border-right-color:transparent; border-left-color:#dfdfdf; }
 .recommendList .picList:nth-child(2n) {border-right-color:none;}
-.recommendList .picList:last-child {border-right-color:#dfdfdf;}
+.recommendList .picList:last-child {border-right-color:#dfdfdf;}*/
 
 /* 快捷加入购物车 */
 .addCar {position: absolute; z-index: 20; bottom: 1.4rem; right: 0; font-size: 2.4rem; margin-top: -0.6rem; color: #252525; font-weight: bold;   height:2.5rem; width: 6rem; text-align: center; line-height: 3rem; }
 .addCar em {position: relative; font-weight: 600;}
-.addCar em i {position: absolute; right: -8px; top: -4px; height: 1.2rem; width: 1.2rem; background: #ffa320; border-radius: 50%; color: #fff; font-size: 1.4rem; text-align: center; line-height: 0.75rem; font-weight: 100;}
+.addCar em i {position: absolute; right: -8px; top: -4px; height: 1.2rem; width: 1.2rem; background: #ff0033; border-radius: 50%; color: #fff; font-size: 1.4rem; text-align: center; line-height: 0.75rem; font-weight: 100;}
 
 
 /* 详情页面 */
@@ -120,7 +124,7 @@ transform: rotate(-90deg);
 /* 详情页面1 */
 .goodsInfo {text-align: center; padding-top:2rem; margin: 0 auto; background: #fff;}
 .goodsInfo h2 {font-size: 1.8rem; color: #252525; line-height: 2rem; font-weight: 100;}
-.goodsInfo .sideInfo { color: #ff9600; line-height: 2rem; margin: 1rem 0;}
+.goodsInfo .sideInfo { color: #ff0033; line-height: 2rem; margin: 1rem 0;}
 .goodsInfo .sendWay {line-height: 4rem; color: #666666; position: relative;}
 .goodsInfo .sendWay i {right: 50%; height: 1.5rem; margin-top: -0.75rem;}
 .goodsInfo .sendWay span {color: #252525;}
@@ -131,16 +135,18 @@ transform: rotate(-90deg);
 .detailImg h3 {border-bottom: 1px solid #dfdfdf; font-size: 1.8rem; font-weight: 100; color: #666666; line-height: 3rem;}
 
 /* 服务专线 */
-.serviceInfo {margin-top: 1rem; background: #fffff4; padding:0.5rem 1rem; color: #666666; }
+.contactBoss {position: absolute; left: 0; top: 0; z-index: -10; box-sizing: border-box; width: 100%;}
+.serviceInfo {margin-top: 1rem; background: #ffffff; padding:0.5rem 1rem; color: #666666; }
 .serviceInfo h3 {font-weight: 100; font-size: 1.6rem;}
-.serviceInfo p {line-height: 2.5rem; margin: 0.5rem 0; font-size: 1.4rem;}
+.serviceInfo p {line-height: 2.5rem; padding: 0.5rem 0; font-size: 1.6rem; text-align: left;}
 .serviceInfo p a {}
-.serviceInfo p em {margin-right: 1rem; color: #ff9600; }
+.serviceInfo p em {margin-right: 0.8rem; color: #ff0033; }
 .serviceInfo p span {margin-left: 2px;}
-.serviceInfo p .btnA {padding: 0.1rem 1.5rem; color: #fff; background: #ff9600; box-sizing: border-box; border-radius: 8px; width: 100px; text-align: center; font-size: 1.4rem;}
+.serviceInfo p .btnA {padding: 0.1rem 1.2rem; color: #fff; background: #ff0033; box-sizing: border-box; border-radius: 8px; min-width: 90px; max-width: 100px; text-align: center; font-size: 1.4rem; font-family: "Microsoft YaHei"}
+.serviceInfo p .num {line-height: 2.8rem}
 .serviceBot {background: #fff; padding:1rem ; border-top: 1px solid #dfdfdf;}
-.serviceBot a {display: block; color:#ff9600; font-size: 1.6rem; line-height: 3rem; margin-bottom: 1rem;}
-.serviceBot a.btnA { border:1px solid #ff9600; border-radius: 8px; text-align: center; width: 75%;}
+.serviceBot a {display: block; color:#ff0033; font-size: 1.6rem; line-height: 3rem; margin-bottom: 1rem;}
+.serviceBot a.btnA { border:1px solid #ff0033; border-radius: 8px; text-align: center; width: 75%;}
 .serviceBot span {display: block; color: #666666; font-size: 1.4rem; line-height: 1.4rem;}
 
 /* 商家信息 */
@@ -149,8 +155,8 @@ transform: rotate(-90deg);
 .storeArea .storeImg {height: 6rem; width: 6rem; border:1px solid transparent; box-sizing: border-box; border-radius: 50%; margin-right: 1rem; }
 .storeArea .storeImg img {display: block; width: 100%;}
 .storeArea .storeName {margin-right: 0.8rem}
-.storeArea .storeName h4 {font-weight: 100; font-size: 1.6rem; color: #666666; margin-bottom: 1rem;}
-.storeArea .storeName p { font-size: 1.6rem; max-height: 3rem; overflow: hidden;}
+.storeArea .storeName h4 {font-weight: 100; font-size: 1.4rem; color: #666666; margin-bottom: 1rem;}
+.storeArea .storeName p { font-size: 1.4rem; max-height: 3rem;  }
 .storeArea .storeName p span {vertical-align: middle;}
 .storeArea .storeName .icon-store {color:#252525; font-size: 2.5rem; margin-right: 0.5rem; }
 
@@ -184,7 +190,7 @@ transform: rotate(-90deg);
 .detailsBot .deButton {width: 30%;}
 .detailsBot .deButton a {color: #fff; font-size: 1.6rem; }
 .deAddCar {background: #ff9600; }
-.deBuyOnce {background: #fa4b4b; }
+.deBuyOnce {background: #ff0033; }
 
 /* 规格选择框 */
 .seletSide {background: #fff; position: fixed; left: 0; min-height:28rem;width: 100%; z-index: 120; bottom: 0; padding: 0 1.2rem; box-sizing: border-box; }
@@ -200,7 +206,7 @@ transform: rotate(-90deg);
 /* 产品规格选择 */
 .goodsSize ul {margin-left: -1rem;}
 .goodsSize li {float: left; position: relative; box-sizing: border-box; border:1px solid #dfdfdf; padding:4px 8px; width: auto; margin-left: 1rem; margin-top: 1rem;}
-.goodsSize li.active {border:1px solid #ff9600; }
+.goodsSize li.active {border:1px solid #ff0033; }
 .goodsSize li.active i {position: absolute; right: 0; bottom: 0; background: url(../image/tip_seleted.png) no-repeat; background-size: 100% 100%; width: 1.6rem; height: 1.6rem;}
 
 /* 下拉箭头 */
@@ -217,7 +223,7 @@ transform: rotate(-90deg);
 .sumNum{display:block;  width:auto;  cursor: pointer; height:100%; text-align:center;font-size:1.6rem; outline:none; border-top:.1rem solid #dfdfdf;border-bottom:.1rem solid #dfdfdf; border-radius: 0}
 
 /* 确定按钮 */
-.btnTrue {background: #ff9600; color: #fff; line-height: 4rem; font-size: 1.6rem; border-radius: 8px; margin-bottom: 0.5rem; text-align: center;}
+.btnTrue {background: #ff0033; color: #fff; line-height: 4rem; font-size: 1.6rem; border-radius: 8px; margin-bottom: 0.5rem; text-align: center;}
 
 
 /* 购物车 */
@@ -243,9 +249,7 @@ transform: rotate(-90deg);
 .storeOwner .storeImg {height: 4rem; width: 4rem;}
 .storeOwner .splitline {right: 0.8rem; height: 3rem; margin-top: -1.5rem;}
 
-.carListBox .storeEdit {font-size: 3rem; box-sizing: border-box;}
-.carListBox .storeEdit:hover {color: rgba(0,0,0,.5);}
-
+.carListBox .storeEdit {font-size: 1.6rem; box-sizing: border-box; color:#252525}
 .carList li {position: relative; z-index: 1; border-top:1px solid #dfdfdf; overflow: hidden;background: #fff;
 
 }
@@ -268,11 +272,11 @@ transform: rotate(-90deg);
 
 .allselet li {color: #252525; font-size: 1.6rem; }
 .allselet .btnAllselet {width: 20%;}
-.btnAllselet.active .checkBox{background: #ff9600;}
+.btnAllselet.active .checkBox{background: #ff0033;}
 .allselet .btnAllselet em {font-size: 1.6rem; margin-right: 0; vertical-align: middle; margin-left: 0.2rem;}
 .allselet .checkBox {font-size: 1.2rem; margin-right: 0;}
 .allselet .btnPay {width: 30%;}
-.allselet .btnPay a {color: #fff; background: #ff9600; display: block; width: 100%; height: 100%;}
+.allselet .btnPay a {color: #fff; background: #ff0033; display: block; width: 100%; height: 100%;}
 .allselet .sumPriceBox div {text-align: left; padding-left: 1rem;}
 .allselet .sumPriceBox em {font-size: 1.6rem; margin-right: 0; color: #fa4b4b; vertical-align: middle;}
 .allselet .sumPriceBox span {font-size: 1.6rem; color: #252525; vertical-align: middle; margin-right: 0.5rem;}
@@ -314,13 +318,13 @@ transform: rotate(-90deg);
 .successTip {background: #fff; overflow: hidden; }
 .successTip .HBox {padding:1.5rem 1rem; box-sizing: border-box;}
 .successTip .HBox:first-child {border-bottom: 1px solid #dfdfdf;}
-.successTip .icon-OK {font-size: 5rem; text-align: center; color: #ff9600; position: relative;width:42%; display: block;  text-align: right;}
+.successTip .icon-OK {font-size: 5rem; text-align: center; color: #ff0033; position: relative;width:42%; display: block;  text-align: right;}
 
 .successTip .txtInfo {margin-left: 1rem;}
 .successTip .txtInfo p {font-size: 2rem; line-height: 4rem;}
 .successTip .txtInfo span {display: block; color:#666666; }
 
-.successTip .suc_Btn {display: block; border:1px solid #252525; color: #252525; text-align: center; border-radius: 5px; width: 80%; margin:0 auto; line-height: 3rem; font-size: 1.8rem;}
+.successTip .suc_Btn {display: block; border:1px solid #252525; color: #252525; text-align: center; border-radius: 5px; width: 80%; margin:0 auto; line-height: 3rem; font-size: 1.6rem;}
 .successTip .suc_Btn:hover {background: #f5f5f5;}
 
 /******  我的订单  *****/
@@ -328,8 +332,8 @@ transform: rotate(-90deg);
 .orderHead .icoStyle {text-align: center; font-size: 3rem; position: relative; height: auto; width: auto; display: block; vertical-align: initial; line-height: 2.5rem; margin: 0 0.2rem; border-bottom: 2px solid transparent; box-sizing: border-box; }
 .orderHead .icoStyle i {font-size: 1.4rem; font-weight: 600; background: #fa4b4b; border-radius: 50%; text-align: center; position: absolute; left: 55%; top: -0.3rem; color: #fff; height: 1.8rem; width: 1.8rem; line-height: 1.8rem; white-space:nowrap;text-overflow:ellipsis; overflow:hidden;}
 
-.orderHead .icoStyle span {display: block; font-size: 1.6rem; line-height: 3rem; color: #666666; font-family: 'SimHei';}
-.orderHead .swiper-pagination-bullet-active span {color:#ff9600;}
+.orderHead .icoStyle span {display: block; font-size: 1.6rem; line-height: 3rem; color: #666666; font-family: 'Microsoft YaHei';}
+.orderHead .swiper-pagination-bullet-active span {color:#ff0033;}
 
 /* 订单状态 */
 .orderList .orderInfo {border-top: 1px solid #dfdfdf; padding:1rem 0;}
@@ -337,12 +341,12 @@ transform: rotate(-90deg);
 .orderList .btnBox {padding-top: 1rem;}
 .orderList .btnBox a {margin: 0 0.5rem;}
 .ordStateTxt { width: auto; font-size: 1.6rem}
-.ordStateTxt p {color: #ff9600;}
+.ordStateTxt p {color: #ff0033;}
 .ordStateTxt .statCol_red {color: #fa4b4b;}
-.ordStateTxt .statCol_org {color: #ff9600;}
+.ordStateTxt .statCol_org {color: #ff0033;}
 .orderList .statesInfo {padding-bottom:1rem;}
 .orderList .statesInfo .btnStyle { padding:0 2rem; margin-left: 0.5rem;}
-.orderList .statesInfo .btn_BgOrg {background: none; color:#ff9600;}
+.orderList .statesInfo .btn_BgOrg {background: none; color:#ff0033;}
 
 
 /* 订单金额和服务 */
@@ -386,7 +390,7 @@ transform: rotate(-90deg);
 /* 服务中心介绍 */
 .serviceIntro {background: #fff}
 .serviceIntro section{overflow: hidden; padding:0 1.5rem;}
-.serviceIntro h4 {color:#ff9600; line-height: 3rem; background: #f5f5f5; padding:0 1.5rem;
+.serviceIntro h4 {color:#ff0033; line-height: 3rem; background: #f5f5f5; padding:0 1.5rem;
     height: 48px; font-size: 1.8rem;
     line-height: 4rem; font-weight: 500;
     -webkit-box-sizing:border-box ;
@@ -407,7 +411,7 @@ transform: rotate(-90deg);
 }
 .serviceIntro h5 em,
 .serviceIntro h5 span {display: block; height: 1.5rem; width: 1.5rem; float: right; margin-top: 0.8rem;}
-.serviceIntro h5 span {float: left; font-size: 2rem; margin-right: 0.6rem;  color: #ff9600 }
+.serviceIntro h5 span {float: left; font-size: 2rem; margin-right: 0.6rem;  color: #ff0033 }
 .serviceIntro aside {color: #666666;  font-size: 1.4rem; line-height: 1.8rem; height: auto;  overflow: hidden; }
 
 
@@ -429,10 +433,11 @@ transform: rotate(-90deg);
 .applyTitle .reasonList {padding:1rem 0;}
 .applyTitle .reasonList ul {margin-left: -1rem;}
 .applyTitle .reasonList li { padding:0.5rem 1rem; border:1px solid #dfdfdf; margin:0.5rem 1rem; }
-.applyTitle .reasonList li.active {border-color: #ff9600; background: url(../image/tip_seleted.png) no-repeat bottom right; background-size: 1.6rem;}
-.applyTitle .explain {padding:1rem 0; overflow: hidden;}
+.applyTitle .reasonList li.active {border-color: #ff0033; background: url(../image/tip_seleted.png) no-repeat bottom right; background-size: 1.6rem;}
+.applyTitle .explain {padding:1rem 0 1.5rem; overflow: hidden; position: relative;}
 .applyTitle .explain textarea {box-sizing: border-box; border:1px solid #dfdfdf; display: block; padding: 4px; resize: none; height: 10rem; line-height: 1.6rem}
 .applyTitle .telPhone textarea{ height: 2.5rem; }
+.applyTitle .explain .word {position: absolute; bottom:2px; right: 2px; font-size: 1.2rem; color: #666666;}
 
 .applyTitle .photoList {padding:1rem 0;}
 .applyTitle .photoList ul {margin-left: -1rem;}
@@ -449,8 +454,8 @@ transform: rotate(-90deg);
 .appStateH,
 .appStateM,
 .appStateF {padding:1.5rem 0; border-bottom: 1px solid #dfdfdf;}
-.appStateH .iconSize {  font-size: 7rem; width: 12rem; color: #ff9600;}
-.appStateH h5 {color:#ff9600; font-weight: 100; font-size: 1.6rem; line-height: 2.5rem;}
+.appStateH .iconSize {  font-size: 7rem; width: 12rem; color: #ff0033;}
+.appStateH h5 {color:#ff0033; font-weight: 100; font-size: 1.6rem; line-height: 2.5rem;}
 .appStateH p {line-height: 2.5rem;}
 .appStateH .explain {color:#666666;}
 .appStateM a {  margin: 0 1rem;}
@@ -461,6 +466,29 @@ transform: rotate(-90deg);
 
 .applyBtn .btnStyle {border-radius: 0; line-height: 4rem;}
 
+/* 地址栏 */
+.userAddress {padding:1rem; background: #fff;}
+.userAddrInfo {border-bottom: 1px solid #dfdfdf; padding: 0.5rem 0}
+.userAddrInfo:last-child {border-bottom: 0}
+.userAddrInfo label {display: block; width: 6.5rem; font-size: 1.4rem; font-weight: bold; color: #666666; line-height: 2.6rem;  }
+.userAddrInfo input,
+.userAddrInfo textarea {margin-bottom: 0; width: 100%; padding: 4px; display: block; border-color: transparent; font-size: 1.4rem; height: 30px}
+.userAddrInfo textarea {height: 55px;  }
+
+/* 地址栏底部 */
+.addrFoot {}
+.addrFoot li a {margin:0.5rem 1.5rem;  padding: 0.3rem 0;}
+.addrFoot li a em {color:#252525; margin-right: 0; line-height: 1.8rem;}
+.addrFoot li a span {height: 3rem; line-height: 3rem; font-size: 1.6rem;}
+
+/* 地址栏操作 */
+.seletAddrBox .seletAddr { overflow:  hidden;}
+.seletAddrBox .seletAddr  span {display: inline-block; width: auto; }
+.seletAddr .default { color: #ff0033; margin-right: 0.2rem; width: 3rem }
+.addrEditBox {padding: 1rem 0}
+.addrEditBox a {margin-left: 1rem;}
+.addrEditBox .Bflex2 {display: block; color: #666666}
+.addrEditBox .Bflex2 .checkBox {display: inline-block;}
 
 
 
@@ -476,14 +504,15 @@ transform: rotate(-90deg);
 .silderBox img {display: block; width: 100%; height: 100%}
 
 .orderHead .swiper-pagination-bullet {width: auto; height: auto; display: block; border-radius: 0; opacity: 1; background: none;}
-.orderHead .swiper-pagination-bullet-active {color:#ff9600; border-bottom: 2px solid #ff9600}
+.orderHead .swiper-pagination-bullet-active {color:#ff0033; border-bottom: 2px solid #ff0033}
 
 /******************************* 公共样式 **********************************/
 /* 留言区域 */
-.messageArea {padding:1rem 0; border-top: 1px solid #dfdfdf;}
+.messageArea {padding:1rem 0 1.5rem; border-top: 1px solid #dfdfdf; position: relative;}
 .messageArea textarea {display: block; width: 100%; padding:0 4px; resize: none; height:3.2rem;border:1px solid #dfdfdf; box-sizing: border-box; overflow: hidden; line-height: 1.6rem }
 .messageArea .buyMessage {color:#666666; width: 7rem; font-size: 1.6rem; line-height: 1.8rem;}
 .messageArea .buyMessInfo {color:#252525; line-height: 1.8rem; font-size: 1.6rem;}
+.messageArea .word {font-size: 1.2rem; position: absolute; bottom: 2px; right: 2px; color:#666666;}
 
 
 
@@ -491,7 +520,8 @@ transform: rotate(-90deg);
 .listBox {}
 .listBox .listImg {height: 7rem; width: 7rem; border:1px solid #dfdfdf; box-sizing: border-box; margin-right: 1rem; position: relative;}
 .listBox .listImg img {width: 100%; height: 100%;}
-.listBox .listImg i {position: absolute; height: 3rem; width: 3rem; left: 0; top: 0;}
+.listBox .listImg i {position: absolute; height: 2.5rem; width: 3.5rem; left: -2px; top: -2px;}
+.listBox .listImg .timeAct { width: 7rem;}
 
 /* 结算产品列表 */
 .listBox .listInfor {}
@@ -504,7 +534,7 @@ transform: rotate(-90deg);
 
 /* 选择框 */
 .checkBox {display:block; height: 2rem; width:2rem; box-sizing: border-box; border: 1px solid #dfdfdf; border-radius: 50%; text-align: center; line-height: 2rem; color: #fff; font-size: 1.2rem; margin-right:1rem;  }
-.checkBox.active {background: #ff9600; border:1px solid #ff9600;}
+.checkBox.active {background: #ff0033; border:1px solid #ff0033;}
 
 /*图标*/
 .icoStyle {height: 2rem; width: 2rem;  display: inline-block; vertical-align: middle;  line-height: 2rem}
@@ -516,10 +546,10 @@ transform: rotate(-90deg);
 .border_bot {border-bottom: 1px solid #dfdfdf;}
 
 /*购物车数量统计*/
-.userNum {right: -12px; top: -10px; height: 1.6rem; width: 1.6rem; background: #fa4b4b; border-radius: 50%; color: #fff; font-size: 1.4rem; line-height: 1.8rem; white-space:nowrap;text-overflow:ellipsis; overflow: hidden; text-align: center; font-weight: bold; font-family: 'SimHei'; }
+.userNum {right: -12px; top: -10px; height: 1.6rem; width: 1.6rem; background: #ff0033; border-radius: 50%; color: #fff; font-size: 1.4rem; line-height: 1.8rem; white-space:nowrap;text-overflow:ellipsis; overflow: hidden; text-align: center;  font-family: 'Microsoft YaHei'; }
 
 /*加入购物车动画标记*/
-.moveIcon {height: 14px; width: 14px; background: #ffa320; position: fixed; top: 95%; left: 74%;  z-index: 10; border-radius: 50%; color: #fff; line-height: 14px; text-align: center; font-weight: bold; opacity: 0; }
+.moveIcon {height: 14px; width: 14px; background: #ff0033; position: fixed; top: 95%; left: 74%;  z-index: 10; border-radius: 50%; color: #fff; line-height: 14px; text-align: center;   opacity: 0; }
 .moveIcon.MAnimate {
     -webkit-transition:0.8s left linear,0.8s top ease-in, 1.5s opacity linear,0.1s 0.5s visibility linear ;
     -o-transition: 0.8s left linear,0.8s top ease-in, 1.5s opacity linear,0.1s 0.5s visibility linear;
@@ -527,7 +557,7 @@ transform: rotate(-90deg);
 }
 
 /* 阴影 */
-.shadow {position: fixed; background: rgba(0,0,0,.5) repeat;  height: 100%; width: 100%; z-index: 110;}
+.shadow {position: fixed; background: rgba(0,0,0,.5) repeat;  height: 100%; width: 100%; z-index: 110; left: 0; top: 0;}
 
 /* 错误信息 */
 .errIcon {position: absolute; top: 20%; left: 50%; margin-left: -30%; width: 60%; text-align: center; font-size: 15rem; color: #666666; box-sizing: border-box; overflow: hidden;
@@ -591,10 +621,10 @@ transform: rotate(-90deg);
 .btnStyle a {color:#252525;}
 
 .btn_Bgred {background: #fa4b4b; color: #fff; border-color:#fa4b4b; }
-.btn_BgOrg {background: #ff9600; color: #fff; border-color:#ff9600;}
+.btn_BgOrg {background: #ff0033; color: #fff; border-color:#ff0033;}
 .color_red {color:#fa4b4b;}
 .color_hui {color:#666666;}
-.color_org {color:#ff9600;}
+.color_org {color:#ff0033;}
 /*.btn_contant {}
 .btn_cancelOrder {}
 .btn_payFast {}
@@ -603,13 +633,32 @@ transform: rotate(-90deg);
 .btn_getTrue {}
 .btn_delOrder {}*/
 
+.layermcont,
+.layermchild h3 {box-sizing: border-box; font-family: "Microsoft YaHei"}
+.icon_myLayer {color:#ff0033; margin-right:0.5rem; line-height:2rem; font-size: 1.8rem; }
 
-/*爆品*/
+
+/*热卖*/
 .tip-hot {background: url(../image/tip_hot.png) no-repeat left top;
      background-size: 100% 100%;
 }
 
 /*新品*/
 .tip-new {background: url(../image/tip_new.png) no-repeat left top;
+     background-size: 100% 100%;
+}
+
+/*特价*/
+.tip-tj {background: url(../image/tip_tj.png) no-repeat left top;
+     background-size: 100% 100%;
+}
+
+/*买赠*/
+.tip-give {background: url(../image/tip_give.png) no-repeat left top;
+     background-size: 100% 100%;
+}
+
+/*限时活动*/
+.tip-timeAct {background: url(../image/tip_timeAct.png) no-repeat left top;
      background-size: 100% 100%;
 }

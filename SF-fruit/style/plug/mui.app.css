@@ -1,0 +1,30 @@
+/*
+ *这是单独为hello mui准备的个性化css，可以覆盖标准mui的css定义；
+ * 在实际项目开发时，建议为App单独写一个css文件，从而实现项目的自定义皮肤功能；
+ *
+ * */
+.mui-plus.mui-android header.mui-bar{
+	display: none;
+}
+.mui-plus.mui-android .mui-bar-nav~.mui-content{
+	padding: 0;
+}
+
+/* 城市列表样式 */
+/*.mui-btn {
+    font-size: 16px;
+    padding: 8px;
+    margin: 3px;
+}
+h5.mui-content-padded {
+    margin-left: 3px;
+    margin-top: 20px !important;
+}
+h5.mui-content-padded:first-child {
+    margin-top: 12px !important;
+}
+.ui-alert {
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 16px;
+}*/

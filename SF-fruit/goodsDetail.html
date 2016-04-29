@@ -16,13 +16,13 @@
 <link rel="stylesheet" type="text/css" href="style/style.css" >
 <link rel="stylesheet" type="text/css" href="style/plug/swiper.css" >
 <style type="text/css">
-    .swiper-pagination-bullet-active {background: #ff9600;}
+    .swiper-pagination-bullet-active {background: #ff0033;}
 </style>
 
 </head>
 <body>
 <div class="wrap">
-    <section class="detailsBox  js_page1" style="">
+    <section _class="detailsBox  js_page1" style="">
         <div class="detailsInfo">
             <!-- 轮播 -->
             <section class="silderBox" style="margin-top: 0;">
@@ -61,40 +61,53 @@
                     <i class="splitline" ></i>
                 </div>
             </section>
-            <!-- 联系客服 -->
-            <section class="serviceInfo">
-                <h3>售后客服专线</h3>
-                <p class="clearfix">
-                    <a class="fl" href="tel:0755-83867555"><em class="icon-Tel"></em>0755-83867555</a>
-                    <a class="fr btnA" href="tel:0755-83867555">联系客服</a>
-                </p>
-                <p class="clearfix">
-                    <a class="fl" href="tel:13825540110" ><em class="icon-Iphone"></em>13825540110</a>
-                    <a class="fr btnA" href="tel:13825540110">拨打手机</a>
-                </p>
-                <p class="clearfix">
-                    <em class="icon-WX"></em><span>Kimvitor 009</span>
-                </p>
-            </section>
-            <section class="pullTip js_pullTip pullTip-bottom"><em class="icoStyle icon-arrow-down js_arrow "></em><span class="js_tipTxt">下拉查看图文详情</span></section>
+            <section class="pullTip js_pullTip pullTip-bottom" style="display: none"><em class="icoStyle icon-arrow-down js_arrow "></em><span class="js_tipTxt">下拉查看图文详情</span></section>
         </div>
     </section>
     <!-- 商品详情 -->
-    <section class="detailsBox  js_page2" style=" opacity:0; ">
+    <section _class="detailsBox  js_page2"  style="margin-top: 1rem; padding-bottom: 6rem;">
         <div class="detailsInfo js_move2">
             <section class="pullTip js_pullTip pullTip-top" style="position: absolute; left: 0; display: none;"><em class="icoStyle icon-arrow-down js_arrow "></em><span class="js_tipTxt">返回产品详情</span></section>
             <!-- 商品信息 -->
             <section class="detailImg">
                 <h3>商品信息</h3>
-                <img src="image/goodsDetail.jpg">
-                <img src="image/goodsDetail.jpg">
-                <img src="image/goodsDetail.jpg">
+                <!-- 联系客服 -->
+                <section class="serviceInfo">
+                    <p class="clearfix">
+                        <a class="fl" ><em class="icon-message"></em>商品详情和售后咨询</a>
+                        <a class="fr btnA js_btnA">联系客服</a>
+                    </p>
+                </section>
+                <section class="contactBoss js_contactBoss"  style="display: none">
+                    <section class="serviceInfo ">
+                        <h3 style="display: none">联系商家</h3>
+                        <p class="clearfix border_bot">
+                            <a class="fl num" href="tel:0755-83867555"><em class="icon-Tel"></em>0755-83867555</a>
+                            <a class="fr btnA" href="tel:0755-83867555">联系客服</a>
+                        </p>
+                        <p class="clearfix border_bot">
+                            <a class="fl num" href="tel:13825540110" ><em class="icon-Iphone"></em>13825540110</a>
+                            <a class="fr btnA" href="tel:13825540110">拨打手机</a>
+                        </p>
+                        <p class="clearfix">
+                            <em class="icon-WX" style="color: #09B911"></em><span>Kimvitor 009</span>
+                        </p>
+                    </section>
+                </section>
+
+                 <!-- 商品详情信息 -->
+                <section>
+                    <img src="image/goodsDetail.jpg">
+                    <img src="image/goodsDetail.jpg">
+                    <img src="image/goodsDetail.jpg">
+                </section>
+
             </section>
             <!-- 联系客服说明 -->
             <section class="serviceBot HBox">
                 <div class="Bflex1">
-                    <a href="tel:0755-3639-1888" style="font-size: 1.8rem;">0755-3639-1888</a>
-                    <span style="font-size: 1.8rem;">平台服务专线</span>
+                    <a href="tel:0755-3639-1888" >0755-3639-1888</a>
+                    <span>平台服务专线</span>
                 </div>
                 <div class="Bflex1">
                     <a class="btnA" href="tel:0755-3639-1888">在线平台客服</a>
@@ -103,7 +116,7 @@
             </section>
             <!-- 商家信息 -->
             <section class="storeBox HBox">
-                <div class="Bflex1 storeArea HBox BoxCenter">
+                <div class="storeArea HBox BoxCenter" style="width: 50%">
                     <figure class="storeImg">
                         <img src="image/storeImg.png">
                     </figure>
@@ -112,8 +125,8 @@
                         <p>不二小不二</p>
                     </div>
                 </div>
-                <div class="storeInfo Bflex1">
-                    <p>顺丰人在日复一日地派送中一路探索，发现各种鲜果特产隐藏在遥远的山林湖海，它们无法触达更多的中国家庭</p>
+                <div class="Bflex1 storeInfo ">
+                    <p>顺丰人在日复一日地派送中一路探索，发现各种鲜果特产隐藏</p>
                     <i class="splitline"></i>
                 </div>
             </section>
@@ -122,12 +135,13 @@
                 <div class="goodsTitle">
                     <h3><em></em><span>该商家其他商品</span><em></em></h3>
                 </div>
-                <div class="goodsList clearfix recommendList js_recommendList">
+                <div class="goodsList clearfix recommendList">
                     <ul>
                         <li class="picList">
                             <a href="goodsDetail.html">
                                 <figure>
                                     <img src="image/loadImg.png">
+                                    <i class="tip-hot"></i>
                                 </figure>
                                 <aside class="priceArea">
                                     <h4>智利进口蓝莓智利进口蓝莓智利进口蓝莓智利进口蓝莓</h4>
@@ -142,6 +156,7 @@
                             <a href="goodsDetail.html">
                                 <figure>
                                     <img src="image/goods.jpg">
+                                    <i class="tip-new"></i>
                                 </figure>
                                 <aside class="priceArea">
                                     <h4>智利进口蓝莓智利进口蓝莓智利进口蓝莓智利进口蓝莓</h4>
@@ -156,6 +171,7 @@
                             <a href="goodsDetail.html">
                                 <figure>
                                     <img src="image/goods.jpg">
+                                    <i class="tip-give"></i>
                                 </figure>
                                 <aside class="priceArea">
                                     <h4>智利进口蓝莓智利进口蓝莓智利进口蓝莓智利进口蓝莓</h4>
@@ -170,6 +186,7 @@
                             <a href="goodsDetail.html">
                                 <figure>
                                     <img src="image/goods.jpg">
+                                    <i class="tip-timeAct timeAct"></i>
                                 </figure>
                                 <aside class="priceArea">
                                     <h4>智利进口蓝莓智利进口蓝莓智利进口蓝莓智利进口蓝莓</h4>
@@ -231,7 +248,6 @@
     <a class="btnTrue js_carhref" href="#">确定</a>
     <div class="closeBtn js_closeBtn"></div>
 </section>
-
 
 <script type="text/javascript" src="js/plug/sea/sea.min.js"></script>
 <script type="text/javascript" src="js/plug/jquery.min.js"></script>

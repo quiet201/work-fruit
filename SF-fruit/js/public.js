@@ -96,20 +96,111 @@ define(function(require,exports,module) {
     exports.ScrollBar = ScrollBar;
     /*************** 滚动条效果 e***************/
 
-     /*************** 弹框效果 s***************/
-     /*************** 弹框效果 e***************//* 数字验证 */
+
+     /* 数字验证 */
     function ValiNum(obj,fn1,fn2) {
         var reg = new RegExp("^[0-9]*$");
         if(!reg.test(obj.val())){
             if(fn1) fn1();
         }
         else if( obj.val() < 0) {
-            alert("数量不能小余1");
+            TipLayer("数量不能小余1");
             obj.val(1);
         }
         else{if(fn2) fn2();}
     }
     exports.ValiNum = ValiNum;
+
+    /* 字数统计 */
+     function statInputNum(textArea,numItem) {
+        var max =  numItem.eq(0).text();
+        var curLength = 0;
+            textArea.each(function(i) {
+                textArea.eq(i).attr("maxlength", max).on('input propertychange', function () {
+                    curLength = $(this).val().length;
+                    numItem.eq(i).empty().text(max - curLength);
+                });
+            });
+
+    }
+    exports.statInputNum = statInputNum;
+
+
+    /* 购物车价格统计 */
+    function ShopSumPrice(obj,tarFather,target,sumPrice) {
+        var _price = 0;
+        obj.each(function(i) {
+            if(obj.eq(i).hasClass('active')) {
+                var _oGoodsPrice = obj.eq(i).siblings(tarFather).find(target);
+                _oGoodsPrice.each(function(i) {
+                    _price += (_oGoodsPrice.eq(i).text())*1;
+                     return  _price;
+                });
+            }
+
+        });
+        sumPrice.text(_price.toFixed(2));
+    }
+    exports.ShopSumPrice = ShopSumPrice;
+
+
+    /*************** 弹框效果 s***************/
+
+    //提示框
+    function TipLayer (sCont,sStyle,fn) {
+        layer.open({
+            content: sCont,
+            style:sStyle || 'background-color:rgba(0,0,0,0.5); color:#fff; border:none; border-radius: 15px;',
+            time: 2,
+            success:function() {if(fn)fn();}
+        });
+    }
+    exports.TipLayer = TipLayer;
+
+    //带按钮提示框
+    function TipBtnLayer (sCont) {
+        layer.open({
+            content: sCont,
+            btn:['确定'],
+            shadeClose: false,
+        });
+    }
+    exports.TipBtnLayer = TipBtnLayer;
+
+    // 标题提示框
+    function TipTitleLayer (sTitle,styleTit,sCont) {
+        layer.open({
+            title: [ sTitle,'background-color:#f8f8f8; color:#252525; font-weight:bold' ],
+            content: sCont,
+            shadeClose:false,
+            style: styleTit,
+        });
+    }
+    exports.TipTitleLayer = TipTitleLayer;
+
+    //加载层
+    function loadLayer() {
+        layer.open({type: 2});
+    }
+    exports.loadLayer = loadLayer;
+
+    //询问层
+    function askLayer(sCont, yesFn, noFn) {
+        layer.open({
+            content: sCont,
+            btn: ['确认', '取消'],
+            shadeClose: false,
+            yes: yesFn, no: noFn
+        });
+    }
+    exports.askLayer = askLayer;
+
+
+    /*************** 弹框效果 e***************/
+
+
+
+
 
 });
 

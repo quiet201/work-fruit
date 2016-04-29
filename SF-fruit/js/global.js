@@ -23,17 +23,23 @@ seajs.use(['hammer','iscroll','layer','public'], function(myHam,myIsc,myLay,myPu
         var oMoveIcon = $('.js_moveIcon');          //加入购物车动态标记
         var oGoTop = $('.js_goTop');                //回到顶部
         var oSearchTxt = $('.js_searchTxt');        //搜索框
-        var oPage1 = $('.js_page1');                //详情滚动1
-        var oPage2 = $('.js_page2');                //详情滚动2
-
-        var oRecommendList = $('.js_recommendList');//推荐列表
-        var oRecomUL = oRecommendList.find('ul');   //推荐列表ul
-        var oRecomLi = oRecommendList.find('li');   //推荐列表li
-
         var oSeletSide = $('.js_seletSide');        //下滑窗口
         var oBotCloseBtn = $('.js_closeBtn');       //关闭按钮
         var oArrDownBtn = $('.js_arrDownBtn');      //下滑按钮
         var oGoodsSizeUl = $('.js_goodsSize ul');
+
+        var oCarListHead = $('.js_carListHead');        //店家
+        var oCarList = $('.js_carList');                //全部宝贝
+        var oCarListArea = $('.js_carListArea');        //列表区域
+        var oDelBtn = $('.js_btnDel');                  //单个删除按钮
+        var oStoreEditBtn = $('.js_storeEdit');         //整组删除按钮
+        var oCheckBox = $('.js_checkBox');              //单选按钮
+        var oGoodsSelet = oCarList.find('.js_checkBox');        //单个宝贝选择按钮
+        var oStoreSelet = oCarListHead.find('.js_checkBox');    //店家全选按钮
+        var oAllseletBtn = $('.js_btnAllselet');                //全部选按钮
+        var oSumPrice = $('.js_sumPrice');                      //总价格
+        var nOrderNum = $('.js_orderNum');                      //订单数量
+
 
         var oDeButton = $('.js_deButton');          //结账和加入操作按钮
         var oCarhref = $('.js_carhref');            //结账和加入 确定
@@ -43,13 +49,16 @@ seajs.use(['hammer','iscroll','layer','public'], function(myHam,myIsc,myLay,myPu
         var oGoodsPrice = $('.js_goodsPrice');      //产品价格
         var oSumNum = $('.js_sumNum');              //总数
 
+        var obtnBusines = $('.js_btnA');            //联系商家信息按钮
+        var oContactBoss = $('.js_contactBoss');    //商家信息
+        var oUserMessage = $('.js_message').find('textarea');  //留言区域
+        var maxLWord = $('.js_wordmax');               //最大字数
+
 
 
 /**********************************  添加滚动条 start  *********************************/
 
         oNavSecUl.css({width:oNavSecLi.outerWidth(true) * oNavSecLi.length});
-        oRecomUL.css({width:oRecomLi.outerWidth(true) * oRecomLi.length, height:oRecomLi.outerHeight(true)});
-        //页面滚动
         var conScroll = new myPub.ScrollBar();
         if(oContain.length>0) {
             conScroll.AddScroll(oContain[0],{probeType: 3,click:true,mouseWheel:true});
@@ -64,79 +73,12 @@ seajs.use(['hammer','iscroll','layer','public'], function(myHam,myIsc,myLay,myPu
             });
 
         }
-        //二级导航滚动
-        if(oNavSecList.length>0) {
-            var secScroll = new myPub.ScrollBar();
-            secScroll.AddScroll(oNavSecList[0],{scrollX: true, scrollY: false, click:true,mouseWheel:true});
-        }
+        // //二级导航滚动
+        // if(oNavSecList.length>0) {
+        //     var secScroll = new myPub.ScrollBar();
+        //     secScroll.AddScroll(oNavSecList[0],{scrollX: true, scrollY: false, click:true,mouseWheel:true});
+        // }
 
-        //详情滚动
-        if(oPage1.length>0 && oPage2.length>0) {
-            var maxY = 40;
-            var DISY = null;
-            var oPullTip = $('.js_pullTip');
-            var oTipH = oPullTip.outerHeight(true);
-            var pageScroll1 = new IScroll(oPage1[0], { probeType: 3, mouseWheel: true, click:true,preventDefault:false,bounceTime:100, });
-            var pageScroll2 = new IScroll(oPage2[0], { probeType: 3, mouseWheel: true, click:true, });
-            var H1 = pageScroll1.scrollerHeight;
-            oPage2.css({top:H1});
-
-            // 阻止其他元素拖动
-            $(document).on('touchmove',function(e) {
-                oPage2.css({opacity:1});
-                e.preventDefault();
-
-            });
-
-            pageScroll1.on('scroll',function() {
-                var _disY = this.maxScrollY - this.y;
-                oPage2.css({top:H1+this.y,'z-index':7});
-                if(_disY >= maxY) {
-                    oPullTip.eq(0).find('em').addClass('changIcon');
-                }
-                else {
-                    oPullTip.eq(0).find('em').removeClass('changIcon');
-                }
-
-            });
-
-            pageScroll2.on('scroll',function(e) {
-                if(this.y >= maxY) {
-                    oPullTip.eq(1).find('em').addClass('changIcon');
-                }
-                else {
-                    oPullTip.eq(1).find('em').removeClass('changIcon');
-                }
-            });
-
-
-            //上拉
-            pageScroll1.on('slideUp',function(e) {
-                var _disY = this.maxScrollY - this.y;
-                if( _disY > maxY) {
-                    oPage1.stop().animate({'top':-H1},800,function() {oPullTip.eq(1).show();});
-                    oPage2.stop().animate({'top':0},300);
-                }
-            });
-
-             //下拉
-            pageScroll2.on('slideDown',function() {
-                var _disY = this.maxScrollY - this.y;
-                if(this.y > maxY) {
-                    oPage1.stop().animate({'top':0},400);
-                    oPage2.stop().animate({'top':H1},400);
-                    oPullTip.eq(1).hide();
-                }
-            });
-
-        }
-
-
-        //推荐滚动 (详情滚动前)
-        if(oRecommendList.length>0) {
-            var recomScroll = new myPub.ScrollBar();
-            recomScroll.AddScroll(oRecommendList[0],{scrollX: true, scrollY: false, click:true,mouseWheel:true});
-        }
 
 /**********************************  添加滚动条 end    *************************************/
 
@@ -156,7 +98,7 @@ seajs.use(['hammer','iscroll','layer','public'], function(myHam,myIsc,myLay,myPu
                         case 0:
                              if(iNow <= 1) {
                                 iNow = 1;
-                                alert("最小为1");
+                                myPub.TipLayer("最小为1");
                              }
                              else {
                                 iNow--;
@@ -166,22 +108,22 @@ seajs.use(['hammer','iscroll','layer','public'], function(myHam,myIsc,myLay,myPu
                         case 1:
                             if(iNow >= 99) {
                                 iNow = 99;
-                                alert("最大为1");
+                                myPub.TipLayer("最大为99");
                              }
                              else {
                                 iNow++;
                              }
                             break;
-                        //123
                     }
                     oGoodsPrice.eq(i).html((oGoodsPriceTxt*iNow).toFixed(2));
                     oSumNum.eq(i).val(iNow);
+                    myPub.ShopSumPrice(oCheckBox,'.listBox','.js_goodsPrice',oSumPrice);
                 });
 
 
                 oSumNum.eq(i).on('input propertychange',function(e) {
                     myPub.ValiNum(oSumNum.eq(i),function() {
-                        alert('输入正确数字');
+                        myPub.TipLayer('输入正确数字');
                         oSumNum.eq(i).val(1);
                     },function() {
                         var _iNow = oSumNum.eq(i).prop('value')*1;
@@ -189,36 +131,36 @@ seajs.use(['hammer','iscroll','layer','public'], function(myHam,myIsc,myLay,myPu
                         if(_iNow >= 99) {
                             _iNow = 99;
                             oSumNum.eq(i).val(_iNow);
-                            alert("最大为"+_iNow);
+                            myPub.TipLayer("最大为"+_iNow);
                          }
                         iNow = _iNow;
                         oGoodsPrice.eq(i).html((oGoodsPriceTxt*iNow).toFixed(2));
+                        myPub.ShopSumPrice(oCheckBox,'.listBox','.js_goodsPrice',oSumPrice);
 
                     });
                     e.preventDefault();
                 });
 
                 oSumNum.eq(i).blur(function() {
-                   // alert( $('.js_seletSide').css('bottom')  )
+                   // myPub.TipLayer( $('.js_seletSide').css('bottom')  )
                 });
 
             });
         }
+
+
 /**********************************  增加减少 end     ***********************************/
 
 
 /**********************************  购物车 start *************************************/
-        var oCarListHead = $('.js_carListHead');        //店家
-        var oCarList = $('.js_carList');                //全部宝贝
-        var oCarListArea = $('.js_carListArea');        //列表区域
-        var oDelBtn = $('.js_btnDel');                  //单个删除按钮
-        var oStoreEditBtn = $('.js_storeEdit');         //整组删除按钮
-        var oCheckBox = $('.js_checkBox');              //单选按钮
-        var oGoodsSelet = oCarList.find('.js_checkBox');        //单个宝贝选择按钮
-        var oStoreSelet = oCarListHead.find('.js_checkBox');    //店家全选按钮
-        var oAllseletBtn = $('.js_btnAllselet');                //全部选按钮
+
 
         if(oCarListArea.length>0) {
+
+            myPub.ShopSumPrice(oCheckBox,'.listBox','.js_goodsPrice',oSumPrice);
+            var orderNum = oCarListArea.find('.js_checkBox.active').length;
+            nOrderNum.text(orderNum);
+
             //左滑动出现删除
             oCarListArea.hammer().on('swipeleft',function(e) {
                 var index = oCarListArea.index(this);
@@ -238,20 +180,40 @@ seajs.use(['hammer','iscroll','layer','public'], function(myHam,myIsc,myLay,myPu
             // 单个删除
             oDelBtn.hammer().on('tap',function(e) {
                 $(this).siblings('.js_carListArea').removeClass('TformY5').find('.js_checkBox').removeClass('active');
-               // $(this).parents('li').remove();
-               conScroll.ReScroll();
+                // 判断删除店家
+                if($(this).parents('.js_carList').find('li').length == 1) {
+                    $(this).parents('.carListBox').remove();
+                }
+                else {
+                    $(this).parents('li').remove();
+                }
+                conScroll.ReScroll();
+                myPub.ShopSumPrice(oCheckBox,'.listBox','.js_goodsPrice',oSumPrice);
+
+
             });
 
-            // 整组删除
+            // 整组选择
             oStoreEditBtn.hammer().on('tap',function() {
-                var _off = $(this).siblings('.js_checkBox').hasClass('active');
-                // 删除店家
-                if(_off) {
-                    $(this).parents('.js_carListHead').siblings('.js_carList').find('.js_carListArea').removeClass('TformY5').parents('.carListBox').remove();
+                // 删除选中或者整个
+                // var _off = $(this).siblings('.js_checkBox').hasClass('active');
+                // // 删除店家
+                // if(_off) {
+                //     $(this).parents('.js_carListHead').siblings('.js_carList').find('.js_carListArea').removeClass('TformY5').parents('.carListBox').remove();
+                // }
+                // // 删除选中的
+                // else {
+                //     $(this).parents('.js_carListHead').siblings('.js_carList').find('.active').parents('.js_carListArea').removeClass('TformY5').parents('li').remove();
+                // }
+                // 出现删除按钮 再次点击取消
+                var _off = $(this).parents('.js_carListHead').siblings('.js_carList').find('.js_carListArea');
+                if(_off.hasClass('TformY5')) {
+                    $(this).text('编辑');
+                    _off.removeClass('TformY5');
                 }
-                // 删除选中的
                 else {
-                    $(this).parents('.js_carListHead').siblings('.js_carList').find('.active').parents('.js_carListArea').removeClass('TformY5').parents('li').remove();
+                    $(this).text('完成');
+                    _off.addClass('TformY5');
                 }
                 conScroll.ReScroll();
             });
@@ -274,9 +236,11 @@ seajs.use(['hammer','iscroll','layer','public'], function(myHam,myIsc,myLay,myPu
                         if(_actNum >= _checkNum) {
                             oAllseletBtn.addClass('active');
                         }
-
                     }
                 }
+                myPub.ShopSumPrice(oCheckBox,'.listBox','.js_goodsPrice',oSumPrice);
+                var orderNum = oCarListArea.find('.js_checkBox.active').length;
+                nOrderNum.text(orderNum);
             });
 
 
@@ -289,6 +253,9 @@ seajs.use(['hammer','iscroll','layer','public'], function(myHam,myIsc,myLay,myPu
                     $(this).parents('.js_carListHead').siblings('.js_carList').find('.js_checkBox').removeClass('active');
                     oAllseletBtn.removeClass('active');
                 }
+                myPub.ShopSumPrice(oCheckBox,'.listBox','.js_goodsPrice',oSumPrice);
+                var orderNum = oCarListArea.find('.js_checkBox.active').length;
+                nOrderNum.text(orderNum);
             });
 
             // 全选
@@ -296,13 +263,18 @@ seajs.use(['hammer','iscroll','layer','public'], function(myHam,myIsc,myLay,myPu
                 if($(this).hasClass('active')) {
                     $(this).removeClass('active');
                     oCheckBox.removeClass('active');
+                    oSumPrice.text(0);
                 }
                 else {
-                    $(this).addClass('active')
+                    $(this).addClass('active');
                     oCheckBox.addClass('active');
                 }
+                myPub.ShopSumPrice(oCheckBox,'.listBox','.js_goodsPrice',oSumPrice);
+                var orderNum = oCarListArea.find('.js_checkBox.active').length;
+                nOrderNum.text(orderNum);
             });
         }
+
 
 /**********************************  购物车 end   *************************************/
 
@@ -332,7 +304,6 @@ seajs.use(['hammer','iscroll','layer','public'], function(myHam,myIsc,myLay,myPu
             if(jumpBtn) {
                 myPub.ValiNum(oSumNum,function() {
                     oCarhref.attr('href','#1');
-                    oSumNum.val(1);
                 },function() {
                     oCarhref.attr('href','https://www.baidu.com/');
                     oSeletSide.show().stop().animate({bottom:0},300);
@@ -340,8 +311,10 @@ seajs.use(['hammer','iscroll','layer','public'], function(myHam,myIsc,myLay,myPu
                 });
             }
             else {
+                myPub.TipLayer('<span class="icon-rightIcon icon_myLayer"></span>加入购物车成功！');
                 oSeletSide.stop().animate({bottom:-oSeletSideH},300,function(){ oSeletSide.hide();});
                 oShadow.hide();
+
             }
         });
 
@@ -396,6 +369,18 @@ seajs.use(['hammer','iscroll','layer','public'], function(myHam,myIsc,myLay,myPu
         }
         else {
             myPub.AddCarAnimate(oBtnAddCar,oMoveIcon,"30%","94%");
+        }
+
+        // 弹出商家信息列表
+        obtnBusines.hammer().on('tap',function() {
+            var styleTitle = 'width:100%;  border:none';
+            oContactBoss.show()
+            myPub.TipTitleLayer('联系商家',styleTitle, oContactBoss.html());
+        });
+
+        // 限制字数
+        if(oUserMessage.length>0) {
+            myPub.statInputNum(oUserMessage,maxLWord);
         }
 
 

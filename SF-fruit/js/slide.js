@@ -1,16 +1,48 @@
 seajs.use('./js/plug/swiper.jquery.min.js',function() {
     $(function() {
-        var sTime = null; //时间
-        var oSilderImg = $('.js_silderImg'); //轮播框
-        var oBNext = $('.js_BNext'); //下一个
-        var oBPrev = $('.js_BPrev'); //上一个
-        var oPagin = $('.js_pagin'); //个数点
-        var oDetailsImg = $('.js_detailsImg'); //详情轮播
-        var oOrderInfoBox = $('.js_orderInfoBox');   //订单tab切换
+        var sTime = null;                           //时间
+        var oSilderImg = $('.js_silderImg');        //广告轮播框
+        var oIndexPage = $('.js_index');            //首页
+        var oIndexNav = $('.js_headerNav');         //首页导航
+        var oBNext = $('.js_BNext');                //下一个
+        var oBPrev = $('.js_BPrev');                //上一个
+        var oPagin = $('.js_pagin');                //个数点
+        var oDetailsImg = $('.js_detailsImg');      //详情轮播
+        var oOrderInfoBox = $('.js_orderInfoBox');  //订单tab切换
         var oOrderHeadNav = $('.js_orderHead');     //订单导航
         var oEmptyIcon = $('.js_emptyIcon');        //订单空的图标
 
-        //首页轮播
+        // 首页导航轮播
+        var _indexIHeight = [];
+        var _indexPage = oIndexPage.find('.js_listSlide');
+        _indexPage.each(function(i) {
+            _indexIHeight.push(_indexPage.eq(i).outerHeight(true));
+            return _indexIHeight;
+        });
+        oIndexPage.css({ 'height': _indexIHeight[0] + 'px' });
+
+        var oIndexSwiper = oIndexPage.swiper({
+            pagination: oIndexNav[0],
+            paginationClickable: true,
+            paginationBulletRender:function(index,className){
+                switch(index) {
+                    case 0:name = '精选'; break;
+                    case 1:name = '当季鲜果'; break;
+                    case 2:name = '海鲜蛋肉';  break;
+                    case 3:name = '五谷干货';  break;
+                    case 4:name = '酒茶饮品'; break;
+                }
+                return '<li class="Bflex1"><a>'+name+'</a></li>';
+            },
+            onSlideChangeEnd: function (swiper) {
+                oIndexPage.css({ 'height': _indexIHeight[swiper.activeIndex] + 'px' });
+                //oEmptyIcon.removeClass('swing').eq(swiper.activeIndex).addClass('swing');
+            }
+        });
+
+
+
+        //首页广告轮播
         var indexSwiper = oSilderImg.swiper({
             nextButton: oBNext,
             prevButton: oBPrev,
@@ -35,13 +67,13 @@ seajs.use('./js/plug/swiper.jquery.min.js',function() {
         });
 
         // 我的订单轮播
-        var _iHeight = [];
+        var _ordIHeight = [];
         var oOrderSlide = oOrderInfoBox.find('.swiper-slide');
         oOrderSlide.each(function (i) {
-            _iHeight.push(oOrderSlide.eq(i).outerHeight(true));
-            return _iHeight;
+            _ordIHeight.push(oOrderSlide.eq(i).outerHeight(true));
+            return _ordIHeight;
         });
-        oOrderSlide.css({ 'height': _iHeight[0] + 'px' });
+        oOrderSlide.css({ 'height': _ordIHeight[0] + 'px' });
 
         var orderSwiper = oOrderInfoBox.swiper({
             pagination: oOrderHeadNav[0],
@@ -57,7 +89,7 @@ seajs.use('./js/plug/swiper.jquery.min.js',function() {
                 return '<p class="Bflex1 BoxCenter icoStyle icon-'+iconName+' '+ className+'"><span>'+name+'</span>'+tip+'</p>';
             },
             onSlideChangeEnd: function (swiper) {
-                oOrderInfoBox.css({ 'height': _iHeight[swiper.activeIndex] + 'px' });
+                oOrderInfoBox.css({ 'height': _ordIHeight[swiper.activeIndex] + 'px' });
                 oEmptyIcon.removeClass('swing').eq(swiper.activeIndex).addClass('swing');
             }
         });

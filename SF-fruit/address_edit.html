@@ -1,0 +1,87 @@
+<!doctype html>
+<html class="">
+<head>
+<meta charset="utf-8">
+<title>编辑我的地址</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+<!-- 网站开启对web app程序的支持 -->
+<meta content="yes" name="apple-mobile-web-app-capable"></meta>
+<!--忽略将页面中的数字识别为电话号码。-->
+<meta name="format-detection" content="telephone=no" />
+<meta name="Author" content="顺丰速运科技有限公司" />
+<meta name="Keywords" content="顺丰速运" />
+<meta name="Description" content="顺丰速运科技有限公司" />
+
+<link rel="stylesheet" type="text/css" href="style/MobReset.css" >
+<link rel="stylesheet" type="text/css" href="style/plug/mui.min.css">
+<link rel="stylesheet" type="text/css" href="style/plug/mui.picker.min.css">
+<link rel="stylesheet" type="text/css" href="style/style.css" >
+
+<style type="text/css">
+.mui-poppicker {background:rgba(0,0,0,.6);}
+.mui-poppicker-header .mui-btn {width: 80px;}
+.mui-poppicker-btn-ok {background: #ff9600; border:1px solid #ff9600;}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+    <section class="userAddress" style="">
+        <form name="userAddress" method="">
+            <div class="userAddrInfo HBox ">
+                <label for="userName" name="">收货人姓名</label>
+                <input class="Bflex1" id="userName" name="" type="text" placeholder="姓名"></input>
+            </div>
+            <div class="userAddrInfo HBox ">
+                <label for="userIphone" name="">手机号码</label>
+                <input class="Bflex1" id="userIphone"  name="" type="number" placeholder="手机号码"></input>
+            </div>
+            <div class="userAddrInfo HBox js_showCityBtn" id="">
+                <label for="userCity" name="" id="">省、市、区</label>
+                <input class="Bflex1 js_cityResult" id="userCity"  name="" disabled="disabled" type="text" placeholder="省、市、区" value=""></input>
+            </div>
+            <div class="userAddrInfo HBox">
+                <label for="userAddrDetail" name="">详细地址</label>
+                <textarea class="Bflex1"  id="userAddrDetail" name="" placeholder="详细地址(精确到门牌号)"></textarea>
+            </div>
+            <div class="userAddrInfo" style="margin-top: 2rem;">
+                <button type="submite" class="btnStyle btn_BgOrg" style="margin:0 auto; width: 50%">保存</button>
+            </div>
+         </form>
+    </section>
+
+
+</div>
+
+<!-- <button id='showCityPicker3' class="mui-btn mui-btn-block" type='button'>三级联动示例 ...</button>
+<div id="cityResult3" class="ui-alert">你选择的城市是:北京市 北京市 东城区</div> -->
+
+<!-- <script type="text/javascript" src="js/plug/sea/sea.min.js"></script> -->
+<script type="text/javascript" src="js/plug/jquery.min.js"></script>
+<script type="text/javascript" src="js/plug/mui/mui.min.js"></script>
+<script type="text/javascript" src="js/plug/mui/mui.picker.min.js"></script>
+<script type="text/javascript" src="js/city.data-3.js"></script>
+
+<script type="text/javascript">
+    (function($) {
+        $.init();
+        $.ready(function() {
+            var cityPicker = new $.PopPicker({  layer: 3  });
+            cityPicker.setData(cityData3);
+            // var showCityPickerButton = doc.getElementById('showCityPicker3');
+            var showCityPickerButton = $('.js_showCityBtn')[0];
+            var cityResult = $('.js_cityResult');
+            showCityPickerButton.addEventListener('click', function(event) {
+                cityPicker.show(function(items) {
+                    var _seletCity = ( items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {} ).text;
+                    //console.log(items)
+                    cityResult[0].value = _seletCity;
+                });
+            }, false);
+        });
+    })(mui);
+</script>
+
+</body>
+</html>
+

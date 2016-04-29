@@ -52,8 +52,9 @@
 
             <div class="applyTitle">
                 <h4>问题描述</h4>
-                <section class="explain">
+                <section class="explain js_message">
                      <textarea name="" placeholder="请详细描述售后的原因和您期望的解决方案（最多200字）"></textarea>
+                     <span class="word">剩余：<em class="js_wordmax">200</em>字</span>
                 </section>
             </div>
 
@@ -77,9 +78,10 @@
     <div class="icoStyle  icon-arrow-up goTopIcon js_goTop" style="display: none"></div>
 </div>
 
+<script type="text/javascript" src="js/plug/sea/sea.min.js"></script>
 <script type="text/javascript" src="js/plug/jquery.min.js"></script>
 <script type="text/javascript">
-
+    seajs.use(['./js/global.js'],function() {});
 </script>
 </body>
 </html>
