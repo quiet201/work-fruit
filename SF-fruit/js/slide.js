@@ -19,6 +19,7 @@ seajs.use('./js/plug/swiper.jquery.min.js',function() {
             _indexIHeight.push(_indexPage.eq(i).outerHeight(true));
             return _indexIHeight;
         });
+
         oIndexPage.css({ 'height': _indexIHeight[0] + 'px' });
 
         var oIndexSwiper = oIndexPage.swiper({
@@ -32,7 +33,7 @@ seajs.use('./js/plug/swiper.jquery.min.js',function() {
                     case 3:name = '五谷干货';  break;
                     case 4:name = '酒茶饮品'; break;
                 }
-                return '<li class="Bflex1"><a>'+name+'</a></li>';
+                return '<li class="Bflex1 '+className+'"><a>'+name+'</a></li>';
             },
             onSlideChangeEnd: function (swiper) {
                 oIndexPage.css({ 'height': _indexIHeight[swiper.activeIndex] + 'px' });

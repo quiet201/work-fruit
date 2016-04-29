@@ -31,7 +31,7 @@ transform: rotate(-90deg);
 /*头部导航*/
 .header {position: absolute; top: 5rem; left: 0; width: 100%; z-index: 100;}
 .headerNav { width: 100%; margin-bottom: 1px; background: #fff; box-sizing: border-box;}
-.headerNav li {text-align: center; line-height:4rem; text-align: center;}
+.headerNav li {text-align: center; line-height:4rem; text-align: center; }
 .headerNav li a {display: block; width: 100%; }
 .headerNav li.active a {color: #ff0033; border-bottom: 2px solid #ff0033}
 
@@ -503,8 +503,10 @@ transform: rotate(-90deg);
 .silderBox {width: 100%;margin-top: 1px;  min-height: 12rem;}
 .silderBox img {display: block; width: 100%; height: 100%}
 
-.orderHead .swiper-pagination-bullet {width: auto; height: auto; display: block; border-radius: 0; opacity: 1; background: none;}
+.orderHead .swiper-pagination-bullet,
+.headerNav .swiper-pagination-bullet {width: auto; height: auto; display: block; border-radius: 0; opacity: 1; background: none;}
 .orderHead .swiper-pagination-bullet-active {color:#ff0033; border-bottom: 2px solid #ff0033}
+.headerNav .swiper-pagination-bullet-active a {color: #ff0033; border-bottom: 2px solid #ff0033;}
 
 /******************************* 公共样式 **********************************/
 /* 留言区域 */

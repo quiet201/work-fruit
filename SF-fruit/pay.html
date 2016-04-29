@@ -1,0 +1,88 @@
+<!doctype html>
+<html class="">
+<head>
+<meta charset="utf-8">
+<title>购物车-支付</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+<!-- 网站开启对web app程序的支持 -->
+<meta content="yes" name="apple-mobile-web-app-capable"></meta>
+<!--忽略将页面中的数字识别为电话号码。-->
+<meta name="format-detection" content="telephone=no" />
+<meta name="Author" content="顺丰速运科技有限公司" />
+<meta name="Keywords" content="顺丰速运" />
+<meta name="Description" content="顺丰速运科技有限公司" />
+
+<link rel="stylesheet" type="text/css" href="style/MobReset.css" >
+<link rel="stylesheet" type="text/css" href="style/style.css" >
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+<div class="wrap">
+    <section class="contain js_contain" style="top: 0; bottom: 6rem;">
+        <div class="conIScroll">
+            <!-- 购物车-支付列表 -->
+            <section class="carListBox">
+                <!-- 店家信息 -->
+                <section class="carListHead HBox BoxCenter">
+                    <div class="storeOwner Bflex1 storeArea HBox BoxCenter">
+                        <figure class="storeImg">
+                            <img src="image/storeImg.png">
+                        </figure>
+                        <div class="storeName Bflex1">
+                            <p>不二小姐</p>
+                        </div>
+                    </div>
+                    <div class="Bflex1">
+                        <p>共<i>2</i>件：<em>¥</em><span class="sumPrice">29.90</span></p>
+                    </div>
+                </section>
+                <!-- 对应宝贝 -->
+                <section class="carList js_carList">
+                    <ul>
+                        <li>
+                            <section class="HBox BoxCenter carListArea js_carListArea">
+                                <div class="Bflex1 HBox BoxCenter listBox">
+                                    <figure class="listImg">
+                                        <img src="image/goods1.jpg">
+                                    </figure>
+                                    <div class="Bflex1 listInfor priceArea">
+                                        <h4>新西兰阳光金奇异果</h4>
+                                        <p class="goodsWeight">规格：<span>尝鲜2斤装</span></p>
+                                        <p class="goodsPrice clearfix"><em class="fl">¥</em><span class="js_goodsPrice">29.90</span> X1</p>
+                                    </div>
+                                </div>
+                            </section>
+
+                        </li>
+
+                    </ul>
+                </section>
+            </section>
+
+        </div>
+    </section>
+    <!-- 底部 -->
+    <section class="footer allselet ">
+        <nav>
+            <ul class="HBox BoxCenter">
+                <li class="Bflex1 clearfix sumPriceBox">
+                    <span>合计:</span><em>¥</em><span class="sumPrice">299999.90</span>
+                </li>
+                <li class="btnPay"><a class="pay.html" href="">确认</a></li>
+            </ul>
+        </nav>
+    </section>
+    <div class="icoStyle  icon-arrow-up goTopIcon js_goTop" style="display: none"></div>
+</div>
+
+<script type="text/javascript" src="js/plug/sea/sea.min.js"></script>
+<script type="text/javascript" src="js/plug/jquery.min.js"></script>
+<script type="text/javascript">
+    seajs.use(['./js/global.js'],function() {});
+</script>
+</body>
+</html>
+
