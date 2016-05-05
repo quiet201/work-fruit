@@ -12,8 +12,8 @@
 <meta name="Keywords" content="顺丰速运" />
 <meta name="Description" content="顺丰速运科技有限公司" />
 
-<link rel="stylesheet" type="text/css" href="style/MobReset.css" >
-<link rel="stylesheet" type="text/css" href="style/style.css" >
+<link rel="stylesheet" type="text/css" href="static/v1/style/MobReset.css" >
+<link rel="stylesheet" type="text/css" href="static/v1/style/style.css" >
 <style type="text/css">
 
 </style>
@@ -25,9 +25,14 @@
         <section class="applyPage">
             <div class="appState">
                 <div class="appStateH HBox BoxCenter">
-                    <div class="Bflex1 icon-applyIng iconSize"></div>
+                    <div class="Bflex1 icon-servicing iconSize"></div>
                     <div class="Bflex1">
                         <h5>商家已处理您的售后申请</h5>
+                        <h5 style="display: none">您的售后申请已取消</h5>
+                        <h5 style="display: none">已成功提交售后申请</h5>
+                        <h5 style="display: none">客服介入申请已取消</h5>
+                        <h5 style="display: none">已提交客服介入申请</h5>
+                        <h5 style="display: none">平台客服已处理您的申请</h5>
                         <p class="result" >处理结果：
                             <!-- 用户自己申请结果 -->
                             <span style="display: none1">驳回申请，不退款<span class="explain">（已沟通完成，不需要进行退款了）</span></span>
@@ -42,19 +47,33 @@
 
                     </div>
                 </div>
-                <div class="appStateM HBox BoxCenter" >
-                    <a class="Bflex1 btnStyle " href="#">联系商家</a>
-                    <a class="Bflex1 btnStyle btn_BgOrg" href="#">取消申请</a>
-                    <a class="Bflex1 btnStyle btn_BgOrg" href="#" style="display: none">客服介入中</a>
-                    <a class="Bflex1 btnStyle btn_BgOrg" href="apply_service.html" style="display: none">客服介入</a>
+                <div class="appStateM clearfix js_cBossA" >
+                    <a class="fl btnStyle js_contactBoss" >联系商家</a>
+                    <a class="fl btnStyle btn_Bgred js_cancelApply" >取消申请</a>
+                    <a class="fl btnStyle btn_Bgred" href="apply_index.html" style="display: none">重新申请</a>
+                    <a class="fl btnStyle btn_Bgred" href="#" style="display: none">客服介入中</a>
+                    <a class="fl btnStyle btn_Bgred" href="apply_service.html" style="display: none1">客服介入</a>
                 </div>
+                <!-- 店家联系方式 -->
+                <section class="bossInfo js_bossInfo"  style="display: none">
+                    <section class="serviceInfo" style="margin: -12px 0;">
+                        <h3 style="display: none">联系商家</h3>
+                        <p class="clearfix border_bot">
+                            <a class="fl num" href="tel:0755-83867555"><em class="icon-Tel"></em>0755-83867555</a>
+                            <a class="fr btnA" href="tel:0755-83867555">联系客服</a>
+                        </p>
+                        <p class="clearfix">
+                            <em class="icon-WX" style="color: #09B911"></em><span>Kimvitor 009</span>
+                        </p>
+                    </section>
+                </section>
                 <div class="appStateF">
                     <!-- 2个类别提示 -->
                     <div>
                         <p class="color_hui">退款进度</p>
                         <p>平台客服将在3个工作日内进行退款</p>
-                        <p class="color_org">平台客服已经完成退款<span class="color_hui">(款项退回到原支付账号)</span></p>
-                        <p>退款金额 <span class="color_red">¥29.90</span></p>
+                        <p class="color_red">平台客服已经完成退款<span class="color_hui">(款项退回到原支付账号)</span></p>
+                        <p>退款金额 <span class="color_red">￥29.90</span></p>
                     </div>
 
                     <div>
@@ -72,12 +91,12 @@
                     <p class="HBox BoxCenter"><span class="name">收货状态：</span><span class="Bflex1">已收到商品</span></p>
                     <p class="HBox BoxCenter"><span class="name">售后原因：</span><span class="Bflex1">未收到货</span></p>
                     <p class="HBox BoxCenter"><span class="name">售后说明：</span><span class="Bflex1">8天了还不发货</span></p>
-                    <p class="HBox BoxCenter">
+                    <p class="HBox ">
                         <span class="name">售后凭证：</span>
                         <span class="Bflex1">
-                            <img src="image/goods1.jpg">
-                            <img src="image/goods1.jpg">
-                            <img src="image/goods1.jpg">
+                            <img src="static/v1/image/goods1.jpg">
+                            <img src="static/v1/image/goods1.jpg">
+                            <img src="static/v1/image/goods1.jpg">
                         </span>
                     </p>
                     <p class="HBox BoxCenter"><span class="name">退款编号：</span><span class="Bflex1">20161235664</span></p>
@@ -90,10 +109,12 @@
     </div>
 </div>
 
-<script type="text/javascript" src="js/plug/jquery.min.js"></script>
+<script type="text/javascript" src="static/v1/js/plug/sea/sea.min.js"></script>
+<script type="text/javascript" src="static/v1/js/plug/jquery.min.js"></script>
 <script type="text/javascript">
-
+    seajs.use(['./static/v1/js/global.js'],function() {});
 </script>
+
 </body>
 </html>
 

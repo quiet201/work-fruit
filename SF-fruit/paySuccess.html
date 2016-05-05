@@ -12,8 +12,8 @@
 <meta name="Keywords" content="顺丰速运" />
 <meta name="Description" content="顺丰速运科技有限公司" />
 
-<link rel="stylesheet" type="text/css" href="style/MobReset.css" >
-<link rel="stylesheet" type="text/css" href="style/style.css" >
+<link rel="stylesheet" type="text/css" href="static/v1/style/MobReset.css" >
+<link rel="stylesheet" type="text/css" href="static/v1/style/style.css" >
 <style type="text/css">
 
 </style>
@@ -21,13 +21,13 @@
 </head>
 <body>
 <div class="wrap">
-    <section class="contain js_contain" style="top: 0;" >
+    <section class="contain js_contain" >
         <div class="conIScroll">
             <section class="successTip">
                 <div class="HBox BoxCenter">
                     <div class="icon-OK"></div>
                     <div class="Bflex1 txtInfo">
-                        <p class="color_org">订单支付成功</p>
+                        <p class="color_red">订单支付成功</p>
                         <span>商家将尽快为您发货</span>
                     </div>
                 </div>
@@ -48,65 +48,69 @@
             <!-- 商家其他产品 -->
             <section class="goodsShow">
                 <div class="goodsTitle">
-                    <h3><em></em><i class="icon-gift"></i><span>你可能还想要</span><em></em></h3>
+                    <h3><em></em><span>该商家其他商品</span><em></em></h3>
                 </div>
-                <div class="goodsList clearfix recommendList js_recommendList">
+                <div class="goodsList clearfix recommendList js_goodsList">
                     <ul>
                         <li class="picList">
                             <a href="goodsDetail.html">
                                 <figure>
-                                    <img src="image/loadImg.png">
+                                    <img src="static/v1/image/loadImg.png">
+                                    <i class="tip-hot"></i>
                                 </figure>
                                 <aside class="priceArea">
                                     <h4>智利进口蓝莓智利进口蓝莓智利进口蓝莓智利进口蓝莓</h4>
                                     <p class="clearfix">
-                                        <i>¥</i><span class="goodsPrice">29.00</span><span class="goodsWeight">/2500g</span>
+                                        <i>￥</i><span class="goodsPrice">29.00</span><span class="goodsWeight">/2500g</span>
                                     </p>
                                 </aside>
                             </a>
-                            <p class="addCar js_addCar"><em class="icon-MyShopCar"><i class="">+</i></em></p>
+                            <p class="addCar js_addCar"><em class="icon-MyShopCar"><i class="addIcon"></i></em></p>
                         </li>
                         <li class="picList">
                             <a href="goodsDetail.html">
                                 <figure>
-                                    <img src="image/goods.jpg">
+                                    <img src="static/v1/image/goods.jpg">
+                                    <i class="tip-new"></i>
                                 </figure>
                                 <aside class="priceArea">
                                     <h4>智利进口蓝莓智利进口蓝莓智利进口蓝莓智利进口蓝莓</h4>
                                     <p class="clearfix">
-                                        <i>¥</i><span class="goodsPrice">29.00</span><span class="goodsWeight">/2500g</span>
+                                        <i>￥</i><span class="goodsPrice">29.00</span><span class="goodsWeight">/2500g</span>
                                     </p>
                                 </aside>
                             </a>
-                            <p class="addCar js_addCar"><em class="icon-MyShopCar"><i class="">+</i></em></p>
+                            <p class="addCar js_addCar"><em class="icon-MyShopCar"><i class="addIcon"></i></em></p>
                         </li>
                         <li class="picList">
                             <a href="goodsDetail.html">
                                 <figure>
-                                    <img src="image/goods.jpg">
+                                    <img src="static/v1/image/goods.jpg">
+                                    <i class="tip-give"></i>
                                 </figure>
                                 <aside class="priceArea">
                                     <h4>智利进口蓝莓智利进口蓝莓智利进口蓝莓智利进口蓝莓</h4>
                                     <p class="clearfix">
-                                        <i>¥</i><span class="goodsPrice">29.00</span><span class="goodsWeight">/2500g</span>
+                                        <i>￥</i><span class="goodsPrice">29.00</span><span class="goodsWeight">/2500g</span>
                                     </p>
                                 </aside>
                             </a>
-                            <p class="addCar js_addCar"><em class="icon-MyShopCar"><i class="">+</i></em></p>
+                            <p class="addCar js_addCar"><em class="icon-MyShopCar"><i class="addIcon"></i></em></p>
                         </li>
                         <li class="picList">
                             <a href="goodsDetail.html">
                                 <figure>
-                                    <img src="image/goods.jpg">
+                                    <img src="static/v1/image/goods.jpg">
+                                    <i class="tip-timeAct timeAct"></i>
                                 </figure>
                                 <aside class="priceArea">
                                     <h4>智利进口蓝莓智利进口蓝莓智利进口蓝莓智利进口蓝莓</h4>
                                     <p class="clearfix">
-                                        <i>¥</i><span class="goodsPrice">29.00</span><span class="goodsWeight">/2500g</span>
+                                        <i>￥</i><span class="goodsPrice">29.00</span><span class="goodsWeight">/2500g</span>
                                     </p>
                                 </aside>
                             </a>
-                            <p class="addCar js_addCar"><em class="icon-MyShopCar"><i class="">+</i></em></p>
+                            <p class="addCar js_addCar"><em class="icon-MyShopCar"><i class="addIcon"></i></em></p>
                         </li>
                     </ul>
                 </div>
@@ -118,19 +122,20 @@
         <nav>
             <ul class="HBox">
                 <li class="Bflex1"><a href="myOrder.html"><em class="icoStyle  icon-MyOrder"></em><span>我的订单</span></a><i class="splitline"></i></li>
-                <li class="Bflex1"><a href="shopCar.html"><em class="icoStyle icon-MyShopCar"><i class="userNum">100</i></em><span>购物车</span></a></li>
+                <li class="Bflex1"><a href="shopCar.html"><em class="icoStyle icon-MyShopCar"><i class="userNum js_userNum myanimated">100</i></em><span>购物车</span></a></li>
             </ul>
         </nav>
     </section>
     <div class="moveIcon MAnimate js_moveIcon">1</div>
+    <div class="icoStyle  icon-arrow-up goTopIcon js_goTop" style="display: none"></div>
 </div>
 
 
 
-<script type="text/javascript" src="js/plug/sea/sea.min.js"></script>
-<script type="text/javascript" src="js/plug/jquery.min.js"></script>
+<script type="text/javascript" src="static/v1/js/plug/sea/sea.min.js"></script>
+<script type="text/javascript" src="static/v1/js/plug/jquery.min.js"></script>
 <script type="text/javascript">
-    seajs.use(['./js/global.js'],function() {
+    seajs.use(['./static/v1/js/global.js'],function() {
 
     });
 </script>

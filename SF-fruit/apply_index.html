@@ -12,8 +12,8 @@
 <meta name="Keywords" content="顺丰速运" />
 <meta name="Description" content="顺丰速运科技有限公司" />
 
-<link rel="stylesheet" type="text/css" href="style/MobReset.css" >
-<link rel="stylesheet" type="text/css" href="style/style.css" >
+<link rel="stylesheet" type="text/css" href="static/v1/style/MobReset.css" >
+<link rel="stylesheet" type="text/css" href="static/v1/style/style.css" >
 <style type="text/css">
 
 </style>
@@ -26,11 +26,11 @@
             <div class="applyTitle">
                 <h4>收货状态</h4>
                 <section class="HBox BoxCenter">
-                    <p class="Bflex1">
+                    <p class="Bflex1 js_goodsStats">
                         <span class="checkBox icon-rightIcon js_checkBox active "></span>
                         <span>已收到商品</span>
                     </p>
-                    <p class="Bflex1">
+                    <p class="Bflex1 js_goodsStats">
                         <span class="checkBox icon-rightIcon js_checkBox "></span>
                         <span>未收到商品</span>
                     </p>
@@ -39,7 +39,7 @@
 
             <div class="applyTitle">
                 <h4>售后原因</h4>
-                <section class="reasonList">
+                <section class="reasonList js_reasonList">
                      <ul class="clearfix">
                          <li class="active">收到商品破损</li>
                          <li>商品错发/漏发</li>
@@ -60,10 +60,29 @@
 
             <div class="applyTitle">
                 <h4>上传凭证<span>（最多3张）</span></h4>
-                <section class="photoList">
+                <section class="photoList js_photoList">
                     <ul class="clearfix">
-                        <li>+</li>
-                        <li>-</li>
+                        <li>
+                            <section class="addPhotoBox js_addPhotoBox">
+                                <label class="js_upLoadBtn" for="fileImg1">+</label>
+                                <input id="fileImg1" class="js_file" type="file"></input>
+                            </section>
+                            <figure class="UpImgBox js_view" style="display: none"><img ><span class="delBtn btn_Bgred js_delBtn">-</span></figure>
+                        </li>
+                        <li>
+                            <section class="addPhotoBox js_addPhotoBox">
+                                <label class="js_upLoadBtn" for="fileImg2">+</label>
+                                <input id="fileImg2" class="js_file" type="file"></input>
+                            </section>
+                            <figure class="UpImgBox js_view" style="display: none"><img ><span class="delBtn btn_Bgred js_delBtn">-</span></figure>
+                        </li>
+                        <li>
+                            <section class="addPhotoBox js_addPhotoBox">
+                                <label class="js_upLoadBtn" for="fileImg3">+</label>
+                                <input id="fileImg3" class="js_file" type="file"></input>
+                            </section>
+                            <figure class="UpImgBox js_view" style="display: none"><img ><span class="delBtn btn_Bgred js_delBtn">-</span></figure>
+                        </li>
                     </ul>
                 </section>
             </div>
@@ -71,17 +90,42 @@
         </section>
 
     </div>
+
+
+
+
     <!-- 底部 -->
     <section class="footer applyBtn">
-        <p class="btnBox"><a class="btnStyle btn_BgOrg" href="apply_state.html">提交申请</a></p>
+        <p class="btnBox"><a class="btnStyle btn_Bgred" href="apply_state.html">提交申请</a></p>
     </section>
     <div class="icoStyle  icon-arrow-up goTopIcon js_goTop" style="display: none"></div>
 </div>
 
-<script type="text/javascript" src="js/plug/sea/sea.min.js"></script>
-<script type="text/javascript" src="js/plug/jquery.min.js"></script>
+<div class="ClipBox js_ClipBox" style="display: none">
+    <div class="clipArea js_clipArea" style="display: none">
+       <p class="clearfix">
+            <a class="fl btnStyle btn_Bgbai js_cancelBtn">取消</a>
+            <a class="fr btnStyle btn_Bgred js_clipBtn">确定</a>
+       </p>
+    </div>
+    <div class="clipArea js_clipArea" style="display: none">
+       <p class="clearfix">
+            <a class="fl btnStyle btn_Bgbai js_cancelBtn">取消</a>
+            <a class="fr btnStyle btn_Bgred js_clipBtn">确定</a>
+       </p>
+    </div>
+    <div class="clipArea js_clipArea" style="display: none">
+       <p class="clearfix">
+            <a class="fl btnStyle btn_Bgbai js_cancelBtn">取消</a>
+            <a class="fr btnStyle btn_Bgred js_clipBtn">确定</a>
+       </p>
+    </div>
+</div>
+
+<script type="text/javascript" src="static/v1/js/plug/sea/sea.min.js"></script>
+<script type="text/javascript" src="static/v1/js/plug/jquery.min.js"></script>
 <script type="text/javascript">
-    seajs.use(['./js/global.js'],function() {});
+    seajs.use(['./static/v1/js/clip.js'],function() {});
 </script>
 </body>
 </html>

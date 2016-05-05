@@ -12,8 +12,8 @@
 <meta name="Keywords" content="顺丰速运" />
 <meta name="Description" content="顺丰速运科技有限公司" />
 
-<link rel="stylesheet" type="text/css" href="style/MobReset.css" >
-<link rel="stylesheet" type="text/css" href="style/style.css" >
+<link rel="stylesheet" type="text/css" href="static/v1/style/MobReset.css" >
+<link rel="stylesheet" type="text/css" href="static/v1/style/style.css" >
 <style type="text/css">
 </style>
 
@@ -23,9 +23,9 @@
     <section class="contain " style="top: 0;">
         <!-- 地址选择 -->
         <div class="addrBox seletAddrBox  " style="display: none1;">
-            <div class="addrDetail border_bot">
+            <div class="addrDetail border_bot seletAddr">
                 <p class="indexAddr clearfix"><span>张三丰</span><span class="fr">15232458795</span></p>
-                <p class="seletAddr js_tipDefault">
+                <p class="js_tipDefault">
                     <span><span class="default">[默认]</span>广东省深圳市南山区桂庙路口公园香水公寓5座3楼16室</span>
                 </p>
             </div>
@@ -38,9 +38,9 @@
 
         <!-- 地址选择 -->
         <div class="addrBox seletAddrBox  " style="display: none1;">
-            <div class="addrDetail border_bot">
+            <div class="addrDetail border_bot seletAddr">
                 <p class="indexAddr clearfix"><span>张三丰</span><span class="fr">15232458795</span></p>
-                <p class="seletAddr js_tipDefault">
+                <p class="js_tipDefault">
                     <span><span class="default"></span>广东省深圳市南山区桂庙路口公园香水公寓5座3楼16室</span>
                 </p>
             </div>
@@ -53,9 +53,9 @@
 
         <!-- 地址选择 -->
         <div class="addrBox seletAddrBox  " style="display: none1;">
-            <div class="addrDetail border_bot">
+            <div class="addrDetail border_bot seletAddr">
                 <p class="indexAddr clearfix"><span>张三丰</span><span class="fr">15232458795</span></p>
-                <p class="seletAddr js_tipDefault">
+                <p class="js_tipDefault">
                     <span><span class="default"></span>广东省深圳市南山区桂庙路口公园香水公寓5座3楼16室</span>
                 </p>
             </div>
@@ -72,14 +72,14 @@
         <nav>
             <ul class="HBox">
                 <li class="Bflex1"><a class="btnStyle" href="address_edit.html"><em class="icoStyle">+</em><span>新建地址</span></a> </li>
-                <li class="Bflex1"><a class="btnStyle btn_BgOrg" href="#"> <span>使用淘宝地址</span></a></li>
+                <li class="Bflex1"><a class="btnStyle btn_Bgred" href="#"> <span>使用淘宝地址</span></a></li>
             </ul>
         </nav>
     </section>
 </div>
 
-<script type="text/javascript" src="js/plug/sea/sea.min.js"></script>
-<script type="text/javascript" src="js/plug/jquery.min.js"></script>
+
+<script type="text/javascript" src="static/v1/js/plug/jquery.min.js"></script>
 <script type="text/javascript">
     //seajs.use(['./js/global.js'],function() {});
 
@@ -90,7 +90,7 @@ $(function() {
     oDefaultBtn.on('click',function() {
         var index = oDefaultBtn.index(this);
         oDefaultBtn.find('.checkBox').removeClass('active').eq(index).addClass('active');
-        oTipDefault.find('.default').text('').eq(index).text(_tip)
+        oTipDefault.find('.default').text('').eq(index).text(_tip);
     });
 
 });

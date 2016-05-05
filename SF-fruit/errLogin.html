@@ -2,7 +2,7 @@
 <html class="">
 <head>
 <meta charset="utf-8">
-<title>页面丢失</title>
+<title>登录失效</title>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
 <!-- 网站开启对web app程序的支持 -->
 <meta content="yes" name="apple-mobile-web-app-capable"></meta>
@@ -22,20 +22,35 @@
 <body >
 <div class="wrap">
     <section class="contain containAbs containAll" >
-        <div class="errIcon icon-unGoods zoomIn animated">
-
-        </div>
-        <div class="errText">
-            <h2>对不起，页面找不到</h2>
-            <p></p>
-            <p class="tip">其他地方逛逛</p>
+        <div class="errIcon icon-person flipInX animated"></div>
+        <div class="errText" style="bottom: 16%;">
+            <h2>登录失效！</h2>
+            <p>请重新打开</p>
+            <p class="tip"><span id="timer">3</span>秒后自动跳转到首页</p>
             <a href="index.html">返回首页</a>
         </div>
     </section>
     <div class="icoStyle  icon-arrow-up goTopIcon js_goTop" style="display: none"></div>
 </div>
 <script type="text/javascript">
+    window.onload = function() {
+        var times = null;
+        var iNow = 3;
+        var oTime = document.getElementById('timer');
+        clearInterval(times);
+        setInterval(function() {
+            if(iNow < 2) {
+                clearInterval(times);
+                window.location.href = "index.html";
+            }
+            else {
+                iNow--;
+                oTime.innerHTML = iNow;
+            }
+        },1000);
 
+
+    };
 </script>
 </body>
 </html>

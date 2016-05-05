@@ -1,0 +1,100 @@
+<!doctype html>
+<html class="">
+<head>
+<meta charset="utf-8">
+<title>物流详情</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+<!-- 网站开启对web app程序的支持 -->
+<meta content="yes" name="apple-mobile-web-app-capable"></meta>
+<!--忽略将页面中的数字识别为电话号码。-->
+<meta name="format-detection" content="telephone=no" />
+<meta name="Author" content="顺丰速运科技有限公司" />
+<meta name="Keywords" content="顺丰速运" />
+<meta name="Description" content="顺丰速运科技有限公司" />
+
+<link rel="stylesheet" type="text/css" href="static/v1/style/MobReset.css" >
+<link rel="stylesheet" type="text/css" href="static/v1/style/style.css" >
+<link rel="stylesheet" type="text/css" href="static/v1/style/animate.min.css" >
+<style type="text/css">
+</style>
+
+</head>
+<body >
+<div class="wrap">
+    <section class="contain containAll" >
+        <!-- 物流信息 -->
+        <section class="expressNumBox clearfix">
+            <p class="expressLogo fl"><img src="static/v1/image/expressLogo.png"></p>
+            <span class="expressNum fr">1204 3221 3467</span>
+        </section>
+        <section class="expressDetail">
+            <h3>物流详情</h3>
+            <section class="timeLine" style="display: none;">
+                <div class="expressList">
+                    <aside class="markLine js_markLine"></aside>
+                    <div class="ListInfo js_listInfo">
+                        <p>已签收，感谢使用顺丰，期待再次为您服务</p>
+                        <span class="times">2015-04-07 16:57:00</span>
+                        <span class="markTip js_markTip"></span>
+                    </div>
+                    <div class="ListInfo js_listInfo" style="display: none1">
+                        <p>正在派送途中，请您准备签收（派件员:吴晓斌，电话:18307551234）</p>
+                        <span class="times">2015-04-07 16:57:00</span>
+                        <span class="markTip js_markTip"></span>
+                    </div>
+                    <div class="ListInfo js_listInfo">
+                        <p>快件在【深圳总集散中心】，正转运至【深圳彩田中心】</p>
+                        <span class="times">2015-04-07 16:57:00</span>
+                        <span class="markTip js_markTip"></span>
+                    </div>
+                    <div class="ListInfo js_listInfo">
+                        <p>快件在【北京总集散中心】，正转运至【深圳总集散中心】</p>
+                        <span class="times">2015-04-07 16:57:00</span>
+                        <span class="markTip js_markTip"></span>
+                    </div>
+                    <div class="ListInfo js_listInfo">
+                        <p>顺丰速运 已收件 </p>
+                        <span class="times" style="border:0">2015-04-07 16:57:00</span>
+                        <span class="markTip js_markTip"></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 物流为空 -->
+            <section class="emptyExpress" style="display: none1;">
+                <div class="errIcon icon-unGoods jello animated" style="">
+
+                </div>
+                <div class="errText">
+                    <h2>暂无物流信息</h2>
+                    <p></p>
+                    <p class="tip">稍候再来查看</p>
+                    <a href="index.html">返回首页</a>
+                </div>
+            </section>
+        </section>
+
+
+    </section>
+
+</div>
+<script type="text/javascript" src="static/v1/js/plug/jquery.min.js"></script>
+<script type="text/javascript">
+$(function () {
+    var oListInfo = $('.js_listInfo');
+    var oLastList = oListInfo.eq(oListInfo.length-1);
+    var oMarkLine = $('.js_markLine');
+    var oMarkTip = $('.js_markTip');
+    var _H = oLastList.outerHeight(true);
+    var _disH = 18;
+    // 计算线条高度
+    oMarkLine.css({'bottom':_H - _disH});
+    // 第一个加标记
+    oMarkTip.eq(0).addClass('active');
+    oListInfo.eq(0).find('p').addClass('color_red');
+
+});
+</script>
+</body>
+</html>
+
