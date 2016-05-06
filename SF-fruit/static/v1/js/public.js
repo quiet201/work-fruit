@@ -4,15 +4,11 @@ define(function(require,exports,module) {
     function AddCarAnimate(_X,_Y,target,sLeft,sTop, callBack) {
         // obj.hammer().on('tap',function(e) {
             //console.log(e);
-            var time = null;
-            var time1 = null;
-            target.removeClass('myRotateFast');
-            // var _X = e.clientX;
-            // var _Y = e.clientY;
             // var _X = e.gesture.center.x;
             // var _Y = e.gesture.center.y;
-            target.css({ 'left':_X,'top':_Y, 'opacity':1})
-
+            var time = null;
+            target.removeClass('myRotateFast');
+            target.css({ 'left':_X,'top':_Y, 'opacity':1});
             clearTimeout(time);
             time = setTimeout(function() {
                 target.addClass('myRotateFast').stop().animate({'left':_X,'top':_Y-50, 'opacity':1},300,function() {

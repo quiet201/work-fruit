@@ -96,8 +96,8 @@ body {background: #F5F5F5;}
 .picList {box-sizing: border-box; float: left; width: 50%; padding:1px;  position: relative; border-width: 1px; border-style: solid; border-color: transparent; border-right-color: #dfdfdf;  border-bottom-color:#dfdfdf; background: #fff;  z-index: 0;}
 .picList:nth-child(2n) {border-right-color:transparent;}
 .picList a {height: 100%; display: block;}
-.picList figure {/*max-height: 20rem; max-width: 20rem;*/ box-sizing: border-box; /*padding: 2.4rem 0 1.5rem;*/ background:url(../image/loadImg.png) no-repeat center center; background-size:contain;  margin: 0 auto; position: relative;}
-.picList figure i {position: absolute; height: 3rem; width: 4rem; left: -2px; top: -5px; z-index: 5;}
+.picList figure {/*max-height: 20rem; max-width: 20rem;*/ box-sizing: border-box;  background:url(../image/loadImg.png) no-repeat center center; background-size:contain;  margin: 0 auto; position: relative; padding: 10px;}
+.picList figure i {position: absolute; height: 3rem; width: 4rem; left: 2px; top: -5px; z-index: 5;}
 .picList figure .timeAct { width: 9rem;}
 .picList img {display: block; width: 100%; height: 100%; }
 .picList .priceArea {padding:1rem 0.8rem; font-size: 1.6rem}
@@ -151,7 +151,7 @@ body {background: #F5F5F5;}
 .bossInfo {position: absolute; left: 0; top: 0; z-index: -10; box-sizing: border-box; width: 100%;}
 .serviceInfo {background: transparent;  color: #666666; }
 .serviceInfo h3 {font-weight: 100; font-size: 1.6rem;}
-.serviceInfo p {line-height: 2.5rem; padding: 0.5rem 0;  text-align: left;}
+.serviceInfo p {line-height: 2.8rem; padding: 0.5rem 0;  text-align: left;}
 .serviceInfo p a {width: auto;}
 .serviceInfo p em {margin-right: 0.8rem; color: #ff0033; font-size: 18px; vertical-align: middle;}
 .serviceInfo p span {margin-left: 2px;}
@@ -335,7 +335,7 @@ body {background: #F5F5F5;}
 .orderHead { background: #fff; margin-bottom: 1rem; padding-top:1rem; position: fixed; top: 0; left: 0; width: 100%; z-index: 100;}
 .orderHead .icoStyle {text-align: center; font-size: 24px; position: relative; height: auto; width: auto; display: block; vertical-align: initial; margin: 0 0.2rem; border-bottom: 2px solid transparent; box-sizing: border-box; }
 .orderHead .icoStyle.icon-WaitGet {font-size: 30px;}
-.orderHead .icoStyle i {font-size: 12px; background: #ff0033; border-radius: 50%; text-align: center; position: absolute; left: 55%; top: -1px; color: #fff; height: 15px; width: 15px; line-height: 15px; white-space:nowrap;text-overflow:ellipsis; overflow:hidden;}
+.orderHead .icoStyle i {font-size: 12px; background: #fff;  border: 1px solid #ff0033; border-radius: 50%; text-align: center; position: absolute; left: 55%; top: -4px; color: #ff0033; height: 15px; width: 15px; line-height: 15px; white-space:nowrap;text-overflow:ellipsis; overflow:hidden;}
 
 .orderHead .icoStyle span {display: block; font-size: 13px; line-height: 3rem; color: #666666; font-family: 'Microsoft YaHei';}
 .orderHead .swiper-pagination-bullet-active span {color:#ff0033;}
@@ -498,10 +498,10 @@ body {background: #F5F5F5;}
 .userAddrInfo textarea {height: 55px;  }
 
 /* 地址栏底部 */
-.addrFoot {}
-.addrFoot li a {margin:0.5rem 1.5rem;  padding: 0.3rem 0;}
-.addrFoot li a em {color:#252525; margin-right: 0; line-height: 1.8rem;}
-.addrFoot li a span {height: 3rem; line-height: 3rem; font-size: 15px;}
+.addrFoot li { padding: 10px 0; font-size: 16px;}
+.addrFoot li a {margin:0 auto;    height: 40px; width: 136px;}
+.addrFoot li a em {color:#252525; margin-right: 0; line-height: 16px;}
+.addrFoot li a span {height: 40px; line-height: 36px;   }
 
 /* 地址栏操作 */
 .seletAddrBox .seletAddr { overflow:  hidden; padding-bottom: 1rem;}
@@ -589,7 +589,7 @@ body {background: #F5F5F5;}
 .border_bot {border-bottom: 1px solid #dfdfdf;}
 
 /*购物车数量统计*/
-.userNum {right: -12px; top: -8px; height: 18px; width: 18px; background: #ff0033; border-radius: 50%; color: #fff; font-size: 12px; line-height: 18px; white-space:nowrap;text-overflow:ellipsis; overflow: hidden; text-align: center;  font-family: 'Microsoft YaHei'; }
+.userNum {right: -12px; top: -8px; height: 18px; width: 18px; background: #fff; border:1px solid #ff0033; border-radius: 50%; color: #ff0033; font-size: 12px; line-height: 18px; white-space:nowrap;text-overflow:ellipsis; overflow: hidden; text-align: center;  font-family: 'Microsoft YaHei'; }
 
 /*加入购物车动画标记*/
 .moveIcon {height: 24px; width: 24px;  position: fixed; top: 95%; left: 74%;  z-index: 10; color: #fff; line-height: 24px; text-align: center; opacity: 0; font-size: 12px;  background:url(../image/moveIcon.png) no-repeat; background-size: contain; }

@@ -94,6 +94,10 @@ seajs.use(['hammer','layer','public'], function(myHam,myLay,myPub) {
 
         });
 
+
+
+
+
         function addFixed () {
             var _scrollTop = $(window).scrollTop();
             var _time = null;
@@ -454,52 +458,40 @@ seajs.use(['hammer','layer','public'], function(myHam,myLay,myPub) {
         var oShopCarTip = $('.js_userNum');
         var clearTime;
         var oGoodsList = $('.js_goodsList');
+        var dbTapOff = true;
         oGoodsList.hammer().on('tap',function(e) {
-            console.log(e)
-            var _tags = e.gesture.target.offsetParent;
-            var _tagsP = e.gesture.target.offsetParent;
+            //console.log(e)
+            if(dbTapOff) { //阻止多次点击 true 可点击
+                dbTapOff = false;
+                var _tags = e.gesture.target.offsetParent;
+                var _tagsParent = $(_tags);
+                var _X = e.gesture.center.x;
+                var _Y = e.gesture.center.y;
+                //console.log(_tagsParent.parents('.picList').find('h4').text());
+                //console.log(_tagsParent.parents('li').find('.js_addCar').attr('_id'));
+                console.log(_tagsParent.parents('li').index());
+                if(_tags.nodeName.toLowerCase() == 'p' || _tags.nodeName.toLowerCase() == 'em') {
+                    var aLi = $(this).find('.js_addCar');
+                    var sLeft;
+                    if(oFooter.find('li').length<=2) {
+                        sLeft = "70%";
+                    }
+                    else {
+                        sLeft = "30%";
+                    }
+                    myPub.AddCarAnimate(_X,_Y,oMoveIcon,sLeft,"94%",function() {
+                            oShopCarTip.addClass('mybounceIn');
+                            clearTimeout(clearTime);
+                            clearTime = setTimeout(function() {
+                                oShopCarTip.removeClass('mybounceIn');
 
-            var _X = e.gesture.center.x;
-            var _Y = e.gesture.center.y;
-            if(_tags.nodeName.toLowerCase() || _tags.offsetParent.nodeName.toLowerCase() == 'p') {
 
-            //console.log($(_tagsP).index(oGoodsList.find('.js_addCar')))
-            var aLi = $(this).find('.js_addCar');
-
-            console.log(_tags)
-            var index;
-             for(var i=0;i<aLi.length;i++) if(aLi[i].nodeName.toLowerCase()===_tags)index=i;
-             if(index>=0)alert('我的下标是第'+index+'个');
-
-
-
-
-
-                if(oFooter.find('li').length<=2) {
-                    myPub.AddCarAnimate(_X,_Y,oMoveIcon,"70%","94%",function() {
-                        //mybounceIn
-                        oShopCarTip.addClass('mybounceIn');
-                        clearTimeout(clearTime);
-                        clearTime = setTimeout(function() {
-                            oShopCarTip.removeClass('mybounceIn');
-                        },800);
-                    });
+                                dbTapOff = true;
+                            },800);
+                        });
+                    myPub.HamstopPropaga();
                 }
-                else {
-                    myPub.AddCarAnimate(_X,_Y,oMoveIcon,"30%","94%",function() {
-
-                        oShopCarTip.addClass('mybounceIn');
-                        clearTimeout(clearTime);
-                        clearTime = setTimeout(function() {
-                            oShopCarTip.removeClass('mybounceIn');
-                        },800);
-                    });
-                }
-                myPub.HamstopPropaga();
             }
-
-            //myPub.HamstopPropaga();
-
         });
 
 

@@ -21,10 +21,19 @@ seajs.use('./static/v1/js/plug/swiper.jquery.min.js',function() {
         //     return _indexIHeight;
         // });
         //oIndexPage.css({ 'height': _indexIHeight[0] + 'px' });
-        var _indexIHeight;
         var _indexPage = oIndexPage.find('.js_listSlide');
         var _indexIHeight = _indexPage.eq(0).outerHeight(true);
         var _indexLiH = oGoodsList.eq(0).find('li').eq(0).outerHeight(true);
+        var slideHeight;
+        var _sIndex = 0;
+        var swiperOff = [true,true,true,true,true];
+
+        var nCount = [5,5,5,5,5];
+        var IndexPage = [1,1,1,1,1];
+        var indexH = [];
+        var _html = _indexPage.eq(0).find('ul').html()
+
+
         var oIndexSwiper = oIndexPage.swiper({
             pagination: oIndexNav[0],
             paginationClickable: true,
@@ -39,16 +48,85 @@ seajs.use('./static/v1/js/plug/swiper.jquery.min.js',function() {
                 return '<li class="Bflex1 '+className+'"><a>'+name+'</a></li>';
             },
             onSlideChangeEnd: function (swiper) {
-                if(swiper.activeIndex !== 0) {
-                    oIndexPage.css({ 'height': _indexLiH*2 + 'px' });
+                //_indexPage.hide().eq(swiper.activeIndex).show();
+                _sIndex = swiper.activeIndex;
+                if(_sIndex !== 0) {
+                    if(swiperOff[_sIndex]) {
+                        slideHeight = _indexLiH*2
+                    }
+                    else {
+                        slideHeight = indexH[_sIndex];
+                    }
+
                 }
                 else {
-                    oIndexPage.css({ 'height': _indexIHeight + 'px' });
+                    slideHeight = _indexIHeight
                 }
-
+                oIndexPage.css({ 'height':slideHeight + 'px' });
                 $(window).scrollTop(0);
+                return _sIndex;
             }
         });
+
+
+        $(window).on('scroll',function() {
+            if(_sIndex !== 0) {
+                swiperOff[_sIndex] = false
+                indexH[_sIndex] = oIndexPage.outerHeight(true);
+                throttleIndex(IndexScrollData,window);
+            }
+        });
+
+
+
+
+    function IndexScrollData() {
+        var scrollTop = $(window).scrollTop();
+        var windowHeight = $(window).height();
+        var scrollHeight = $(document).height();
+
+        if (scrollTop + windowHeight >= scrollHeight - 150) {
+            //页面加载 大于总数/单页的值时 停止加载
+
+            if (IndexPage[_sIndex] >= nCount[_sIndex]) {
+                return
+            }
+            else {
+                IndexPage[_sIndex]++;
+                _indexPage.eq(_sIndex).find('ul').append(_html)
+                oIndexPage.css({'height':_indexLiH*2*(IndexPage[_sIndex]-1)});
+
+            }
+        }
+
+
+
+
+    }
+
+    function throttleIndex(method, context) {
+        clearTimeout(method.tId);
+        method.tId = setTimeout(function () {
+            method.call(context);
+            //console.log(111)
+        }, 250);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -109,3 +187,5 @@ seajs.use('./static/v1/js/plug/swiper.jquery.min.js',function() {
     });
 
 });
+
+
