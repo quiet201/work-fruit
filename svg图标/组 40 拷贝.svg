@@ -1,0 +1,31 @@
+<svg id="组_40_拷贝" data-name="组 40 拷贝" xmlns="http://www.w3.org/2000/svg" width="26" height="23" viewBox="0 0 26 23">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f66465;
+        fill-opacity: 0;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #474747;
+        stroke-width: 2px;
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-3 {
+        font-size: 14px;
+        fill: #434343;
+        font-family: Arial;
+      }
+    </style>
+  </defs>
+  <g id="组_41" data-name="组 41">
+    <path id="icon_拷贝" data-name="icon 拷贝" class="cls-1" d="M288.483,653.793S286,652.763,286,648.616a7.011,7.011,0,0,1,14,0c0,4.144-2.5,5.177-2.5,5.177" transform="translate(-281 -641)"/>
+    <path id="形状_25" data-name="形状 25" class="cls-2" d="M293,645.979a2.653,2.653,0,1,0,2.805,2.649A2.73,2.73,0,0,0,293,645.979Z" transform="translate(-281 -641)"/>
+  </g>
+  <text id="new" class="cls-3" x="0.023" y="22.664">new</text>
+</svg>

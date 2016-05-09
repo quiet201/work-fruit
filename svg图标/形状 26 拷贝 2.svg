@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #4aa0e2;
+        fill-opacity: 0;
+        stroke: #474747;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="形状_26_拷贝_2" data-name="形状 26 拷贝 2" class="cls-1" d="M66.5,678l2.936,5.925L76,684.875l-4.75,4.613L72.371,696,66.5,692.925,60.629,696l1.121-6.512L57,684.875l6.564-.95Z" transform="translate(-54 -675)"/>
+</svg>

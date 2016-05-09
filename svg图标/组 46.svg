@@ -1,0 +1,47 @@
+<svg id="组_46" data-name="组 46" xmlns="http://www.w3.org/2000/svg" width="48" height="45" viewBox="0 0 48 45">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke-linecap: round;
+      }
+
+      .cls-1, .cls-2, .cls-4 {
+        stroke: #434343;
+        stroke-linejoin: round;
+        fill-rule: evenodd;
+      }
+
+      .cls-1 {
+        stroke-width: 4px;
+      }
+
+      .cls-2, .cls-4 {
+        stroke-width: 3px;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #fbfbfb;
+      }
+
+      .cls-4 {
+        fill-opacity: 0;
+      }
+
+      .cls-5 {
+        font-size: 22.236px;
+        fill: #434343;
+        font-family: HYCuYuanJ;
+      }
+    </style>
+  </defs>
+  <g id="组_45" data-name="组 45">
+    <path id="形状_21" data-name="形状 21" class="cls-1" d="M249,507l8-7h22l9,7-3,27H253Z" transform="translate(-247 -498)"/>
+    <path id="形状_22" data-name="形状 22" class="cls-2" d="M266,501l-2,6,2,13h5l2-13-3-6h-4Z" transform="translate(-247 -498)"/>
+    <path id="形状_23" data-name="形状 23" class="cls-2" d="M250,507h11" transform="translate(-247 -498)"/>
+    <path id="形状_23_拷贝" data-name="形状 23 拷贝" class="cls-2" d="M276,507h11" transform="translate(-247 -498)"/>
+  </g>
+  <rect id="圆角矩形_56" data-name="圆角矩形 56" class="cls-3" x="23" y="20" width="25" height="25" rx="11.5" ry="11.5"/>
+  <path id="圆角矩形_57" data-name="圆角矩形 57" class="cls-4" d="M281.674,520.174h1.652a9.5,9.5,0,0,1,9.5,9.5v1.652a9.5,9.5,0,0,1-9.5,9.5h-1.652a9.5,9.5,0,0,1-9.5-9.5v-1.652A9.5,9.5,0,0,1,281.674,520.174Z" transform="translate(-247 -498)"/>
+  <text id="_" data-name="!" class="cls-5" transform="translate(32.76 35.775) scale(0.54)">!</text>
+</svg>

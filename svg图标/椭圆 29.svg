@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #cacaca;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="椭圆_29" data-name="椭圆 29" class="cls-1" d="M101.75,659.75a0.8,0.8,0,0,1-1.134,0l-3.306-3.306a10.5,10.5,0,1,1,1.134-1.134l3.306,3.306A0.8,0.8,0,0,1,101.75,659.75ZM96.5,642.464a8.511,8.511,0,1,0,0,12.036A8.512,8.512,0,0,0,96.5,642.464Z" transform="translate(-80 -638)"/>
+</svg>

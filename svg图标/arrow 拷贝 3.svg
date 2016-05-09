@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="11" height="21" viewBox="0 0 11 21">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #979797;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="arrow_拷贝_3" data-name="arrow 拷贝 3" class="cls-1" d="M243,598v-3l8-8-8-7v-3l11,10Z" transform="translate(-243 -577)"/>
+</svg>

@@ -1,0 +1,49 @@
+<svg id="组_46" data-name="组 46" xmlns="http://www.w3.org/2000/svg" width="48" height="45" viewBox="0 0 48 45">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke-linecap: round;
+      }
+
+      .cls-1, .cls-2, .cls-4 {
+        stroke: #434343;
+        stroke-linejoin: round;
+      }
+
+      .cls-1 {
+        stroke-width: 4px;
+      }
+
+      .cls-1, .cls-2, .cls-4, .cls-5 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2, .cls-4 {
+        stroke-width: 3px;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #fbfbfb;
+      }
+
+      .cls-4 {
+        fill-opacity: 0;
+      }
+
+      .cls-5 {
+        fill: #434343;
+      }
+    </style>
+  </defs>
+  <g id="组_45" data-name="组 45">
+    <path id="形状_21" data-name="形状 21" class="cls-1" d="M198,509l8-7h22l9,7-3,27H202Z" transform="translate(-196 -500)"/>
+    <path id="形状_22" data-name="形状 22" class="cls-2" d="M215,503l-2,6,2,13h5l2-13-3-6h-4Z" transform="translate(-196 -500)"/>
+    <path id="形状_23" data-name="形状 23" class="cls-2" d="M199,509h11" transform="translate(-196 -500)"/>
+    <path id="形状_23_拷贝" data-name="形状 23 拷贝" class="cls-2" d="M225,509h11" transform="translate(-196 -500)"/>
+  </g>
+  <rect id="圆角矩形_56" data-name="圆角矩形 56" class="cls-3" x="23" y="20" width="25" height="25" rx="11.5" ry="11.5"/>
+  <path id="圆角矩形_57" data-name="圆角矩形 57" class="cls-4" d="M230.674,522.174h1.652a9.5,9.5,0,0,1,9.5,9.5v1.652a9.5,9.5,0,0,1-9.5,9.5h-1.652a9.5,9.5,0,0,1-9.5-9.5v-1.652A9.5,9.5,0,0,1,230.674,522.174Z" transform="translate(-196 -500)"/>
+  <path id="圆角矩形_58" data-name="圆角矩形 58" class="cls-5" d="M235.707,529.286a0.95,0.95,0,0,1,0,1.366l-6.178,6.062a1,1,0,0,1-1.4,0,0.952,0.952,0,0,1,0-1.366l6.178-6.062A1,1,0,0,1,235.707,529.286Z" transform="translate(-196 -500)"/>
+  <path id="圆角矩形_58_拷贝" data-name="圆角矩形 58 拷贝" class="cls-5" d="M228.293,529.286a0.95,0.95,0,0,0,0,1.366l6.178,6.062a1,1,0,0,0,1.4,0,0.952,0.952,0,0,0,0-1.366l-6.178-6.062A1,1,0,0,0,228.293,529.286Z" transform="translate(-196 -500)"/>
+</svg>

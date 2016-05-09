@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="56" viewBox="0 0 48 56">
+  <defs>
+    <style>
+      .cls-1 {
+        filter: url(#filter);
+      }
+
+      .cls-2, .cls-3 {
+        fill: #777;
+      }
+
+      .cls-2 {
+        fill-opacity: 0;
+        stroke: #777;
+        stroke-linejoin: round;
+        stroke-width: 4px;
+        fill-rule: evenodd;
+      }
+
+      .cls-3 {
+        font-size: 60px;
+        font-family: "PingFang SC";
+        font-weight: 700;
+      }
+    </style>
+    <filter id="filter" filterUnits="userSpaceOnUse">
+      <feFlood result="flood" flood-color="#434343"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="组_33" data-name="组 33" class="cls-1">
+    <path id="形状_5" data-name="形状 5" class="cls-2" d="M515.9,465.831C511.008,473.548,500,481,500,481v-7.086a20.462,20.462,0,1,1,20-20.457A20.643,20.643,0,0,1,515.9,465.831Z" transform="translate(-476 -429)"/>
+    <text id="_" data-name="”" class="cls-3" transform="translate(13.807 53.546) scale(0.69 0.706)">”</text>
+  </g>
+</svg>

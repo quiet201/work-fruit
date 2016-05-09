@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49" height="47" viewBox="0 0 49 47">
+  <defs>
+    <style>
+      .cls-1 {
+        filter: url(#filter);
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill: #777;
+      }
+
+      .cls-2 {
+        stroke: #777;
+        stroke-linejoin: round;
+        stroke-width: 1px;
+      }
+
+      .cls-2, .cls-3 {
+        fill-rule: evenodd;
+      }
+    </style>
+    <filter id="filter" filterUnits="userSpaceOnUse">
+      <feFlood result="flood" flood-color="#414142"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="组_9" data-name="组 9" class="cls-1">
+    <path id="形状_2" data-name="形状 2" class="cls-2" d="M131,1059c-0.074,0-.144-0.01-0.218-0.01H114.988l2.53-4.42A20.628,20.628,0,0,1,109,1038c0-11.6,9.85-21,22-21s22,9.4,22,21S143.15,1059,131,1059Zm0-40c-11.046,0-20,8.51-20,19a18.765,18.765,0,0,0,8.911,15.81l-1.924,3.2h12.006l-0.038-.06c0.349,0.01.693,0.05,1.046,0.05,11.046,0,20-8.51,20-19S142.046,1019,131,1019Z" transform="translate(-106.5 -1014.5)"/>
+    <path id="椭圆_4" data-name="椭圆 4" class="cls-3" d="M124.719,1040.73a7.456,7.456,0,0,0,14.384,0h1.787a9.167,9.167,0,0,1-17.958,0h1.787Z" transform="translate(-106.5 -1014.5)"/>
+    <circle id="椭圆_5" data-name="椭圆 5" class="cls-4" cx="18" cy="19" r="2.5"/>
+    <circle id="椭圆_5_拷贝" data-name="椭圆 5 拷贝" class="cls-4" cx="33" cy="19" r="2.5"/>
+  </g>
+</svg>

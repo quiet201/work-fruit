@@ -1,0 +1,18 @@
+<svg id="组_8" data-name="组 8" xmlns="http://www.w3.org/2000/svg" width="34" height="20" viewBox="0 0 34 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #434343;
+      }
+
+      .cls-2 {
+        font-size: 26.667px;
+        fill: #fff;
+        font-family: "PingFang SC";
+        font-weight: 500;
+      }
+    </style>
+  </defs>
+  <rect id="圆角矩形_16_拷贝_3" data-name="圆角矩形 16 拷贝 3" class="cls-1" width="34" height="20" rx="3" ry="3"/>
+  <text id="其它" class="cls-2" transform="translate(3.985 15.045) scale(0.5)">其它</text>
+</svg>

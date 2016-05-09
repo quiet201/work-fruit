@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="44" height="44" viewBox="0 0 44 44">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #777;
+        fill-rule: evenodd;
+        filter: url(#filter);
+      }
+    </style>
+    <filter id="filter" x="422" y="433" width="44" height="44" filterUnits="userSpaceOnUse">
+      <feFlood result="flood" flood-color="#434343"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <path id="椭圆_8_拷贝" data-name="椭圆 8 拷贝" class="cls-1" d="M444,477a22,22,0,1,1,22-22A22,22,0,0,1,444,477Zm0-40a18,18,0,1,0,18,18A18,18,0,0,0,444,437Zm4.241,23.232-5.2-3A3.268,3.268,0,0,1,442,455V445a2,2,0,0,1,4,0v9.32l4.241,2.448A2,2,0,0,1,448.241,460.232Z" transform="translate(-422 -433)"/>
+</svg>

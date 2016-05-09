@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45" height="34" viewBox="0 0 45 34">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #606061;
+        fill-rule: evenodd;
+        filter: url(#filter);
+      }
+    </style>
+    <filter id="filter" x="29" y="1025" width="45" height="34" filterUnits="userSpaceOnUse">
+      <feFlood result="flood" flood-color="#414142"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <path id="优惠卷" class="cls-1" d="M70,1043h4v4h0v6a6,6,0,0,1-6,6H35a6,6,0,0,1-6-6v-6h0v-4h4a1,1,0,0,0,0-2H29v-4h0v-6a6,6,0,0,1,6-6H68a6,6,0,0,1,6,6v6h0v4H70A1,1,0,0,0,70,1043Zm0-6v-4a4,4,0,0,0-4-4H37a4,4,0,0,0-4,4v4a5,5,0,0,1,0,10v4a4,4,0,0,0,4,4H66a4,4,0,0,0,4-4v-4A5,5,0,0,1,70,1037Zm-6.85,14H38.85a0.85,0.85,0,0,1-.85-0.85v-0.3a0.85,0.85,0,0,1,.85-0.85h24.3a0.85,0.85,0,0,1,.85.85v0.3A0.85,0.85,0,0,1,63.15,1051Zm0-16H38.85a0.85,0.85,0,0,1-.85-0.85v-0.3a0.85,0.85,0,0,1,.85-0.85h24.3a0.85,0.85,0,0,1,.85.85v0.3A0.85,0.85,0,0,1,63.15,1035Z" transform="translate(-29 -1025)"/>
+</svg>

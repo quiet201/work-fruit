@@ -1,0 +1,52 @@
+<svg id="组_17" data-name="组 17" xmlns="http://www.w3.org/2000/svg" width="66" height="81.5" viewBox="0 0 66 81.5">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fbfbfb;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        stroke: #434343;
+      }
+
+      .cls-1, .cls-2, .cls-4 {
+        stroke-linejoin: round;
+      }
+
+      .cls-1, .cls-4 {
+        stroke-width: 2px;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-2, .cls-3 {
+        stroke-width: 1px;
+      }
+
+      .cls-3 {
+        fill-rule: evenodd;
+      }
+
+      .cls-5 {
+        font-size: 18px;
+        fill: #595959;
+        font-family: "Microsoft YaHei";
+      }
+    </style>
+  </defs>
+  <g id="组_4" data-name="组 4">
+    <rect id="圆角矩形_17" data-name="圆角矩形 17" class="cls-1" x="3" y="9" width="43" height="68" rx="6" ry="6"/>
+    <rect id="矩形_23" data-name="矩形 23" class="cls-2" x="6" y="15" width="36" height="51"/>
+    <circle id="椭圆_2" data-name="椭圆 2" class="cls-2" cx="24" cy="71" r="4"/>
+    <path id="形状_5" data-name="形状 5" class="cls-3" d="M117,1126c-3.71-13.42-7.321-12.54-13-15.28-3.947-1.9-1.854-5.07,1.668-10.32,0,0-2.757-16.45-4.162-21.7s5.26-7.47,6.5-.7c1.534,8.39,3,14,3,14s6.289-5,18-5c7.223,0,9.367,17.63,7,21-2.8,3.99-.735,10.26,0,13" transform="translate(-80 -1045)"/>
+    <path id="形状_14" data-name="形状 14" class="cls-3" d="M91,1065v11" transform="translate(-80 -1045)"/>
+    <path id="形状_15" data-name="形状 15" class="cls-3" d="M91,1078v3" transform="translate(-80 -1045)"/>
+    <path id="形状_13" data-name="形状 13" class="cls-3" d="M100,1057h10" transform="translate(-80 -1045)"/>
+  </g>
+  <g id="组_9" data-name="组 9">
+    <circle id="椭圆_4" data-name="椭圆 4" class="cls-4" cx="50" cy="16" r="13"/>
+    <text id="_1" data-name="1" class="cls-5" x="44.916" y="23.072">1</text>
+  </g>
+</svg>

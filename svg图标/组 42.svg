@@ -1,0 +1,16 @@
+<svg id="组_42" data-name="组 42" xmlns="http://www.w3.org/2000/svg" width="17.062" height="18.812" viewBox="0 0 17.062 18.812">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #434343;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="形状_19" data-name="形状 19" class="cls-1" d="M156,649v11h4V649h-4Z" transform="translate(-155 -642.219)"/>
+  <path id="形状_20" data-name="形状 20" class="cls-1" d="M160,650s3.406-.924,4-4,3-3.9,3-1-0.405,2.646-1,4-0.314,0,2,0,3.286-.428,3,1c-2.044,10.2-1.445,10.145-4,10s-7,0-7,0V650Z" transform="translate(-155 -642.219)"/>
+</svg>
