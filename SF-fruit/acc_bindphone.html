@@ -1,0 +1,75 @@
+﻿<!doctype html>
+<html class="">
+<head>
+<meta charset="utf-8">
+<title>绑定手机</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+<!-- 网站开启对web app程序的支持 -->
+<meta content="yes" name="apple-mobile-web-app-capable"></meta>
+<!--忽略将页面中的数字识别为电话号码。-->
+<meta name="format-detection" content="telephone=no" />
+<meta name="Author" content="顺丰速运科技有限公司" />
+<meta name="Keywords" content="顺丰速运" />
+<meta name="Description" content="顺丰速运科技有限公司" />
+
+<link rel="stylesheet" type="text/css" href="static/v1/style/MobReset.css" >
+<link rel="stylesheet" type="text/css" href="static/v1/style/style.css" >
+<style type="text/css">
+    .layermbtn span {width: 100%}
+</style>
+
+</head>
+<body>
+<div class="wrap"  >
+    <div class="userPhone accountMid" style="margin-top: 12px;">
+        <div class="HBox BoxCenter telList border_bot">
+            <label  for="phone">手机号</label><input id="phone" name="" class="Bflex1 js_Text js_phonetext" type="text" placeholder="请输入手机号" /><em class="clearBtn icoStyle js_clearBtn active"></em>
+            <aside class="errorTip color_red js_error" style="display: none">请输入正确的手机号</aside>
+        </div>
+        <div  class="HBox BoxCenter telList">
+            <label for="codes">验证码</label>
+            <input id="codes" name="" class="Bflex1 js_Text" type="txt" placeholder="请输入验证码" />
+            <em class="clearBtn icoStyle js_clearBtn active" style="margin-right: 6px;"></em>
+            <p class="codeBox">
+                <button type="button" class="btnStyle getCode btn_Bgred js_getCode" >获取验证码</button>
+                <a type="button" class="btnStyle codeTime js_getCode" style="display: none">重新发送(<span>120s</span>)</a>
+            </p>
+            <aside class="errorTip color_red js_error" style="display: none">请输入正确的验证码</aside>
+        </div>
+    </div>
+    <div class="btnBox submitBtn">
+        <button type="button" class="btnStyle btn_Bgred" href="">提交</button>
+        <p>点击提交表示您同意<a class="color_red" href="#">《大当家服务协议》</a></p>
+    </div>
+    <div class="accountPic accountNoBg">
+        <img src="static/v1/image/carbg.png">
+        <p>绑定上手机号可随时享受</p>
+        <p>查看订单、购物车等更多服务</p>
+    </div>
+
+
+
+    <!-- 底部 -->
+    <section class="footer js_footer">
+        <nav>
+            <ul class="HBox">
+                <li class="Bflex1"><a href="index.html"><em class="icoStyle  icon-home"></em><span>首页</span></a><i class="splitline"></i></li>
+                <li class="Bflex1"><a href="service.html"><em class="icoStyle icon-service"></em><span>平台服务中心</span></a></li>
+            </ul>
+        </nav>
+    </section>
+    <div class="icoStyle  icon-arrow-up goTopIcon js_goTop" style="display: none"></div>
+</div>
+
+
+
+<script type="text/javascript" src="static/v1/js/plug/sea/sea.min.js"></script>
+<script type="text/javascript" src="static/v1/js/plug/jquery.min.js"></script>
+<script type="text/javascript">
+    seajs.use(['./static/v1/js/global.js'],function() {});
+</script>
+
+</script>
+</body>
+</html>
+

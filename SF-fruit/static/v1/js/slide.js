@@ -8,9 +8,8 @@ seajs.use('./static/v1/js/plug/swiper.jquery.min.js',function() {
         var oBPrev = $('.js_BPrev');                //上一个
         var oPagin = $('.js_pagin');                //个数点
         var oDetailsImg = $('.js_detailsImg');      //详情轮播
-        var oOrderInfoBox = $('.js_orderInfoBox');  //订单tab切换
-        var oOrderHeadNav = $('.js_orderHead');     //订单导航
-        var oEmptyIcon = $('.js_emptyIcon');        //订单空的图标
+
+
 
 
         var oGoodsList = $('.js_goodsList');
@@ -98,10 +97,6 @@ seajs.use('./static/v1/js/plug/swiper.jquery.min.js',function() {
 
             }
         }
-
-
-
-
     }
 
     function throttleIndex(method, context) {
@@ -111,16 +106,6 @@ seajs.use('./static/v1/js/plug/swiper.jquery.min.js',function() {
             //console.log(111)
         }, 250);
     }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -147,6 +132,10 @@ seajs.use('./static/v1/js/plug/swiper.jquery.min.js',function() {
             },
         });
 
+
+
+
+
         // 详情轮播
         var detailsSwiper = oDetailsImg.swiper({
             pagination: oPagin,
@@ -154,14 +143,28 @@ seajs.use('./static/v1/js/plug/swiper.jquery.min.js',function() {
             lazyLoading: true,
         });
 
-        // 我的订单轮播
-        var _ordIHeight = [];
+        // 我的订单轮播 js_myordSlide
+        var oOrderHeadNav = $('.js_orderHead');     //订单导航
+        var oEmptyIcon = $('.js_emptyIcon');        //订单空的图标
+        var oOrderInfoBox = $('.js_orderInfoBox');  //订单tab切换
         var oOrderSlide = oOrderInfoBox.find('.swiper-slide');
-        oOrderSlide.each(function (i) {
-            _ordIHeight.push(oOrderSlide.eq(i).outerHeight(true));
-            return _ordIHeight;
-        });
-        oOrderSlide.css({ 'height': _ordIHeight[0] + 'px' });
+        var oListHead_H = oOrderSlide.find('.carListHead').eq(0).outerHeight(true);
+        var oOrderInfo_H = oOrderSlide.find('.orderInfo').eq(0).outerHeight(true);
+        var oOrderLi_H = oOrderSlide.find('li').eq(0).outerHeight(true);
+        var marginBottom = oOrderSlide.find('.carListBox').css('margin-bottom');
+        var firstPage_H = oOrderSlide.eq(0).outerHeight(true);
+        var swiperOff_H =[true,true,true,true,true];
+        var aOrdCount = [5,5,5,5,5];
+        var aOrdPage = [1,1,1,1,1];
+        var aOrder_H = [];
+        var _ordIHeight;
+
+        // n是 对应 li 的个数  AlistHeight (n) 是一个店家的高度
+        function AlistHeight (n) {
+            return oListHead_H*1 + oOrderInfo_H*1 + oOrderLi_H*(n*1) + parseInt(marginBottom);
+        }
+
+
 
         var orderSwiper = oOrderInfoBox.swiper({
             pagination: oOrderHeadNav[0],
@@ -177,12 +180,53 @@ seajs.use('./static/v1/js/plug/swiper.jquery.min.js',function() {
                 return '<p class="Bflex1 BoxCenter icoStyle icon-'+iconName+' '+ className+'"><span>'+name+'</span>'+tip+'</p>';
             },
             onSlideChangeEnd: function (swiper) {
-                oOrderInfoBox.css({ 'height': _ordIHeight[swiper.activeIndex] + 'px' });
-                oEmptyIcon.removeClass('swing').eq(swiper.activeIndex).addClass('swing');
+                _sIndex = swiper.activeIndex;
+                if(_sIndex !== 0) {
+                    if(swiperOff_H[_sIndex]) {
+                        _ordIHeight = AlistHeight (1) * 2;
+                    }
+                    else {
+                        _ordIHeight = aOrder_H[_sIndex];
+                    }
+                }
+                else {
+                    _ordIHeight = firstPage_H;
+                }
+                console.log(_ordIHeight)
+
+                oOrderInfoBox.css({ 'height': _ordIHeight + 'px' });
+                oEmptyIcon.removeClass('swing').eq(_sIndex).addClass('swing');
                 $(window).scrollTop(0);
+                return _sIndex;
             }
         });
 
+        $(window).on('scroll',function() {
+            if(_sIndex !== 0) {
+                swiperOff_H[_sIndex] = false;
+                aOrder_H[_sIndex] = oOrderSlide.outerHeight(true);
+                throttleIndex(OrderScrollData,window);
+            }
+        });
+
+
+
+        function OrderScrollData() {
+            var scrollTop = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            var scrollHeight = $(document).height();
+
+            if (scrollTop + windowHeight >= scrollHeight - 150) {
+                //页面加载 大于总数/单页的值时 停止加载
+                if (aOrdPage[_sIndex] >= aOrdCount[_sIndex]) {
+                    return
+                }
+                else {
+                    aOrdPage[_sIndex]++;
+                    oOrderInfoBox.css({'height':AlistHeight (1) * 2});
+                }
+            }
+        }
 
     });
 

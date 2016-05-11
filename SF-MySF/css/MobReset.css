@@ -1,0 +1,357 @@
+@charset "utf-8";
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block;  margin: 0; padding: 0; border: 0;}
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+html {overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+/* =============================================================================
+   排版规则
+   ========================================================================== */
+abbr[title] { border-bottom: 1px dotted; }
+b, strong { font-weight: bold; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+figure { margin: 0; }
+
+
+/* =============================================================================
+   表单
+   ========================================================================== */
+
+form { margin: 0; }
+fieldset { border: 0; margin: 0; padding: 0; }
+
+/* 指示“label”会将焦点移至相关联的表单元素 */
+label { cursor: pointer; }
+
+button, input, select, textarea { margin: 0; vertical-align: baseline; *vertical-align: middle; border-width: 1px;}
+
+button, input { line-height: normal; *overflow: visible; }
+
+/*
+ * 在“table”中重新加入内边距，以避免 IE6/7 中的交迭和空白问题
+ */
+
+table button, table input { *overflow: auto; }
+
+/*
+ * 1. 显示手形光标，表示可以点击的表单元素
+ * 2. 允许 iOS 中可点击的表单元素的样式
+ */
+
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+
+/* 一致的框大小和外观 */
+
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+
+/*
+ * 删除 FF3/4 中的内边距和边框: h5bp.com/l
+ */
+
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+/*
+ * 1. 删除 IE6/7/8/9 中的默认垂直滚动条
+ * 2. 仅允许垂直调整大小
+ */
+
+textarea { overflow: auto; vertical-align: top; resize: none; }
+
+/* 用于表单验证的颜色 */
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+/* structural elements 结构元素 */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote,
+/* list elements 列表元素 */
+dl, dt, dd, ul, ol, li,
+/* text formatting elements 文本格式元素 */
+pre,
+/* form elements 表单元素 */
+form, fieldset, legend, button, input, textarea,
+/* table elements 表格元素 */
+th, td,
+/* img elements 图片元素 */
+img { border: 0; margin: 0; padding: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; width: 100%  }
+
+/** 设置默认字体 **/
+body,button, input, select, textarea { font: 14px 'Microsoft YaHei','SimHei',Helvetica,Arial, sans-serif;   }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+em{font-style:normal;}
+
+/** 重置列表元素 **/
+ul, ol { list-style: none; }
+
+a { color: #434343; text-decoration: none;}
+a:visited {  }
+a:hover { }
+a:focus { outline: none; }
+a:hover, a:active { outline: 0; }
+textarea {border-radius: 0;}
+
+
+/*清除浮动设置*/
+.clearfix:before,
+.clearfix:after { content:"."; display:block; height:0px; visibility:hidden;}
+.clearfix:after { clear:both;}
+.clearfix { zoom:1;} /*IE<8*/
+
+/*****   公共样式  ******/
+/*浮动公用样式*/
+.fl {float:left;}
+.fr {float:right;}
+i{ font-style:normal}
+
+/*文字超出框显示省略号*/
+.Omit {white-space:nowrap;text-overflow:ellipsis;}
+
+/*ios按钮*/
+input, textarea{
+    -webkit-appearance:none;
+    outline:none
+}
+
+.hide {display: none}
+
+
+ /*水平盒模型*/
+.HBox {
+    display: box;
+    display:-moz-box;
+    display:-o-box;
+    display:-ms-box;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -ms-box-orient: horizontal;
+    box-orient: horizontal;
+}
+
+/*垂直盒模型*/
+.VBox {
+    display: box;
+    display:-moz-box;
+    display:-o-box;
+    display:-ms-box;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -ms-box-orient: vertical;
+    box-orient: vertical;
+}
+/*盒模型分块*/
+.Bflex1 {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -o-box-flex: 1;
+    -ms-box-flex: 1;
+    box-flex: 1;
+}
+.Bflex2 {
+    -webkit-box-flex: 2;
+    -moz-box-flex: 2;
+    -o-box-flex: 2;
+    -ms-box-flex: 2;
+    box-flex: 2;
+}
+.Bflex3 {
+    -webkit-box-flex: 3;
+    -moz-box-flex: 3;
+    -o-box-flex: 3;
+    -ms-box-flex: 3;
+    box-flex: 3;
+}
+.Bflex4 {
+    -webkit-box-flex: 4;
+    -moz-box-flex: 4;
+    -o-box-flex: 4;
+    -ms-box-flex: 4;
+    box-flex: 4;
+}
+
+.BoxCenter {
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.bordBox {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+.fixedDom {position: fixed;}
+
+/* 运动旋转 */
+/* 转圈 */
+.myRotate{
+    animation: rotate 10s linear 0s infinite normal;
+    -webkit-animation:rotate 10s linear 0s infinite normal;
+}
+
+.myRotateFast{
+    animation: rotate 0.5s linear 0s infinite normal;
+    -webkit-animation:rotate 0.5s linear 0s infinite normal;
+    /*-webkit-transition:0.8s left linear,0.8s top ease-in, 1.5s opacity linear,0.1s 0.5s visibility linear ;
+    -o-transition: 0.8s left linear,0.8s top ease-in, 1.5s opacity linear,0.1s 0.5s visibility linear;
+    transition: 0.8s left linear,0.8s top ease-in, 1.5s opacity linear,0.1s 0.5s visibility linear;*/
+}
+
+
+.myanimated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both
+}
+
+.myanimated.mybounceIn {
+    -webkit-animation-duration: .75s;
+    animation-duration: .75s
+}
+
+.mybounceIn {
+    -webkit-animation-name: mybounceIn;
+    animation-name: mybounceIn
+}
+
+.rotate180 {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.rotate90 {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(  90deg);
+}
+
+
+
+
+@-webkit-keyframes rotate{
+    0%{
+        -webkit-transform: rotate(0deg) ;
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg) ;
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(-360deg) ;
+        -ms-transform: rotate(-360deg);
+        -o-transform: rotate(-360deg) ;
+        transform: rotate(-360deg);
+    }
+}
+@keyframes rotate{
+    0%{
+        -webkit-transform: rotate(0deg) ;
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg) ;
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(-360deg) ;
+        -ms-transform: rotate(-360deg);
+        -o-transform: rotate(-360deg) ;
+        transform: rotate(-360deg);
+    }
+}
+
+
+@-webkit-keyframes mybounceIn {
+    0%,100%,20%,40%,60%,80% {
+        -webkit-animation-timing-function: cubic-bezier(0.215,.61,.355,1);
+        animation-timing-function: cubic-bezier(0.215,.61,.355,1)
+    }
+
+    0% {
+        -webkit-transform: scale3d(1,1,1);
+        transform: scale3d(1,1,1)
+    }
+
+    20% {
+        -webkit-transform: scale3d(.3,.3,.3);
+        transform: scale3d(.3,.3,.3)
+    }
+
+    40% {
+        -webkit-transform: scale3d(1,1,1);
+        transform: scale3d(1,1,1)
+    }
+
+    60% {
+        -webkit-transform: scale3d(.5,.5,.5);
+        transform: scale3d(.5,.5,.5)
+    }
+
+    80% {
+        -webkit-transform: scale3d(.8,.8,.8);
+        transform: scale3d(.8,.8,.8)
+    }
+
+    100% {
+        -webkit-transform: scale3d(1,1,1);
+        transform: scale3d(1,1,1)
+    }
+}
+
+@keyframes mybounceIn {
+    0%,100%,20%,40%,60%,80% {
+        -webkit-animation-timing-function: cubic-bezier(0.215,.61,.355,1);
+        animation-timing-function: cubic-bezier(0.215,.61,.355,1)
+    }
+
+    0% {
+        -webkit-transform: scale3d(1,1,1);
+        transform: scale3d(1,1,1)
+    }
+
+    20% {
+        -webkit-transform: scale3d(.3,.3,.3);
+        transform: scale3d(.3,.3,.3)
+    }
+
+    40% {
+        -webkit-transform: scale3d(1,1,1);
+        transform: scale3d(1,1,1)
+    }
+
+    60% {
+        -webkit-transform: scale3d(.5,.5,.5);
+        transform: scale3d(.5,.5,.5)
+    }
+
+    80% {
+        -webkit-transform: scale3d(.8,.8,.8);
+        transform: scale3d(.8,.8,.8)
+    }
+
+    100% {
+        -webkit-transform: scale3d(1,1,1);
+        transform: scale3d(1,1,1)
+    }
+}
+
+
+

@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-    src:    url('fonts/icomoon.eot?9kir0y');
-    src:    url('fonts/icomoon.eot?9kir0y#iefix') format('embedded-opentype'),
-        url('fonts/icomoon.ttf?9kir0y') format('truetype'),
-        url('fonts/icomoon.woff?9kir0y') format('woff'),
-        url('fonts/icomoon.svg?9kir0y#icomoon') format('svg');
+    src:    url('fonts/icomoon.eot?8rdjic');
+    src:    url('fonts/icomoon.eot?8rdjic#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?8rdjic') format('truetype'),
+        url('fonts/icomoon.woff?8rdjic') format('woff'),
+        url('fonts/icomoon.svg?8rdjic#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -24,190 +24,174 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-longTime:before {
+.icon-allOrder:before {
     content: "\e900";
 }
-.icon-rightIcon:before {
+.icon-arrow:before {
     content: "\e901";
 }
-.icon-rocket:before {
+.icon-Iphone:before {
     content: "\e902";
 }
-.icon-unGoods:before {
+.icon-MyAccount:before {
     content: "\e903";
 }
-.icon-unOrder .path1:before {
-    content: "\e904";
-    /*color: rgb(93, 93, 93);*/
-    color: #dfdfdf;
-}
-.icon-unOrder .path2:before {
-    content: "\e905";
-    margin-left: -1em;
-    /*color: rgb(174, 174, 174);*/
-    color: #eaeaea;
-}
-.icon-unOrder .path3:before {
-    content: "\e906";
-    margin-left: -1em;
-    /*color: rgb(93, 94, 94);*/
-    color: #dfdfdf;
-}
-.icon-unOrder .path4:before {
-    content: "\e907";
-    margin-left: -1em;
-    /*color: rgb(174, 174, 174);*/
-    color: #eaeaea;
-}
-.icon-unOrder .path5:before {
-    content: "\e908";
-    margin-left: -1em;
-    /*color: rgb(93, 94, 94);*/
-    color: #dfdfdf;
-}
-.icon-unOrder .path6:before {
-    content: "\e909";
-    margin-left: -1em;
-    /*color: rgb(93, 93, 93);*/
-    color: #dfdfdf;
-}
-.icon-unOrder .path7:before {
-    content: "\e90a";
-    margin-left: -1em;
-    /*color: rgb(93, 93, 93);*/
-    color: #dfdfdf;
-}
-.icon-unOrder .path8:before {
-    content: "\e90b";
-    margin-left: -1em;
-    /*color: rgb(174, 174, 174);*/
-    color: #eaeaea;
-}
-.icon-addr:before {
-    content: "\e90c";
-}
-.icon-applyIng:before {
-    content: "\e90d";
-}
-.icon-edit:before {
-    content: "\e90e";
-}
-.icon-emptyCar:before {
-    content: "\e90f";
-}
-.icon-gift:before {
-    content: "\e910";
-}
-.icon-home:before {
-    content: "\e911";
-}
-.icon-message:before {
-    content: "\e912";
-}
-.icon-noOrder:before {
-    content: "\e913";
-}
-.icon-payEnd:before {
-    content: "\e914";
-}
-.icon-person:before {
-    content: "\e915";
-}
-.icon-refundEnd .path1:before {
-    content: "\e916";
-    color: rgb(170, 170, 170);
-}
-.icon-refundEnd .path2:before {
-    content: "\e917";
-    margin-left: -1em;
-    color: rgb(243, 243, 243);
-}
-.icon-refundEnd .path3:before {
-    content: "\e918";
-    margin-left: -1em;
-    color: rgb(171, 171, 171);
-}
-.icon-refundIng:before {
-    content: "\e919";
-}
-.icon-refundStart:before {
-    content: "\e91a";
-}
-.icon-refundTime:before {
-    content: "\e91b";
-}
-.icon-reject:before {
-    content: "\e91c";
-}
-.icon-search:before {
-    content: "\e91d";
-}
-.icon-store:before {
-    content: "\e91e";
-}
-.icon-allOrder:before {
-    content: "\e91f";
-}
-.icon-arrow:before {
-    content: "\e920";
-}
-.icon-Iphone:before {
-    content: "\e921";
-}
 .icon-MyOrder:before {
-    content: "\e922";
+    content: "\e904";
 }
 .icon-MyShopCar:before {
-    content: "\e923";
+    content: "\e905";
 }
 .icon-OK:before {
-    content: "\e924";
+    content: "\e906";
 }
 .icon-putDown:before {
-    content: "\e925";
+    content: "\e907";
 }
 .icon-service:before {
-    content: "\e926";
+    content: "\e908";
 }
 .icon-servicing:before {
-    content: "\e927";
+    content: "\e909";
 }
 .icon-Tel:before {
-    content: "\e928";
+    content: "\e90a";
 }
 .icon-Tel2:before {
-    content: "\e929";
+    content: "\e90b";
 }
 .icon-unFind .path1:before {
-    content: "\e92a";
+    content: "\e90c";
     color: rgb(93, 94, 94);
 }
 .icon-unFind .path2:before {
-    content: "\e92b";
+    content: "\e90d";
     margin-left: -1em;
     color: rgb(175, 175, 175);
 }
 .icon-unFind .path3:before {
-    content: "\e92c";
+    content: "\e90e";
     margin-left: -1em;
     color: rgb(115, 115, 115);
 }
 .icon-unFind .path4:before {
-    content: "\e92d";
+    content: "\e90f";
     margin-left: -1em;
     color: rgb(115, 115, 115);
 }
 .icon-WaitGet:before {
-    content: "\e92e";
+    content: "\e910";
 }
 .icon-WaitPay:before {
-    content: "\e92f";
+    content: "\e911";
 }
 .icon-WaitSend:before {
-    content: "\e930";
+    content: "\e912";
 }
 .icon-WX:before {
-    content: "\e931";
+    content: "\e913";
+}
+.icon-addr:before {
+    content: "\e914";
+}
+.icon-applyIng:before {
+    content: "\e915";
+}
+.icon-edit:before {
+    content: "\e916";
+}
+.icon-emptyCar:before {
+    content: "\e917";
+}
+.icon-gift:before {
+    content: "\e918";
+}
+.icon-home:before {
+    content: "\e919";
+}
+.icon-message:before {
+    content: "\e91a";
+}
+.icon-noOrder:before {
+    content: "\e91b";
+}
+.icon-payEnd:before {
+    content: "\e91c";
+}
+.icon-person:before {
+    content: "\e91d";
+}
+.icon-refundEnd:before {
+    content: "\e91e";
+}
+.icon-refundIng:before {
+    content: "\e91f";
+}
+.icon-refundStart:before {
+    content: "\e920";
+}
+.icon-refundTime:before {
+    content: "\e921";
+}
+.icon-reject:before {
+    content: "\e922";
+}
+.icon-search:before {
+    content: "\e923";
+}
+.icon-store:before {
+    content: "\e924";
+}
+.icon-longTime:before {
+    content: "\e925";
+}
+.icon-rightIcon:before {
+    content: "\e926";
+}
+.icon-rocket:before {
+    content: "\e927";
+}
+.icon-unGoods:before {
+    content: "\e928";
+}
+.icon-unOrder .path1:before {
+    content: "\e929";
+    color: rgb(93, 93, 93);
+}
+.icon-unOrder .path2:before {
+    content: "\e92a";
+    margin-left: -1em;
+    color: rgb(174, 174, 174);
+}
+.icon-unOrder .path3:before {
+    content: "\e92b";
+    margin-left: -1em;
+    color: rgb(93, 94, 94);
+}
+.icon-unOrder .path4:before {
+    content: "\e92c";
+    margin-left: -1em;
+    color: rgb(174, 174, 174);
+}
+.icon-unOrder .path5:before {
+    content: "\e92d";
+    margin-left: -1em;
+    color: rgb(93, 94, 94);
+}
+.icon-unOrder .path6:before {
+    content: "\e92e";
+    margin-left: -1em;
+    color: rgb(93, 93, 93);
+}
+.icon-unOrder .path7:before {
+    content: "\e92f";
+    margin-left: -1em;
+    color: rgb(93, 93, 93);
+}
+.icon-unOrder .path8:before {
+    content: "\e930";
+    margin-left: -1em;
+    color: rgb(174, 174, 174);
 }
 .icon-arrow-left:before {
     content: "\e094";

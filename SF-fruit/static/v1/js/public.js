@@ -114,8 +114,9 @@ define(function(require,exports,module) {
     exports.TipLayer = TipLayer;
 
     //带按钮提示框
-    function TipBtnLayer (sCont) {
+    function TipBtnLayer (sCont,sTit) {
         layer.open({
+            title: sTit != 'no' ? sTit : '',
             content: sCont,
             btn:['确定'],
             shadeClose: false,
@@ -182,6 +183,100 @@ define(function(require,exports,module) {
         }, 20);
     }
     exports.throttle = throttle;
+
+
+
+    //s20是代表20秒 h是指小时，如12小时则是：h12 d是天数，30天则：d30
+    //写cookies setCookie("name","hayden",'s20');
+    function setCookie(name,value,time) {
+        var strsec;
+        if (time == undefined) {
+            var Days = 30; //默认30天有效期
+            strsec = Days*24*60*60*1000;
+        }
+        else {
+            strsec = getsec(time)*1;
+        }
+        var exp = new Date();
+        exp.setTime(exp.getTime() + strsec);
+        document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+    }
+    exports.setCookie = setCookie;
+
+    //读取cookies getCookie("name")
+    function getCookie(name) {
+        var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+        if(arr=document.cookie.match(reg)) {
+            return unescape(arr[2]);
+        }
+        else{
+            return null;
+        }
+
+    }
+    exports.getCookie = getCookie;
+
+    //删除cookies delCookie('name')
+    function delCookie(name) {
+        var exp = new Date();
+        exp.setTime(exp.getTime() - 1);
+        var cval=getCookie(name);
+        if(cval!=null)
+        document.cookie= name + "="+cval+";expires="+exp.toGMTString();
+    }
+    exports.delCookie = delCookie;
+
+    //设置cookie时间
+    function getsec(str) {
+        var str1=str.substring(1,str.length)*1;
+        var str2=str.substring(0,1);
+        if (str2=="s") {
+            return str1*1000;
+        }
+        else if (str2=="h") {
+            return str1*60*60*1000;
+        }
+        else if (str2=="d") {
+            return str1*24*60*60*1000;
+        }
+    }
+
+    /* 验证码倒计时 */
+    function CutTime(time,fn1,fn2) {
+        var _AllTime = time;
+        var _T = null;
+        clearInterval(_T);
+        _T = setInterval(function() {
+            if(time<=0) {
+                clearInterval(_T);
+                if(fn1)fn1(_AllTime);
+            }
+            else {
+                time--;
+                if(fn2)fn2(time);
+            }
+        },1000)
+    }
+    exports.CutTime = CutTime;
+
+    /*手机号码验证*/
+    function checkMobile(obj,fn1,fn2,fn3){
+        var oIphone = obj.val();
+        var reg = /^(1[3|5|7|8])[\d]{9}$/;   //验证手机号码
+
+        if(oIphone == '') {
+            if(fn1)fn1()
+        }
+        else if (!reg.test(oIphone) ){
+
+            if(fn2)fn2();
+        }
+        else {
+            if(fn3)fn3();
+        }
+    }
+    exports.checkMobile = checkMobile;
+
 
 
 

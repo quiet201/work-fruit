@@ -54,7 +54,7 @@ body {background: #F5F5F5;}
 .footer {position: fixed; z-index: 100; bottom: 0; left: 0; width: 100%; box-sizing: border-box;  background: #ffffff; border-top:1px solid #EBEBEB;}
 .footer li {text-align: center; line-height: 5rem; position: relative;}
 .footer li a {display: block; height: 100%;}
-.footer li em {font-size: 24px; color: #666666; margin-right: 1rem; position: relative; }
+.footer li em {font-size: 24px; color: #666666; margin-right:0.5rem; position: relative; }
 .footer li span {text-align: center; display: inline-block; height: 2rem; line-height: 2rem; vertical-align: middle; }
 .footer li i {position: absolute; display: block;}
 
@@ -243,7 +243,7 @@ body {background: #F5F5F5;}
 .carListBox,
 .orderMoneyBox,
 .expressBox,
-.dealTimesBox {background: #fff; margin-bottom: 1rem; padding: 0 1rem;}
+.dealTimesBox {background: #fff; margin-bottom: 12px; padding: 0 1rem;}
 
 .carListHead .seletPrice,
 .orderList .seletPrice{ text-align: right; color: #666666;}
@@ -342,6 +342,7 @@ body {background: #F5F5F5;}
 
 /* 订单状态 */
 .orderList .orderInfo {border-top: 1px solid #dfdfdf; padding:1rem 0; background: #fff;}
+.orderList .orderInfo a {}
 .orderList .seletPrice {}
 .orderList .btnBox {padding-top: 1rem;}
 .orderList .btnBox a {margin: 0 1rem;}
@@ -350,7 +351,7 @@ body {background: #F5F5F5;}
 .ordStateTxt .statCol_red {color: #ff0033;}
 .ordStateTxt .statCol_org {color: #ff0033;}
 .orderList .statesInfo {padding-bottom:1rem;}
-.orderList .statesInfo .btnStyle {margin-left: 0.5rem; width: 30%}
+.orderList .statesInfo .btnStyle {margin-left:5%; width: 28%; }
 .orderList .statesInfo .btn_BgOrg {background: none; color:#ff0033;}
 
 
@@ -534,6 +535,36 @@ body {background: #F5F5F5;}
 .emptyExpress .errIcon {top: 30%;}
 
 
+/* 我的账户 */
+.accountPic {background: #fff; }
+.accountNoBg {background: none;}
+.accountPic img {display: block; width: 50%; margin: 0 auto; padding:25px 0 15px;}
+.accountPic p {text-align: center; color: #666666; line-height: 25px;}
+.accountMid {background: #fff; margin-bottom: 12px; padding: 0 10px;}
+.accountMid .btnBox { width: 50%; margin: 0 auto; padding: 10px 0 20px;  }
+.accountMid p {text-align: center; padding: 12px 0;}
+.accountMid p button {display: block; width: 100%;}
+.accountMid .telList { height: 60px;  position: relative;}
+.accountMid .telList .codeTime {background: #dfdfdf; border-color: #dfdfdf; color: #666666}
+.accountMid .telList .codeBox {width: 120px;}
+.accountMid .telList .errorTip {position: absolute; left: 0; bottom: 5px; font-size: 12px; line-height: 12px;}
+
+.accountMid label {display: block; width: 50px; }
+.accountMid input {  width: 100%; display: block;   padding: 0 5px; height: 30px; line-height: 30px;}
+.accountMid .clearBtn { background-image: url(../image/delIcon.png); background-color: #fff; background-size: 75%; background-repeat: no-repeat; background-position: center center;  }
+.accountMid .clearBtn.active {background-size: 0%;}
+
+.accountList {background: #fff;}
+.accountList li {padding:0 10px; box-sizing: border-box;}
+.accountList li a {display: block; }
+.accountList li span {line-height: 24px; padding: 10px 0}
+.accountList li em { margin-top: 14px;  }
+.submitBtn {margin-top: 55px;}
+.submitBtn button {width: 50%; margin: 0 auto; line-height: 40px;}
+.submitBtn p {text-align: center; color: #666666; margin-top: 20px;}
+
+
+
 /* 轮播图 */
 .swiper-container {height: 100%; width: 100%;}
 .swiper-slide {height: 100%; width: 100%;}
@@ -675,9 +706,10 @@ body {background: #F5F5F5;}
 .icon_myLayer {color:#ff0033; margin-right:0.5rem; line-height:2rem; font-size: 1.8rem; }
 .layermend {top: 5px;}
 /* 弹框按钮样式 确定是红色 */
-.layermbtn span {font-family: 'Microsoft YaHei'; border-radius: 0;}
+.layermbtn span {font-family: 'Microsoft YaHei'; border-radius: 0; }
+.layermbtn span:first-child {height: 100%;}
 .layermbtn span:last-child {background:#ff0033; color: #fff; }
-.layermbox0 .layermchild {min-width: 55%; overflow: hidden; border-radius: 4px;}
+.layermbox0 .layermchild {min-width: 65%; overflow: hidden; border-radius: 4px;}
 
 
 /*热卖*/
