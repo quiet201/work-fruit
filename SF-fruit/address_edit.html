@@ -61,41 +61,11 @@
 
 
 
-<!-- <script type="text/javascript" src="js/plug/sea/sea.min.js"></script> -->
+<script type="text/javascript" src="static/v1/js/plug/sea/sea.min.js"></script>
 <script type="text/javascript" src="static/v1/js/plug/jquery.min.js"></script>
-<script type="text/javascript" src="static/v1/js/plug/mui/mui.min.js"></script>
-<script type="text/javascript" src="static/v1/js/plug/mui/mui.picker.min.js"></script>
-<script type="text/javascript" src="static/v1/js/city.data-3.js"></script>
 
 <script type="text/javascript">
-// 地址选择
-(function($) {
-    $.init();
-    $.ready(function() {
-        var cityPicker = new $.PopPicker({  layer: 3  });
-        cityPicker.setData(cityData3);
-        // var showCityPickerButton = doc.getElementById('showCityPicker3');
-        var showCityPickerButton = $('.js_showCityBtn')[0];
-        var cityResult = $('.js_cityResult');
-        showCityPickerButton.addEventListener('click', function(event) {
-            cityPicker.show(function(items) {
-                var _seletCity = ( items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {} ).text;
-                //console.log(items)
-                cityResult[0].value = _seletCity;
-            });
-        }, false);
-    });
-})(mui);
-$(function() {
-    // 默认地址选择
-    var oDefault = $('.js_DefaultAddr');
-    var oChecks =  oDefault.find('.js_checkBox');
-    oDefault.on('click',function() {
-        oChecks.hasClass('active') ? oChecks.removeClass('active') : oChecks.addClass('active');
-    });
-
-
-});
+    seajs.use(['./static/v1/js/seletCity.js'],function() {});
 </script>
 
 </body>

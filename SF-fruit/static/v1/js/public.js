@@ -1,5 +1,4 @@
 define(function(require,exports,module) {
-
     //加入购物车的动画
     function AddCarAnimate(_X,_Y,target,sLeft,sTop, callBack) {
         // obj.hammer().on('tap',function(e) {

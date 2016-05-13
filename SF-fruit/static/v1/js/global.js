@@ -16,17 +16,23 @@ seajs.use(['hammer','layer','public'], function(myHam,myLay,myPub) {
         var oNavSecList = $('.js_navSecList');      //二级导航
         var oNavSecUl = $('.js_navSecList').find('ul');      //二级导航ul
         var oNavSecLi = $('.js_navSecList').find('li');      //二级导航li
+
+        var oGoTop = $('.js_goTop');                //回到顶部
+
+
         var oGoodsBox = $('.js_goodsBox');          //产品页面
         var oSearchBox = $('.js_searchBox');        //搜索框
         var oIndexSearch = $('.js_IndexSearch');    //搜索历史
         var oSearchArea = $('.js_searchArea');      //搜索框区域
         var oSStart = $('.js_sStart');              //开始搜索按钮
         var oSCancel = $('.js_sCancel');            //取消搜索按钮
+
         var oBtnAddCar = $('.js_addCar');           //加入购物车按钮
         var oMoveIcon = $('.js_moveIcon');          //加入购物车动态标记
-        var oGoTop = $('.js_goTop');                //回到顶部
+
         var oSearchTxt = $('.js_searchTxt');        //搜索框
         var oSearchClear = $('.js_clearBtn');       //搜索框清空
+
         var oSeletSide = $('.js_seletSide');        //下滑窗口
         var oBotCloseBtn = $('.js_closeBtn');       //关闭按钮
         var oArrDownBtn = $('.js_arrDownBtn');      //下滑按钮
@@ -52,6 +58,7 @@ seajs.use(['hammer','layer','public'], function(myHam,myLay,myPub) {
         var oAmountBox = $('.js_amountBox');        //数量框
         var oGoodsPrice = $('.js_goodsPrice');      //产品价格
         var oSumNum = $('.js_sumNum');              //总数
+        var oBtnPay = $('.js_btnPay');                 //提交按钮
 
         var oContactBossBtn = $('.js_contactBoss');     //联系商家信息按钮 js_contactBoss
         var oBossInfo = $('.js_bossInfo');              //商家信息 js_bossInfo
@@ -59,14 +66,13 @@ seajs.use(['hammer','layer','public'], function(myHam,myLay,myPub) {
         var oReasonList = $('.js_reasonList');          //取消原因选择
         var oCanOrderBtn = $('.js_cancelOrderBtn');     //取消订单按钮
         var oCanOrderInfo = $('.js_cancelOrder');       //取消订单信息
-        var oUserMessage = $('.js_message').find('textarea');  //留言区域
+
         var oTrueGetBtn = $('.js_trueGetBtn');          //确认收货
         var oDelOrderBtn = $('.js_delOrderBtn');        //删除订单
         var oCancelApply = $('.js_cancelApply');        //取消申请
 
-
+        var oUserMessage = $('.js_message').find('textarea');  //留言区域
         var maxLWord = $('.js_wordmax');               //最大字数
-        var oBtnPay = $('.js_btnPay');                 //提交按钮
         var oUserAddr = $('.js_userAddr');             //用户现在的地址
 
 
@@ -137,6 +143,7 @@ seajs.use(['hammer','layer','public'], function(myHam,myLay,myPub) {
 
 
 /**********************************  增加减少 start   ***********************************/
+   /*
         if(oAmountBox.length > 0) {
             oAmountBox.each(function(i) {
                 var oHandBtn = oAmountBox.eq(i).find('.js_handBtn');
@@ -200,12 +207,12 @@ seajs.use(['hammer','layer','public'], function(myHam,myLay,myPub) {
 
             });
         }
-
+    */
 /**********************************  增加减少 end     ***********************************/
 
 
 /**********************************  购物车 start *************************************/
-
+/*
 
         if(oCarListArea.length>0) {
             myPub.ShopSumPrice(oCheckBox,'.listBox','.js_goodsPrice',oSumPrice);
@@ -349,12 +356,13 @@ seajs.use(['hammer','layer','public'], function(myHam,myLay,myPub) {
             }
 
         });
-
+*/
 
 /**********************************  购物车 end   *************************************/
 
 
 /**********************************  下滑窗口 start   **********************************/
+    /*
         var oSeletSideH = oSeletSide.outerHeight(true);
         var ArrDownHam = new myPub.onHammerSwiper();
         var jumpBtn = false;     //判断是加入购物车false 还是结账true
@@ -417,31 +425,31 @@ seajs.use(['hammer','layer','public'], function(myHam,myLay,myPub) {
             var index = $(this).index();
              oGoodsSizeUl.find('li').removeClass('active').eq(index).addClass('active');
         });
-
+    */
 /**********************************  下滑窗口 end     **********************************/
 
-/**********************************  部分公共操作 start     **********************************/
-        //显示搜索框
-        oSStart.hammer().on('tap',function(e) {
-            oSearchArea.show().eq(1).hide();
-            oGoodsBox.hide();
-            oFooter.hide();
-            oIndexSearch.show();
-            oHeader.hide();
-            oContain.hide();
-            oSearchTxt.focus();
-        });
+/**********************************  部分公共操作 start **********************************/
+        // //显示搜索框
+        // oSStart.hammer().on('tap',function(e) {
+        //     oSearchArea.show().eq(1).hide();
+        //     oGoodsBox.hide();
+        //     oFooter.hide();
+        //     oIndexSearch.show();
+        //     oHeader.hide();
+        //     oContain.hide();
+        //     oSearchTxt.focus();
+        // });
 
-        //隐藏搜索框
-        oSCancel.hammer().on('tap',function(e) {
-            oSearchArea.show().eq(0).hide();
-            oGoodsBox.show();
-            oFooter.show();
-            oIndexSearch.hide();
-            oHeader.show();
-            oContain.show();
-            oSearchTxt.blur();
-        });
+        // //隐藏搜索框
+        // oSCancel.hammer().on('tap',function(e) {
+        //     oSearchArea.show().eq(0).hide();
+        //     oGoodsBox.show();
+        //     oFooter.show();
+        //     oIndexSearch.hide();
+        //     oHeader.show();
+        //     oContain.show();
+        //     oSearchTxt.blur();
+        // });
 
         // 清空搜索框  oSearchClear
         oSearchClear.hammer().on('tap',function() {
@@ -469,7 +477,7 @@ seajs.use(['hammer','layer','public'], function(myHam,myLay,myPub) {
                 var _Y = e.gesture.center.y;
                 //console.log(_tagsParent.parents('.picList').find('h4').text());
                 //console.log(_tagsParent.parents('li').find('.js_addCar').attr('_id'));
-                console.log(_tagsParent.parents('li').index());
+                //console.log(_tagsParent.parents('li').index());
                 if(_tags.nodeName.toLowerCase() == 'p' || _tags.nodeName.toLowerCase() == 'em') {
                     var aLi = $(this).find('.js_addCar');
                     var sLeft;
@@ -498,6 +506,7 @@ seajs.use(['hammer','layer','public'], function(myHam,myLay,myPub) {
 
 
 
+        /*
         var oOrderSlide = $('.js_orderInfoBox').find('.swiper-slide');
 
         oOrderSlide.hammer().on('tap',function(e) {
@@ -576,7 +585,7 @@ seajs.use(['hammer','layer','public'], function(myHam,myLay,myPub) {
                     break;
             }
         });
-
+*/
 
 
 
@@ -677,6 +686,7 @@ seajs.use(['hammer','layer','public'], function(myHam,myLay,myPub) {
         }
 
 
+        /*
         // 搜索设置cookie
         var cTime = 'h2';  //coookie 时间
         var _val = [];
@@ -731,8 +741,9 @@ seajs.use(['hammer','layer','public'], function(myHam,myLay,myPub) {
                 alert('no')
             },'no');
         });
+        */
 
-
+/*
     // 发送验证码
     var oGetCode = $('.js_getCode'); //发送验证码
     var oInputText = $('.js_Text');  //输入框
@@ -777,9 +788,9 @@ seajs.use(['hammer','layer','public'], function(myHam,myLay,myPub) {
         }
 
     });
+*/
 
-
-/**********************************  部分公共操作 end     **********************************/
+/**********************************  部分公共操作 end   **********************************/
 
 
    });
