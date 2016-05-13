@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<title>选择终端打印</title>
+<link rel="stylesheet" href="../../../css/common/global-store.css">
+<link rel="stylesheet" href="../../../css/common/ship-store.css"/>
+</head>
+
+<body>
+<div class="wrap">
+  <header> <span class="btn-topl"> <a class="ui-btn btn-back" href="javascript: history.go(-1);"><span class="back"></span></a></span>
+    <h1>选择终端打印</h1>
+  </header>
+  
+  <!-- code s-->
+  
+  <div class="module store-print">
+    <div class="module-t">
+      <h4>订单号：<span id="bno"></span></h4>
+    </div>
+  </div>
+  
+  <!--codes-->
+  
+  <div class="module store-latest-use">
+    <div class="module-t">
+      <h4>最近使用终端</h4>
+    </div>
+    
+    <!--有终端s-->
+    <div class="box-module-c" >
+    <div class="module-c" id="data_order">
+    
+    <!--选中状态，dl上面的样式为cur-->
+      
+     <!--    <dl >
+         <span hidden="hidden">1</span>
+         <dd class="box-radio-device"><input type="radio" class="radio-device"></dd>
+        <dt>
+          <label class="store-name-device cell">1号打印终端</label>
+        </dt>
+        <dd class="store-adress">白石龙一区100栋</dd>
+      </dl>
+     <dl>
+     <span hidden="hidden">2</span>
+         <dd class="box-radio-device"><input type="radio" class="radio-device"></dd>
+        <dt>
+         <label class="store-name-device cell">1号打印终端</label>
+        </dt>
+        <dd class="store-adress">白石龙一区100栋</dd>
+      </dl>
+      <dl>
+      <span hidden="hidden">1</span>
+         <dd class="box-radio-device"><input type="radio" class="radio-device"></dd>
+        <dt>
+          <label class="store-name-device cell">1号打印终端</label>
+        </dt>
+        <dd class="store-adress">白石龙一区100栋</dd>
+      </dl>  -->
+    </div>
+    
+    
+   <ul class="grid-btn-timing">
+      <li class="btn-cancel btn-current" id="btnSubmit">立即打印</li>
+      <!--btn-cancel为默认       btn-current为用户选完了-->
+    </ul>
+    
+    </div>
+     
+  
+    <!--有终端e--> 
+    
+    <!--无终端s-->
+    
+      <div class="box-module-c" style="display:none;" id="no_date">
+    <div class="module-c">
+      <div class="box-tip-people">
+        <div class="login-people  flex-c">
+          <p><img src="css/img/people01.png"></p>
+        </div>
+        <p class="text-tip-people">哎哟！最近没有使用过终端</p>
+        <div class="flex-c">
+        <p><a class="text-tip-ccc" href="javascript:;">请扫一扫终端打印运单</a></p></div>
+      </div>
+    </div>
+    </div>
+    <!--无终端e-->
+    
+    
+    <div class="box-sweep-print">
+    <a href="javascript:void(0);" id="J_barcodeTrigger">
+      <P class="sweep-print"><span class="icon-sweep"></span><span class="text-sweep-print">扫一扫终端打印</span></P>
+      <p class="content-btn-right right"></p>
+    </a>
+    </div>
+    
+     </div>
+    
+
+  
+  
+  
+</div>
+</body>
+</html>
+<script type="text/javascript" src="/js/common/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/js/common/deliverydetails/zepto.js"></script>
+<script type="text/javascript" src="/js/common/deliverydetails/2bWSEvAXi1.js"></script>
+<script type="text/javascript" src="/js/common/deliverydetails/2bytu8UVLZ.js"></script>
+<script type="text/javascript" src="/js/common/deliverydetails/commonSkin.js"></script>
+<script type="text/javascript" src="/js/common/deliverydetails/swipe.js"></script>
+<script type="text/javascript" src="/js/common/deliverydetails/fastclick.js"></script>
+<script type="text/javascript" src="/js/common/util/util.js"></script>
+<script type="text/javascript" src="/js/common/common.js"></script>
+<script type="text/javascript" src="/js/common/util/common.js"></script>
+<script type="text/javascript" src="/js/alipay/sinceOrders/shipStorePrint.js"></script>
+<script type="text/javascript" src="/js/common/baiduState.js"></script>

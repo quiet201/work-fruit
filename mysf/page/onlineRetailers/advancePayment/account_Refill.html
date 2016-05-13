@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>账户充值</title>
+<link rel="stylesheet" href="css/public.css">
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/advancePayment.js"></script>
+<script src="/page/onlineRetailers/printer/js/util.js"></script>
+<script  type="text/javascript">
+$(document).ready(function(){
+
+});
+
+function makeSureClick(){
+	var makeSure = $('#makeSure').attr('class');
+	if('ui-ico-sfi ico-box'==makeSure){
+		$('#makeSure').attr('class','ui-ico-sfi ico-yes2');
+	}else{
+		$('#makeSure').attr('class','ui-ico-sfi ico-box');
+	}
+}
+</script>
+</head>
+
+<body style="background-color:#f0f3f5">
+<div id="wrapper">
+   <section class="grid-main" style="margin: 40px 0;">
+    	<ul class="ui-fm ">
+    		<li class="item01 item-fm">
+                <div class="ui-flex">
+                    <div class="flex-ico"><label><span class="lable-fontStyle" style="width: 40px;">金额</span></label></div>
+                    <div class="flex-con">
+                    	<input id="amount" type="tel" name="" class="input-text" style="margin-left: 0px; font-size: 0.825em;" value="" placeholder="请输入充值金额，充值金额需为整数" />
+                    </div>
+                    <!-- <div class="ico_right"></div> -->
+                </div>
+            </li>
+ 	<li style="margin:0 0 10px 0">
+                <div class="ui-agreement" id="agreementDiv">
+		        	<div class="div-lr-padding">
+		        		<span >
+		                    <p>
+		                    	<a href="javascript:void(0);" data-btn="yes-no" onClick="makeSureClick();">
+		                    	<i class="ui-ico-sfi ico-box" id="makeSure"></i>
+			        			 <!--<i class="ui-ico-sfi ico-yes2" ></i>-->
+			        			</a>
+								<span class="text-fontStyle text-margin-left-6">  我已阅读并同意</span>
+		                    	<a href="receive_rules.html">
+			                    	<span class="text-fontStyle contract-color" >《活动协议》</span>
+		                    	</a>
+		                    </p>
+		                </span>
+		        	</div>
+	        	</div>
+            </li>
+       </ul>
+    </section>
+    <dl class="ui-submit">
+    	<dt><a class="btn-submitcz" href="#javascript:void(0)" onclick="submitFrozenAdvancePayment()">充值</a></dt>
+    </dl>
+</div>
+</body>
+</html>

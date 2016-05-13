@@ -1,0 +1,30 @@
+$(document).ready(function() {
+	//加日志
+	$.post("/service/commonLog/addLog/L00401");
+			$('[data-toggle="showHelp"]').bind("click",function(){
+				$("#pop-help").fadeIn();
+			});
+			
+			$("#help_button_1").bind("click",function(){
+				$("#page_1").hide();
+				$("#page_2").show();
+			});
+			$("#help_button_2").bind("click",function(){
+				$("#page_2").hide();
+				$("#page_3").show();
+			});
+			$("#help_button_3").bind("click",function(){		
+				$("#pop-help").hide();
+				$("#page_1").show();
+				$("#page_2").hide();
+				$("#page_3").hide();
+				location.href="/xiaomi/range/ship.html";
+			});
+			$("#help-close").bind("click",function(){		
+				$("#pop-help").hide();
+				$("#page_1").show();
+				$("#page_2").hide();
+				$("#page_3").hide();
+			});	
+			getCommonImg("10","N","1");
+});

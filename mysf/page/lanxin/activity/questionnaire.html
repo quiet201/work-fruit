@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html class="light">
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>个性物流问卷调查</title>
+<link rel="stylesheet" href="../../../css/common/public.css">
+  <style>
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+</style>
+
+    <style>
+.clear {height:0px; clear:both;}
+body {
+}
+.form-wrapper {
+  float:left;
+  width:100%;
+  max-width:75.000em;
+  background:#f0f3f5;
+  overflow:hidden;
+}
+.form-wrapper label, .form-wrapper .radio-check-label {
+  width:103%;
+  float:left;
+  margin-bottom:1em;
+  line-height: 18px;
+}
+.form-wrapper label span, .form-wrapper .notes, .form-wrapper .radio-check-label span.label {
+  float:left;
+  width: 25%;
+  text-align:right;
+}
+div.input-wrapper {
+  width:70%;
+  float:right;
+  padding:0 0.625em;
+}
+.form-wrapper input, .form-wrapper select, .form-wrapper textarea, form-wrapper .radio {
+  width:103%;
+  padding:0.625em 0;
+}
+.form-wrapper .text input, .form-wrapper textarea {
+  width:103%;
+  padding-left: 1%; /* % will not work in FF*/
+  padding-right: 1%; /* % will not work in FF*/
+}
+
+.form-wrapper .radio, .form-wrapper .checkbox {
+  position:relative;
+}
+.form-wrapper .radio span, .form-wrapper .checkbox span {
+  width :90%;
+  text-align:left;
+  padding-left:1.5em;
+}
+.form-wrapper .radio input, .form-wrapper .checkbox input {
+  position:absolute;
+  left:5px;
+  top:-6px;
+  width:1em;
+  height:1em;
+}
+
+input[type=reset], input[type=submit] {
+
+  max-width:94%;
+
+}
+input[type=submit] {
+  margin-left:3%
+}
+.form-wrapper .notes {
+  margin-top:1em;
+  width:100%;
+  text-align:left;
+}
+
+/* DOWN HERE: Only theming */ 
+
+/* Light Theme -----------------    */ 
+html.light{
+  background:#f0f3f5;
+}
+
+.form-wrapper.light {
+  background:#f0f3f5;
+  font-family:'PT Sans', Arial, sans-serif;
+  font-weight:normal;
+  font-size:1em;
+  line-height:1em;
+  color:#424242;
+  padding:1em 3%;
+}
+/* TEXT & TEXTAREA */
+.light label.text input, .light label.text textarea {
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  background: #fff;
+  color: #555;
+  transition:background .2s;
+}
+
+/* DROPDOWN & MULTIPLE*/
+.light label.dropdown select, .light label.multiple select {
+  background: #e5e5e5;
+  border: 1px solid #cccccc;
+  border-bottom-color: #fff;
+  border-right-color: #fff;
+  border-radius:3px;
+  transition:background .2s;
+}
+.light label.multiple select {
+  padding-bottom:1.875em;
+}
+.light label.dropdown select option, .light label.multiple select option  {
+  background:#e5e5e5;
+  margin-bottom:0.625em 1%;
+  cursor:pointer;
+  transition:background .2s;
+}
+.light label.dropdown select:focus, .light label.multiple select:focus, .light label.dropdown select:focus option, .light label.multiple select:focus option {
+  background:#FFF;
+}
+
+
+.check-a{display:block;-webkit-appearance:none;background:#fff;border:1px solid #b9b9b9;border-radius:4px;width:8px;height:8px;}
+.check-active{display:block;-webkit-appearance:none;background:#999;width:8px;height:8px;border-radius:4px;border:1px solid #999;}
+.light .radio-check-label input:checked ~ span { 
+  background:#FFF;
+}
+/* SUBMIT & RESET */
+.light input[name=submit], .light input[name=reset] {
+  
+  border-radius: 5px;
+  padding: 0.563em 4em;
+  background: #E65A5A;
+  color:#fff;
+  font-size:1em;
+  cursor:pointer;
+  transition:background 0.2s;
+  margin-bottom: 20px;
+}
+.submit{
+   width: 93%;
+  border-radius: 5px;
+  padding: 0.7em 0em;
+  background: #E65A5A;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 20px;
+  float: left;
+  text-align: center;
+  
+  margin-left: 10px;
+}
+
+.otherinput{
+	opacity: 1 !important;
+  position: relative !important;
+  margin-left: 60px;
+  width: 75% !important;
+  margin-bottom: 10px;
+  border:1px solid #cccccc;
+  height: 30px !important; 
+}
+.flex-con{
+   margin: 9px;
+  border: 1px solid #cccccc;
+  width: 91%;
+  background-color: #fff;
+}
+.ui-btn-right03:after {
+  content: "\e83d";
+  color: #bfbfbf;
+  font-size: 26px;
+  height: 20px;
+  line-height: 20px;
+  font-family: "sfico";
+  display: inline-block;
+  position: absolute;
+  right: 42px;
+  margin-top: -30px;
+}
+/* Media Queries */ 
+@media screen and (max-width: 480px)  {
+  .form-wrapper .text span, .form-wrapper .dropdown span, .form-wrapper .multiple span, .form-wrapper .radio-check-label span.label {
+  float:none;
+  width:100%;
+}
+  .form-wrapper .input-wrapper {
+    float:none;
+    margin-top:1.625em;
+    width:94%
+  }
+/* 省市区选择 */
+  .form-wrapper .input-wrapper label.radio span, .form-wrapper .input-wrapper label.checkbox span {
+    width: 93%;
+  padding-right: 1%;
+  border: 1px solid #cccccc;
+  height: 100%;
+  line-height: 34px;
+  margin-top: -17px;
+  background-color: #fff;
+  }
+ .form-wrapper .input-wrapper label.checkbox span p{
+  font-size: 12px;
+  line-height: 20px;
+  margin: -4px 0 8px 0px;
+  }
+  .form-wrapper input[name="reset"] {
+    margin-top:0.563em;
+    padding:0.563em 6em;
+  }
+.formbody li label{width: 100%;
+    float: left;
+   
+    font-size: 1.3rem;
+    margin: 1rem .5rem 1rem .5rem;
+}
+.place_selector{
+    display: inline-block;
+    width: 98%;
+}
+.place_selector {margin-left:.8rem;width: 93%;}
+.place_selector01{
+  -webkit-box-sizing: border-box;
+  margin-left: .1rem;
+  height: 100%;
+  line-height: 100%;
+  margin-top: .4rem;
+  display: inline-block;
+  padding: 10px 0;
+  background: #f8f8f8;
+  width: 29.5%;
+  text-align: center;
+  border: .1rem solid #ccc;
+  
+	
+}
+
+.placelist>span {
+    -webkit-box-sizing: border-box;
+  margin-left: .6rem;
+  height: 100%;
+  line-height: 1.8rem;
+  margin-top: .4rem;
+  display: inline-block;
+  background: #f8f8f8;
+  width: 29.5%;
+  text-align: center;
+  border: .1rem solid #ccc;
+  border-radius: .6em;
+  background-color: #E9E7E7;
+}
+
+/*媒体S*/
+
+/* @media screen and (min-width:320px){
+	html,body{font-size:10px;}
+	input, textarea, keygen, select, button{font-size:10px;}
+	}
+	
+
+@media screen and (min-width:375px){
+	html,body{font-size:11.71875px;}
+	input, textarea, keygen, select, button{font-size:11.71875px;}
+	}
+	
+	@media screen and (min-width:414px){
+	html,body{font-size:12.9375px;}
+	input, textarea, keygen, select, button{font-size:12.9375px;}
+	}
+	
+		
+	@media screen and (min-width:640px){
+	html,body{font-size:20px;}
+	input, textarea, keygen, select, button{font-size:20px;}
+	} */
+
+
+</style>
+
+    <!--<script src="js/prefixfree.min.js"></script>-->
+  <script src='/js/common/jquery-1.7.2.min.js'></script>
+  <script src="/js/tencent/activity/questionnaire.js"></script>
+  <script type="text/javascript" src="/js/common/util/util.js"></script>
+  <script type="text/javascript" src="/js/baiduState.js"></script>
+  <script type="text/javascript" src="/js/common/common.js"></script>
+  <script type="text/javascript" src="/js/common/commonchange.js"></script>
+  <script type="text/javascript" src="/js/common/area.js"></script>
+  <script type="text/javascript" src="/js/common/util/common.js"></script>
+  <script type="text/javascript" src="/js/common/activity/to-luck-trigger.js"></script>
+  <script type="text/javascript">
+function checkform(){
+	var warnstr = "";
+	if($("input[name=fromprovince]").val() == ""){
+		warnstr += "出发地省份没有填写\r\n";
+	}
+	if($("input[name=toprovince]").val() == ""){
+		warnstr += "到达地省份没有填写\r\n";
+	}
+	
+	if(warnstr == ""){
+		scrollTo(0,0);
+		var postr = $("#postform").serialize();
+		window.postinfo.getParameters(postr);
+	}else{
+		alert("表单填写有以下错误：\r\n\r\n"+warnstr);
+	}
+	return false;
+}
+
+$(document).ready(function(){
+	placeSelector($("#ps_from"), "from");
+	placeSelector($("#ps_to"), "to");
+	
+	$("#reset").click(function(){
+	    location.reload();
+		scrollTo(0,0);
+	});	
+});
+</script>
+</head>
+
+<body>
+  <!-- header s -->
+    <header>
+        <span class="btn-topl">
+        <a class="ui-btn btn-back" href="javascript: history.go(-1);"><i class="ui-ico-sfi ico-back"></i></a></span>
+        <h1>个性物流问卷调查</h1>
+        
+        </span>
+    </header>
+     <!-- header e -->
+  <div id="options" class="form-wrapper">
+  
+		<p style="margin-bottom: 20px;">快递也要有个性！仅需2分钟，参与问卷调查，填写您的真实想法，留下您的物流个性化足迹，帮忙程序猿哥哥优化我们的服务，逐步提升您的物流体验。更有精美礼品等你来拿！</p>
+		<fieldset class="radio-check-label" >
+		  <a id="dest_01"></a>
+		 1. 您的性别
+		  <div class="input-wrapper">	  	
+		    <label class="radio"  for="sex_a">
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="sex" value="M" id="sex_a"/>
+		      <span>男</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">
+		    <label class="radio"  for="sex_b">
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="sex" value="F" id="sex_b"/>
+		      <span>女</span>
+		    </label>
+		  </div>
+		</fieldset>
+		<fieldset class="radio-check-label" >
+		 <a id="dest_02"/>
+		 2. 您的年龄
+		  <div class="input-wrapper" >		  	
+		    <label class="radio" for="age_a">
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="age" value="A" id="age_a"/>
+		      <span>18岁以下</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">
+		    <label class="radio" for="age_b">
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="age" value="B" id="age_b"/>
+		      <span>18-24岁</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="radio" for="age_c">
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="age" value="C" id="age_c"/>
+		      <span>25-29岁</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">
+		    <label class="radio" for="age_d">
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="age" value="D" id="age_d"/>
+		      <span>30-39岁</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="radio" for="age_e">
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="age" value="E" id="age_e"/>
+		      <span>40-49岁</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">
+		    <label class="radio" for="age_f">
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="age" value="F" id="age_f"/>
+		      <span>50岁及以上</span>
+		    </label>
+		  </div>
+		</fieldset>
+  <fieldset class="radio-check-label" >
+		 <a id="dest_03"/>
+		 3. 您所在的地区是		  	  	
+		    <div class="form">
+    <form name="postform" id="postform" action="javascript:void(0);" onSubmit="return checkform();" method="post" autocomplete="off">
+      <input type="hidden" name="fromprovince" id='fromprovince' value="">
+      <input type="hidden" name="fromcity" id='fromcity' value="">
+      <input type="hidden" name="fromcounty" id='fromcounty' value="">
+      <input type="hidden" name="toprovince" value="">
+      <input type="hidden" name="tocity" value="">
+      <input type="hidden" name="tocounty" value="">
+      <ul class="formbody">
+        <li id="ps_from">
+          
+          
+            <div class="place_selector">
+              <span label="province" id="province" class="place_selector01">省份</span>
+              <span label="city"  id="city" class="place_selector01">城市</span>
+              <span label="county" id="county" class="place_selector01">区县</span>
+            </div>
+          <div class="placelist" style="width:95%"></div>
+        </li>
+        
+      </ul>
+     
+    </form>
+		 
+		</fieldset>
+	<fieldset class="radio-check-label" >
+		 <a id="dest_04"/>
+		 4. 您的职业
+		  <div class="input-wrapper">		  	
+		    <label class="radio" >
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="job" value="A"/>
+		      <span>行政/事业单位</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">
+		    <label class="radio" >
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="job" value="B"/>
+		      <span>医务人员</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="radio" >
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="job" value="C"/>
+		      <span>白领</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">
+		    <label class="radio" >
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="job" value="D"/>
+		      <span>教职工</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="radio" >
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="job" value="E"/>
+		      <span>学生</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">
+		    <label class="radio" >
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="job" value="F"/>
+		      <span>蓝领</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">
+		    <label class="radio" style="height:62px">
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="job" value="G" id="job_g"/>
+		      <span style="height:73px">其他</span>	
+		      <input type="text" class="otherinput" maxlength="20" id='jobG' style="top:-43px"/>
+		    </label>
+		    
+		  </div>
+		</fieldset>	
+		<fieldset class="radio-check-label">
+		<a id="dest_05"/>
+		5. 您的兴趣爱好（多选）
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="interest_a">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="interest" id="interest_a" value="A"/>
+		      <span>科技数码</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="interest_b">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="interest" id="interest_b" value="B"/>
+		      <span>服装美容</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="interest_c">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="interest" id="interest_c" value="C"/>
+		      <span>运动健身</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="interest_d">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="interest" id="interest_d"value="D"/>
+		      <span>美食烘焙</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="interest_e">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="interest" id="interest_e" value="E"/>
+		      <span>萌宠花艺</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="interest_f">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="interest" id="interest_f" value="F"/>
+		      <span>亲子母婴</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="interest_g">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="interest" id="interest_g" value="G"/>
+		      <span>旅游摄影</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="interest_h">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="interest" id="interest_h" value="H"/>
+		      <span>竞技网游</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="interest_i" style="height:62px">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="interest" id="interest_i" value="I"/>
+		      <span style="height:73px">其他</span>
+		      <input type="text" class="otherinput" maxlength="20" id='interestI' style="top:-43px"/>
+		    </label>
+		  </div>	  
+		</fieldset>
+		<fieldset class="radio-check-label" >
+		 <a id="dest_06"/>
+		 6. 您平均每月收几次顺丰快件？
+		  <div class="input-wrapper">		  	
+		    <label class="radio" >
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="month_sign_count"  value="A"/>
+		      <span>基本没有</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">
+		    <label class="radio" >
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="month_sign_count" value="B"/>
+		      <span>1-2次</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="radio" >
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="month_sign_count" value="C"/>
+		      <span>3-5次</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">
+		    <label class="radio" >
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="month_sign_count" value="D"/>
+		      <span>6-8次</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="radio" >
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="month_sign_count" value="E"/>
+		      <span>8次及以上</span>
+		    </label>
+		  </div>		  
+		</fieldset>		
+		<fieldset class="radio-check-label">
+		 <a id="dest_07"/>
+		 7. 您最关心快件的哪些方面（多选）
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="care_aspect_a">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="care_aspect" id="care_aspect_a" value="A"/>
+		      <span>价格</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="care_aspect_b">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="care_aspect" id="care_aspect_b" value="B"/>
+		      <span>时效</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="care_aspect_c">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="care_aspect" id="care_aspect_c" value="C"/>
+		      <span>安全性</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="care_aspect_d" style="height:62px">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="care_aspect" id="care_aspect_d" value="D"/>
+		      <span style="height:73px">其他</span>
+		      <input type="text" class="otherinput" maxlength="20" id='care_aspectD' style="top:-43px"/>
+		    </label>
+		  </div>		    
+		</fieldset>	
+		<fieldset class="radio-check-label">
+		<a id="dest_08"/>
+		8. 您平时都使用顺丰速运哪些自助服务平台或工具？（多选）
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="send_tool_type_a">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="send_tool_type" id="send_tool_type_a" value="A"/>
+		      <span>微信顺丰速运服务号</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="send_tool_type_b">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="send_tool_type" id="send_tool_type_b" value="B"/>
+		      <span>顺丰官网</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="send_tool_type_c">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="send_tool_type" id="send_tool_type_c" value="C"/>
+		      <span>支付宝服务窗顺丰速运服务号</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="send_tool_type_d">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="send_tool_type" id="send_tool_type_d" value="D"/>
+		      <span>手机QQ顺丰速运服务号</span>
+		    </label>
+		  </div>		
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="send_tool_type_e">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="send_tool_type" id="send_tool_type_e" value="E"/>
+		      <span>小米黄页顺丰速运服务号</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="send_tool_type_f">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="send_tool_type" id="send_tool_type_f" value="F"/>
+		      <span>顺丰速运APP</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="send_tool_type_g" style="height:62px">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="send_tool_type" id="send_tool_type_g" value="G"/>
+		      <span style="height:73px">其他</span>
+		      <input type="text" class="otherinput" maxlength="20" id='send_tool_typeG' style="top:-43px"/>
+		    </label>
+		  </div>		
+		</fieldset>	
+  <fieldset class="radio-check-label" >
+		 <a id="dest_09"/>
+		 9. 您一般多久会开始查询收到的快件？
+		  <div class="input-wrapper">		  	
+		    <label class="radio" >
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="start_query_time" value="A"/>
+		      <span>快件寄出3小时内</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">
+		    <label class="radio" >
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="start_query_time" value="B"/>
+		      <span>快件寄出3-6小时</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="radio" >
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="start_query_time" value="C"/>
+		      <span>快件寄出6-8小时</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">
+		    <label class="radio" >
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="start_query_time" value="D"/>
+		      <span>看情况</span>
+		    </label>
+		  </div>		  		  
+		</fieldset>	
+	<fieldset class="radio-check-label" >
+		 <a id="dest_10"/>
+		 10. 您平均间隔多久查询一次快件？
+		  <div class="input-wrapper">		  	
+		    <label class="radio" >
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="interval_query_time" value="A"/>
+		      <span>每小时查询1次</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">
+		    <label class="radio" >
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="interval_query_time" value="B"/>
+		      <span>每2-5小时查询1次</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="radio" >
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="interval_query_time" value="C"/>
+		      <span>每6-10小时查询1次</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">
+		    <label class="radio" >
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="interval_query_time" value="D"/>
+		      <span>每天查询1次</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">
+		    <label class="radio" >
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="interval_query_time" value="E"/>
+		      <span>很少查询</span>
+		    </label>
+		  </div>
+		</fieldset>
+  <fieldset class="radio-check-label">
+		 <a id="dest_11"/>
+		 11. 您一般通过什么方式查询快件信息？（多选）
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="query_type_a">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="query_type" id="query_type_a" value="A"/>
+		      <span>对话框输入运单号进行查单</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="query_type_b">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="query_type" id="query_type_b" value="B"/>
+		      <span>通过物流消息进入快件详情页</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="query_type_c">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="query_type" id="query_type_c" value="C"/>
+		      <span>通过“查件”菜单进行查件</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="query_type_d">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="query_type" id="query_type_d" value="D"/>
+		      <span>通过客服进行查件</span>
+		    </label>
+		  </div>		
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="query_type_e" style="height:62px">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="query_type" id="query_type_e" value="E"/>
+		      <span style="height:73px">其他</span>
+		      <input type="text" class="otherinput" maxlength="20" id='query_typeE' style="top:-43px"/>
+		    </label>
+		  </div>		 
+		</fieldset>	
+	<fieldset class="radio-check-label">
+		 <a id="dest_12"/>
+		 12. 您希望查询快件时可以看到哪些相关信息？（多选）
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="query_msg_type_a">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="query_msg_type" id="query_msg_type_a" value="A"/>
+		      <span>快件的原始寄出地区及目的地</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="query_msg_type_b">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="query_msg_type" id="query_msg_type_b" value="B"/>
+		      <span>预计送达时间</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="query_msg_type_c">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="query_msg_type" id="query_msg_type_c" value="C"/>
+		      <span>小哥联系方式</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="query_msg_type_d">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="query_msg_type" id="query_msg_type_d" value="D"/>
+		      <span>物流详情</span>
+		    </label>
+		  </div>		
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="query_msg_type_e">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="query_msg_type" id="query_msg_type_e" value="E"/>
+		      <span>专享服务<br><p>(查看运单图片、订阅快件动态、安全签收、小哥捎话等)</p></span>
+		    </label>
+		  </div>	
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="query_msg_type_f">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="query_msg_type" id="query_msg_type_f" value="F"/>
+		      <span>寄件方信息</span>
+		    </label>
+		  </div>		
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="query_msg_type_g" style="height:62px">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="query_msg_type" id="query_msg_type_g" value="G"/>
+		      <span style="height:73px">其他服务</span>
+		      <input type="text" class="otherinput" maxlength="20" id='query_msg_typeG' style="top:-43px"/>
+		    </label>
+		  </div>	
+		</fieldset>	
+  <fieldset class="radio-check-label">
+		<a id="dest_13"/>
+		13. 顺丰已推出如下专享服务，您比较感兴趣的有哪些？（多选）
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="interest_exclusive_service_a">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="interest_exclusive_service" id="interest_exclusive_service_a" value="A"/>
+		      <span>给小哥捎话<br>
+		      <p>(您不方便收件时，可提前给小哥捎话，将快件放入前台、门卫、快递柜等地方，还可以预约派送时间)</p></span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="interest_exclusive_service_b">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="interest_exclusive_service" id="interest_exclusive_service_b" value="B"/>
+		      <span>二维码安全签收<br><p>(专属二维签收码，出示给小哥扫一扫，即可完成安全签收)</p></span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="interest_exclusive_service_c">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="interest_exclusive_service" id="interest_exclusive_service_c" value="C"/>
+		      <span>订阅快件动态<br><p>(快件寄出后，订阅快件动态，快件路由有更新会及时发送物流消息提醒)</p></span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="interest_exclusive_service_d">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="interest_exclusive_service" id="interest_exclusive_service_d" value="D"/>
+		      <span>查看运单资料<br><p>(快件寄出或签收，可查看自己的运单资料图片)</p></span>
+		    </label>
+		  </div>		
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="interest_exclusive_service_e">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="interest_exclusive_service" id="interest_exclusive_service_e" value="E"/>
+		      <span>优先派送<br><p>(收派员准备派件时，使用优先派送服务，收派员会优先对您的快件进行派送)</p></span>
+		    </label>
+		  </div>	
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="interest_exclusive_service_f">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="interest_exclusive_service" id="interest_exclusive_service_f" value="F"/>
+		      <span>小哥评价<br><p>(快件签收后，您可以给小哥进行星级打分和贴上专属标签)</p></span>
+		    </label>
+		  </div>		
+		</fieldset>
+    <fieldset class="radio-check-label">
+		<a id="dest_14"/>
+		14. 您使用过以下哪些专享服务？（多选）
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="use_exclusive_service_a">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="use_exclusive_service" id="use_exclusive_service_a" value="A"/>
+		      <span>给小哥捎话</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="use_exclusive_service_b">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="use_exclusive_service" id="use_exclusive_service_b" value="B"/>
+		      <span>二维码安全签收</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="use_exclusive_service_c">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="use_exclusive_service" id="use_exclusive_service_c" value="C"/>
+		      <span>订阅快件动态</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="use_exclusive_service_d">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="use_exclusive_service" id="use_exclusive_service_d" value="D"/>
+		      <span>查看运单资料</span>
+		    </label>
+		  </div>		
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="use_exclusive_service_e">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="use_exclusive_service" id="use_exclusive_service_e" value="E"/>
+		      <span>优先派送</span>
+		    </label>
+		  </div>	
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="use_exclusive_service_f">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="use_exclusive_service" id="use_exclusive_service_f" value="F"/>
+		      <span>小哥评价</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="use_exclusive_service_g">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="use_exclusive_service" id="use_exclusive_service_g" value="G"/>
+		      <span>都没有使用过</span>
+		    </label>
+		  </div>
+		</fieldset>
+	  <fieldset class="radio-check-label" >
+		 <a id="dest_15"/>
+		 15. 您是否愿意收到物流消息提醒？
+		  <div class="input-wrapper">		  	
+		    <label class="radio" >
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="willing_msg_remind" id='willing_msg_remind_a' value="A"/>
+		      <span>  非常愿意</span>
+		    </label>
+		  </div>
+		 
+		  <div class="input-wrapper">
+		    <label class="radio" >
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="willing_msg_remind" id='willing_msg_remind_b' value="B"/>
+		      <span>不愿意</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="radio" >
+		      <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="willing_msg_remind" value="C"/>
+		      <span>推不推都可以，不太关注</span>
+		    </label>
+		  </div>		  
+		</fieldset>
+    <fieldset class="radio-check-label">
+		<a id="dest_16"/>
+		16. 您不愿意收到物流消息提醒是因为以下哪些原因？（多选）
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="no_msg_remind_a">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="no_msg_remind" id="no_msg_remind_a" value="A"/>
+		      <span>消息推送不及时</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="no_msg_remind_b">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="no_msg_remind" id="no_msg_remind_b" value="B"/>
+		      <span>经常将别人的物流消息推送给我</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="no_msg_remind_c">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="no_msg_remind" id="no_msg_remind_c" value="C"/>
+		      <span>有时候不推送消息给我</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="no_msg_remind_d">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="no_msg_remind" id="no_msg_remind_d" value="D"/>
+		      <span>多个渠道同时推送消息给我</span>
+		    </label>
+		  </div>		
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="no_msg_remind_e" style="height:62px">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="no_msg_remind" id="no_msg_remind_e" value="E"/>
+		      <span style="height:73px">其他</span>
+		      <input type="text" class="otherinput" maxlength="20" id='no_msg_remindE' style="top:-43px"/>
+		    </label>
+		  </div>	
+		</fieldset>
+		<fieldset class="radio-check-label">
+		<a id="dest_17"/>
+		17. 您希望在哪些环节收到物流消息提醒呢？（多选）
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="hope_remind_node_a">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="hope_remind_node" id="hope_remind_node_a" value="A"/>
+		      <span>快件寄出</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="hope_remind_node_b">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="hope_remind_node" id="hope_remind_node_b" value="B"/>
+		      <span>快件到达新的城市</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="hope_remind_node_c">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="hope_remind_node" id="hope_remind_node_c" value="C"/>
+		      <span>收派员开始派送快件</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="hope_remind_node_d">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="hope_remind_node" id="hope_remind_node_d" value="D"/>
+		      <span>快件出现异常</span>
+		    </label>
+		  </div>		
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="hope_remind_node_e">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="hope_remind_node" id="hope_remind_node_e" value="E"/>
+		      <span>快件已签收</span>
+		    </label>
+		  </div>
+		  <div class="input-wrapper">		  	
+		    <label class="checkbox" for="hope_remind_node_f">
+		       <input type="checkbox" onfocus="this.style.imeMode='disabled'" name="hope_remind_node" id="hope_remind_node_f" value="F"/>
+		      <span>收派员上门收件</span>
+		    </label>
+		  </div>		
+		</fieldset>
+
+  <label class="text">
+    <span>18. 您还希望有神马定制化的物流服务呢？(非必填)</span>
+    <div class="input-wrapper">
+      <input type="text"  id='hope_what_service'/> 
+    </div>  
+</div>
+    <a class="submit"  id="submitFrom">提交</a>
+<div class="clear"></div>
+</div>
+<div id="commonPage"></div>
+<div class="pop-tips" hidden="true" id="errorMsg">
+    <div class="tips">
+    	<img src="../../../css/common/img/warning.png"><p id="errorInfo"></p>
+    </div>
+</div>
+</body>
+</html>

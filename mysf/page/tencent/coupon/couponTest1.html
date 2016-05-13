@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<title>查詢优惠券</title>
+<!-- <link rel="stylesheet" href="/css/common/global.css">
+<link rel="stylesheet" href="/css/common/coupon.css"/>
+<script type="text/javascript" src="/js/common/tip-aligncenter.js"></script> -->
+<script type="text/javascript" src="/js/common/barcode/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="/js/common/barcode/jquery-barcode-2.0.1.js"></script>
+
+</head>
+
+<body>
+
+<p>券号:<input id="couponNo"></p>
+<p>验证码:<input id="checkcode"></p>
+<button type="button" value="生成" onclick="getData();" > 按钮</button>
+
+<h6 id="status"></h6>
+
+<!-- <p>姓名:<input id="customerName"></p>
+<p>手机号码:<input id="customerPhone"></p>
+<p>劵类型:<input id="couponType"></p>
+<p>赠劵运单号:<input id="waybillNo"></p>
+<p>抵免金额:<input id="pledgeMoney"></p>
+<p>生效日期:<input id="effectDate"></p>
+<p>截止日期:<input id="invalidDate"></p>
+<p>申领部门网点代码:<input id="deptCode"></p>
+<p>申领部门作业中心:<input id="deptCenter"></p>
+<p>项目代码:<input id="projectCode"></p>
+<p>费用归属项目名称:<input id="payoffProjectName"></p>
+<p>唯一标识码:<input id="markCode"></p>
+<p>系统编码:<input id="requestSystemId"></p>
+<p>调用时间:<input id="requestTime"></p> -->
+</body>
+</html>
+<script type="text/javascript">
+
+
+function getData(){
+	var couponNo = $("#couponNo").val();
+	var checkcode = $("#checkcode").val();
+	$.ajax({
+		type : "get",
+		dataType : "json",
+		url : "/service/coupons/coupons/validateMumber/"+couponNo+"/"+checkcode,
+		success : function(data) {
+			var json = eval(data);
+			$("#status").html(json[0].status);
+			/* BarCodeGeneration(json.couponNo,'3','50','5','148','22',$("#couponImg"));
+			BarCodeGeneration(json.checkCode,'3','50','5','148','22',$("#codeImg")); */
+		},
+		error : function(XMLHttpRequest, textStatus, errorThrown) {
+			//getCommonImg("1005","N","3");
+		}
+	});
+}
+
+function BarCodeGeneration(code,barWidths,barHeights,moduleSizes,posXs,posYs,obj){
+	var btype ='ean8';
+	var value = code;
+	 var settings = {
+	          output:"css",
+	          bgColor: "#FFFFFF",
+	          color: "#000000",
+	          barWidth: barWidths,
+	          barHeight: barHeights,
+	          moduleSize: moduleSizes,
+	          posX: posXs,
+	          posY: posYs,
+	          addQuietZone: false
+	        };
+	 obj.text("").show().barcode(value, btype, settings);
+	
+}
+</script>

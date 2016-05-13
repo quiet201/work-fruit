@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>账户余额</title>
+<link rel="stylesheet" href="css/public.css">
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/advancePayment.js"></script>
+<script src="/page/onlineRetailers/printer/js/util.js"></script>
+<script  type="text/javascript">
+$(document).ready(function(){
+	//queryAdvancePaymentRecs()
+	queryAdvancePaymentBlanceAmount();
+});
+</script>
+</head>
+
+<body>
+<div id="wrapper">
+	<dl class="topmenu">
+		<a href="customerInfo.html?type=modify">用户信息</a>
+	</dl>
+	<dl class="topmenu">
+		<a href="shouzhilist.html">收支明细</a>
+	</dl>
+   <section>
+    	<ul class="ui-success border-bottom0">       	
+        	<li class="item" style="padding-top: 20%;">
+        		<img src="img/ico/wallet.png" width="30%">
+        		<p>当前余额(元)</p>
+        		<p id="idBlanceAmount" style="font-size: 2em;">0.00</p>
+        		
+        	</li>                       
+        	                   
+        </ul>
+    </section>
+    <dl class="ui-submit">
+    	<dt><a class="btn-submitcz" href="#javascript:void(0)" onclick="redirectRechargeClick()">充值</a></dt>
+    	<dt><a class="btn-submitjd" href="#javascript:void(0)" onclick="redirectThawClick()">解冻</a></dt>
+    </dl>
+</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>顺丰速运</title>
+<link rel="stylesheet" href="../../../css/common/public.css">
+<link rel="stylesheet" href="../../../css/common/sf02.css">
+<link rel="stylesheet" href="../../../css/common/tips.css"/>
+</head>
+
+<body>
+<div id="wrapper">
+
+    <!-- header s -->
+    <header>
+    	<span class="btn-topl"><a class="ui-btn btn-back" href="javascript: history.go(-1);"><i class="ui-ico-sfi ico-back"></i></a></span>
+        <h1>绑定关联手机号</h1>
+    </header>
+    <!-- header e -->
+    
+    <section class="grid-main">
+    	<form>
+    	<ul class="ui-fm">
+    		
+            <li class="item item-fm">
+                <div class="ui-flex">
+                    <div class="flex-ico"><label><span class="lable-fontStyle">新手机号</span></label></div>
+                    <div class="flex-con">
+                        <input type="num" id="phoneNo" onpropertychange="isButtonEnable()" oninput="isButtonEnable()" class="input-text" value="" placeholder="请输入要关联的新手机号码"/><span class="placeholder"></span>
+                    </div>
+                </div>
+            </li>
+            <li class="item item-fm">
+                <div class="ui-flex">
+                    <div class="flex-ico"><label><span class="lable-fontStyle">验证码</span></label></div>
+                    <div class="flex-con">
+                        <input style="width: 50%;" type="num" name="" class="input-text" id="mobileVerifyCode"  onpropertychange="isButtonEnable()" oninput="isButtonEnable()" value="" placeholder="请输入验证码"/><span class="placeholder"></span>
+                    	<a class="ui-btn btn-buttom-line2 disable" id="linktext_1" onclick="sendValidateCode();commonEventPush('寄件','页面统计','绑定手机','bind.html');" href="javascript:void(0);" >发送验证码</a>
+                    	<span id="linktext_2" class="ui-btn btn-buttom-line3 disable"  style="display: none;"><samp id="timeNo">60秒</samp></span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        </form>
+        <div class="grid-btn">
+	       	<a class="ui-btn btn-submit" href="javascript:void(0);" id="sub" onclick="commonEventPush('寄件','页面统计','绑定手机','bind.html');">提 交</a>
+	    </div>
+    </section>
+
+</div>
+<div class="pop-tips" hidden="true" id="errorMsg">
+    <div class="tips">
+    	<img src="/css/common/img/warning.png"><p id="errorInfo"></p>
+    </div>
+</div>
+ <a href="/page/lanxin/index.html" class="cd-Home"><span class="ui-ico-sfi ico-home"></span></a>
+<script type="text/javascript" src="/js/common/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/js/common/util/util.js"></script>
+<script type="text/javascript" src="/js/common/deliverydetails/commonSkin.js"></script>
+<script type="text/javascript" src="/js/lanxin/bind/bind.js"></script>
+<script type="text/javascript" src="/js/baiduState.js"></script>
+</body>
+</html>

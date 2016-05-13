@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<title>订单详情</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="line-gray">
+<div class="wrap">
+  <header>
+    <div class="row hbg-gray"> <a href="javascript: history.go(-1);"><i class="btn btn-top">&nbsp;</i>
+      <h1>订单详情</h1>
+      </a> </div>
+  </header>
+  <!--待寄修s-->
+  <div class="row col grid-green">
+    <div class="phone-model">
+      <p class="model-p">iPhone 6</p>
+      <p class="fault-p">屏幕破碎、耳机无声音</p>
+      <p class="date"> 2015-08-28</p>
+    </div>
+    <div class="zt-jx">
+      <p class="repairing">待确认</p>
+    </div>
+  </div>
+  <!--待寄修e-->
+  
+  <section class="info-fault">
+    <article class="ifault">故障信息</article>
+    <p>手机甩出后导致屏幕破碎，点击无效，耳机无法听到声音；</p>
+    <p>边缘金属边磨损严重</p>
+  </section>
+  <div>
+    <ul class="infof1">
+      <li>预估维修价格<span>365元</span></li>
+    </ul>
+    <ul class="infof info-t info-b">
+      <li class="info-item">故障信息统计 <span>3项</span></li>
+      <li class="info-item" style="border-bottom:none;">预估维修价格<span>365元</span></li>
+     
+    </ul>
+    
+    <section>
+      <!-- <a class="ui-btn btn-payred" href="order-detail3.html">在线支付</a> -->
+      <a class="ui-btn btn-payred" href="javascript:void(0)" onclick="pay()">在线支付</a>
+      <form id="payForm" method="post" action="http://mpay-sit.sf-pay.com:8090/h5-cashier/home">
+		<input type="hidden" id="serviceName" name="serviceName" />
+		<input type="hidden" id="charset" name="charset" />
+		<input type="hidden" id="signType" name="signType" />
+		<input type="hidden" id="sign" name="sign" />
+		<input type="hidden" id="requestTime" name="requestTime" />
+		<input type="hidden" id="merchantId" name="merchantId" />
+		<input type="hidden" id="merchantName" name="merchantName" />
+		<input type="hidden" id="orderId" name="orderId" />
+		<input type="hidden" id="amt" name="amt" />
+		<input type="hidden" id="tradeScene" name="tradeScene" />
+		<input type="hidden" id="ccy" name="ccy" />
+		<input type="hidden" id="orderBeginTime" name="orderBeginTime" />
+		<input type="hidden" id="orderExpDate" name="orderExpDate" />
+		<input type="hidden" id="goodsName" name="goodsName" />
+		<input type="hidden" id="goodsDesc" name="goodsDesc" />
+		<input type="hidden" id="goodsUrl" name="goodsUrl" />
+		<input type="hidden" id="merBusinessType" name="merBusinessType" />
+		<input type="hidden" id="reserved" name="reserved" />
+		<input type="hidden" id="notifyUrl" name="notifyUrl" />
+		<input type="hidden" id="merchantUrl" name="merchantUrl" />
+		<input type="hidden" id="callBackUrl" name="callBackUrl" />
+		<input type="hidden" id="accessWay" name="accessWay" />
+		<input type="hidden" id="ext1" name="ext1" />
+		<input type="hidden" id="ext2" name="ext2" />
+		<input type="hidden" id="ext3" name="ext3" />
+		<input type="hidden" id="openId" name="openId" />
+		<input type="hidden" id="merchantUserId" name="merchantUserId" />
+		<input type="hidden" id="merchantUserName" name="merchantUserName" />
+	  </form>
+    </section>
+  </div>
+</div>
+
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+	function pay(){
+		$.get("/service/songweixiu/private/orderpay/getpayinfo", {},function(result){
+			if(result){
+				$("#serviceName").val(result["serviceName"]);//接口名称
+				$("#charset").val(result["charset"]);//字符编码
+				$("#signType").val(result["signType"]);//签名方式
+				var requestTime = "20151023163833";//请求时间戳
+				var merchantId = "1000100349";//平台商户代码
+				var merchantKey = "f1646245e6edc52a0c10418489ea5bb3";//商户秘钥
+				var key = hex_md5(requestTime)+merchantKey;
+				var orderId = "1445566613632";//平台商户订单号
+				var amt = "1";//订单金额
+				var ccy = "RMB";//金额币种
+				var notifyUrl = "http://www.baidu.com";//通知URL
+				var sign = "merchantId="+merchantId+"&orderId="+orderId+"&amt="+amt+"&ccy="+ccy+"&notifyUrl="+notifyUrl+key;
+				$("#sign").val(hex_md5(sign));//签名
+				$("#merchantId").val(merchantId);
+				$("#merchantName").val("");//商户名称
+				$("#orderId").val(orderId);
+				$("#amt").val(amt);
+				$("#tradeScene").val("030200005");//交易场景码
+				$("#ccy").val(ccy);
+				$("#orderBeginTime").val("20151023133619");//订单发起时间
+				$("#orderExpDate").val("20151027133619");//订单过期时间
+				$("#goodsName").val("iphone6s 128G 钻石镶金版维修费用");//商品名称
+				$("#goodsDesc").val("土豪专用");//商品描述
+				$("#goodsUrl").val("http://10.79.4.28:8080/query_package");//商品链接
+				$("#merBusinessType").val("");//商户业务类型
+				$("#reserved").val("");//商户附加信息
+				$("#notifyUrl").val(notifyUrl);//通知URL
+				$("#merchantUrl").val("http://www.baidu.com");//商户链接
+				$("#callBackUrl").val(result["callBackUrl"]);//商家成功回调url
+				$("#accessWay").val("WAP");//访问来源
+				$("#ext1").val("");//扩展参数1
+				$("#ext2").val("");//扩展参数2
+				$("#ext3").val("");//扩展参数3
+				$("#requestTime").val(requestTime);
+				$("#openId").val("");//开放ID
+				$("#merchantUserId").val("");//内部商户的用户唯一标识
+				$("#merchantUserName").val("");//内部商户的用户名字
+				$("#payForm").submit();
+				
+			}
+			
+		},"json");
+	}
+</script>
+</body>
+</html>

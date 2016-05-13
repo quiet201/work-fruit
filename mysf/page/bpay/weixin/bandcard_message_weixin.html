@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>填写银行卡信息</title>
+<link rel="stylesheet" href="../weixin/css/baobeibao_weixin.css">
+<link rel="stylesheet" href="../../../css/common/public.css">
+<link rel="stylesheet" href="../../../css/common/tips.css"/>
+
+
+
+</head>
+<body>
+	<div id="wrapper">
+
+    <!-- header s -->
+    <header>
+        <span class="btn-topl">
+        <a class="ui-btn btn-back" href="javascript: history.go(-1);"><i class="ui-ico-sfi ico-back"></i></a></span>
+        <h1>填写银行卡信息</h1>
+        </span>
+    </header>
+    <section>
+    	<form>
+    	<ul class="ui-fm " style="padding: 0 3%;">
+    		<li class="item item-fm border-bottom0" style="padding: 0;">
+                <div class="ui-flex">
+                    <div class="flex-ico">
+                    	<label class="wth200"><span class="">姓名</span><span class="ml30" id="name"></span></label>
+                        <p class="colorgray02 mb15">请填写姓名对应的银行卡信息，否则会导致理赔不成功</p>
+                    </div>
+                    
+                </div>
+            </li>
+       </ul>
+       
+       <ul class="grid-main ui-list">
+       	    <li class="item02 item-fm" style="padding: 0; height: 50px; line-height: 50px;">
+                <div class="ui-flex">
+                    <div class="flex-ico"><label><span class="">开户银行</span></label></div>
+                    <div class="flex-con">
+                    	<select name="band" id="band" class="band">
+							<option value="chose"  selected="selected">请选择开户银行</option>
+							<option value="ICBC" >工商银行</option>
+							<option value="ABC" >农业银行</option>
+							<option value="BOC" >中国银行</option>
+							<option value="CCB" >建设银行</option>
+							<option value="BOCM" >交通银行</option>
+							<option value="CITIC" >中信银行</option>
+							<option value="CEB" >光大银行</option>
+							<option value="CMBC" >民生银行</option>
+							<option value="GDB" >广发银行</option>
+							<option value="PAB" >平安银行</option>
+							<option value="CMB" >招商银行</option>
+							<option value="CIB" >兴业银行</option>
+							<option value="SPDB" >上海浦东发展银行</option>
+							<option value="BOB" >北京银行</option>
+							<option value="BOS" >上海银行</option>
+							<option value="PSBC" >中国邮政储蓄银行</option>
+						</select>
+                    </div>
+                    
+                </div>
+            </li>
+            <li class="item02 item-fm border-bottom0" style="padding: 0 ;height: 50px; line-height: 50px;">
+                <div class="ui-flex" >
+                    <div class="flex-ico"><label><span class="">银行卡号</span></label></div>
+                    <div class="flex-con">
+                    	<input type="text" id="cardNum" class="input-text" value="" placeholder="请输入对应的银行卡号" maxlength="24" onkeyup="this.value=this.value.replace(/\D/g,'').replace(/....(?!$)/g,'$& ')" />
+                    </div>
+                </div>
+            </li>
+       </ul>
+       </form>
+       <dl class="ui-btn01">
+    	<center><a class="btn-submit02" onclick="submit();">　提交　</a></center>
+        </dl>
+    </section>
+    
+   </div>
+   <div class="maskbox" id="maskbox01" hidden="hidden"></div>
+   <div class="pop-tips" hidden="true" id="errorMsg">
+    <div class="tips">
+    	<img src="/css/common/img/warning.png"><p id="errorInfo"></p>
+    </div>
+</div>
+
+<script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/js/common/common.js"></script>
+<script type="text/javascript" src="/js/common/util/util.js"></script>
+<script type="text/javascript" src="/js/bpay/weixin/bandcard.js"></script>
+<!-- <script type="text/javascript" src="../weixin/select.js"></script> -->
+</html>

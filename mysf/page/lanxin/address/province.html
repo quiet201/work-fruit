@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+	content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<title>顺丰速运</title>
+<link rel="stylesheet" href="../../../../css/common/main.css">
+</head>
+
+<body class="region-page">
+	<div id="wrapper">
+		<!-- header s -->
+		<header>
+			<span class="btn-topl"><a class="ui-btn btn-back" href="javascript: history.go(-1);"><i class="ui-ico-sfi ico-back"></i></a></span>
+			<h1>选择所在地区</h1>
+		</header>
+		<!-- header e -->
+ 
+		<section class="ui-region">
+			<ul class="ui-tabs-menu" data-tabs="tabs">
+				<li class="cur">中国大陆</li>
+				<li id="gatAddrInfor">港澳台</li>
+				<li id="countryAddrInfor">海外</li>
+			</ul>
+			<!-- 大陆 s -->
+			<div class="ui-tabs-content" style="display: block;">
+				<!-- <div class="region-title">当前所在城市</div>
+				<div class="ui-con cur-city">深圳</div> -->
+				<div class="region-title">热门城市</div>
+				<ul id="hotList" class="ui-con hot-city">
+				</ul>
+				<div class="region-title">省份/直辖市</div>
+				<div class="item-wrapper">
+					<ul class="items" id="provinceList">
+					</ul>
+				</div>
+			</div>
+			<!-- 大陆 e -->
+
+			<!-- 港澳台 s -->
+			<div  class="ui-tabs-content">
+				<!-- <div class="region-title">当前所在城市</div>
+				<div class="ui-con cur-city">深圳</div> -->
+				<div class="item-wrapper">
+					<ul id="gatAddr" class="items">
+						<!-- <li><a href="/tencent/range/city.html?sar=台湾">台湾</a></li>
+						<li><a href="/tencent/range/city.html?sar=香港">香港</a></li>
+						<li><a href="/tencent/range/city.html?sar=澳门">澳门</a></li> -->
+					</ul>
+				</div>
+			</div>
+			<!-- 港澳台 e -->
+
+			<!-- 国外 s -->
+			<div   class="ui-tabs-content">
+				<!-- <div class="region-title">当前所在城市</div>
+				<div class="ui-con cur-city">深圳</div> -->
+				<div class="item-wrapper">
+					<ul class="items" id="countryAddr">
+					</ul>
+				</div>
+			</div>
+			<!-- 国外 e -->
+		</section>
+	</div>
+	 <a href="/page/tencent/index.html" class="cd-Home"><span class="ui-ico-sfi ico-home"></span></a>
+</body>
+	<script type="text/javascript" src="../../../js/common/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="/../../js/common/util/util.js"></script>
+	<!-- <script type="text/javascript" src="../../../js/common/region.js"></script>  -->
+	<script type="text/javascript" src="../../../js/lanxin/address/province.js"></script>
+	<script type="text/javascript" src="/js/common/baiduState.js"></script>
+</html>

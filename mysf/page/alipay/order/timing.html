@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<title>运费与时效</title>
+<link rel="stylesheet" href="../../../css/common/global-store.css">
+<link rel="stylesheet" href="../../../css/common/tips.css">
+<link rel="stylesheet" href="../../../css/common/timing.css"/>
+<!-- <link rel="stylesheet" type="text/css" href="../../../css/style.css"> -->
+
+</head>
+
+<body>
+<div class="wrap">
+  <header> 
+  	<span class="btn-topl"> 
+  		<a class="ui-btn btn-back" href="javascript: history.go(-1);"><span class="back"></span></a>
+  	</span>
+    <h1>运费与时效</h1>
+   <!--  <span class="btn-topr">
+    	<a class="ui-btn btn-top" style="font-size:1.3rem" href="/page/alipay/order/timing_internal.html" onclick="commonEventPush('寄件','页面统计','国际时效查询','timing_internal.html');">查国际时效</a>
+    </span> -->
+  </header>
+  <div class="timing">
+  <!--选择s-->
+    <div class="timing-select">
+      <ul class="select-adress">
+        <li onclick="getAddressDetail('/page/common/address/province.html?addrName=srcName&addrCode=srcCode&addrCountyName=acountyName&addrCountyCode=acountyCode&type=3')">
+        	<span id="srcName"><i>请选择寄出城市</i></span>
+          	<div class="icon-timing icon-adress"></div>
+        </li>
+        <div class="icon-timing icon-refresh"></div>
+        <li onclick="getAddressDetail('/page/common/address/province.html?addrName=destName&addrCode=destCode&addrCountyName=dcountyName&addrCountyCode=dcountyCode&type=4')">
+        	<span id="destName"><i>请选择寄送城市</i></span>
+        </li>
+      </ul>
+      <ul class="select-other">
+        <li>
+          <dl showDivId="div_id_content_wpzl" class="option_select" >
+            <dt class="arrow">
+            	<span class="weight"></span>
+            	<span id="weight">1kg</span>
+            </dt>
+          </dl>
+          <dl class="second" onclick="getSendingTime('/page/alipay/order/calendar.html')">
+            <dt class="arrow" >
+            	<span class="time" id="dateTime">现在</span>
+            </dt>
+          </dl>
+        </li>
+      </ul>
+      <ul class="grid-btn-timing">
+        <li class="btn-current btn-cancel" id="btnQuery" onclick="btnClick();">查 询</li>
+        <!--btn-cancel为默认       btn-current为用户选完了-->
+      </ul>
+    </div>
+    
+  <!--选择e-->
+  
+  
+  <!--产品价格和时效s-->
+    <div class="box-timecontainer-store dev-search-show" style="display:none">
+      <div class="timecontainer-store">
+        <div class="timecontainer-store-t flex-sb">
+        	<P>产品时效和价格</P>
+        	<p> 
+        		<a class="btn-return"><!--寄为send,收方付return-->
+            		<i class="send" onclick="switchPriceTable();" id="tableType">寄付</i>
+            	</a>
+        	</p>
+       
+        </div>
+        
+        
+        <div class="timecontainer-store-c" id="timecontainerDiv">
+           <ul>
+             <Li name="seed" class="T1 dated" style="display:none">
+               <dl>
+               		<dt class="price">
+               			<span name='price'>298</span>
+               			<span name='destPrice' style="display:none">298</span>
+               			<span class="money-hk" name="name_span_currency" style="display:none">港币</span>
+               			<span class="money-hk" name="name_span_destcurrency" style="display:none">港币</span>
+               			</dt><dd class="pay-pre">预估运费</dd>
+               		</dl>
+               <div class="line-cplx"></div>
+               <dl class="second">
+               		<dt>
+               			<span class="cplx-name" name='cplxName'>顺丰即日</span>
+               			<span class="time-commit" name="name_span_productTip" style="display:none" >今天寄今天到</span>
+               		</dt>
+               		<dd class="time-pre" name="dd_name_deliverTm">预计<span name='deliverTm'>2015-10-24(周四) 12:00</span>送达</dd>
+               		<dd class="time-last" name="dd_name_time_last">截止寄件：   <span name='timeLast'>当日10:00</span></dd>
+               	</dl>
+             </Li>
+             
+          <!--    <Li name="seed" class="T8" style="display:none"> 
+               <dl><dt class="price"><span name='price'>50</span><span name='destPrice' style="display:none">298</span><span class="money-hk" name="name_span_currency" style="display:none">港币</span><span class="money-hk" name="name_span_destcurrency" style="display:none">港币</span></dt><dd class="pay-pre">预估运费</dd></dl>
+               <dl class="second"><dt><span class="cplx-name" name='cplxName'>顺丰次晨</span><span class="time-commit" name="name_span_productTip">今天寄明天早上到</span></dt><dd class="time-pre">预计<span name='deliverTm'>2015-10-24(周四) 12:00</span>送达</dd><dd class="time-last">截止寄件：   <span name='timeLast'>当日10:00</span></dd></dl>
+             </Li>
+             <Li name="seed" class="T4" style="display:none"> 
+               <dl><dt class="price"><span name='price'>50</span><span name='destPrice' style="display:none">298</span><span class="money-hk" name="name_span_currency" style="display:none">港币</span><span class="money-hk" name="name_span_destcurrency" style="display:none">港币</span></dt><dd class="pay-pre">预估运费</dd></dl>
+               <dl class="second"><dt><span class="cplx-name" name='cplxName'>顺丰次日</span><span class="time-commit" name="name_span_productTip">今天寄明天到</span></dt><dd class="time-pre">预计<span name='deliverTm'>2015-10-24(周四) 12:00</span>送达</dd><dd class="time-last" ">截止寄件：   <span name='timeLast'>当日10:00</span></dd></dl>
+             </Li>
+             
+              <Li name="seed" class="T6" style="display:none"> 
+               <dl><dt class="price"><span name='price'>50</span><span name='destPrice' style="display:none">298</span><span class="money-hk" name="name_span_currency" style="display:none">港币</span><span class="money-hk" name="name_span_destcurrency" style="display:none">港币</span></dt><dd class="pay-pre">预估运费</dd></dl>
+               <dl class="second"><dt><span class="cplx-name" name='cplxName'>顺丰隔日</span><span class="time-commit" name="name_span_productTip">今天寄后天到</span></dt><dd class="time-pre">预计<span name='deliverTm'>2015-10-24(周四) 12:00</span>送达</dd><dd class="time-last">截止寄件：   <span name='timeLast'>当日10:00</span></dd></dl>
+             </Li> -->
+             
+              
+             <!--香港s-->
+            <!--  <Li> 
+               <dl><dt class="price"><span>500</span><span name="name_span_currency" style="display:none">港币</span></dt><dd class="pay-pre">预估运费</dd></dl>
+               <dl class="second"><dt><span class="cplx-name">顺丰隔日</span><span class="time-commit">今天寄后天到</span></dt><dd class="time-pre">预计<span>2015-10-24(周四) 12:00</span>送达</dd><dd class="time-last">截止寄件：   <span>当日10:00</span></dd></dl>
+             </Li> -->
+             
+               <!--香港e-->
+           </ul>
+        </div> 
+      </div>
+    </div>
+    
+    <!--暂无查询结提示s-->
+    <div id="id_div_noProduct" class="box-tip-people dev-search-show" style="display:none">
+      <div class="login-people  flex-c">
+        <p><img src="../../../css/common/img/people01.png"></p>
+      </div>
+      <p class="text-tip-people">暂无查询结果</p>
+      <p class="tc text-tip-ccc">请试试其它查询条件或稍后再来查询</p>
+    </div>
+    
+       <!--暂无查询结提示e--> 
+    
+    <div style="display:none" class="dev-search-show">
+      <ul class="grid-btn-timing">
+        <li class="current first" onclick="javascript:window.location.href='/page/alipay/order/ship.html';">我要寄件</li>
+      </ul>
+    </div>
+      
+    	
+    <!--产品价格和时效e-->
+  </div>
+  <div class="order_layer_shade" style="display:none;"></div><!-- 遮罩弹出层 -->
+	<!-- 遮罩弹出层 -->
+	<div class="order_layer_iframe clearfix" style="height:0;">
+		<a class="close Left" href="javascript:;">×</a>
+		<div class="clear"></div>
+		<div class="container clearfix">
+ 				<div id="div_id_content_wpzl" class="content_wpzl clearfix " style="display:none;">
+				<p>物品重量</p>
+				<ul id="ul_id_good_weight" class="clearfix name_element_select"  destId="weight" destValueCallFun="setWeightValue()">
+					<li class="chidren_element_option current">1kg</li>
+					<li class="chidren_element_option">1.5kg</li>
+					<li class="chidren_element_option">2kg</li>
+					<li class="chidren_element_option">2.5kg</li>
+					<li class="chidren_element_option">3kg</li>
+					<li class="chidren_element_option_other" relatedShowId="dl_id_good_weight" srcValueId="input_id_good_weight_other_value" makeSuerId="a_id_good_weight_other">填其他</li>
+				</ul>
+				<dl id="dl_id_good_weight" style="display:none">
+				   <dt>
+						<div class="pd">
+							<input id="input_id_good_weight_other_value" type="text"  placeholder="请填写您寄出的物品重量" setValueCallBack="setWeightValue($('#input_id_good_weight_other_value'))">
+							<i>kg</i>
+						</div>
+					</dt>
+					<dd>
+						<a id="a_id_good_weight_other" class="submit Right blue" href="javascript:void();" beforeClick="validWeight($('#input_id_good_weight_other_value'))">确定</a>
+					</dd>
+			    </dl>
+			</div>  
+		</div>
+	</div>
+</div>
+<div class="pop-tips" hidden="true" id="errorMsg">
+    <div class="tips">
+    	<img src="../../../css/common/img/warning.png"><p id="errorInfo"></p>
+    </div>
+    </div>
+    
+    <div class="pop-tips" hidden="true" id="success">
+    <div class="tips">
+    	<img src="../../../css/common/img/success.png"><p id="MsgInfo"></p>
+    </div>
+</div>
+<div id="commonPage"></div>
+<a href="/page/alipay/index.html" class="cd-Home"><span class="ui-ico-sfi ico-home"></span></a>
+<!--立即下单s-->
+
+<!--立即下单e-->
+<script type="text/javascript" src="/js/common/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../../../js/common_ship.js"></script>
+<script type="text/javascript" src="/js/common/util/util.js"></script>
+<script type="text/javascript" src="/js/common/util/common.js"></script>
+<script type="text/javascript" src="/js/common/baiduState.js"></script>
+<script type="text/javascript" src="/js/alipay/order/ship-timing.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>顺丰速运</title>
+<link rel="stylesheet" href="/css/common/public.css">
+<link rel="stylesheet" href="/css/common/waybill.css">
+</head>
+
+<body>
+<style>
+.active{
+	display:block;
+}
+.unactive{
+	display:none;
+}
+</style>
+     <div id="wrapper">
+
+    <!-- header s -->
+    <header>
+        <span class="btn-topl">
+        <a class="ui-btn btn-back" href="javascript: history.go(-1);"><i class="ui-ico-sfi ico-back"></i></a></span>
+        <h1>评价顺丰小哥</h1>
+        </span>
+    </header>
+     <!-- header e -->
+     
+     <section class="acceptd">
+    	<ul class="ui-fm border-top0 border-bottom0">
+        	<li class="item item-normal">
+            	<div class="introduce-box">
+                    <div class="ui-flex">
+                        <div class="flex-ico02" style="margin-bottom: 10px;">
+                            <div class="photo02">
+                                <span class=""><img id="photoUrl" src=""  width="80px" /></span>
+                                <span class="pin"></span>
+                               
+                            </div>
+                        </div>
+                        <div class="flex-con02">
+                        	<ul class="introduce-list">
+                            	<li class=""><h3 id="empName"></h3></li>
+                                <li class="item"><i class="ui-ico ico-star able"></i><i class="ui-ico ico-star able"></i><i class="ui-ico ico-star able"></i><i class="ui-ico ico-star able"></i><i class="ui-ico ico-star"></i></li>
+                            </ul>
+                        </div>                    
+                    </div>
+                </div>
+              </li>
+              <li class="item danhao border-bottom0">
+                
+                <span class="font01 colorgrey01">运单号：<span class="font03" id="waybill-num"></span></span>
+                <p class="font01 colorgrey01">签收时间：<span class="font03" id="signTime"></span></p> 
+                
+              
+              </li>
+              </ul>
+        </section>
+        	<!-- 没有评价 -->
+        <section class="grid-main acceptd" id="noEvaluate" style="display:none;">
+              <ul class="ui-latest">
+               <li class="item01"><div class=" title-latest">服务评分</div></li>
+               <li class="item02" id="evaluateScore"><i class="ui-ico ico-star02 "></i><i class="ui-ico ico-star02"></i><i class="ui-ico ico-star02"></i><i class="ui-ico ico-star02 "></i><i class="ui-ico ico-star02"></i></li>
+             <li class="item01">
+             <div class=" title-latest" id="yingxiang" >小哥印象</div>
+             <div class="f-r" style="margin-top: -8%; width:76px" id="tagsSwitch"><i class="ui-ico-sfi ico-refresh mar-r2"></i><span class=" font01 colorgrey02 pad-t1 mar-l" style="line-height: 30px;">换一批</span></div>
+             </li>
+             <li class="item01" id="evaluateLabels" style="display:none;">
+                  <!--  <i class="ui-btn btn-submitapprisal">速度快</i>
+                   <i class="ui-btn btn-submitapprisal">小哥好帅</i>
+                   <i class="ui-btn btn-submitapprisal">小哥声音很好听</i>
+                   <i class="ui-btn btn-submitapprisal">服务态度很好</i>
+                   <i class="ui-btn btn-submitapprisal">幽默</i>
+                   <i class="ui-btn btn-submitapprisal">遇到这样的男人就嫁了</i> -->
+              </li>
+              
+             
+              
+               <li class="item03" id="text-commentsDiv">
+               <div style="width:100%;background:transparent;padding-top: 5px;">
+                <input type="num" class="input-text" id="text-comments" placeholder="我还想说…" style="padding: 7% 3%;">
+              </li>   
+              <li class="item05" style="display:none; padding:0 5% 50px 0"" id="evaluatedRecord">
+              	<div class="msg-div">
+              	    <div class="msg-box-h">
+                    		<span class="msg-lt-h"></span>
+                    		<p id="evaluatedtext">顺丰服务很不错呦~ 支持！</p>
+                    </div>
+                 </div>
+                 <div class="clearall"></div>
+              </li>
+              
+            </ul>
+            <div class="grid-btn">
+        	<a class="ui-btn btn-cancel" href="#" id="subBtn">提 交</a>
+        </div>
+        </section>
+        	<!-- 评价过 -->
+		<!-- <section class="grid-main acceptd" id="evaluated"  style="display:none;">
+			<ul class="ui-latest">
+				<li class="item01"><div class=" title-latest">服务评分</div></li>
+				<li class="item02"><i class="ui-ico ico-star02 able "></i><i
+					class="ui-ico ico-star02 able"></i><i class="ui-ico ico-star02 able"></i><i
+					class="ui-ico ico-star02 able"></i><i class="ui-ico ico-star02"></i></li>
+				<li class="item01">
+					<div class=" title-latest">小哥印象</div>
+	
+				</li>
+	
+				<li class="item01"><i class="ui-btn btn-submitassess">速度快</i> <i
+					class="ui-btn btn-submitassess">小哥声音很好听</i> <i
+					class="ui-btn btn-submitassess">服务态度很好</i> <i
+					class="ui-btn btn-submitassess">遇到这样的男人就嫁了</i></li>
+				<li class="item04"><span class="font01 colorgrey01">顺丰服务很不错呦~</span>
+				</li>
+	
+			</ul>
+		</section> -->
+		<!-- <div class="ad"  id="testPosition001" class="replaces" style="bottom: 0px;position: fixed;display:none;"><a href="http://eqxiu.com/s/OMcmWDs2"><img src="../../../../image/telephoneBind/shaohua_banner.jpg" ></a></div>  -->
+	</div>
+  
+ 	<span id="conmment-tips" style="display:none;">系统繁忙</span>
+ 	<span id="conmment-tips2" style="display:none;">只能评价自己的运单哦~</span>
+<!-- 公共页面 -->
+<div id="commonPage"></div>
+ <a href="/page/telephoneBind/index.html" class="cd-Home"><span class="ui-ico-sfi ico-home"></span></a>
+<!-- js引入 -->
+<script type="text/javascript" src="/js/common/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/js/common/util/util.js"></script>
+<script type="text/javascript" src="/js/common/util/common.js"></script>
+<script type="text/javascript" src="/js/common/baiduState.js"></script>
+<script type="text/javascript" src="/js/telephoneBind/deliverydetails/routing/evaluate.js"></script>
+  
+</body>
+</html>

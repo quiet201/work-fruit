@@ -1,0 +1,338 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> 
+<meta http-equiv="Pragma" content="no-cache" /> 
+<meta http-equiv="Expires" content="0" />
+<title>订单详情</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="wrap">
+  <header>
+    <div class="row hbg-gray"> <a href="javascript: history.go(-1);"><i class="btn btn-top">&nbsp;</i>
+      <h1>订单详情</h1>
+      </a> </div>
+  </header>
+  <!--待寄修s-->
+  <div class="row col grid-green">
+    <div class="phone-model">
+      <p class="model-p" id="productseries"></p>
+      <p class="fault-p" id="customerbigfaultcodes"></p>
+      <p class="date" id="createtm"></p>
+    </div>
+    <div class="zt-jx">
+      <p class="repairing" id="progress"></p>
+    </div>
+  </div>
+  <!--待寄修e-->
+  
+  <section class="info-fault">
+    <article class="ifault">故障信息</article>
+    <div id="customersmallfaultcodes">
+    
+    </div>
+  </section>
+  <div>
+    <ul class="infof1">
+      <li>预估维修价格<span><label id="totals"></label>元</span></li>
+    </ul>
+    <ul class="infof info-t info-b infof2">
+      <li class="info-item">故障信息统计 <span><label id="customersmallfaultcodescount"></label>项</span></li>
+      <li class="info-item">预估维修价格<span><label id="totals1"></label>元</span></li>
+      <div id="payDiv"></div>
+      
+      <li class="info-item1"><a class="tel-mend" href="#"><span class="contact-kf">联系客服</span></a></li>
+    </ul>
+    
+    <div id="order_progress">
+    
+    </div>
+    
+  </div>
+  
+  <div id="payWayDiv"></div>
+  
+  <!-- 顺手付支付 隐藏表单 -->
+  <form id="payForm" method="post" action="">
+  	<input type="hidden" id="erporder" name="erporder" />
+	<input type="hidden" id="serviceName" name="serviceName" />
+	<input type="hidden" id="charset" name="charset" />
+	<input type="hidden" id="signType" name="signType" />
+	<input type="hidden" id="sign" name="sign" />
+	<input type="hidden" id="requestTime" name="requestTime" />
+	<input type="hidden" id="merchantId" name="merchantId" />
+	<input type="hidden" id="merchantName" name="merchantName" />
+	<input type="hidden" id="orderId" name="orderId" />
+	<input type="hidden" id="amt" name="amt" />
+	<input type="hidden" id="tradeScene" name="tradeScene" />
+	<input type="hidden" id="ccy" name="ccy" />
+	<input type="hidden" id="orderBeginTime" name="orderBeginTime" />
+	<input type="hidden" id="orderExpDate" name="orderExpDate" />
+	<input type="hidden" id="goodsName" name="goodsName" />
+	<input type="hidden" id="goodsDesc" name="goodsDesc" />
+	<input type="hidden" id="goodsUrl" name="goodsUrl" />
+	<input type="hidden" id="merBusinessType" name="merBusinessType" />
+	<input type="hidden" id="reserved" name="reserved" />
+	<input type="hidden" id="notifyUrl" name="notifyUrl" />
+	<input type="hidden" id="merchantUrl" name="merchantUrl" />
+	<input type="hidden" id="callBackUrl" name="callBackUrl" />
+	<input type="hidden" id="accessWay" name="accessWay" />
+	<input type="hidden" id="ext1" name="ext1" />
+	<input type="hidden" id="ext2" name="ext2" />
+	<input type="hidden" id="ext3" name="ext3" />
+	<input type="hidden" id="openId" name="openId" />
+	<input type="hidden" id="merchantUserId" name="merchantUserId" />
+	<input type="hidden" id="merchantUserName" name="merchantUserName" />
+  </form>
+  
+  <!-- 支付宝钱包支付  隐藏表单 -->
+  <form id="alipayForm" method="get" action="https://mapi.alipay.com/gateway.do">
+  	<input type="hidden" id="service" name="service" />
+  	<input type="hidden" id="partner" name="partner" />
+  	<input type="hidden" id="_input_charset" name="_input_charset" />
+  	<input type="hidden" id="sign_type" name="sign_type" />
+  	<input type="hidden" id="sign" name="sign" />
+  	<input type="hidden" id="notify_url" name="notify_url" />
+  	<input type="hidden" id="return_url" name="return_url" />
+  	<input type="hidden" id="out_trade_no" name="out_trade_no" />
+  	<input type="hidden" id="subject" name="subject" />
+  	<input type="hidden" id="total_fee" name="total_fee" />
+  	<input type="hidden" id="seller_id" name="seller_id" />
+  	<input type="hidden" id="payment_type" name="payment_type" />
+  	<input type="hidden" id="body" name="body" />
+  	<input type="hidden" id="show_url" name="show_url" />
+  	<input type="hidden" id="it_b_pay" name="it_b_pay" />
+  	<input type="hidden" id="extern_token" name="extern_token" />
+  </form>
+  
+  <!-- 微信支付 隐藏表单 -->
+  <form id="wxpayForm" method="get">
+  	<input type="hidden" id="body" name="body" />
+  	<input type="hidden" id="trade_no" name="trade_no" />
+  	<input type="hidden" id="fee" name="fee" />
+  </form>
+</div>
+
+
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.extension.js"></script>
+<script type="text/javascript" src="js/jhope.forward.js"></script>
+<script type="text/javascript">
+        Date.prototype.pattern=function(fmt) {        
+            var o = {        
+              "M+" : this.getMonth()+1, //月份        
+              "d+" : this.getDate(), //日        
+              "h+" : this.getHours() == 0 ? 12 : this.getHours(), //小时        
+              "H+" : this.getHours(), //小时        
+              "m+" : this.getMinutes(), //分        
+              "s+" : this.getSeconds(), //秒        
+              "q+" : Math.floor((this.getMonth()+3)/3), //季度        
+              "S" : this.getMilliseconds() //毫秒        
+            };        
+            var week = {        
+              "0" : "\u65e5",        
+              "1" : "\u4e00",        
+              "2" : "\u4e8c",        
+              "3" : "\u4e09",        
+              "4" : "\u56db",        
+              "5" : "\u4e94",        
+              "6" : "\u516d"       
+            };        
+            if(/(y+)/.test(fmt)){        
+                fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));        
+            }        
+            if(/(E+)/.test(fmt)){        
+                fmt=fmt.replace(RegExp.$1, ((RegExp.$1.length>1) ? (RegExp.$1.length>2 ? "\u661f\u671f" : "\u5468") : "")+week[this.getDay()+""]);        
+            }        
+            for(var k in o){        
+                if(new RegExp("("+ k +")").test(fmt)){        
+                    fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));        
+                }        
+            }        
+            return fmt;        
+        }
+        var r = new request(true);
+        var erporder = r.getAttribute("erporder");
+        if(erporder==null||typeof(erporder)=='undefined'){
+        	erporder = r.getAttribute("out_trade_no");//支付宝支付完成后，同步通知此页面，接收订单号的参数
+        }
+        $(function($){
+          $.get("/service/songweixiu/private/order/details", {erporder:erporder},function(result){
+                if(result){
+                	if(result["progress"]=='等待付款中'&&result["warranttype"]=='保外'){
+                		var payBtn = [];
+                		payBtn.push('<a class="ui-btn btn-payred" href="javascript:void(0)" onclick="payway()">在线支付</a>');
+                		$("#payDiv").html(payBtn.join(""));//显示在线支付按钮
+                	} 
+                	
+                	$("#productseries").html(result["productseries"]);
+                	$("#createtm").html(new Date(result['createtm']).pattern("yyyy-MM-dd hh:mm:ss"));
+                	$("#progress").html(result["progress"]);
+                	var customerbigfaultcodes = [];
+                	result["customerbigfaultcode1"]&&customerbigfaultcodes.push(result["customerbigfaultcode1"]);
+                	result["customerbigfaultcode2"]&&customerbigfaultcodes.push(result["customerbigfaultcode2"]);
+                	result["customerbigfaultcode3"]&&customerbigfaultcodes.push(result["customerbigfaultcode3"]);
+                	$("#customerbigfaultcodes").html(customerbigfaultcodes.join("、"));
+                	var customersmallfaultcodes = [];
+                	var count = 0;
+                	result["customersmallfaultcode1"]&&customersmallfaultcodes.push("<p>"+result["customersmallfaultcode1"]+"</p>")&&count++;
+                	result["customersmallfaultcode2"]&&customersmallfaultcodes.push("<p>"+result["customersmallfaultcode2"]+"</p>")&&count++;
+                	result["customersmallfaultcode3"]&&customersmallfaultcodes.push("<p>"+result["customersmallfaultcode3"]+"</p>")&&count++;
+                	$("#customersmallfaultcodes").html(customersmallfaultcodes.join(""));
+                	$("#customersmallfaultcodescount").html(count);
+                	$("#totals").html((result["total1"]||0) + (result["total2"] ||0) + (result["total3"]||0));
+                	$("#totals1").html((result["total1"]||0) + (result["total2"] ||0) + (result["total3"]||0));
+                	
+                	if(result['dtos']){
+                		var d = result['dtos'];
+                		var temp = [];
+                		temp.push('<section class="info-fault info-fault1 mt10 bdtb-infof">');
+	                		temp.push('<article class="ifault">订单状态跟踪</article>');
+	                		for(var z=0;z<d.length;z++){
+	                			temp.push('<p>'+ d[z]["progress"] +'  '+ new Date(d[z]["updatedate"]).pattern("yyyy-MM-dd hh:mm:ss"));
+	                			if(d[z]["pointUrl"]){
+	                				temp.push('<span> <a class="a-blue" href="'+ d[z]["pointUrl"] +'">拆箱视频</a></span>');
+	                			}
+	                			temp.push('</p>');
+	                		}
+                		temp.push('</section>');
+                		$("#order_progress").html(temp.join(""));
+                	}
+                	
+                	//赋值给隐藏的form表单
+                	$("#orderId").val(result["erporder"]);//平台商户订单号
+                	$("#amt").val(parseFloat(result["actualmaintainprice"])*100);//维修价格
+                	$("#goodsName").val(result["productseries"]+"维修费用");//商品名称
+                	$("#orderBeginTime").val(new Date(result['createtm']).pattern("yyyyMMddhhmmss"));//订单发起时间
+                
+                	//赋值给隐藏的form表单（支付宝支付）
+                	$("#out_trade_no").val(result["erporder"]);//订单号
+                	$("#total_fee").val(result["actualmaintainprice"]);//维修价格
+                	$("#subject").val(result["productseries"]+"维修费用");//商品名称
+                	
+                	//赋值给隐藏的form表单（微信支付）
+                	$("trade_no").val(result["erporder"]);//订单号
+                	$("fee").val(result["actualmaintainprice"]);//维修价格
+                	$("body").val(result["productseries"]+"维修费用");//商品名称
+                }
+            },"json");
+        });
+        
+        //选择支付方式
+        function payway(){
+        	var payway = [];
+        	payway.push('<div class="maskbox">');
+        		payway.push('<div class="tip-pay">');
+        			payway.push('<div class="pay-title1"><a href="#"><i class="arrow-l">&nbsp;</i></a>   <span class="fz15 b">选择支付方式</span>  <span>&nbsp;</span> </div>');
+        			payway.push('<div class="pay-list1">');
+        				payway.push('<ul>');
+        					payway.push('<li> <a class="pay-img" href="#"> &nbsp;</a> <a href="javascript:void(0);" onclick="pay()" class="pay-style-t">顺手付支付</a>  <a class="arrow-pay" href="#">&nbsp;</a>  </li>');
+        					payway.push('<li> <a class="pay-img" href="#"> &nbsp;</a> <a href="javascript:void(0);" onclick="alipay()" class="pay-style-t">支付宝钱包支付</a>  <a class="arrow-pay" href="#">&nbsp;</a>  </li>');
+        					payway.push('<li> <a class="pay-img" href="#"> &nbsp;</a> <a href="javascript:void(0);" onclick="wxpay()" class="pay-style-t">微信支付</a>  <a class="arrow-pay" href="#">&nbsp;</a>  </li>');
+        				payway.push('</ul>');
+        			payway.push('</div> ');
+        		payway.push('</div> ');
+        	payway.push('</div> ');
+        	$("#payWayDiv").html(payway.join(""));
+    	}
+        
+        //顺手付支付,跳转到 h5收银台页面
+        function pay(){
+        	$.get("/service/songweixiu/private/orderpay/getpayinfo?erporder="+$("#orderId").val()+"&amt="+$("#amt").val(), {},function(result){
+    			if(result){
+    				$("#serviceName").val(result["serviceName"]);//接口名称
+    				$("#charset").val(result["charset"]);//字符编码
+    				$("#signType").val(result["signType"]);//签名方式
+    				var requestTime = result["requestTime"];//请求时间戳
+    				var merchantId = result["merchantId"];//平台商户代码
+    				var merchantKey = result["merchantKey"];//商户秘钥
+    				var ccy = result["ccy"];//金额币种
+    				var notifyUrl = result["notifyUrl"];//通知URL
+    				$("#sign").val(result["sign"]);//签名
+    				$("#merchantId").val(merchantId);
+    				$("#merchantName").val("");//商户名称
+    				$("#tradeScene").val(result["tradeScene"]);//交易场景码
+    				$("#ccy").val(ccy);
+    				$("#orderExpDate").val("");//订单过期时间
+    				$("#goodsDesc").val("");//商品描述
+    				$("#goodsUrl").val("");//商品链接
+    				$("#merBusinessType").val("");//商户业务类型
+    				$("#reserved").val("");//商户附加信息
+    				$("#notifyUrl").val(notifyUrl);//通知URL
+    				$("#merchantUrl").val(result["merchantUrl"]);//商户链接
+    				$("#callBackUrl").val(result["callBackUrl"]);//商家成功回调url
+    				$("#accessWay").val(result["accessWay"]);//访问来源
+    				$("#ext1").val("");//扩展参数1
+    				$("#ext2").val("");//扩展参数2
+    				$("#ext3").val("");//扩展参数3
+    				$("#requestTime").val(requestTime);
+    				$("#openId").val("");//开放ID
+    				$("#merchantUserId").val("");//内部商户的用户唯一标识
+    				$("#merchantUserName").val("");//内部商户的用户名字
+    				$("#payForm").attr("action",result["SFPayH5Url"]);//顺手付支付h5收银台URL
+    				$("#payForm").submit();
+    			}
+    			
+    		},"json");
+        }
+        
+        
+        //支付宝钱包支付
+        function alipay(){
+        	$.get("/service/songweixiu/private/orderpay/getalipayinfo?tradeNo="+$("#out_trade_no").val()+"&subject="+$("#subject").val()+"&fee="+$("#total_fee").val(), {},function(result){
+    			if(result){
+    				$("#service").val(result["service"]);
+    				$("#partner").val(result["partner"]);
+    				$("#_input_charset").val(result["_input_charset"]);
+    				$("#seller_id").val(result["seller_id"]);
+    				$("#payment_type").val(result["payment_type"]);
+    				$("#notify_url").val(result["notify_url"]);
+    				$("#return_url").val(result["return_url"]);
+    				$("#body").val("");
+    				$("#it_b_pay").val(result["it_b_pay"]);
+    				$("#sign_type").val(result["sign_type"]);
+    				$("#sign").val(result["sign"]);
+    				$("#alipayForm").submit();
+    			}
+    			
+    		},"json");
+        }
+        
+        
+        /*//微信支付
+        function wxpay(){
+        	$.get("/service/songweixiu/private/orderpay/wxpay?tradeNo="+$("#trade_no").val()+"&body="+$("#body").val()+"&fee="+$("fee").val(),{},function(result){
+        		if(parseInt(result["agent"])<5){
+        			alert("您的微信版本低于5.0无法使用微信支付");
+        			return;
+        		}
+        		WeixinJSBridge.invoke(
+   			       'getBrandWCPayRequest', {
+   			           "appId" ： result["appId"],//公众号名称，由商户传入     
+   			           "timeStamp"： result["timeStamp"],//时间戳，自1970年以来的秒数     
+   			           "nonceStr" ：  result["nonceStr"],//随机串
+   			           "package" ：  result["packageValue"],     
+   			           "signType" ：  result["signType"],//微信签名方式：     
+   			           "paySign" ：  result["paySign"]//微信签名
+   			       },
+   			       function(res){
+   			    	   alert(res.err_msg);
+   			    	   //使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。
+   			           if(res.err_msg == "get_brand_wcpay_request：ok" ){
+   			        	   window.location.href = result["sendUrl"];
+   			           }else{
+   			        	   alert("fail");
+   			        	   window.location.href=result["failUrl"];
+   			           }
+   			       }
+   			   ); 
+        	});
+        } */
+
+</script>
+</body>
+</html>

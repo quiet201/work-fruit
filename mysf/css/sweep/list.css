@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+html, body{font-family:Helvetica,sans-serif;font-size:16px;margin:0;padding:0;background: #85d0f5;}
+@media screen and (min-width:375px) {
+	html, body{font-size:18.75px;}
+}
+@media screen and (min-width:414px) {
+	html, body{font-size:20.7px;}
+}
+input, textarea, keygen, select, button{font-family:Helvetica,sans-serif;}
+ul ,li ,p{margin:0;padding:0;list-style:none;}
+
+.container{text-align: center; margin:0 auto;height:100%;}
+.main{background:url(/image/sweep/zs_1.png) no-repeat;width:20rem;height:23.1875rem;background-size:contain;margin-top:1.28125rem;margin:0 auto;}
+
+.prize_zj{margin-left:2.0625rem;background:url(/image/sweep/bg_red.png) no-repeat 0 0;background-size:contain;width:15.75rem;height:18.25rem;padding-top:1.375rem;margin-top:0.8rem;}
+.zj_gray1{background:url(/image/sweep/bg_lqgray.png) no-repeat 0 0;background-size:contain;width:16.0625rem;height:19.625rem;}
+.zj_gray2{background:url(/image/sweep/bg_zjdz.png) no-repeat 0 0;background-size:contain;width:16.0625rem;height:19.625rem;}
+.title_1{font-szie:0.78125rem;text-align:center;color:#f5f652;margin:0 auto;}
+.title_1g{color:#818181;}
+.t_msgwrong{font-size:.7rem;}
+.text_msg{margin:4.9rem auto .5rem auto;text-align:center;font-size:1.5rem;color:#fff;}
+.text_duanzi{font-size:.8rem;width:10rem;}
+.duanzi{width:8rem;height:4rem;font-size:.5rem;overflow:hidden;margin: 2.2rem 1rem 2rem 2rem;}
+.quan{width:12rem;font-size:1.4rem;height:3.3125rem;line-height:3.3125rem;text-align:center;color:#fe2d4c;background-color:#fceb55;border-left:.25rem solid #de0034;border-right:.25rem solid #de0034;margin:.5rem auto 0 auto;}
+.quan_long{width:12.6rem;}
+.num_money{font-size:2.46875rem;padding:.1rem .5rem;}
+.note{color:#fff;font-size:.75rem;width:12rem;text-align:center;line-height:.9rem;margin:.3rem auto;text-align:center;text-indent:.2rem;padding-top:.2rem;}
+.note_gray{text-indent: .02rem;font-size:.1rem;margin-bottom:.5rem;
+    margin-left: 2.5rem;
+    width:9rem;}
+.ren_1 img{z-index:1;position:absolute;width:3.8125rem;height:8rem;left:13.5rem;top:14.3rem;}
+
+.ren_2 img{z-index:1;position:absolute;width:4.21875rem;height:8.5625rem;left:12rem;top:14.3rem;}
+.xiong img{z-index: 1;
+    position: absolute;
+    width: 4.9375rem;
+    height: 5.90625rem;
+    left: 3.7rem;
+    top: 15rem;}
+.btn_lq input{width:7.90625rem;height:1.625rem;text-align:center;border:none;margin:1rem auto 0 3.59375rem;}
+
+
+.text_c{color:#f7ed49;font-size:1rem;text-indent:1rem;padding:0 1.7375rem 0 1.7375rem;height:6.84375rem;overflow:hidden;}
+.text_cgray{text-align:left;}
+.pro_title{font-size:.4375rem;margin-top:0;padding:0;color:#fcdb54;}
+.pic img{width:7.75rem;height:3.9375rem;overflow:hidden;text-align:center;margin:0 auto;padding:0;}
+.box{width:8.5rem;margin:.1rem auto;}
+.text_price{color:#fff100;font-size:1.5rem;}
+.pro_hd{font-size:0.8rem;color:#fff;}
+.msg_wrong img{float:left;width:2.5rem;height:2.5rem;margin-right:.2rem;}
+
+.msg_wrong{width:11rem;display:inline-block;color:#fff;font-size:.7rem;margin-top:7rem;text-align:center;vertical-align:middle;}
+
+.return, .return:hover{background:none;border:0;text-decoration:none;color:#fff;}
+.return{font-size:.8rem;width:4rem;height:1.625rem;line-height:1.625rem;background-color:#4a4a4a;border-radius:0.21875rem;text-align:center;border:none;color:#fff;margin:.2rem auto 0rem auto;}
+.cursorReturn{font-size:.8rem;width:4rem;height:1.46875rem;line-height:1.46875rem;background-color:#fceb55;border-radius:0.21875rem;text-align:center;border:none;color:#fe2d4c;margin:.2rem auto 0rem auto;}
+
+.buttonzj{font-size:.78125rem;width:7.90625rem;height:1.46875rem;line-height:1.46875rem;background-color:#4a4a4a;border-radius:0.21875rem;text-align:center;border:none;color:#fff;margin:.2rem auto 0rem auto;}
+.cursorButtonzj{-webkit-tap-highlight-color:rgba(255,0,0,0);font-size:.78125rem;width:7.90625rem;height:1.625rem;line-height:1.625rem;background-color:#fceb55;border-radius:0.21875rem;text-align:center;border:none;color:#fe2d4c;margin:.2rem auto 0rem auto;}
+#msg_wrong button:hover{outline: none;}
+
+.hsxf_list a{display:inline-block;width:100%;text-align:center;vertical-align:middle;}
+.hsxf_list a img{text-align:center;width:8.375rem;height:1.28125rem;background-size:contain;vertical-align:middle;}
+
+.footer_list{width:100%;height:1.3125rem;background: url(/image/sweep/footer_list.jpg) no-repeat;background-size:100%;position:absolute;bottom:0;margin:0 auto;}

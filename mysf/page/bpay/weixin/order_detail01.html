@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>订单详情</title>
+<link rel="stylesheet" href="../weixin/css/baobeibao_weixin.css">
+<link rel="stylesheet" href="../../../css/common/public.css">
+<script type="text/javascript" src="/js/common/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function (){
+	//加日志
+	$.post("/service/commonLog/addLog/L00903");
+	var urlinfo=window.location.href; //获取当前页面的url 
+	var len=urlinfo.length;//获取url的长度 
+	var offset=urlinfo.indexOf("?");//设置参数字符串开始的位置 
+	var newsidinfo=urlinfo.substr(offset,len)//取出参数字符串 这里会获得类似“id=1”这样的字符串 
+	var newsids=newsidinfo.split("=");//对获得的参数字符串按照“=”进行分割 
+	document.getElementById("orderNo").innerHTML=newsids[1].split("&")[0];
+	document.getElementById("phoneNo").innerHTML=newsids[2].split("&")[0];
+	document.getElementById("clientName").innerHTML=decodeURI(newsids[3].split("&")[0]);
+	//document.getElementById("payAccountNo").innerHTML=newsids[4].split("&")[0];
+	document.getElementById("uwPremium").innerHTML=newsids[4].split("&")[0];
+	
+	if(newsids[5].split("&")[0].indexOf("x")>0){
+		document.getElementById("beginDate").innerHTML=newsids[5].split("&")[0].replace("x"," ").replace("y",":");
+	}else{
+		document.getElementById("beginDate").innerHTML=decodeURI(newsids[5].split("&")[0]);
+	}
+	if(newsids[6].split("&")[0].indexOf("x")>0){
+		document.getElementById("endDate").innerHTML=newsids[6].split("&")[0].replace("x"," ").replace("y",":");
+	}else{
+		document.getElementById("endDate").innerHTML=decodeURI(newsids[6].split("&")[0]);
+	}
+	
+	document.getElementById("couponCode").innerHTML=newsids[7].split("&")[0];
+	if(newsids[7].split("&")[0] !=null && newsids[7].split("&")[0] !=''){
+		$("#uwPremium_show").hide();
+		$("#couponCode_show").show();
+	}else{
+		$("#uwPremium_show").show();
+		$("#couponCode_show").hide();
+	}
+	
+	var payType = newsids[8];
+	if(payType =='3'){
+		payType = '微信';
+	}else if(payType =='2'){
+		payType = '抵用劵';
+	}
+	document.getElementById("paymentType").innerHTML=payType;
+});
+
+</script>
+</head>
+
+<body>
+	<div id="wrapper">
+
+    <!-- header s -->
+    <header>
+        <span class="btn-topl">
+        <a class="ui-btn btn-back" href="javascript: history.go(-1);"><i class="ui-ico-sfi ico-back"></i></a></span>
+        <h1>订单详情</h1>
+        </span>
+    </header>
+	</div>
+	<section class="ui-list border-top0">
+		<dl class="contacts sent">
+			<dt>手机号码：<span id="phoneNo">136****1234</span></dt>
+			<dd>订单状态：<span class="colorred">已生效</span></dd>
+		</dl>
+		<dl style="padding: 10px 0;">
+			<span>服务介绍：对于顺丰承运的包裹，发现遗失时，每票快件赔付500元，累计赔付10000元；因顺丰公司导致的破损，每票快件赔付100元，累计赔付2000元。</span>
+		</dl>
+	</section>
+	<section class="grid-main ui-list" style="padding: 10px 3%;">						
+	    <dl class="detailtext">
+	    	<p>订单号：<span id="orderNo">2105062389237</span></p>
+	    </dl>
+	    <dl class="detailtext">
+	    	<p>姓名：<span id="clientName">张小花</span></p>
+	    </dl>
+	    <dl class="detailtext">
+	    	<p>付款方式：<span id="paymentType">zfb</span></p>
+	    </dl>
+	    <dl class="detailtext">
+	    	<p id="uwPremium_show">付款金额：¥<span id="uwPremium">9.9</span></p>
+	    </dl>
+	    <dl class="detailtext">
+	    	<p id="couponCode_show">优惠券码：<span id="couponCode">12345678</span></p>
+	    </dl>
+	    <dl class="detailtext">
+	    	<p>有效期：<span id="beginDate">2015.8.25  12:00</span>至<span id="endDate">2015.8.26  12:00</span></p>
+	    </dl>
+	</section>
+	
+    <script type="text/javascript" src="/js/common/baiduState.js"></script>
+	</body>
+</html>

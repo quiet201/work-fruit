@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> 
+<meta http-equiv="Pragma" content="no-cache" /> 
+<meta http-equiv="Expires" content="0" />
+<title>手机维修</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/jquery-1.9.1.min.js"></script>
+<!-- <script type="text/javascript" src="js/jquery.extension.js"></script> -->
+<script src="/js/common/util/util.js"></script>
+<script src="js/songweixiuUtil.js"></script>
+<script  type="text/javascript">
+
+$(document).ready(function(){
+	var objs = [];
+	for(var i=0; i<10; i++){
+		var obj = {};
+		if(getUrlValueByKey("solveName"+i)){
+			obj.solveName = getUrlValueByKey("solveName"+i);
+			obj.price = getUrlValueByKey("price"+i);
+			objs[i]=obj;
+		}else{
+			break;
+		}
+	}
+	productFaultSolve(objs);
+});
+
+function productFaultSolve(objs){
+	//objs = [{"solveName":"更换显示屏幕总成","price":"1200"},{"solveName":"更换原厂屏幕配件","price":"100"},{"solveName":"更换顺维修提供的屏幕配件","price":"400"}];
+    var target = $("li[name='name_li_solve'][style='display:none!important']").get(0);
+    for(var i=0; i<objs.length; i++){
+    	var objClone = $(target).clone(true);
+    	var obj = objs[i];
+	    $(objClone).find("label[name='name_label_solvename']").text(obj.solveName);
+	    $(objClone).find("div[name='name_div_price']").text("￥"+obj.price);
+	    $(objClone).attr('style','display:block');
+	    $(objClone).appendTo("#id_ul_solves"); 
+    }
+}
+
+
+</script>
+</head>
+
+<body>
+<div class="wrap">
+<header>
+  <div class="row"> <a href="javascript: history.go(-1);"><i class="btn btn-top">&nbsp;</i>
+    <h1>订单预算</h1>
+    </a> </div>
+</header>
+<div class="row budget btg">
+<div class="tip-budget">
+<div class="bgt-t">
+  <h4>尊敬的用户：</h4>
+  <h5>以下为您的手机初次评估结果</h5>
+  <p> 非常抱歉！根据您提供的手机信息，您的手机已不属于厂家换机范围，顺维修可为您提供维修服务.以下为初步维修方案（具体详情以工程师检测结果为准）。</p>
+</div>
+<div class="tip-budgec">
+  <div class="grid-gray bordert">
+    <div class="repair-list btg">
+      <div class="itemi"> <a href="#"><i class="open">&nbsp;</i><span class="dw3">请选择您需要的维修方案</span></a></div>
+      <div class="item-bgt">
+        <ul id="id_ul_solves">
+          <li> <span class="dw1 ml16 b">维修方案</span> <a href="#"> <span class="right dw1">维修费用</span></a> </li>
+
+          <li name="name_li_solve"  style="display:none!important">
+            <div> 
+            	<span class="check-a" style="display:none"></span>
+                <label name="name_label_solvename">更换显示屏幕总成</label>
+            </div>
+            <div name="name_div_price" class="text-r">￥900.00</div>
+          </li>
+          <!-- 
+          <li>
+            <div> <span class="check-active"></span>
+              <label>更换原厂屏幕配件</label>
+            </div>
+            <div class="text-r">￥1200.00</div>
+          </li>
+          
+          
+          <li>
+            <div> <span class="check-a"></span>
+              <label>更换顺维修提供的屏幕配件</label>
+            </div>
+            <div class="text-r">￥700.00</div>
+          </li>
+           -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="grid-gray mt10">
+  <div class="grid-btn"> <a class="btn-green-n" href="index.html">不接受</a>   <a class="btn-green-o" href="repair4.html">接受</a></div>
+  
+  
+</div>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" /> 
+  <title>顺丰圣诞派好礼</title> 
+  <link rel="stylesheet" href="css/public.css" /> 
+  <link rel="stylesheet" href="css/style.css" /> 
+  <style type="text/css">
+	::-webkit-input-placeholder { 
+    color:#07e7ba;padding-left:1rem;
+	}
+	
+	</style>
+ </head> 
+ <body> 
+  <div class="bg-christmas"> 
+   <img src="images/bg-aj.jpg" class="bgimg" /> 
+   <div class="text-aj1">进入仓库，请配合安检哟</div>
+   <div class="text-christmas-i n">圣诞好礼等你拿</div>
+    <!--以下的是表单 s-->
+   <div class="text-christmas-input">
+      <input class="input-num" type="text" id="cardNo" placeholder="请输入月结卡号"/>
+    </div> 
+   <div class="text-ajnote n">您输入的月结卡号不能为空</div>
+   <div class="text-aj2">每个月结卡号可获得圣诞好礼一份</div>
+   
+   <div class="btn-submit-i-box">
+    <div class="c">
+     <button class="btn-submit-i" id="awardBtn" type="button" disabled="disabled"></button>
+   </div>
+   </div>
+   <!--输入时gift-boxshow-->
+   
+  <div class="gift" id="boxDiv">&nbsp;</div>
+    
+  </div>
+ <!--活动结束弹出框s-->
+  <div class="maskbox  n">
+  
+     <div class="prize-end"><img src="images/tanchu.png">
+     
+     <a href="#" class="close">关闭</a>
+     </div>
+    
+  
+  </div>
+   <!--活动结束弹出框e-->
+  
+  <script type="text/javascript" src="js/jhope.min.js"></script>
+  <script type="text/javascript">
+		$(function(){
+			var isCourierNo = /^[0-9]{10,11}$/,
+			$awardBtn = $('#awardBtn'),
+			$cardNo = $('#cardNo');
+			$cardNo.bind('input propertychange',function(){
+				if($cardNo.val()){
+					$awardBtn.removeAttr('disabled');
+					$awardBtn.addClass('btn-submit-active');
+					$('#boxDiv').addClass('gift-boxshow');
+				}else{
+					$awardBtn.attr('disabled',true);
+					$awardBtn.removeClass('btn-submit-active');
+					$('#boxDiv').removeClass('gift-boxshow');
+				}
+			});
+			
+			$awardBtn.tap(function(e){
+				if(this.disabled){
+					return;
+				}
+				$awardBtn.attr('disabled',true);
+				var data = {cardNo:$cardNo.val()};
+				$.ajax({
+				  type: 'GET',
+				  url: '/service/christmas/isDrawAward',
+				  data: data,
+				  dataType: 'json',
+				  contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+				  context: $('body'),
+				  success: function(result){
+					  if(result == -1){
+						  $('body').alert({content:'该月结卡号不能参与抽奖',laterFn:function(){
+								$awardBtn.removeAttr('disabled');
+						  }});
+						  return;
+					  }else if(result == 1){
+						  $('body').alert({content:'该月结卡号已获得圣诞好礼请勿重复参与哟',laterFn:function(){
+							$awardBtn.removeAttr('disabled');
+						  }});
+						  return;
+					  }else{
+						  JHope.Tool.forwardHref('prize.html',data);
+						  return;
+					  }
+				  }
+				});
+			});
+		});
+	</script>
+ </body>
+</html>

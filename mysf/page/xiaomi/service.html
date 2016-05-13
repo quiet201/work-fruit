@@ -1,0 +1,455 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>服务大厅</title>
+<link rel="stylesheet" href="../../../css/common/public.css">
+<link rel="stylesheet" href="../../../css/common/service.css">
+<link rel="stylesheet" href="../../../css/common/tips.css">
+
+</head>
+
+<body>
+     <div id="wrapper">
+
+    <!-- header s -->
+    <header>
+        <span class="btn-topl">
+        <a class="ui-btn btn-back" href="javascript: history.go(-1);"><i class="ui-ico-sfi ico-back"></i></a></span>
+        <h1>服务大厅</h1>
+        </span>
+    </header>
+     <!-- header e -->
+     <section >
+    	<ul class=" ui-fm ui-grid02 border-bottom01 grid-main">
+    		<li class="item border-bottom01"><div class=" title-latest">自助服务</div></li>
+        	<li class="grid"><a class="item" href="/page/xiaomi/order/timing.html"><i class="ui-ico-sfi ico-money-time"></i><h3>运费与时效</h3></a></li>
+            <li class="grid"><a class="item" href="/page/xiaomi/range/range.html"><i class="ui-ico-sfi ico-target"></i><h3>收送范围</h3></a></li>
+            <li class="grid"><a class="item" href="/page/xiaomi/nearby/nearby_store.html"><i class="ui-ico-sfi ico-locationed"></i><h3>附近网点</h3></a></li>
+            <li class="grid"><a class="item" href="/page/common/forbidden/forbidden.html"><i class="ui-ico-sfi ico-warn"></i><h3>禁寄品</h3></a></li>
+            
+        </ul>
+    </section>
+     
+     <section>
+        <ul class="ui-fm grid-main">
+        	<li class="item border-bottom01"><div class=" title-latest">常见问题</div></li>
+            <li class="item item-fm" style="  padding:0;">
+        	<div class="ui-tap-title">
+	        	<div class="ui-tap-btn">
+		        	<a href="#" class="ui-btn active" hidefocus="true" id="01">
+		        		查件问题
+		        	</a>
+	        	</div>
+        	
+        	   <div class="ui-tap-btn2">
+	        	</div>
+        	    <div class="ui-tap-btn">
+		            <a href="#" class="ui-btn" hidefocus="true" id="02">
+		            	寄件问题
+		            </a>
+	        	</div>
+	        	<div class="ui-tap-btn2">
+	        	</div>
+	        	<div class="ui-tap-btn">
+		            <a href="#" class="ui-btn" hidefocus="true" id="03">
+		            	其他问题
+		            </a>
+	        	</div>
+        	</div>
+        	</li>
+        </ul>
+    </section>
+    
+    <div class="tap-content" id="login01">
+      <section >
+        <ul class="ui-fm02" >
+        	<li class="item item-fm-m">
+            	<div class="ui-div-right" >
+            		<a class="ui-btn-bottom" data-toggle="show-explain" href="javascript:void(0);" onclick="changeDivStyle('show-explain-id1',this)">
+                		<span class="placeholder text-fontStyle query-dd-time"> 1.如何查询我的快件动态？</span>
+                	</a>
+                </div>
+            </li>
+        </ul>
+        
+        <div class="table table-ship" id="show-explain-id1" style="display: none;">
+        	<p>您可在顺丰速运小米服务号页面对话框中直接输入12位单号查询您的快件状态；</p>
+        	
+        </div>
+    </section>
+    <section >
+        <ul class="ui-fm02">
+        	<li class="item item-fm-m">
+            	<div class="ui-div-right" >
+            		<a class="ui-btn-bottom" data-toggle="show-explain" href="javascript:void(0);" onclick="changeDivStyle('show-explain-id2',this)">
+                		<span class="placeholder text-fontStyle query-dd-time"> 2.如何快速与收派员取得联系？</span>
+                	</a>
+                </div>
+            </li>
+        </ul>
+        
+        <div class="table table-ship" id="show-explain-id2" style="display: none;">
+        	<p>方式一：寄件下单成功后，收派员上门收件之前，系统会给您推送一条收派员接收订单的消息，点击查看详情即可电话联系收派员。</p>
+        	<p>方式二：收件过程中，系统会给您推送一条收派员上门派件的消息，点击查看详情即可电话联系收派员，同时可以给小哥捎话，提交您的收件需求。</p>
+        </div>
+    </section>
+    
+    
+    <section >
+        <ul class="ui-fm02">
+        	<li class="item item-fm-m">
+            	<div class="ui-div-right" >
+            		<a class="ui-btn-bottom" data-toggle="show-explain" href="javascript:void(0);" onclick="changeDivStyle('show-explain-id3',this)">
+                		<span class="placeholder text-fontStyle query-dd-time">3.如何查看寄给我的快件信息？</span>
+                	</a>
+                </div>
+            </li>
+        </ul>
+        
+        <div class="table table-ship" id="show-explain-id3" style="display: none;">
+        	<p>方式一：您可通过点击顺丰速运黄页上的“我的顺丰”菜单，点击上方“我的快件”，即可查看寄给我的快件。</p>
+        	<p>方式二：您可通过点击顺丰速运黄页上方“我的快件”菜单，即可查看寄送给我的所有快件信息。</p>
+        </div>
+    </section>
+    
+    <section >
+        <ul class="ui-fm02">
+        	<li class="item item-fm-m">
+            	<div class="ui-div-right" >
+            		<a class="ui-btn-bottom" data-toggle="show-explain" href="javascript:void(0);" onclick="changeDivStyle('show-explain-id4',this)">
+                		<span class="placeholder text-fontStyle query-dd-time"> 4.只有收件人手机号是否可以查询快件状态？</span>
+                	</a>
+                </div>
+            </li>
+        </ul>
+        
+        <div class="table table-ship" id="show-explain-id4" style="display: none;">
+        	<p>如您不方便提供快递单号，可通过绑定的收件人手机号登录来查询快件信息。点击顺丰速运黄页的“我的快件”菜单，选择“寄给我的”，即可快速查询到您的快件信息。</p>
+        	
+        </div>
+    </section>
+    
+    <section >
+        <ul class="ui-fm02">
+        	<li class="item item-fm-m">
+            	<div class="ui-div-right" >
+            		<a class="ui-btn-bottom" data-toggle="show-explain" href="javascript:void(0);" onclick="changeDivStyle('show-explain-id13',this)">
+                		<span class="placeholder text-fontStyle query-dd-time"> 5.为何我的快件一直没有更新物流状态信息？</span>
+                	</a>
+                </div>
+            </li>
+        </ul>
+        
+        <div class="table table-ship" id="show-explain-id13" style="display: none;">
+        	<p>您可以通过我的快件详情查看您快件的最新动态，因快件运输过程中需要经过一定的时间才能到达下一地点，故您频繁查询时物流信息可能显示的是一致的，我们会第一时间更新最新的物流状态以方便您查询，快件均在妥妥运输中。</p>
+        	
+        </div>
+    </section>
+    <section style="padding-bottom: 100px;">
+        <ul class="ui-fm02">
+        	<li class="item item-fm-m">
+            	<div class="" >
+            		<a  style="display: block;" data-toggle="show-explain" href="http://eqxiu.com/s/Q6C04NKl" onclick="">
+                		<span><img src="../../../css/common/img/wanzhuan.png" width="10%"></span>
+                		<span class="placeholder text-fontStyle query-dd-time" style="display:inline"> 玩转顺丰物流管家，技能大全!</span>
+                	</a>
+                </div>
+            </li>
+        </ul>
+        
+        
+    </section>
+    				    							               
+     </div>         
+     <div class="tap-content" id="login02" hidden="hidden">
+            <section >
+		        <ul class="ui-fm02">
+		        	<li class="item item-fm-m">
+		            	<div class="ui-div-right" >
+		            		<a class="ui-btn-bottom" data-toggle="show-explain" href="javascript:void(0);" onclick="changeDivStyle('show-explain-id5',this)">
+		                		<span class="placeholder text-fontStyle query-dd-time"> 1.如何在顺丰速运黄页中寄件下单？</span>
+		                	</a>
+		                </div>
+		            </li>
+		        </ul>
+		        
+        <div class="table table-ship" id="show-explain-id5" style="display: none;">
+        	<p>您可通过点击顺丰速运黄页上方“我要寄件”菜单，填写寄件信息，核实信息完整无误后，点击立即下单，等待收派员上门取件即可。</p>
+        	
+        </div>
+    </section>		
+    <section >
+		        <ul class="ui-fm02">
+		        	<li class="item item-fm-m">
+		            	<div class="ui-div-right" >
+		            		<a class="ui-btn-bottom" data-toggle="show-explain" href="javascript:void(0);" onclick="changeDivStyle('show-explain-id6',this)">
+		                		<span class="placeholder text-fontStyle query-dd-time"> 2.如何查询我寄出的快件？</span>
+		                	</a>
+		                </div>
+		            </li>
+		        </ul>
+		        
+        <div class="table table-ship" id="show-explain-id6" style="display: none;">
+        	<p>您可通过点击顺丰速运黄页上方“我的快件”菜单选择“我寄出的”，查询您的寄出的快件和订单信息。</p>
+        	
+        </div>
+    </section>		
+    <section >
+		        <ul class="ui-fm02">
+		        	<li class="item item-fm-m">
+		            	<div class="ui-div-right" >
+		            		<a class="ui-btn-bottom" data-toggle="show-explain" href="javascript:void(0);" onclick="changeDivStyle('show-explain-id7',this)">
+		                		<span class="placeholder text-fontStyle query-dd-time"> 3.寄件下单后何时上门取件？</span>
+		                	</a>
+		                </div>
+		            </li>
+		        </ul>
+		        
+        <div class="table table-ship" id="show-explain-id7" style="display: none;">
+        	<p>根据您下单所选择的寄件时间，我们会尽量满足，但不做服务承诺，敬请理解。</p>
+        	
+        </div>
+    </section>		
+    
+    <section>
+		        <ul class="ui-fm02">
+		        	<li class="item item-fm-m">
+		            	<div class="ui-div-right" >
+		            		<a class="ui-btn-bottom" data-toggle="show-explain" href="javascript:void(0);" onclick="changeDivStyle('show-explain-id8',this)">
+		                		<span class="placeholder text-fontStyle query-dd-time"> 4.如何取消寄件订单？</span>
+		                	</a>
+		                </div>
+		            </li>
+		        </ul>
+		        
+        <div class="table table-ship" id="show-explain-id8" style="display: none;">
+        	<p>您可通过顺丰速运黄页上方“我的快件”菜单，然后选择“我寄出”，选择对应订单进入订单详情页面，在订单详情页面选择“取消订单”，即可取消订单。</p>
+        	
+        </div>
+    </section>
+    <section style="padding-bottom: 100px;">
+        <ul class="ui-fm02">
+        	<li class="item item-fm-m">
+            	<div class="" >
+            		<a  style="display: block;" data-toggle="show-explain" href="http://eqxiu.com/s/Q6C04NKl" onclick="changeDivStyle('show-explain-id4')">
+                		<span><img src="../../../css/common/img/wanzhuan.png" width="10%"></span>
+                		<span class="placeholder text-fontStyle query-dd-time" style="display:inline"> 玩转顺丰物流管家，技能大全!</span>
+                	</a>
+                </div>
+            </li>
+        </ul>
+        
+        
+    </section>
+     </div>       
+     
+     
+     <div class="tap-content" id="login03" hidden="hidden">
+         <section >
+		        <ul class="ui-fm02">
+		        	<li class="item item-fm-m">
+		            	<div class="ui-div-right" >
+		            		<a class="ui-btn-bottom" data-toggle="show-explain" href="javascript:void(0);" onclick="changeDivStyle('show-explain-id9',this)">
+		                		<span class="placeholder text-fontStyle query-dd-time"> 1.如何查询运费与时效、收送范围、附近网点信息？</span>
+		                	</a>
+		                </div>
+		            </li>
+		        </ul>
+		        
+        <div class="table table-ship" id="show-explain-id9" style="display: none;">
+        	<p>您可通过点击顺丰速运页面上方选择相应的“运费时效”“收送范围”“附近网点”菜单，点击可进入对应的页面。</p>
+        	
+        </div>
+    </section>	
+    
+    <section >
+		        <ul class="ui-fm02">
+		        	<li class="item item-fm-m">
+		            	<div class="ui-div-right" >
+		            		<a class="ui-btn-bottom" data-toggle="show-explain" href="javascript:void(0);" onclick="changeDivStyle('show-explain-id10',this)">
+		                		<span class="placeholder text-fontStyle query-dd-time">2.什么是物流消息推送通知？</span>
+		                	</a>
+		                </div>
+		            </li>
+		        </ul>
+		        
+        <div class="table table-ship" id="show-explain-id10" style="display: none;">
+        	<p>您的快件在顺丰收件、顺丰开始派件时我们会给收件方推送最新的快件信息即物流消息，您可通过点击查看详情进入查看快件的最新信息。</p>
+        	
+        </div>
+    </section>	
+    
+    <section >
+		        <ul class="ui-fm02">
+		        	<li class="item item-fm-m">
+		            	<div class="ui-div-right" >
+		            		<a class="ui-btn-bottom" data-toggle="show-explain" href="javascript:void(0);" onclick="changeDivStyle('show-explain-id11',this)">
+		                		<span class="placeholder text-fontStyle query-dd-time"> 3.如何退订物流消息通知？</span>
+		                	</a>
+		                </div>
+		            </li>
+		        </ul>
+		        
+        <div class="table table-ship" id="show-explain-id11" style="display: none;">
+        	<p>您可通过在顺丰速运小米服务号对话框中输入“TD”即可退订物流，输入“KT”即可随时开通免费物流消息提醒。</p>
+        	
+        </div>
+    </section>	
+    
+    <section >
+		        <ul class="ui-fm02">
+		        	<li class="item item-fm-m">
+		            	<div class="ui-div-right" >
+		            		<a class="ui-btn-bottom" data-toggle="show-explain" href="javascript:void(0);" onclick="changeDivStyle('show-explain-id12',this)">
+		                		<span class="placeholder text-fontStyle query-dd-time"> 4.为什么我没有收到物流消息的推送通知？</span>
+		                	</a>
+		                </div>
+		            </li>
+		        </ul>
+		        
+        <div class="table table-ship" id="show-explain-id12" style="display: none;">
+        	<p>由于物流消息数据需通过系统上传供您查看，有最新数据后系统会第一时间为您推送最新的物流消息通知，但因数据未更新导致您可能还未收到物流消息。</p>
+        	
+        </div>
+    </section>
+    
+    
+    
+    <section >
+		        <ul class="ui-fm02">
+		        	<li class="item item-fm-m">
+		            	<div class="ui-div-right" >
+		            		<a class="ui-btn-bottom" data-toggle="show-explain" href="javascript:void(0);" onclick="changeDivStyle('show-explain-id14',this)">
+		                		<span class="placeholder text-fontStyle query-dd-time"> 5.为何我会收到非本人的物流消息推送？</span>
+		                	</a>
+		                </div>
+		            </li>
+		        </ul>
+		        
+        <div class="table table-ship" id="show-explain-id14" style="display: none;">
+        	<p>您更换了手机号码以及寄件方填写错误收件方手机号码均可能导致您收到非本人的物流消息。</p>
+        	
+        </div>
+    </section>
+    
+    <section >
+		        <ul class="ui-fm02">
+		        	<li class="item item-fm-m">
+		            	<div class="ui-div-right" >
+		            		<a class="ui-btn-bottom" data-toggle="show-explain" href="javascript:void(0);" onclick="changeDivStyle('show-explain-id16',this)">
+		                		<span class="placeholder text-fontStyle query-dd-time"> 6.如何查看我关联的手机号信息？</span>
+		                	</a>
+		                </div>
+		            </li>
+		        </ul>
+		        
+        <div class="table table-ship" id="show-explain-id16" style="display: none;">
+        	<p>您可通过点击顺丰速运黄页上方“我的顺丰”菜单，，页面上方可查看您关联的手机号信息，点击可进入页面更改。</p>
+        	
+        </div>
+    </section>
+    
+     <section >
+		        <ul class="ui-fm02">
+		        	<li class="item item-fm-m">
+		            	<div class="ui-div-right" >
+		            		<a class="ui-btn-bottom" data-toggle="show-explain" href="javascript:void(0);" onclick="changeDivStyle('show-explain-id15',this)">
+		                		<span class="placeholder text-fontStyle query-dd-time"> 7.是否可以通过电话下单？</span>
+		                	</a>
+		                </div>
+		            </li>
+		        </ul>
+		        
+        <div class="table table-ship" id="show-explain-id15" style="display: none;">
+        	<p>您可通过拨打95338，根据语音提示自助下单或者选择由客服人员协助为您下单。</p>
+        	
+        </div>
+    </section>
+ 
+    <section style="padding-bottom: 100px;">
+        <ul class="ui-fm02" >
+        	<li class="item item-fm-m">
+            	<div class="" >
+            		<a style="display: block;" data-toggle="show-explain" href="http://eqxiu.com/s/Q6C04NKl" >
+                		<span><img src="../../../css/common/img/wanzhuan.png" width="10%"></span>
+                		<span class="placeholder text-fontStyle query-dd-time" style="display:inline"> 玩转顺丰物流管家，技能大全!</span>
+                	</a>
+                </div>
+            </li>
+        </ul>
+        
+        
+    </section>
+     </div>       
+
+    <section >
+    	<ul class="ui-fm-bottom">
+    		<li>
+		    <div class="grid-btn02">
+		    	   <a class="btn-submit-service"  style=" float: left; margin-left: 10px;" href="tel:95338">
+		    	   	<div class="left"><img src="../../../css/common/img/customer.png" width="50px"></div>
+		    	   	<div class="right"><p>客服电话</p><p>95338</p></div>
+		    	   </a>
+		    	   <a class="btn-submit-service"  style=" float: right; margin-left: 10px;" href="javascript:void(0);" onclick="alertDialog3('您将与顺丰在线客服对话，确定进入对话窗口?','xiaomi');">
+		    	   	<div class="left"><img src="../../../css/common/img/customeronline.png" width="50px"></div>
+		    	   	<div class="right"><p>在线客服</p><p>在线解答</p></div>
+		    	   </a>
+		        	
+		     </div>
+		     </li>
+        </ul>
+    </section>
+       <a href="/page/xiaomi/index.html" class="cd-Home"><span class="ui-ico-sfi ico-home"></span></a>
+     </div>
+
+
+
+
+<script type="text/javascript" src="/js/common/jquery-1.7.2.min.js"></script>
+<script src="/js/common/idangerous.swiper.min.js"></script>
+<script type="text/javascript" src="/js/common/util/util.js"></script>
+<script>
+$(function(){
+	//加日志
+	$.post("/service/commonLog/addLog/L01001");
+});
+$(".ui-tap-title a").on('touchstart mousedown',function(e){
+	e.preventDefault()
+	$(".ui-tap-title .active").removeClass('active');
+	$(this).addClass('active');
+	var tagId = 'login'+$(this).attr('id');
+	$('.tap-content').each(function(){
+		  if($(this).attr('id')==tagId){
+		  	 $(this).show();
+		  }else{
+		  	$(this).hide();
+		  }
+	});
+	  $(tagId).show();
+
+});
+
+function changeDivStyle(e,event){
+	var ment = '#'+e;
+	var item = $(ment);
+	//alert($(item).style().display);
+	$(item).toggle();
+	if($(item).is(":hidden")==false){
+		$(event).removeClass("ui-btn-bottom").addClass("ui-btn-up");
+	}else{
+		$(event).removeClass("ui-btn-up").addClass("ui-btn-bottom");
+	}
+	//if($(e).)
+}
+
+function serviceUrl(){
+	var url="http://sf-ocs.sf-express.com:8080/live800/chatClient/chatbox.jsp?companyID=8935&configID=34&skillId=32&enterurl=xmi";
+	location.href = url;
+}
+
+</script>
+<script type="text/javascript" src="/js/common/baiduState.js"></script>
+</body>
+</html>

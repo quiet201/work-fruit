@@ -1,0 +1,335 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>我要寄件</title>
+<link rel="stylesheet" href="../../../css/common/public.css">
+<link rel="stylesheet" href="../../../css/common/sf03.css"/>
+</head>
+
+<body>
+<div id="wrapper">
+
+    <!-- header s -->
+    <header>
+    	<span class="btn-topl"><a class="ui-btn btn-back" href="javascript: history.go(-1);"><i class="ui-ico-sfi ico-back"></i></a></span>
+        <h1>我要寄件</h1>
+    </header>
+    <!-- header e -->
+    
+    <section>
+    	<form>
+    	<ul class="ui-fm border-top0">
+        	<li class="item item-fm-m">
+            	<div class="ui-div-right" style="padding: 10px 0;">
+                	<span class="placeholder">上门取件联系方式</span>
+                </div>
+            </li>
+        	<li class="item item-fm">
+                <div class="ui-flex">
+                    <div class="flex-ico"><label><span class="must3 lable-fontStyle">手机号</span></label></div>
+                    <div class="flex-con">
+                        <input type="num" name="" class="input-text" value="" placeholder="输入手机号，方便快递员联系"/><span class="placeholder"></span>
+                    </div>
+                </div>
+            </li>
+            <li class="item item-fm">
+                <div class="ui-flex">
+                    <div class="flex-ico"><label><span class="must3 lable-fontStyle">地区</span></label></div>
+                    <div class="flex-con">
+                    	<a class="ui-btn-right" data-toggle="dateAddr" href="javascript:void(0);">
+                        	<span class="fill lab-addr">选择取件所在地区</span>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li class="item item-fm dashed">
+                <div class="ui-flex">
+                    <div class="flex-ico"><label><span class="must3 lable-fontStyle">详细地址</span></label></div>
+                    <div class="flex-con">
+                    	<input type="text" name="" class="input-text" value="" placeholder="输入您的取件详细地址" />
+                    </div>
+                </div>
+            </li>
+            
+        </form>
+    </section>
+    <!-- 快件信息  -->
+    <section class="grid-main">
+    	<form>
+    	<ul class="ui-fm">
+            <li class="item item-fm">
+                <div class="ui-flex">
+                    <div class="flex-ico"><label><span class="must lable-fontStyle">寄件时间</span></label></div>
+                    <div class="flex-con">
+                    	<a class="ui-btn-right" data-toggle="datePicker" href="javascript:void(0);">
+                        	<span class="fill text-fontStyle">&nbsp;</span>
+                        </a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        </form>
+    </section>
+    
+    <section class="grid-main">
+        <div class="tfoot">
+	        <div class="grid-btn">
+	        	<a class="ui-btn btn-submit-no" href="">立即下单</a>
+	        </div>
+        	<div class="div-service">
+        		<div class="ico-jjcxfw">
+        		</div>
+        	</div>
+        	<ul class="ul-service">
+	            <li class="li-item">
+	            	<a href="#">
+	                <p><i class="ui-ico-sfi ico-money-time ico-service-style"></i>价格与时效</p>
+	            	</a>
+	            </li>
+	            <li class="li-item">
+	            	<a href="#">
+	                <p><i class="ui-ico-sfi ico-target ico-service-style"></i>收送范围</p>
+	                </a>
+	            </li>
+	            <li class="li-item">
+	            	<a href="#">
+	                <p><i class="ui-ico-sfi ico-location-2 ico-service-style"></i>附近网点</p>
+	                </a>
+	            </li>
+        	</ul>
+        </div>
+    </section>
+	
+	<footer>
+		<div class="grid-btn">
+	        	<p class="ft-text"><img src="../../../css/common/img/image_2.png" class="sf-icon-img" />由顺丰速运提供快递服务</p>
+	    </div>
+	</footer>
+</div>
+
+
+<!-- 日期时间选择 -->
+<div data-toggle-content="datePicker" class="pop-picker-wrapper" style="display: none;">
+
+<div class="ui-picker-con">
+	
+    <ul class="ui-tabs-menu datetime-menu" data-tabs="tabs">
+        <li data-menu="date" class="cur">日期</li>
+        <li data-menu="time">时间</li>
+    </ul>
+    <!-- 日期 s -->
+    <div data-tabs-content="date" class="ui-tabs-content dates-box" style="display:block;">
+    	<ul class="ui-timelist">
+        <li><span class="name">今天</span><span class="date">2014-07-15</span></li>
+        <li><span class="name">明天</span><span class="date">2014-07-16</span></li>
+        <li><span class="name">本周五</span><span class="date">2014-07-17</span></li>
+    </ul>
+    </div>
+    <!-- 日期 e -->
+    
+    <!-- 时间 s -->
+    <div data-tabs-content="time" class="ui-tabs-content items-box" style="display:none;">
+    	<div class="list-prev"><span class="ui-ico-sfi prev"></span></div>
+        <div class="item-wrapper scroll">
+    	<ul class="items">
+        <li>09: 00</li>
+        <li>09: 30</li>
+        <li>10: 00</li>
+        <li>10: 30</li>
+        <li>11: 00</li>
+        <li>11: 30</li>
+        <li>12: 00</li>
+        <li>12: 30</li>
+        <li>13: 00</li>
+        <li>13: 30</li>
+        <li>14: 00</li>
+        <li>14: 30</li>
+        <li>15: 00</li>
+        <li>15: 30</li>
+        <li>16: 00</li>
+        <li>16: 30</li>
+        <li>17: 00</li>
+        <li>17: 30</li>
+        <li>18: 00</li>
+        <li>18: 30</li>
+        <li>19: 00</li>
+        <li>19: 30</li>
+        <li>20: 00</li>
+        <li>20: 30</li>
+        <li>21: 00</li>
+        <li>22: 30</li>
+        <li>23: 00</li>
+        <li>24: 00</li>
+        
+        </ul>
+        </div>
+        <div class="list-next"><span class="ui-ico-sfi next"></span></div>
+    </div>
+    <!-- 时间 e --> 
+    
+    <div class="picker-btn">
+    <a class="ui-btn btn-cancel" data-btn="cancel">取消</a>
+    <a class="ui-btn btn-submit" data-btn="submit">确定</a>
+    </div>
+    
+</div>
+
+</div>
+
+
+
+<script type="text/javascript" src="/js/common/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	//遍历复选按钮
+	$('[data-btn="checkbox"]').each(function(){
+		$(this).click(function(){$(this).toggleClass("selected");});
+	});
+	
+	
+	//选择寄件时间	
+		
+		$("[data-toggle='datePicker']").bind("click",function(e){
+			
+			var $obj = $(this);
+			var $picker = $('[data-toggle-content="datePicker"]');
+			var pickerDate = $picker.find(".ui-timelist");
+			var pickerTime = $picker.find(".items");
+			var liNum = pickerTime.find("li").length;
+			var prev = $picker.find(".list-prev");
+			var next = $picker.find(".list-next");
+			var defaultDate = 0; //设置默认日期
+			var defaultTime = 1; //设置默认时间
+			var selectDate = defaultDate;
+			var selectTime = defaultTime;		
+			
+			var allPage = Math.ceil(liNum /12);
+			var curPage = 1;		
+			
+			if(allPage > 2){
+				prev.addClass("disable").show();
+				next.show();
+			}else{
+				prev.hide();
+				next.hide();
+			}
+					
+			prev.bind("click",function(){
+				if(curPage != 1){
+					var top = parseInt(pickerTime.css("top"));
+					pickerTime.animate({top:top + 160},300);
+					curPage = curPage - 1;
+				}
+				if(curPage > 1){							
+					next.removeClass("disable");
+				}
+				if(curPage == 1){
+					prev.addClass("disable");
+				}
+			});	
+			
+			next.bind("click",function(){
+				if(curPage < allPage){
+					var top = parseInt(pickerTime.css("top"));
+					pickerTime.animate({top:top - 160},300);
+					curPage = curPage + 1;	
+				}
+				if(curPage > 1){							
+					prev.removeClass("disable");
+				}
+				if(curPage == allPage){
+					next.addClass("disable");
+				}
+			});
+			
+			var $mask = $('<div class="maskbox" style="z-index:10; opacity:.9;"></div>');
+			
+			
+			e.stopPropagation();			
+			$("body").append($mask);
+			$picker.slideDown(300);
+			
+			//点击其它地址隐藏
+			$mask.click(function(){			
+				$picker.slideUp(300,function(){$mask.remove();});				
+			});		
+			
+			
+			//初始化选项卡
+			$picker.find("[data-tabs='tabs']").find("li").removeClass("cur").end().find('[data-menu="date"]').addClass("cur");
+			$picker.find(".ui-tabs-content").hide();
+			$picker.find('[data-tabs-content="date"]').show();
+			
+			//设置默认日期
+			pickerDate.find("li").each(function(i){
+				if(i == defaultDate){
+					$(this).siblings("li").removeClass("selected").end().addClass("selected");
+				}
+			});
+			//设置默认时间
+			pickerTime.find("li").each(function(i){
+				if(i == defaultTime){
+					$(this).siblings("li").removeClass("current").end().addClass("current");
+				}
+			});
+			
+			//选择日期
+			pickerDate.find("li").each(function(i){
+				$(this).bind("click",function(){
+					$(this).siblings("li").removeClass("selected").end().addClass("selected");
+					$picker.find("[data-tabs='tabs']").find("li").removeClass("cur").end().find('[data-menu="time"]').addClass("cur");
+					$picker.find(".ui-tabs-content").hide();
+					$picker.find('[data-tabs-content="time"]').show();
+					selectDate = $(this).index();
+				});
+			});
+			
+			//选择时间
+			pickerTime.find("li").each(function(i){
+				$(this).bind("click",function(){
+					$(this).siblings("li").removeClass("current").end().addClass("current");
+					selectTime = $(this).index();
+				});
+			});	
+			
+			
+			//点击确定
+			$picker.find("[data-btn='submit']").bind("click",function(){
+				$picker.slideUp(300,function(){
+					var selectDateTime = pickerDate.find("li").eq(selectDate).find(".date").text() + ' ' + pickerTime.find("li").eq(selectDate).text();
+					$obj.val(selectDateTime);
+					$mask.remove();
+				});				
+			});
+			
+			//点击取消
+			$picker.find("[data-btn='cancel']").bind("click",function(){
+				$picker.slideUp(300,function(){
+					$mask.remove();
+				});			
+			});
+			
+			//选择寄件时间中tabs
+			$picker.find("[data-tabs='tabs']").each(function(e){
+				var parent= $(this);				 
+				parent.find("li").each(function(i){
+					$(this).bind("click",function(){
+						$(this).siblings("li").removeClass("cur").end().addClass("cur");
+						parent.siblings(".ui-tabs-content").hide();
+						parent.siblings(".ui-tabs-content").eq(i).show();
+					});
+				});
+			});			
+			
+		});		
+		
+		getCommonImg("1004","N","1");
+});
+
+</script>
+<script type="text/javascript" src="/js/common/baiduState.js"></script>
+</body>
+</html>

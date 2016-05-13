@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>顺丰速运</title>
+<link rel="stylesheet" href="../../../css/common/public.css">
+<link rel="stylesheet" href="../../../css/common/sf08-1.css">
+<link rel="stylesheet" href="../../../css/common/tips.css"/>
+</head>
+
+<body>
+  <div id="wrapper">
+
+    <!-- header s -->
+    <header class="header-bottom-line">
+    	<span class="btn-topl"><a class="ui-btn btn-back" href="javascript: history.go(-1);"><i class="ui-ico-sfi ico-back"></i></a></span>
+        <h1>更改收货地址</h1>
+    </header>
+    <!-- header e -->
+    
+    
+   	<section >
+       <ul class="ui-waybill">
+        	<li class="item">
+            	<div class="ui-flex01">
+                	<div class="sflogo"><img src="../../../css/common/img/sflogo02.png" width="80" height="28"></div>
+                    <div class="nurber" id="bno"></div>
+                </div>
+            </li>
+         </ul>
+    </section> 
+	
+	<section class="">
+    	
+    	<ul class="ui-fm border-top01">
+        	
+            <li class="item item-fm-m border-bottom01">
+            	<div class="ui-div-right" style="padding: 5px 3% 0  3%;">
+                	<span class="placeholder">原收货地址</span>
+                </div>
+            </li>
+            <li class="item item-fm-m">
+            		<div class="fill-more">
+                    	<span class="must2">
+                    	<p>
+                    		<span class="name" id="name"></span>
+                    		<span class="tel" id="phone"></span>
+                    		<span id="toCityCode" hidden="true"></span>
+                    	</p>
+                        <p class="address" id="address"></p>
+                       </span>
+                    </div>
+            </li>
+            </ul>
+           </section>
+           
+           <section class="grid-main">
+            <ul class="ui-fm">
+             <li class="item item-fm-m " style="padding: 3%;">
+            	<div class="ui-div-right">
+                	<div class="placeholder title-latest">新收货地址</div>
+                </div>
+            </li>
+            <li class="item item-fm-m">
+            	<a class="ui-btn-right a-btn-msg" style="padding: 5px 3% 0  3%;" href="#" onClick="toSelectSentAddressBook('/page/telephoneBind/addressbook/receive/address_menber2.html','/page/telephoneBind/gaipai/gaipai.html','1')" id="updateAddressDiv">
+            	<!--  <a class="ui-btn-right a-btn-msg" href="#"  id="updateAddressDiv">-->
+            		<div class="fill-more">
+                    	<span class="must2">
+                    	<p class="colorgrey02">
+                    		<span id="selectSentHint">请添加新收件人信息</span>
+                    		<div class="fill-more" id="sentInfo" hidden="true">
+	                    	<p><span class="name" id="sentNameLabel"></span><span class="tel" id="sentPhoneLabel"></span></p>
+	                        <p class="address"><span class="name" id="shippingAddress"></span></p>
+	                        <input type="hidden" id="shippingName" onchange="changeCity()"/>
+	                        <input type="hidden" id="shippingPhone"/>
+	                        <input type="hidden" id="shippingAsbkId"/>
+	                        <input type="hidden" id="shippingProvinceName"/>
+	                        <input type="hidden" id="shippingProvinceCode"/>
+	                        <input type="hidden" id="shippingCityName"/>
+	                        <input type="hidden" id="shippingCityCode"/>
+	                        <input type="hidden" id="shippingCountyName"/>
+	                        <input type="hidden" id="shippingCountyCode"/>
+	                        <input type="hidden" id="shippingDetailAddress"/>
+	                    </div>
+                    	</p>
+                       
+                       </span>
+                    </div>
+                </a>
+            </li>
+            
+           </ul>
+        
+    </section>
+    <section class="grid-main" id="payMethodSec" hidden="true">
+    	<form>
+    	<ul class="ui-fm">
+        	<li class="item item-fm-m01">
+                	<p class="placeholder"><span class="colorgrey01">预估运费：</span><span class="colorred" id="priceSpan"></span><span class="colorgrey01"></span>(以实际收费为准)</p>
+            </li>
+        	<li class="item item-fm-m01">
+                    <div class="fill-more p-topBottom10">
+                    	<span class="must4">
+                    	<div>
+                    		<span class="lable-fontStyle lable-margin">付款方式</span>
+                    		<div class="div-btn-p">
+                    		   <input type="hidden" id="payMethodCode" value='0'/>
+                    			<a class=" btn-buttom-hkj text-margin-left-10" href="#" onclick="changePayMenthod(this,'1')" id="PayMenthod1">商家付</a>
+                    			<!--  <a class="ui-btn btn-buttom-smsj"" href="#" onclick="changePayMenthod(this,2)" id="PayMenthod2">收件人付</a> -->
+                    			<a class=" btn-buttom-hkj text-margin-left-10" href="#" onclick="changePayMenthod(this,'2')" id="PayMenthod2">收件人付</a>
+                    		</div>
+                    	</div>
+                       </span>
+                    </div>
+            </li>
+            </ul>
+            </form>
+       </section>
+            <div class="ui-agreement">
+        	<div class="div-lr-padding">
+        		<span >
+                    <p>
+                    	<a href="javascript:void(0);" data-btn="yes-no" onclick="changeStyle()">
+	        			 <i class="ui-ico-sfi ico-box" id="chImg"></i><input  type="text" hidden="true" value="no" id="isCheck"/>
+	        			</a>
+                    	<span class="text-fontStyle text-margin-left-6">我同意</span>
+                    	<a href="javascript:void(0)" onclick="showAgreement();">
+	                    	<span class="text-fontStyle text-margin-left-6  colorred">《更改收货地址服务协议》</span>
+                    	</a>
+                    </p>
+                </span>
+        	</div>
+        	 <div class="grid-btn">
+        	   <a class="ui-btn btn-submit-no" href="#" onclick="btnClick();" id="btnOk">提 交</a>
+        	 </div>
+	        <div class="colorgray01"><center>提交服务信息不等同于服务办理成功</center></div>
+            <div class="color01">仓库拦截快件有风险，包裹时效需加工作日。若产生运费，默认运费计算标准与原单一致；若地址不可选，请联系在线客服或95338。</div>
+        </div>
+        
+  </div>
+  
+  <div hidden="true"   id="light1">
+  <!--  <div class="tip-box-server" hidden="true" id="agreement"> -->
+  <div class="text">
+	<h1><center>服务协议</center></h1>
+   	<h2>为了使用更改收货地址服务，您应当事先阅读并同时遵守以下条款：</h2>
+   	<h2>一、定义</h2>
+   	<h2>更改收货地址服务是指快件派送前，收件人本人可以在顺丰速运无线服务渠道提交更改收货地址请求，请求有效的情况下我司安排地址变更服务。
+请求有效符合以下三个条件：收件人提交的信息准确真实、客服处理请求时快件未出仓、寄件人同意收件人请求。以上条件若有一条不符，均会导致服务使用失败。
+您提交的信息中，如顺丰速运公司发现或有合理理由怀疑您提供的身份信息不合法、不真实、不准确、不完整，顺丰速运公司有权立即终止向您提供服务，并拒绝您现在或未来使用顺丰速运服务窗全部或部分功能，由此给您造成的任何损失及产生的额外费用由您自行承担。
+     </h2>
+     <h2>二、服务功能</h2>
+   	<h2>1、服务请求功能：快件运输途中，您可以在顺丰速运无线服务渠道提交更改收货信息请求，提交信息有效情况下，顺丰速运会及时为您处理，处理结果（更改收货地址成功或失败）通过顺丰速运服务窗通知您，处理结果成功即为生效。</br>
+2、收货联系方式更改生效后再次更改（目前该功能暂不开放）：如您在更改申请提交成功后，需要再次更改，请再次提交变更信息，顺丰速运会以您的最新申请为准。
+     </h2>
+     <h2>三、服务范围</h2>
+   	<h2>顺丰速运无线服务渠道暂支持北上广深四个城市（快件原目的地为北上广深）的更改收货地址请求，后续开放城市以顺丰速运发布信息为准。
+     </h2>
+     <h2>四、费用</h2>
+   	<h2>顺丰速运服务窗暂提供一次更改收货地址服务。后续将按次数收取服务费，服务费金额以顺丰速运发布信息为准。</br>
+非同城更改收货地址的请求，将重新开单，新单服务类型默认与原单一致，运费计算标准与原单一致。暂不含代收货款件。
+     </h2>
+     <h2>五、托寄物要求</h2>
+   	<h2>计费重量≤3kg。
+     </h2>
+     <h2>六、服务时效</h2>
+   	<h2>更改收货联系方式信息提交成功后，顺丰客服会在1个小时内为您处理。处理结果、快件最新路由将通过顺丰速运无线渠道告知您。
+     </h2>
+     <h2>七、不可抗力及其他免责事由</h2>
+   	<h2>
+   	1.在使用顺丰速运公司提供的更改收货地址服务过程中，可能遇到不可抗力等风险因素，使服
+发生中断。不可抗力是指不能预见、不能克服、不能避免且对一方或双方造成重大影响的客观事件，包括但
+不限于洪水、地震、瘟疫和风暴等自然灾害以及战争、动乱、政府行为等社会事件。出现上述情况时，顺丰
+速运将努力在第一时间与相关单位配合及时进行修复，但由此给您造成的损失顺丰速运有限公司在法律允许的范围内免责。</br>
+2.在法律允许的范围内，顺丰速运公司对以下情形导致的服务中断或受阻不承担责任：</br>
+（1）受到手机、电脑病毒、木马或其他恶意程序、黑客攻击的破坏；</br>
+（2）用户或顺丰速运有限公司的电脑软件、系统、硬件和通信线路出现故障；</br>
+（3）用户操作不当；</br>
+（4）其他顺丰速运公司无法控制或合理预见的情形。</br>
+
+
+     </h2>
+     </div>
+    <!--  <div class="tip-btn-server">
+        	<a class="tip-btn-a1-server" href="">
+				<div class="tip-btn-a-div-server">取消</div>
+        	</a>
+        	<a class="tip-btn-a2-server" href="">
+				<div class="tip-btn-a-div-server">确认</div>
+        	</a>
+</div>-->
+</div>
+<div class="pop-tips" hidden="true" id="errorMsg">
+    <div class="tips">
+    	<img src="../../../css/common/img/warning.png"><p id="errorInfo"></p>
+    </div>
+    </div>
+    
+    <div class="pop-tips" hidden="true" id="success">
+    <div class="tips">
+    	<img src="../../../css/common/img/success.png"><p id="MsgInfo"></p>
+    </div>
+    </div>
+ <a href="/page/telephoneBind/index.html" class="cd-Home"><span class="ui-ico-sfi ico-home"></span></a>
+</body>
+</html>
+<script src="/js/common/jquery-1.7.2.min.js"></script>
+<script src="/js/common/util/util.js"></script>
+<script src="/js/common/common.js"></script>
+<script src="/js/common/idangerous.swiper-2.1.min.js"></script>
+<script src="/js/telephoneBind/deliverydetails/gaipai/gaipai.js"></script>
+<script type="text/javascript" src="/js/common/util/util.js"></script>
+<script type="text/javascript" src="/js/common/util/common.js"></script>
+<script type="text/javascript" src="/js/telephoneBind/order/ship.js"></script>
+<script type="text/javascript" src="/js/common/baiduState.js"></script>

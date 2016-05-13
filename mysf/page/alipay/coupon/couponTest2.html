@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<title>实时生成优惠券</title>
+<!-- <link rel="stylesheet" href="/css/common/global.css">
+<link rel="stylesheet" href="/css/common/coupon.css"/>
+<script type="text/javascript" src="/js/common/tip-aligncenter.js"></script> -->
+
+</head>
+
+<body>
+
+ 运单号:<input id="bno"><br>  
+<button type="button" value="生成" onclick="getData();" > 点击按钮生成</button>
+
+<div>
+ </p><p id="couponNo"></p><p id="checkCode"></p>
+</div> 
+<!-- <div> 
+ <p id="codeImg"> </p>
+</div> -->
+
+</body>
+</html>
+<script type="text/javascript" src="/js/common/util/util.js"></script>
+<script type="text/javascript" src="/js/common/util/common.js"></script>
+<script type="text/javascript" src="/js/common/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/js/common/barcode/jquery-barcode-2.0.1.js"></script>
+<script type="text/javascript">
+
+
+function getData(){
+	var bno = $("#bno").val();
+	$.ajax({
+		type : "get",
+		dataType : "json",
+		url : "/service/coupons/coupons/commonApplyCoupon/"+bno,
+		success : function(data) {
+			var json = eval(data);
+			$("#couponNo").html(json[0].couponNo);
+			$("#checkCode").html(json[0].checkCode);
+			//BarCodeGeneration(json[0].couponNo,'3','50','5','148','22',$("#couponImg"));
+			//BarCodeGeneration(json[0].checkCode,'3','50','5','148','22',$("#codeImg"));
+		},
+		error : function(XMLHttpRequest, textStatus, errorThrown) {
+			//getCommonImg("1005","N","3");
+		}
+	});
+}
+
+function BarCodeGeneration(code,barWidths,barHeights,moduleSizes,posXs,posYs,obj){
+	var btype ='ean8';
+	var value = code;
+	 var settings = {
+	          output:"css",
+	          bgColor: "#FFFFFF",
+	          color: "#000000",
+	          barWidth: barWidths,
+	          barHeight: barHeights,
+	          moduleSize: moduleSizes,
+	          posX: posXs,
+	          posY: posYs,
+	          addQuietZone: false
+	        };
+	 obj.text("").show().barcode(value, btype, settings);
+	
+}
+</script>

@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>活动规则</title>
+<link rel="stylesheet" href="css/public.css">
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/advancePayment.js"></script>
+<script  type="text/javascript">
+
+var showListFun = function showList(objs){
+	//objs = [{'type':'1','amount':'1000','createTime':'2015/9/24 11:34:31','blanceAmount':'0'},
+	//{'type':'2','amount':'1000','createTime':'2015/8/24 11:34:31','blanceAmount':'0'}];
+	if(objs==null || objs.length==0){
+		$("#wrapper").attr("style","display:none");
+		return;
+	}
+	var target = $("dl[name='nameObj']").get(0);
+	fillObj(objs[0],target);
+	for(var i=1; i<objs.length; i++){
+		var objClone = $(target).clone(true);
+		fillObj(objs[i],objClone);
+		$(objClone).appendTo("#wrapper");
+	}
+}
+
+function fillObj(obj,target){
+	var strType, strStatus,amount;
+	if(obj.type==1){
+		strType = "冻结";
+		amount="+"+obj.amount;
+	}else{
+		strType = "解冻";
+		amount="-"+obj.amount;
+	}
+	if(obj.status==1){
+		strStatus = "进行中";
+	}else if(obj.status==2){
+		strStatus = "已支付";
+	}else if(obj.status==3){
+		strStatus = "已解冻";
+	}else if(obj.status==5){
+		strStatus = "已取消";
+	}
+	
+	$(target).find("dt[name='nameType']").text(strType);
+	$(target).find("dd[name='nameAmount']").text(amount);
+	$(target).find("span[name='nameCreateTime']").text(millisecondToTimeStr(obj.createTime));
+	$(target).find("span[name='nameStatus']").text(strStatus);
+}
+
+//毫秒数转华为时间格式  2015-12-2 1:21:33
+function millisecondToTimeStr(millisecond){
+	var obj = new Date(millisecond);
+	var strTime = obj.getFullYear() + "-" + (obj.getMonth()+1) + "-" + obj.getDate() + " " + obj.getHours() +":"+obj.getMinutes()+":"+obj.getSeconds();
+	return strTime;
+}
+
+$(document).ready(function(){
+	queryAdvancePaymentRecs(showListFun)
+	//showList();
+});
+</script>
+</head>
+
+<body>
+<div id="wrapper">
+    <dl name="nameObj" class="shouzhilist">
+    	<dt name="nameType">收款</dt>
+    	<dd class="colorred" name="nameAmount">+2000</dd>
+    	<dt class="color05"><span name="nameCreateTime">2014-09-15 16:00:00</span></dt>
+    	<dd>状态：<span name="nameStatus">处理中</span></dd>
+    </dl>
+
+
+</div>
+</body>
+</html>

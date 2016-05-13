@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>预约派送时间</title>
+<link rel="stylesheet" href="/css/common/public.css">
+<link rel="stylesheet" href="/css/common/sf07.css">
+<link rel="stylesheet" href="/css/common/tips.css"/>
+</head>
+
+<body>
+<div id="wrapper">
+
+    <!-- header s -->
+    <header class="header-bottom-line">
+    	<span class="btn-topl"><a class="ui-btn btn-back" href="javascript: history.go(-1);"><i class="ui-ico-sfi ico-back"></i></a></span>
+        <h1>预约派送时间</h1>
+    </header>
+    <!-- header e -->
+    
+    <section>
+    	<form>
+    	<ul class="ui-fm timing-form">  
+            <li class="item item-fm">
+                <div class="ui-text">
+                    <div class="ui-text-left">
+                    	<div class="ui-text-img">
+                    		<img src="/css/common/img/sfman_1.jpg" alt="" id="photoUrl">
+                    		
+                    	</div>
+                    </div>
+                    <div class="ui-text-center-right">
+                    	<p class="text-fontStyle" style="height: 50%;line-height: 50%;" id="empName"></p>
+                    	<p style="height: 50%;">
+                    		<i class="ui-ico ico-star able"></i><i class="ui-ico ico-star able"></i><i class="ui-ico ico-star able"></i><i class="ui-ico ico-star able"></i><i class="ui-ico ico-star"></i>
+                    	</p>
+                   </div>
+                </div>
+                <div>
+                	<p class="xiuxian" ><span>运单号：</span><span id="waybill-num"></span></p>
+                	
+            	</div>
+            </li>
+        </ul>
+        </form>
+    </section>
+	
+	<section class="grid-main">
+    	<form>
+    	<ul class="ui-fm">
+    		<li class="item item-fm li-msg" style="border-bottom:0;">
+                <div class="ui-flex div-padding-top-buttom10">
+                	<span class=" title-latest">预约派送时间</span>
+                </div>
+                
+                
+                <!--<div class="ui-flex">
+                    <div class="msg-input">
+                    	<div class="msg-box-input">
+                    		<input type="num" name="" value="" placeholder="我还想说"/>
+                    	</div>
+            		</div>
+                </div>-->
+            </li>
+            <li class="item item-fm" id="yy-time">
+                <div class="ui-flex11">
+                    <div class="flex-ico"><label id="timeSpan">选择派送时间</label><input id="dateTimeText" hidden="true"/></div>
+                    <div class="flex-con">
+                    	<a class="ui-btn-right" data-toggle="datePicker" href="javascript:void(0);" onclick="selectDateAndTime()">
+                        	<span class="fill text-fontStyle">&nbsp;</span>
+                        	<input type="hidden" id="dateTimeInput">
+                        	<input type="text" hidden="true" id="dateTimeText1">
+                        </a>
+                    </div>
+                </div>
+            </li>
+           
+        </ul>
+        
+        </form>
+    </section>
+   
+</div>
+
+
+<!-- 日期时间选择 -->
+<div data-toggle-content="datePicker" class="pop-picker-wrapper">
+
+<div class="ui-picker-con">
+	
+    <ul class="ui-tabs-menu datetime-menu" data-tabs="tabs">
+        <li data-menu="date" class="cur">日期</li>
+        <li data-menu="time">时间</li>
+    </ul>
+    <!-- 日期 s -->
+    <div data-tabs-content="date" class="ui-tabs-content dates-box" style="display:block;">
+    	<ul class="ui-timelist" id="orderDateList" >
+    </ul>
+    </div>
+    <!-- 日期 e -->
+    
+    <!-- 时间 s -->
+    <div data-tabs-content="time" class="ui-tabs-content items-box" style="display:none;">
+    	<div class="list-prev"><span class="ui-ico-sfi prev"></span></div>
+        <div class="item-wrapper scroll">
+    	<ul class="items" id="orderTimeList">
+        <!--  <li>09: 00</li> -->
+        </ul>
+        </div>
+        <div class="list-next" onclick="nextPage()"><span class="ui-ico-sfi next"></span></div>
+    </div>
+    <!-- 时间 e --> 
+     
+    
+    <input type="hidden" id="selectDateValue">
+	<input type="hidden" id="selectTimeValue">
+    <div class="picker-btn">
+     <a class="ui-btn btn-cancel" data-btn="cancel" onclick="cancelEvent()">取消</a>
+     <a class="ui-btn btn-submit" data-btn="submit" onclick="confirmEvent()">确定</a>
+    </div>
+</div>
+</div>
+<!-- 提交成功文字 s -->
+     <div class="text-notes">
+   
+      您的预约派送时间需求将会提交给收派员的移动终端，如快件已在派送过程中，您也可以与小哥沟通您的需求，如有疑问可致电顺丰客服电话95338。
+     </div>
+     
+      <!-- 提交成功文字 e --> 
+      
+<div class="grid-btn">
+	        	<a class="ui-btn btn-submit" href="javascript:void(0);" onclick="btnClick();" id="subBtn">提交</a>
+	            
+</div>
+
+  
+<div class="pop-tips" hidden="true" id="errorMsg">
+    <div class="tips">
+    	<img src="/css/common/img/warning.png"><p id="errorInfo"></p>
+    </div>
+    </div>
+ <a href="/page/alipay/index.html" class="cd-Home"><span class="ui-ico-sfi ico-home"></span></a>
+<script type="text/javascript" src="/js/common/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/js/common/util/util.js"></script>
+<script type="text/javascript" src="/js/common/common.js"></script>
+<script type="text/javascript" src="/js/common/util/common.js"></script>
+<script type="text/javascript" src="/js/common/baiduState.js"></script>
+<script type="text/javascript" src="/js/alipay/deliverydetails/routing/aMessage.js"></script>
+</body>
+</html>

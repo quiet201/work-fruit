@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<title>历史维修订单</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="wrap">
+	<header>
+	  <div class="row hbg-gray btb"> 
+	    <a href="javascript: history.go(-1);">
+	      <i class="btn btn-top">&nbsp;</i>
+	      <h1>历史维修订单</h1>
+	    </a> 
+	  </div>
+	</header>
+	<div id="order_history_list">
+      <div class="order-no">对不起，您还没有维修订单</div>
+	</div>
+</div>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+        Date.prototype.pattern=function(fmt) {        
+            var o = {        
+              "M+" : this.getMonth()+1, //月份        
+              "d+" : this.getDate(), //日        
+              "h+" : this.getHours() == 0 ? 12 : this.getHours(), //小时        
+              "H+" : this.getHours(), //小时        
+              "m+" : this.getMinutes(), //分        
+              "s+" : this.getSeconds(), //秒        
+              "q+" : Math.floor((this.getMonth()+3)/3), //季度        
+              "S" : this.getMilliseconds() //毫秒        
+            };        
+            var week = {        
+              "0" : "\u65e5",        
+              "1" : "\u4e00",        
+              "2" : "\u4e8c",        
+              "3" : "\u4e09",        
+              "4" : "\u56db",        
+              "5" : "\u4e94",        
+              "6" : "\u516d"       
+            };        
+            if(/(y+)/.test(fmt)){        
+                fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));        
+            }        
+            if(/(E+)/.test(fmt)){        
+                fmt=fmt.replace(RegExp.$1, ((RegExp.$1.length>1) ? (RegExp.$1.length>2 ? "\u661f\u671f" : "\u5468") : "")+week[this.getDay()+""]);        
+            }        
+            for(var k in o){        
+                if(new RegExp("("+ k +")").test(fmt)){        
+                    fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));        
+                }        
+            }        
+            return fmt;        
+        } 
+
+        $(function($){
+          $.get("/service/songweixiu/private/order/history/list", {},function(result){
+                if(result){
+                  var template = [],temp;
+                  for (var i = 0; i < result.length; i++) {
+                    temp = result[i];
+                    template.push('<div class="row col grid-green">');
+                       template.push('<div class="phone-model">');
+                        template.push('<p class="model-p">'+temp['productseries']+'</p>');
+                        template.push('<p class="fault-p">'+temp['customerbigfaultcode1']+'、'+temp['customerbigfaultcode2']+'</p>');
+                        template.push('<p class="date">'+new Date(temp['createtm']).pattern("yyyy-MM-dd hh:mm:ss")+'</p>');
+                       template.push('</div>');
+                       
+                       template.push('<div class="zt-jx">');
+                         template.push('<p class="djx">'+temp['progress']+'</p>');
+                         template.push('<p><a class="more-d" href="order-comment.html?serialNo='+temp['serialno']+'">评价订单</a></p>');
+                       template.push('</div>');
+                    template.push('</div>');
+                  };
+                  $("#order_history_list").html(template.join(""));
+                }
+            },"json");
+        });
+</script>
+
+ <!--到个人中心的图标 -->
+ <div class="i-info"><a href="index3.html"><i class="icon-home-fixed">&nbsp;</i></a></div>
+</body>
+</html>

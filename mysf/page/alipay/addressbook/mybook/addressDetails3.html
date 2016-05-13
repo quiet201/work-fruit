@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>地址簿详情</title>
+<link rel="stylesheet" href="../../../../css/common/public.css">
+<link rel="stylesheet" href="../../../../css/common/sf02.css">
+<link rel="stylesheet" href="../../../../css/common/tips.css"/>
+</head>
+
+<body>
+<div id="wrapper">
+	<!-- 隐藏域 -->
+	<div  id="asbkId" style="display:none;"></div>
+	<div  id="provinceName" style="display:none;"></div>
+	<div  id="provinceCode" style="display:none;"></div>
+	<div  id="cityName" style="display:none;"></div>
+	<div  id="cityCode" style="display:none;"></div>
+	<div  id="countyName" style="display:none;"></div>
+	<div  id="countyCode" style="display:none;"></div>
+    <!-- header s -->
+    <header>
+    	<span class="btn-topl"><a class="ui-btn btn-back" href="javascript: history.go(-1);"><i class="ui-ico-sfi ico-back"></i></a></span>
+        <h1>地址簿详情</h1>
+    </header>
+    <!-- header e -->
+
+    <section>
+    	<form>
+    	<ul class="ui-fm border-top0">
+    		<li class="item item-fm">
+                <div class="ui-flex">
+                    <div class="flex-ico"><!-- <span class="must2"></span> --><label><span class="lable-fontStyle">姓名</span></label></div>
+                    <div class="flex-con">
+                    	<input type="text" name="" id="userName" class="input-text" value="" placeholder="" readonly="readonly" maxLength="10"/>
+                    </div>
+                </div>
+            </li>
+            <li class="item item-fm">
+                <div class="ui-flex">
+                    <div class="flex-ico"><!-- <span class="must2"></span> --><label><span class="lable-fontStyle">联系方式</span></label></div>
+                    <div class="flex-con">
+                    	<input type="text" name="" id="telePhone" class="input-text" value="" placeholder="" readonly="readonly"/>
+                    </div>
+                </div>
+            </li>
+            <li class="item item-fm">
+                <div class="ui-flex">
+                    <div class="flex-ico"><!-- <span class="must2"></span> --><label><span class="lable-fontStyle">省市区</span></label></div>
+                    <div class="flex-con">
+                    	<a  data-toggle="datePicker" href="#" id="checkedOne">
+                        	<div id="destination" class="fill placeholder font01" style="padding: 10px 0;">请选择地区</div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li class="item item-fm">
+                <div class="ui-flex">
+                    <div class="flex-ico"><!-- <span class="must2"></span> --><label><span class="lable-fontStyle">详细地址</span></label></div>
+                    <div class="flex-con">
+                    	<textarea name="addres" id="detailAdress" class="text-add" readonly="readonly"></textarea>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        </form>
+    </section>
+
+</div>
+<div class="pop-tips" hidden="true" id="errorMsg">
+    <div class="tips">
+    	<img src="../../../../css/common/img/warning.png"><p id="errorInfo"></p>
+    </div>
+</div>
+<!-- 公共页面 -->
+<div id="commonPage"></div>
+
+<!-- JS引入 -->
+<script type="text/javascript" src="/js/common/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/js/common/util/util.js"></script>
+<script type="text/javascript" src="/js/common/util/common.js"></script>
+<script type="text/javascript" src="/js/alipay/addressbook/mybook/addressDetails3.js"></script>
+<script type="text/javascript" src="/js/common/baiduState.js"></script>
+</body>
+</html>

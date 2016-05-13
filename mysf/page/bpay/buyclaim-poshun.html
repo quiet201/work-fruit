@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>我要理赔</title>
+<link rel="stylesheet" href="../../../css/common/baobeibao.css">
+<link rel="stylesheet" href="../../../css/common/public.css">
+<link rel="stylesheet" href="../../../css/common/tips.css">
+</head>
+
+<body>
+<div id="wrapper">
+
+    <!-- header s -->
+    <header>
+    	<span class="btn-topl"><a class="ui-btn btn-back" href="javascript: history.go(-1);"><i class="ui-ico-sfi ico-back"></i></a></span>
+        <h1>我要理赔</h1>
+    </header>
+    <!-- header e -->
+    
+    <section>
+    	<form>
+    	<ul class="ui-fm " style="padding: 0 3%;">
+    		<li class="item item-fm" style="padding: 0;">
+                <div class="ui-flex">
+                    <div class="flex-ico"><span class="must2"></span><label><span class="">手机号码</span></label></div>
+                    <div class="flex-con" style="margin-left: 10px;">
+                    	<input type="text" name="" class="input-text" value="" placeholder="请填写已购买宝贝保的手机号" />
+                    </div>
+                </div>
+            </li>
+            <li class="item item-fm border-bottom0" style="padding: 0 ;">
+                <div class="ui-flex" >
+                    <div class="flex-ico"><span class="must2"></span><label><span class="">支付宝账号</span></label></div>
+                    <div class="flex-con" style="margin-left: 10px;">
+                    	<input type="text" name="" class="input-text" value="" placeholder="请填写接收理赔款项的账号" />
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <ul class="grid-main ui-list border-bottom0" >
+            <li class="item item-fm-m" id="sentWayDiv">
+                    <div class="fill-more p-topBottom10">
+                    	<span class="must4">
+                    	<div>
+                    		<span class="lable-fontStyle lable-margin font01">理赔类型：</span>
+                    		<div class="div-btn-p">
+                    			<span class="ui-btn btn-buttom-smsj" href="javascript:void(0);" ><i class="ico-poshun"></i>破损</span>
+                    			<span class="ui-btn btn-buttom-hkj" href="javascript:void(0);" ><i class="ico-yishi-no"></i>遗失</span> 
+                    			<p class="address btn-fontStyle" id="uMsg">包裹签收7天内可申请破损理赔，确认后每单赔付100元。</p>
+                    			<input hidden="true" id="sentWay" value="1">
+                    		</div>
+                    	</div>
+                       </span>
+                    </div>
+            </li>
+           </ul>
+           <ul class="ui-fm" style="padding: 0 3%;">
+            <li class="item item-fm " style="padding: 0 ;">
+                <div class="ui-flex" >
+                    <div class="flex-ico"><span class="must2"></span><label><span class=" ">理赔说明：</span></label></div>
+                    <div class="flex-con" style="margin-left: 10px;">
+                    	<input type="text" name="" class="input-text" value="" placeholder="请输入理赔说明" />
+                    </div>
+                </div>
+            </li>
+            <li class="item item-fm-m border-bottom0" >
+                    <div class="fill-more">
+          
+                    	<div>
+                    		<span class="lable-fontStyle lable-margin font01 colorgrey02">请您说明：</span>
+                    		<div class="div-btn-p">
+                    			<textarea class="textarea" name="content" maxlength="500" rows="2" id="backSuggest" placeholder="破损包裹的物品名称、数量、重量、收派员是否提醒验货、您是否当面验货、外包装是否破损。"></textarea>
+                    		</div>
+                    	</div>
+                       </span>
+                    </div>
+            </li>
+        </ul>
+        </form>
+        <dl class="ui-btn01">
+    	<center><a class="btn-submit">　提交　</a></center>
+        </dl>                      
+    </section>
+    
+</div>
+<script type="text/javascript" src="/js/common/baiduState.js"></script>
+</body>
+</html>

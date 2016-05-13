@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>电商之家</title>
+<link rel="stylesheet" href="css/public.css">
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/printerApply.js"></script>
+<script src="/page/onlineRetailers/advancePayment/js/advancePaymentIndex.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	indexPrinterApplySearch();	
+});
+</script>
+</head>
+
+<body>
+ <div id="wrapper">
+
+    <!-- header s -->
+    <!--<header class="bgcolor01">
+        <span class="btn-topl">
+        <a class="ui-btn btn-back" href="javascript: history.go(-1);"><i class="ui-ico-sfi ico-back color01"></i></a></span>
+        <h1 class="color01">电商之家</h1>
+        
+        </span>
+    </header>-->
+     <!-- header e -->
+    
+    <section >
+    	<ul class="ui-banner">
+        	<li><img src="img/wec_banner.png"></li>
+            
+            
+        </ul>
+    </section>     
+    
+    <section>
+    	<ul class="ui-fm member-list">       	
+        	<li class="item">  
+        		<a href="javascript:void(0)" onclick="printerApply()">
+                	<i class="ui-ico-sfi ico_printer"></i>
+                	<div class="item-text"><p class="font01">打印机申领</p><p class="font02">本活动仅限顺丰月结客户参加</p></div>
+                    <div id="divIdStatus" class="item-text-right"><a href="javascript:void(0)" onclick="printerApply()"><span id="spanIdStatus" class="font02 color02"></span></a></div>                
+               </a>
+        	</li>                       
+        	<li class="item">
+        		<a href="javascript:void(0)" onclick="redirectAdvancePayment()">
+                	<i class="ui-ico-sfi ico-dollar"></i>
+                	<div class="item-text"><p class="font01">预付款理财</p><p class="font02">本活动仅限顺丰月结客户参加</p></div>                                 
+                </a>
+        	</li>                       
+        	<li class="item"> 
+        		<a href="">
+                	<i class="ui-ico-sfi ico_kingdee"></i>
+                	<div class="item-text"><p class="font01">金蝶用户专区</p><p class="font02">即将上线，敬请期待</p></div>
+                </a>
+        	</li>                       
+        </ul>
+    </section>
+  </div>	
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>购买宝贝保</title>
+<link rel="stylesheet" href="../../../css/common/baobeibao.css">
+<link rel="stylesheet" href="../../../css/common/public.css">
+<link rel="stylesheet" href="../../../css/common/tips.css">
+</head>
+
+<body>
+<div id="wrapper">
+
+    <!-- header s -->
+    <header>
+    	<span class="btn-topl"><a class="ui-btn btn-back" href="javascript: history.go(-1);"><i class="ui-ico-sfi ico-back"></i></a></span>
+        <h1>购买宝贝保</h1>
+    </header>
+    <!-- header e -->
+    
+    <section>
+    	<form>
+    	<ul class="ui-fm " style="padding: 0 3%;">
+    		<li class="item item-fm" style="padding: 0;">
+                <div class="ui-flex">
+                    <div class="flex-ico"><span class="must2"></span><label><span class="lable-fontStyle">手机号码</span></label></div>
+                    <div class="flex-con">
+                    	<input type="text" name="" class="input-text" value="" placeholder="请填写您常用的收件手机号" />
+                    </div>
+                </div>
+            </li>
+            <li class="item item-fm border-bottom0" style="padding: 0 ;">
+                <div class="ui-flex" >
+                    <div class="flex-ico"><span class="must2"></span><label><span class="lable-fontStyle">支付宝账号</span></label></div>
+                    <div class="flex-con">
+                    	<input type="text" name="" class="input-text" value="" placeholder="请填写接收理赔款项的账号" />
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <ul class="grid-main ui-list" >
+            <li class="item item-fm" >           	
+                    <p style="line-height: 30px;"><span class="must3"></span><span class="lable-fontStyle font01" >购买产品</span></p>
+                    <dl class="contacts sent  border-bottom0" style="padding-top: 18px; margin-bottom: 10px;">
+					     <dt style="padding-top: 0;">宝贝保<span>9.9元/年</span></dt>					
+				    </dl>               
+            </li>
+            <li class="item02 item-fm" style="padding: 0;">
+                <div class="ui-flex">
+                    <div class="flex-ico"><label><span class="lable-fontStyle">付款金额：</span></label></div>
+                    <div class="flex-con">
+                    	<span class="colorred">¥</span><span  class="colorred">9.9元</span>
+                    </div>
+                </div>
+            </li>
+            <li class="item02 item-fm border-bottom0" style="padding: 0;">
+                <div class="ui-flex">
+                    <div class="flex-ico"><label><span class="lable-fontStyle">有效期：</span></label></div>
+                    <div class="flex-con">
+                    	<span class="colorred">1年</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <ul class="ui-agree">
+        	<p>
+				<a href="javascript:void(0);" data-btn="yes-no" onClick="makeSureClick();checkNull();">
+					<i class="ui-ico-sfi ico-box" id="makeSure"></i>
+					<!--  <i class="ui-ico-sfi ico-yes2" ></i>-->
+				</a>
+				<span class="text-fontStyle text-margin-left-6">我同意</span>
+				<a href="#">
+					<span class="text-fontStyle colorred" onclick="showClause()">《宝贝保服务协议》</span>
+				</a>
+				</p>
+        	<p class="colorgrey02">宝贝保暂支持部分地区的理赔，暂支持的地区如下鞍山市、本溪市、朝阳市、抚顺市、阜新市、葫芦岛市、锦州市、辽阳市、盘锦市、沈阳市、铁岭市、营口市、湖州市、嘉兴市、杭州市、惠州市、河源市、梅州市、东莞市、给您造成不便敬请谅解，更多地区持续开放中。</p>
+        </ul>
+        
+        </form>
+        <dl class="ui-btn01">
+    	<center><a class="btn-submit02">立即购买</a></center>
+        </dl>
+    </section>
+    <div class="maskbox" style="z-index:1005; opacity:.9;">
+    	<div class="tip-box" style="text-align: left;padding: 0; margin-top: 23%;">
+	   	<div style="padding:10px 20px;border-bottom: 1px solid #cccccc;"><div class="texttitle">确认购买宝贝保信息</div></div>
+	    <div class="tip-content">
+	    	<span><dt>购买手机号：</dt><dd>134****4578</dd></span>
+	    	<span><dt>支付宝账号：</dt><dd>jdp****0118</dd></span>
+	    	<span><dt>购买产品：</dt><dd>宝贝保</dd></span>
+	    	<span><dt>付款金额：</dt><dd class="colorred">¥<span>9.9</dd></span>
+	    	<span><dt>有效期：</dt><dd class="colorred">1年</dd></span>
+	    	<p style="line-height: 16px;"><span class="colorred">《宝贝保服务协议》：</span>宝贝保暂支持部分地区的理赔，暂支持的地区如下鞍山市、本溪市、朝阳市、抚顺市、阜新市、葫芦岛市、锦州市、辽阳市、盘锦市、沈阳市、铁岭市、营口市、湖州市、嘉兴市、杭州市、惠州市、河源市、梅州市、东莞市、给您造成不便敬请谅解，更多地区持续开放中。</p>
+	    </div>
+	    <div class="tip-btn" style="text-align: center;">
+	        	<a class="tip-btn-a1" href="">
+					<div class="tip-btn-a-div">取消</div>
+	        	</a>
+	        	<a class="tip-btn-a2" href="">
+					<div class="tip-btn-a-div">立即购买</div>
+	        	</a>
+	    </div>
+	</div>
+	</div>
+</div>
+
+</body>
+</html>

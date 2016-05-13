@@ -1,0 +1,281 @@
+﻿@charset "UTF-8";
+/*@import"M_plug/layer.css";*/
+@import"M_font.css";
+
+body,button, input, select, textarea { font: 14px 'Microsoft YaHei','SimHei',Helvetica,Arial, sans-serif;   }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+em,i{font-style:normal;}
+
+ul, ol { list-style: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block;  margin: 0; padding: 0; border: 0;}
+
+a { color: #434343; text-decoration: none;}
+a:visited {  }
+a:hover { }
+a:focus { outline: none; }
+a:hover, a:active { outline: 0; }
+textarea {border-radius: 0;}
+
+/*清除浮动设置*/
+.clearfix:before,
+.clearfix:after { content:"."; display:block; height:0px; visibility:hidden;}
+.clearfix:after { clear:both;}
+.clearfix { zoom:1;} /*IE<8*/
+
+/*浮动公用样式*/
+.fl {float:left;}
+.fr {float:right;}
+
+/*文字超出框显示省略号*/
+.Omit {white-space:nowrap;text-overflow:ellipsis;}
+
+/*ios按钮*/
+input, textarea{
+    -webkit-appearance:none;
+    outline:none
+}
+
+.hide {display: none}
+
+
+html,body, .wrap {position: relative; height: 100%; max-width: 900px; margin:0 auto;}
+body {background: #F5F5F5; color: #434343;}
+
+.wrap{}
+.content {position: relative; }
+
+
+/* 地址薄 */
+.addrArea {padding: 0 15px;  background: #fff; }
+.addrList .tipMoren {margin-right: 4px;}
+.addrList li {border-bottom: 1px solid #e1e1e1}
+.addrList li:last-child {border-color: transparent;}
+.addrList .addrInfo {position: relative; padding:14px 14px 14px 0;}
+.addrList .addrInfo p {margin-bottom: 10px;}
+.addrList .addrInfo .addrName {font-size: 16px;}
+.addrList .addrEdite {margin-left:14px; display: block; color: #979797; font-size: 20px; }
+.addrList .splitline {height:60px; margin-top: -30px; }
+.addBtn_addr {width: 60%; margin: 30px auto; font-size: 16px;}
+.locationBtn {padding:5px 8px;}
+.locationBtn .iconImg_loc {height: 17px; width: 12px; display: block; margin: 0 auto;}
+.locationBtn p {text-align: center; font-size: 12px; color: #979797}
+.item .loc_splitL {right: 4px;}
+
+/* 默认按钮开关 */
+.item .moren {line-height: 45px; font-size: 1.143em; position: relative;}
+.item .mrBtn {background: #a7a7a7; height: 20px; width: 50px; border-radius: 25px; margin:12px 0; position: relative;}
+.item .mrBtn em {background: #efefef; height: 30px; width: 30px; border-radius: 50%; position: absolute;   top: 50%; margin-top: -15px; left: 0;
+    -webkit-transition: left .5s ease 0s;
+    -o-transition: left .5s ease 0s;
+    transition: left .5s ease 0s;
+}
+.item .mrBtn.active {background: #f66465;}
+.item .mrBtn.active em {background: #fcd5d6; left: 22px; right: 0;}
+
+/* 城市列表 */
+.searchCity {position: fixed; bottom: 0; background: #fff; width: 100%; left: 0; height: 90%; z-index: 110;}
+.searchCity .searchBox {background: #f5f5f5; padding: 10px}
+.searchBox .closeBtn {color: #979797; text-align: center; font-size: 20px; margin-right: 8px;}
+.searchBox .searchText {border:1px solid #d3d3d3; border-radius: 5px; width: 100%; background: #fff; line-height: 36px; padding-left: 4px; padding-right: 25px;}
+.searchBox .seaClearBtn {position: absolute; height: 20px; width: 20px; top: 50%; right: 4px; margin-top: -10px; font-size: 18px; color: #e1e1e1; text-align: center; line-height: 20px;}
+
+/* 搜索列表*/
+.hisList {}
+.hisList li { border-bottom: 1px solid #d3d3d3; line-height: 40px; text-align: center; font-size: 14px; }
+.hisList li span {vertical-align: middle;}
+.hisList .splite {display: inline-block; width: 20px; margin: 0 5px; height: 1px; background-color: #434343; vertical-align: middle;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***************************************** 公共 s  *******************************************/
+
+/* 底部线条 */
+.border_bot {border-bottom: 1px solid #e1e1e1;}
+.border_botNull {border-bottom: 0;}
+
+/*图标*/
+.icoStyle {height: 24px; width: 24px;  display: inline-block; vertical-align: middle; text-align: center;  line-height: 24px; font-size: 24px;}
+
+/*分割线*/
+.splitline {height: 24px; width: 1px; background: #e1e1e1; right: 0px; top: 50%; margin-top: -12px; position: absolute; display: block;}
+
+/* 按钮样式 */
+.btnStyle { border:1px solid #434343; color: #434343; text-align: center; border-radius: 4px;  line-height: 40px;  display: block;
+    -webkit-box-sizing:border-box;
+     -moz-box-sizing:border-box;
+     box-sizing: border-box;
+}
+.btnStyle a {color:#434343;}
+.btn_BgRed {background: #f66465; color: #fff; border-color:#f66465; }
+.btn_BgRed:hover {color: #fff;}
+.btn_BgWhite {background:#fff; color: #f66465; border-color:#f66465;}
+.btn_BorderRed {  border-color: #f66465; }
+/*.btn_BgOrg {background: #f66465; color: #fff; border-color:#f66465;}*/
+.minW140 {min-width: 140px}
+
+
+.color_Red {color:#f66465;}
+.color_Gray {color:#979797;}
+.color_Org {color:#ff9600;}
+
+/* 定位 */
+.fixedDom {position: fixed;}
+.RelDom {position: relative;}
+.AbsoDom {position: absolute;}
+
+/* 透明度 */
+.opac00 {opacity:0 }
+.opac01 {opacity:0.1 }
+.opac02 {opacity:0.2 }
+.opac03 {opacity:0.3 }
+.opac04 {opacity:0.4 }
+.opac05 {opacity:0.5 }
+.opac06 {opacity:0.6 }
+.opac07 {opacity:0.7 }
+.opac08 {opacity:0.8 }
+.opac09 {opacity:0.9 }
+.opac10 {opacity:1 }
+
+/* 图片图标样式 */
+.iconImg {display: block; width: 100%;}
+
+/* 阴影 */
+.shadow {position: fixed; background: rgba(0,0,0,.5) repeat;  height: 100%; width: 100%; z-index: 100; left: 0; top: 0;}
+
+
+ /*水平盒模型*/
+.HBox {
+    display: box;
+    display:-moz-box;
+    display:-o-box;
+    display:-ms-box;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -ms-box-orient: horizontal;
+    box-orient: horizontal;
+}
+
+/*垂直盒模型*/
+.VBox {
+    display: box;
+    display:-moz-box;
+    display:-o-box;
+    display:-ms-box;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -ms-box-orient: vertical;
+    box-orient: vertical;
+}
+/*盒模型分块*/
+.Bflex1 {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -o-box-flex: 1;
+    -ms-box-flex: 1;
+    box-flex: 1;
+}
+.Bflex2 {
+    -webkit-box-flex: 2;
+    -moz-box-flex: 2;
+    -o-box-flex: 2;
+    -ms-box-flex: 2;
+    box-flex: 2;
+}
+.Bflex3 {
+    -webkit-box-flex: 3;
+    -moz-box-flex: 3;
+    -o-box-flex: 3;
+    -ms-box-flex: 3;
+    box-flex: 3;
+}
+.Bflex4 {
+    -webkit-box-flex: 4;
+    -moz-box-flex: 4;
+    -o-box-flex: 4;
+    -ms-box-flex: 4;
+    box-flex: 4;
+}
+
+.BoxCenter {
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.bordBox {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+
+.rotate180 {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.rotate90 {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(  90deg);
+}
+
+
+
+
+/***************************************** 公共 e  *******************************************/
+
+
+/* swiper样式 */
+.swiper-container {height: 100%; width: 100%;}
+.swiper-slide {height: 100%; width: 100%;}
+.swiper-slide .emptyOrder {position: relative; min-height: 500px;}
+.swiper-slide a {display: block; height: 100%; width: 100%;}
+.swiper-lazy-preloader {opacity: 0.4}
+
+.silderBox {width: 100%; height: auto;}
+.silderBox img {display: block; width: 100%; /*height: 100%*/}
+
+/*.orderHead .swiper-pagination-bullet,
+.headerNav .swiper-pagination-bullet {width: auto; height: auto; display: block; border-radius: 0; opacity: 1; background: none;}
+.orderHead .swiper-pagination-bullet-active {color:#f66465; border-bottom: 2px solid #f66465}
+.headerNav .swiper-pagination-bullet-active a {color: #f66465; border-bottom: 2px solid #f66465;}
+*/
+
+/* lay弹框样式 */
+.layermcont,
+.layermchild h3 {box-sizing: border-box; font-family: "Microsoft YaHei"; font-size: 16px;}
+.layermcont .indexAddr,
+.layermcont .addrDetail {text-align: left;}
+.layermchild h3 { height: 40px; line-height: 40px;}
+.layermend {top: 5px;}
+/* 弹框按钮样式 确定是红色 */
+.layermbtn span {font-family: 'Microsoft YaHei'; border-radius: 0;}
+.layermbtn span:last-child {background:#f66465; color: #fff; }
+.layermbox0 .layermchild {min-width: 65%; overflow: hidden; border-radius: 4px;}

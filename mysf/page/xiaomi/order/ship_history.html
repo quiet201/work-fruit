@@ -1,0 +1,421 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>我要寄件</title>
+<link rel="stylesheet" href="../../../css/common/public.css">
+<link rel="stylesheet" href="../../../css/common/sf03.css"/>
+<link rel="stylesheet" href="../../../css/common/tips.css"/>
+</head>
+
+<body>
+<div id="wrapper">
+
+    <!-- header s -->
+    <header>
+    	<span class="btn-topl"><a class="ui-btn btn-back" href="javascript: history.go(-1);"><i class="ui-ico-sfi ico-back"></i></a></span>
+        <h1>我要寄件</h1>
+    </header>
+    <!-- header e -->
+    
+    <section>
+    	<form>
+    	<ul class="ui-fm border-top0" style="padding-bottom:0 !important;border-bottom:none;">
+        	<li class="item item-fm-m">
+            	<div class="ui-div-right" >
+                	<span class="placeholder"><i class="ui-ico-sfi ico-user-right"></i> 寄件人信息</span>
+                </div>
+            </li>
+        	<li class="item item-fm-m">
+            	<a class="ui-btn-right" href="javascript:void(0);" onClick="toSelectAddressBook()">
+            	<span class="must fill placeholder" id="selectSenderHint">请添加寄件人信息</span>
+                    <div class="fill-more" id="senderInfo">
+                    <span class="must2">
+                    	<p><span class="name" id="senderNameLabel"></span><span class="tel" id="senderPhoneLabel"></span></p>
+                        <p class="address" id="senderAddress"></p>
+                       </span>
+                            <input type="hidden" id="senderName"/>
+	                        <input type="hidden" id="senderPhone"/>
+	                        <input type="hidden" id="senderAsbkId"/>
+	                        <input type="hidden" id="senderProvinceName"/>
+	                        <input type="hidden" id="senderProvinceCode"/>
+	                        <input type="hidden" id="senderCityName"/>
+	                        <input type="hidden" id="senderCityCode"/>
+	                        <input type="hidden" id="senderCountyName"/>
+	                        <input type="hidden" id="senderCountyCode"/>
+	                        <input type="hidden" id="senderDetailAddress"/>
+                    </div>
+                </a>
+            </li>
+            </ul>
+        </form>
+    </section>
+    
+    <section>
+    	<form>
+    	<ul class="ui-fm border-top0" style="padding-bottom:0 !important">
+            <li class="item item-fm-m" id="sentAddreess-navs" style="border-top:1px rgba(0,0,0,.1) solid">
+            	<div class="ui-div-right" >
+                	<span class="placeholder"><i class="ui-ico-sfi ico-user-left"></i> 收件人信息</span>
+                </div>
+            </li>
+          	<li class="item item-fm-m" id="sentAddreess">
+            	<a class="ui-btn-right a-btn-msg" href="javascript:void(0);" onClick="toSelectSentAddressBook('/page/common/addressbook/receive/address_menber2.html', '/page/xiaomi/order/ship.html' ,'2')">
+            	<span class="must fill placeholder" id="selectSentHint" style="padding:10px 0">请添加收件人信息</span>
+                    <div class="fill-more" id="sentInfo">
+                        <span class="must2">
+                    	<p><span class="name" id="sentNameLabel"></span><span class="tel" id="sentPhoneLabel"></span></p>
+                        <p class="address" id="shippingAddress"></p>
+                        </span>
+                            <input type="hidden" id="shippingName"/>
+	                        <input type="hidden" id="shippingPhone"/>
+	                        <input type="hidden" id="shippingAsbkId"/>
+	                        <input type="hidden" id="shippingProvinceName"/>
+	                        <input type="hidden" id="shippingProvinceCode"/>
+	                        <input type="hidden" id="shippingCityName"/>
+	                        <input type="hidden" id="shippingCityCode"/>
+	                        <input type="hidden" id="shippingCountyName"/>
+	                        <input type="hidden" id="shippingCountyCode"/>
+	                        <input type="hidden" id="shippingDetailAddress"/>
+                    </div>
+                </a>
+            </li>
+        </form>
+    </section>
+    
+    
+    
+    
+    <!-- 快件信息  -->
+    <section class="grid-main">
+    	<form>
+    	<ul class="ui-fm">
+        	<li class="item item-fm-m">
+            	<div class="ui-div-right" >
+                	<span class="placeholder"><i class="ui-ico-sfi ico-express-msg"></i> 快件信息</span>
+                </div>
+            </li>
+            
+             <li class="item item-fm" id="destinationDiv" hidden="true">
+                <div class="ui-flex">
+                    <div class="flex-ico"><label><span class="must3 lable-fontStyle">送达城市</span></label></div>
+                    <div class="flex-con">
+                    	<a class="ui-btn-right" data-toggle="datePicker" href="javascript:void(0);" onClick="toSelectDestination()">
+                    	    <span id="destination" class="fill"></span>
+                        	<span class="fill lab-font-h" id="showFill">快件送达城市地区</span>
+                        </a>
+                            <input type="hidden" id="provinceName"/>
+	                        <input type="hidden" id="provinceCode"/>
+	                        <input type="hidden" id="cityName"/>
+	                        <input type="hidden" id="cityCode"/>
+	                        <input type="hidden" id="countyName"/>
+	                        <input type="hidden" id="countyCode"/>
+                    </div>
+                </div>
+            </li>
+            
+        	<li class="item item-fm-m" id="sentWayDiv">
+                    <div class="fill-more p-topBottom10">
+                    	<span class="must4">
+                    	<div>
+                    		<span class="lable-fontStyle lable-margin">寄件方式</span>
+                    		<div class="div-btn-p">
+                    			<span class="ui-btn btn-buttom-smsj" href="javascript:void(0);" id="sentWay1" onclick="sendWay(1);checkNull();">上门收件</span>
+                    			<!-- <span class="ui-btn btn-buttom-hkj" href="javascript:void(0);" id="sentWay2" onclick="sendWay(2);checkNull();">嘿客寄</span> -->
+                    			<p class="address btn-fontStyle" id="uMsg">快递员将在1小时内上门收件</p>
+                    			<input hidden="true" id="sentWay" value="1">
+                    		</div>
+                    	</div>
+                       </span>
+                    </div>
+            </li>
+            <li class="item item-fm-m" id="paymentMethodDiv" hidden="true">
+                    <div class="fill-more p-topBottom10">
+                    	<span class="must4">
+                    	<div>
+                    		<span class="lable-fontStyle lable-margin">付款方式</span>
+                    		<div class="div-btn-p">
+                    			<span class="ui-btn btn-buttom-smsj "  onclick="changeRadioVal(1,this);checkNull();" id="jf">寄付结现</span>
+                    			<span class="ui-btn btn-buttom-hkj "  onclick="changeRadioVal(2,this);checkNull();" id="df">到付</span>
+                    			<input hidden="true" id="paymentMethod" value="1"/>
+                    		</div>
+                    	</div>
+                    		
+                       </span>
+                    </div>
+            </li>
+            <li class="item item-fm">
+                <div class="ui-flex">
+                    <div class="flex-ico"><label><span class="must lable-fontStyle">重量(kg)</span></label></div>
+                     <div class="flex-con fm-weight" style="line-height: 44px;padding: 10px 0 2px 0;">
+                        <!-- <input type="number" name="weight" id="weight" class="placeholder input-text " value="" placeholder="快递员根据重量选择交通工具" onkeyup="return ValidateNumber(this,value);"  onblur="commonEventPush('寄件','页面统计','我要寄件','ship.html');" onchange="checkNull();"/>
+                        <span class="placeholder"></span> -->
+                        
+                        <div class="Spinner">
+							<a class="DisDe" href="javascript:void(0)" onclick="cv(-1);"><i>-</i></a>
+							<input id="weight" class="Amount" value="1" autocomplete="off" maxlength="4">
+							<a class="Increase" href="javascript:void(0)" onclick="cv(1);"><i>+</i></a>
+						</div>
+						<p class="colorgrey01" style="line-height: 27px; color:#acacac;">顺丰小哥根据重量选择交通工具</p>
+                    </div>
+                </div>
+            </li>
+            <li class="item item-fm" id="depositumDiv">
+                <div class="ui-flex">
+                    <div class="flex-ico"><label><span class="must lable-fontStyle">托寄物</span></label></div>
+                    <div class="flex-con">
+                    	<input type="text" name="" id="depositum" class="input-text" value="" placeholder="请填写您要寄出的物品" onblur="commonEventPush('寄件','页面统计','我要寄件','ship.html');" maxlength="8" onchange="checkNull();"/>
+                    </div>
+                </div>
+            </li>
+           
+            <li class="item item-fm" id="insuredAmountDiv" style="margin-bottom:none;">
+                <div class="ui-flex">
+                    <div class="flex-ico"><label><span class="lable-fontStyle " >保价金额</span></label></div>
+                    <div class="flex-con">
+                    	<input type="text" type="number" name="insuredAmount" id="insuredAmount" class="input-text" value="" placeholder="请申请您的快件价值（选填）" onkeyup="return ValidateNumber(this,value)" onchange="checkNull();"/>
+                    </div>
+                </div>
+            </li>
+          <!--  </ul>
+          <ul class="ui-fm border-top0"> -->
+            <li class="item item-fm" id="dateTimeInputDiv">
+                <div class="ui-flex">
+                    <div class="flex-ico"><label><span class="must lable-fontStyle">寄件时间</span></label></div>
+                    <div class="flex-con">
+                    	<a class="ui-btn-right" data-toggle="datePicker" href="javascript:void(0);" onclick="selectDateAndTime()">
+                        	<span class="fill text-fontStyle" id="dateTimeText">现在</span>
+                        	<input type="hidden" id="dateTimeInput">
+                        	<span id="orderTimeTextDiv" hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li class="item item-fm dashed" id="orderRemarkDiv">
+                <div class="ui-flex">
+                    <div class="flex-ico"><label><span class="lable-fontStyle">备注</span></label></div>
+                    <div class="flex-con">
+                        <input type="text" id="orderRemark" class="input-text" value="" placeholder="特殊要求请备注说明（选填）" />
+                    	<!--  <input type="text" name="" class="input-text" value="" placeholder="" />-->
+                    </div>
+                </div>
+            </li>
+            <li class="item item-fm" id="labelDiv">
+            	<div class="btn-group">
+                	<a data-btn="checkbox" id="sellotape" class="ui-btn btn-item " href="javascript:void(0);" onclick="commonEventPush('寄件','页面统计','我要寄件','ship.html');">+请带胶带</a>
+                	<a data-btn="checkbox" id="carton" class="ui-btn btn-item" href="javascript:void(0);" onclick="commonEventPush('寄件','页面统计','我要寄件','ship.html');">+请带纸箱</a>
+                	<a data-btn="checkbox" id="climbStairs" class="ui-btn btn-item" href="javascript:void(0);" onclick="commonEventPush('寄件','页面统计','我要寄件','ship.html');">+需要爬楼</a>
+                	<a data-btn="checkbox" id="large" class="ui-btn btn-item" href="javascript:void(0);" onclick="commonEventPush('寄件','页面统计','我要寄件','ship.html');">+大件</a>
+                </div>
+            </li>
+        </ul>
+        </form>
+    </section>
+    
+    <section class="grid-main" id="FeeAndTimeDiv">
+        <ul class="ui-fm">
+        	<li class="item item-fm-m">
+            	<div class="ui-div-right" >
+            		<a class="ui-btn-bottom" data-toggle="show-explain" href="javascript:void(0);" onclick="loadFeeAndTime()">
+                		<span class="placeholder text-fontStyle query-dd-time" style="margin: 5px 0 0 0 ;"> 查看预估费用和预计到达时间</span>
+                	</a>
+                </div>
+            </li>
+        </ul>
+
+        <div class="table table-ship" id="show-explain-id" hidden="true">
+        	<table class="tab-details">
+        		<thead>
+        			<tr>
+	        			<td>产品类型</td>
+	        			<td colspan="1">预计送达时间</td>
+	        			<td>预估运费</td>
+        			</tr>
+        		</thead>
+        		<tbody class="tbody">
+        			<!-- <tr class="tr-top">
+        				<td rowspan="1" class="text-center">
+        					<i class="ui-ico-sfi ico-parcel-time"></i>
+                        </td>
+                       
+        				<td>
+        					<span class="s-time">2014-11-10(周日)16:00</span>
+        				</td>
+        				<td><p class="contract-color">22.00元</p></td>
+        			</tr>
+        			<tr class="tr-bottom">
+        			 	<td rowspan="1" class="text-center">
+                        	<span class="s-title">顺丰标快</span>
+                        </td>
+        				<td colspan="2">
+        					<p>全国及港澳台高标准的门到门快件服务</p>
+        				</td>
+        			</tr> -->
+        			<!--  <tr class="tr-top">
+        				<td rowspan="2" class="text-center">
+        					<i class="ui-ico-sfi ico-parcel-time"></i>
+                        	<br />
+                        	<span class="s-title">顺丰标快</span></td>
+        				<td>
+        					<p>2014-11-10</p>
+        					<p>16:00-19:00</p>
+        				</td>
+        				<td>(周日)</td>
+        				<td><p class="contract-color">22.00元</p></td>
+        			</tr>
+        			<tr class="tr-bottom">
+        				<td colspan="3">
+        					<p>全国及港澳台高标准的门到门快件服务</p>
+        				</td>
+        			</tr>
+        			<tr class="tr-top">
+        				<td rowspan="2" class="text-center">
+        					<i class="ui-ico-sfi ico-parcel-money"></i>
+                        	<br />
+                        	<span class="s-title">顺丰特惠</span></td>
+        				<td>
+        					<p>2014-11-10</p>
+        					<p>16:00-19:00</p>
+        				</td>
+        				<td>(周日)</td>
+        				<td><p class="contract-color">18.00元</p></td>
+        			</tr>
+        			<tr class="tr-bottom">
+        				<td colspan="3">
+        					<p>全国及港澳台经济型快递服务</p>
+        				</td>
+        			</tr>-->
+        		</tbody>
+        	</table>
+        	<div class="tr-box" data-toggle="show-explain">
+                <dl class="tr-row">
+                     <dd class="td">
+                     	<span class="lab-font-h">你可以在快递员取件时告知您所选用的产品服务，实际费用以快递员收件时实际称重为准</span>
+                     </dd>
+                </dl>
+            </div>
+        </div>
+        
+      
+    </section>
+    
+      <div class="ui-agreement" id="agreementDiv">
+        	<div class="div-lr-padding">
+        		<span >
+                    <p>
+                    	<a href="javascript:void(0);" data-btn="yes-no" onClick="makeSureClick();checkNull();">
+                    	<i class="ui-ico-sfi ico-box" id="makeSure"></i>
+	        			<!--  <i class="ui-ico-sfi ico-yes2" ></i>-->
+	        			</a>
+                    	<span class="text-fontStyle text-margin-left-6">我同意</span>
+                    	<a href="#">
+	                    	<span class="text-fontStyle contract-color" onclick="showClause()">《快件运单契约条款》</span>
+                    	</a>
+                    </p>
+                </span>
+        	</div>
+        </div>
+	
+	<section class="grid-main">
+        <ul class="ui-fm">
+        	<li class="item item-fm-m">
+	        <div class="grid-btn">
+	        	<a class="ui-btn btn-submit-no" href="javascript:void(0);" id="orderConfirmBut" onclick="doSubmit();commonEventPush('寄件','页面统计','确定预约','ship.html');">立即下单</a>
+	        </div>
+            </li>
+        </ul>
+    </section>
+</div>
+
+ <input type="hidden" id="orderStartTime">
+ <input type="hidden" id="orderEndTime">
+<!-- 日期时间选择 -->
+<div data-toggle-content="datePicker" class="pop-picker-wrapper" style="display: none;">
+
+<div class="ui-picker-con">
+    <ul class="ui-tabs-menu datetime-menu" data-tabs="tabs">
+        <li data-menu="date" class="cur">日期</li>
+        <li data-menu="time">时间</li>
+    </ul>
+    <!-- 日期 s -->
+    <div data-tabs-content="date" class="ui-tabs-content dates-box" style="display:block;">
+    	<ul class="ui-timelist" id="orderDateList">
+    
+    </ul>
+    </div>
+    <!-- 日期 e -->
+    
+    <!-- 时间 s -->
+    <div data-tabs-content="time" class="ui-tabs-content items-box" style="display:none;">
+    	<div class="list-prev" onclick="prevPage()"><span class="ui-ico-sfi prev"></span></div>
+        <div class="item-wrapper scroll">
+    	<ul class="items" id="orderTimeList">
+        <!--  <li>09: 00</li> -->
+        
+        </ul>
+        </div>
+        <div class="list-next" onclick="nextPage()"><span class="ui-ico-sfi next"></span></div>
+    </div>
+    <!-- 时间 e --> 
+    <input type="hidden" id="selectDateValue">
+	<input type="hidden" id="selectTimeValue">
+    <div class="picker-btn">
+    <a class="ui-btn btn-cancel" data-btn="cancel" onclick="cancelEvent()">取消</a>
+    <a class="ui-btn btn-submit" data-btn="submit" onclick="confirmEvent()">确定</a>
+    </div>
+    
+</div>
+
+</div>
+
+ <div id="light1"  hidden="true"> 	
+		               <center><h4>《快件运单契约条款》</h4></center>
+	
+                           
+<p>1、特别声明：寄件人寄递价值超过2万元的贵重物品的，应当在寄件时向本公司声明。寄件人未声明的，该物品毁损、灭失后，本公司有权按照不超过2万元的一般物品予以赔偿。</p>
+<p>2、为保证托寄物安全送达，寄件人寄件时应履行以下义务：</p>
+  <p>（1）  如实申报托寄物内容和价值，并准确、清楚地填写寄件人、收件人的名称、地址、联系电话等资料。</p>
+  <p>（2）  根据托寄物的性质（尤其是易碎品），提供充分的防破损措施，保障托寄物安全派送。</p>
+<p>3、关于费用和发票的约定：</p>
+  <p>（1）  已经收寄的到付快件，如收件人尚未付费，寄件人要求更改为寄件人付费的，应支付额外的服务费。该服务费标准以本公司在官方网站上公布的价格为准。</p>
+  <p>（2）  寄件人指示在物流中心、保税区等需要支付出/入仓费或其他额外费用的特殊地址收取或派送快件时，寄件人或其指定付款人应当偿还本公司垫付的上述出/入仓费等额外费用，并向本公司支付附加服务费。附加服务费标准以本公司在官方网站上公布的价格为准。</p>
+  <p>（3）  无法派送的托寄物，若寄件人要求退回，则双程费用均由寄件人承担。</p>
+  <p>（4）  本公司在向月结客户收取月结款时提供发票；有发票需求的非月结客户，请在付款后1个月内持运单原件向本公司索取发票。</p>
+<p>4、关于赔偿的规定：</p>
+<p>若因本公司原因造成托寄物毁损、灭失的，本公司将免除本次运费。</p>
+  <p>（1）若寄件人未选择保价，则本公司对月结客户在九倍运费的限额内，对非月结客户在七倍运费的限额内赔偿托寄物的实际损失。</p>
+  <p>（2）若寄件人已选择保价，则本公司按照投保金额予以赔偿；若托寄物仅有部分毁损或内件短少，则按照投保金额和损失的比例赔偿。</p>
+  <p>（3）托寄物残值由本公司和寄件人双方协商处理；如折归寄件人，本公司在核定赔偿金额时将扣减残值。</p>
+<p>5、对于签单返还服务，若因本公司原因导致签收回单毁损、灭失的，本公司将免费提供一次签单返还服务作为赔偿。</p>
+<p>6、本契约条款未作约定的，或本契约条款与国家相关法律法规及标准相冲突的，按照相关规定执行。</p>
+		</div>
+<div class="pop-tips" hidden="true" id="errorMsg">
+    <div class="tips">
+    	<img src="../../../css/common/img/warning.png"><p id="errorInfo"></p>
+    </div>
+    </div>
+    
+    <div class="pop-tips" hidden="true" id="success">
+    <div class="tips">
+    	<img src="../../../css/common/img/success.png"><p id="MsgInfo"></p>
+    </div>
+    </div>
+      <a href="/page/xiaomi/index.html" class="cd-Home"><span class="ui-ico-sfi ico-home"></span></a>
+<!-- 公共页面 -->
+<div id="commonPage"></div>
+<script type="text/javascript" src="/js/common/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/js/common/util/util.js"></script>
+<script type="text/javascript" src="/js/common/common.js"></script>
+<script type="text/javascript" src="/js/common/util/common.js"></script>
+<script type="text/javascript" src="/js/common/baiduState.js"></script>
+<script type="text/javascript" src="/js/alipay-xiaomi/order/ship.js?time=new Date();"></script>
+<!--  <script type="text/javascript" src="/js/alipay/order/timing.js"></script>-->
+<!-- <div class="ad"  id="testPosition001" class="replaces">
+             <a href="/page/alipay/advice/advice114.html">
+	     	 <img src="../../../../image/alipay/jijian_banner.jpg" >
+	      </a>
+         </div> -->
+</body>
+</html>

@@ -1,0 +1,122 @@
+/* ======================================= */
+
+.row {
+  width: 100%;
+  background-color: #fff; }
+
+.badge {
+  background-color: #fff;
+  padding: 2px 6px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  border: 1px solid #e5e5e5;
+  color: #fff;
+  font-size: 12px;
+  position: relative; }
+
+.badge.received, .icon-received {
+  background-color: #ec5b5b; }
+
+.badge.delivering, .icon-delivering {
+  background-color: #59a8e4; }
+
+.badge.transporting, .icon-transporting {
+  background-color: #59a8e4; }
+
+.badge.signed, .icon-signed {
+  background-color: #6ebc27; }
+
+.tag, .taged {
+  padding: 5px 10px;
+  border: 1px solid #e5e5e5;
+  background-color: #fff;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  color: #748694;
+  display: inline-block;
+  }
+  .tag.selected, .taged.selected {
+    background-color: #fef6ce;
+    border: 1px solid #ead483; }
+
+.row-box {
+  width: 100%;
+  background-color: #f7f7f7;
+  padding: 5px 20px; }
+
+a:active {
+  opacity: 0.6; }
+
+.flex-box {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+
+.user-comments {
+  padding: 5px 20px;
+  color: #4f6175; }
+  .user-comments .stars-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center; }
+    .user-comments .stars-container .stars-wrapper i {
+      width: 25px;
+      height: 25px;
+      vertical-align: top;
+      margin-right: 10px;
+      font-size: 25px;
+      color: #ebebeb; }
+      .user-comments .stars-container .stars-wrapper i:last-child {
+        margin-right: 0; }
+    .user-comments .stars-container .stars-wrapper i.star-g {
+      color: #ebebeb; }
+    .user-comments .stars-container .stars-wrapper i.star-s {
+      color: #f7c14b; }
+  .user-comments .tagsWrapper .flex-box {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    justify-content: space-between;
+    border-top: 0px solid #f2f2f2;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px 0px; }
+    .user-comments .tagsWrapper .flex-box a {
+      display: inline-block;
+      width: auto;
+      height: auto; }
+      .user-comments .tagsWrapper .flex-box a i {
+        color: #a9a9a9; }
+      .user-comments .tagsWrapper .flex-box a i.icons-refresh {
+        width: 15px;
+        height: 15px;
+        background: url("../../../images/alipay/refresh.png") no-repeat center center;
+        background-size: auto 100%;
+        margin-right: 5px; }
+  .user-comments .tagsWrapper .tag-box {
+    display: none; }
+    .user-comments .tagsWrapper .tag-box.active {
+      display: block; }
+      
+  .user-comments #text-comments {
+    margin-top: 12px;
+    min-height: 40px;}
+    
+    .user-comments{ padding-top: 10px; }

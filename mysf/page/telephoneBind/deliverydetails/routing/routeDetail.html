@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>顺丰速运</title>
+<link rel="stylesheet" href="/css/common/public.css">
+<link rel="stylesheet" href="/css/common/sf01-3_3-1-state.css">
+</head>
+
+<body>
+<div id="wrapper">
+
+    <!-- header s -->
+    <header class="header-bottom-line">
+    	<span class="btn-topl"><a class="ui-btn btn-back" href="javascript: history.go(-1);"><i class="ui-ico-sfi ico-back"></i></a></span>
+        <h1>物流详情</h1>
+    </header>
+    <!-- header e -->
+    
+   <section >
+    	<ul class="ui-waybill">
+        	<li class="item">
+            	<div class="ui-flex01">
+                	<div class="sflogo"><img src="/css/common/img/sflogo02.png" width="80" height="28"></div>
+                    <div class="nurber" id="waybill-num"></div>
+                </div>
+            </li>
+            <li class="xuxian-content">
+                	<div class="flex-ico"><span id="fromCityName"></span> <span class="color01">——</span><i class="ui-ico-sfi ico-car"><span class="color01">—— </span><span id="toCityName"></span></i></div>
+            </li>
+           </ul>
+        </section>
+        <section> 
+           <ul>   
+            <li class="item msg-content">
+            </li>
+        </ul>
+    </section>
+	
+	<section class="grid-main server">
+        <ul class="ui-latest">
+            <li class="item01"><div class=" title-latest">物流详情</div></li>
+            <li class="item item-fm" >
+                <div class="ui-flex">
+					<section id="cd-timeline" class="cd-container" style="margin-left: 3%;">
+						<!-- <div class="cd-timeline-block cd-container">
+							<div class="cd-timeline-img cd-red">
+							</div>
+					
+							<div class="cd-timeline-content font-red" style="margin-top: -5px;">
+								<h2>已签收，感谢使用顺丰，期待再次为您服务</h2>
+								<span class="cd-date">2015-01-06 16:57:00</span>
+							</div>
+						</div>
+						
+						
+						<div class="cd-timeline-block cd-container">
+							<div class="cd-timeline-img cd-hui">
+							</div>
+					
+							<div class="cd-timeline-content" style="margin-top: -5px;">
+								<h2>快件在【深圳总集散中心】，正转运至【深圳彩田中心】</h2>
+								<span class="cd-date">2015-01-06 16:57:00</span>
+							</div>
+						</div> -->
+					</section>
+                </div>
+            </li>
+        </ul>
+    </section>
+</div>
+<span id="conmment-tips" style="display:none;">系统繁忙</span>
+<!-- 公共页面 -->
+<div id="commonPage"></div>
+ <a href="/page/telephoneBind/index.html" class="cd-Home"><span class="ui-ico-sfi ico-home"></span></a>
+<!-- js引入 -->
+<script type="text/javascript" src="/js/common/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/js/common/util/util.js"></script>
+<script type="text/javascript" src="/js/common/util/common.js"></script>
+<script type="text/javascript" src="/js/common/baiduState.js"></script>
+<script type="text/javascript" src="/js/common/deliverydetails/routeDetailsCommon.js"></script>
+<script type="text/javascript" src="/js/telephoneBind/deliverydetails/routing/routeDetail.js"></script>
+</body>
+</html>

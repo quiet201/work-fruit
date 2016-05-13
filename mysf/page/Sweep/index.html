@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link rel="stylesheet" type="text/css" href="/css/sweep/style.css">
+<script src="/js/jquery-1.7.2.min.js"></script>
+<title>横扫幸福</title>
+</head>
+
+<body> 
+    
+  <div class="wrap">
+    <div class="list" id="listWrap">      
+     <form id="queryForm" action="/service/pbs/prizeInfoindex" method="post">
+	      <section class="msg_dh">
+	       <input type="text" name="bno" id="queryText" placeholder="请输入您收到包裹的12位运单号"  required="required"
+								data-rule="waybillNumber" maxlength="12" >
+	      </section>
+	      
+	     <section id="button"  class="duijiang">
+		   <button id="submitB" type="submit" disabled="disabled" class="duijiang">兑奖</button>
+		 </section>
+	 </form>
+      <section class="danhao">
+        <img src="/image/sweep/erweima.png" alt="单号">
+      </section>    
+    </div>
+    <div class="footer_home" id="footerHome">
+    </div>
+  </div>
+<script>
+
+var windowDefaultHeight=0;
+$(document).ready(function(){
+	windowDefaultHeight=$(window).height(); //获取页面窗口默认高度
+	//文本框获取焦点事件
+	$("#queryText").focus(changePosition);
+	//页面大小布局改变事件
+	$(window).resize(changePosition);
+});
+
+function changePosition(){
+	var currentHeight=$(window).height();//当前页面窗口高度
+	var listWrapHeight=$("#listWrap").height();//整个高度
+	var footerHeight=$("#footerHome").height();//底部图片高度
+	if((currentHeight<(listWrapHeight+footerHeight))||(currentHeight<windowDefaultHeight)){
+		$("#footerHome").css({position:"absolute",bottom:(currentHeight-listWrapHeight-footerHeight)+"px"});
+	}else{
+		$("#footerHome").css({position:"fixed",bottom:0});
+	}
+}
+
+	/*  jQuery(document).ready(function() {
+	 	$('#queryForm').attr("action", "/service/pbs/prizeInfo").submit();
+		});  */
+	 $(function(){		
+			var url="";
+			var pid="";
+			$('#queryText').bind('input propertychange', function() {
+				var text=$("#queryText").val();
+				if(!isNaN(text)){
+					if(text.length==12){
+						$("#submitB").removeAttr("disabled").addClass("cursorDuijiang");
+					}
+				}else{
+					$("#submitB").attr("disabled","disabled").removeClass("cursorDuijiang");
+				}
+			});
+
+		});
+		
+	</script>
+</body>
+</html>

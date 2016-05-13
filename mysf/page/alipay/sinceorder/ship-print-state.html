@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<title>打印状态</title>
+<link rel="stylesheet" href="../../../css/common/global-store.css">
+<link rel="stylesheet" href="../../../css/common/ship-store.css"/>
+</head>
+
+<body>
+<div class="wrap">
+  <header> <span class="btn-topl"> <a class="ui-btn btn-back" href="javascript: history.go(-1);"><span class="back"></span></a></span>
+    <h1>打印状态</h1>
+  </header>
+  
+  <!-- code s-->
+  
+  <div class="module state-print">
+    <div class="module-t">
+      <h4>订单号：<span id="orderNo">c20989002</span></h4>
+    </div>
+    
+    <!--打印成功s-->
+    
+    <div class="box-module-c" id="order_success">
+      <div class="module-c">
+        <div class="box-state-fff">
+          <div class="flex-c">
+            <div class="icon-print-suc"></div>
+          </div>
+          <div class="text-print-state">
+            <dl>
+              <dt></dt>
+              <dd>运单打印成功！</dd>
+            </dl>
+            <p class="gray969696">请将运单号和快件一起交给顺丰小哥完成寄件</p>
+          </div>
+        </div>
+        <section class="grid-btn">
+          <ul>
+            <li class="current"><a href="/page/alipay/sinceorder/ship.html">继续下单</a></li>
+            <li class="first"><a href="/page/alipay/member.html">打印其他订单</a></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    
+    <!--打印成功e--> 
+    
+     <!--打印失败s-->
+    
+    <div class="box-module-c" style="display:none;" id="order_error">
+      <div class="module-c">
+        <div class="box-state-fff">
+          <div class="flex-c">
+            <div class="icon-print-fail"></div>
+          </div>
+          <div class="text-print-state">
+            <dl>
+              <dt></dt>
+              <dd>运单打印失败！</dd>
+            </dl>
+            <p class="gray969696">请重新打印吧</p>
+          </div>
+        </div>
+        <section class="grid-btn1">
+          <ul class="flex-c">
+            <li class="current" id="goPrint">重新打印</li>
+          
+          </ul>
+        </section>
+      </div>
+    </div>
+    
+    <!--打印失败e--> 
+    
+  </div>
+  
+  <!--codes-->
+  
+  
+</div>
+</body>
+</html>
+<script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/js/date.js?2.0"></script>
+<script type="text/javascript" src="/js/iscroll.js?2.0"></script>
+<script type="text/javascript" src="/js/common/util/util.js"></script>
+<script type="text/javascript" src="/js/common/common.js"></script>
+<script type="text/javascript" src="/js/common/util/common.js"></script>
+<script type="text/javascript" src="/js/common/baiduState.js"></script>
+<script type="text/javascript" src="/js/alipay/sinceOrders/shipPrintState.js"></script>

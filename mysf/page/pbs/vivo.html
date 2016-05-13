@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" /> 
+  <title>VIVO-PBS横扫幸福</title> 
+  <link rel="stylesheet" href="css/public.css" /> 
+  <link rel="stylesheet" href="css/vivo.css" /> 
+ </head> 
+ <body> 
+  <div class="c header"> 
+   <img src="img/vivo1.jpg" /> 
+  </div> 
+  <div class="c pro"> 
+   <img src="img/vivo2.jpg" /> 
+  </div> 
+  <div class="c prize"> 
+   <img src="img/vivo3.jpg" /> 
+   <a class="btn-vivo" id="awardBtn">立刻拆礼品</a> 
+  </div> 
+  <div class="footer c"> 
+   <img src="img/vivo-footer.jpg" /> 
+  </div>   
+ </body>
+ <script type="text/javascript" src="js/jhope.min.js"></script>
+ <script type="text/javascript" src="/js/baiduState.js"></script>
+ <script type="text/javascript">
+	$(function(){
+		var $awardBtn = $('#awardBtn'),
+			data = JHope.Tool.getUrlParam();
+	    if(data){
+	    	$awardBtn.tap(function(e){
+				$.ajax({
+				  type: 'POST',
+				  url: '/service/pbs/drawAward',
+				  data: data,
+				  dataType: 'json',
+				  contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+				  success: function(data){
+					  if(data == null){
+						  return ;
+					  }
+					  var gtypes = {};
+					  gtypes[1] = 'entity.html';
+					  gtypes[2] = 'virtual.html';
+					  gtypes[3] = 'story.html';
+					  gtypes[4] = 'sale.html';
+					  
+					  var gtypes1 = {};
+					      gtypes1[1] = 'entitys.html';
+					      gtypes1[2] = 'virtuals.html';
+					      gtypes1[3] = 'storys.html';
+					      gtypes1[4] = 'sales.html';
+					      
+					  if(data['already'] == 'ok'){
+						  JHope.Tool.forwardHref(gtypes1[data['gtype']],data);
+					  }else{
+						  JHope.Tool.forwardHref(gtypes[data['gtype']],data);
+					  }
+					  
+				  }
+				});
+			});
+	    }
+	});
+ </script>
+</html>

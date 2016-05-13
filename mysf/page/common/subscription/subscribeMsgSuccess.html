@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>顺丰速运</title>
+<link rel="stylesheet" href="../../../css/common/public.css">
+<link rel="stylesheet" href="../../../css/common/sf09.css">
+</head>
+	<body>
+		<div id="wrapper">
+
+    <!-- header s -->
+    <header>
+    	<span class="btn-topl"><a class="ui-btn btn-back" href="javascript: history.go(-1);"><i class="ui-ico-sfi ico-back"></i></a></span>
+        <h1>订阅快件动态</h1>
+    </header>
+    
+    <section>
+        <div class="ui-msg border0">
+            <div class="msg-title"><h2 class="result-title"><i class="ui-ico-sfi ico-success"></i>订阅成功!</h2></div>
+        </div>
+    </section>
+    <section> 
+        <ul>   
+            <li class="item msg-content" style="background-color: #fff;"></li>
+        </ul>
+    </section>
+    <section>
+        <div class="ui-msg" style="border-top: 0;">
+            <div class="detail-content">
+                <p >订阅订单号：<span id="bno"></span></p>
+                <p >订阅时间段：<span id="serviceTm"></span></p>
+                <p >　推送频率：<span id="rate"></span></p>
+                <p class="colorgray" style="font-size:1em !important">该快件如有动态更新将会以消息的形式推送给您。</p>
+            </div>
+        </div>
+        <div class="grid-btn">
+        	<a class="ui-btn btn-submit" href="javascript:void(0);" id="unsub">取消订阅</a>
+            
+        </div>
+    </section>
+</div>
+</div>
+<!-- 公共页面 -->
+<div id="commonPage"></div>
+<script type="text/javascript" src="/js/common/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/js/common/util/util.js"></script>
+<script type="text/javascript" src="/js/common/util/common.js"></script>
+<script type="text/javascript" src="/js/common/subscription/subscribeMsgSuccess.js"></script>
+<script type="text/javascript" src="/js/common/baiduState.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" /> 
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> 
+  <meta http-equiv="Pragma" content="no-cache" /> 
+  <meta http-equiv="Expires" content="0" /> 
+  <title>顺丰PBS横扫幸福</title> 
+  <link rel="stylesheet" href="css/public.css" /> 
+  <link rel="stylesheet" href="css/prize.css" /> 
+ </head> 
+ <body> 
+  <div class="wrap"> 
+   <div class="c"> 
+    <div class="bg-content"> 
+     <!--主要内容区块s--> 
+     <div class="c"> 
+      <div class="shake-prize"> 
+       <div class="shake-prize-t"> 
+       </div> 
+       <a class="btn-receive-again btn-open-gift" id="awardBtn">立刻拆礼品</a> 
+      </div> 
+     </div> 
+     <!--主要内容区块e--> 
+    </div> 
+   </div> 
+   <div class="service"> 
+    <img src="img/footer-shakeprize.jpg" /> 
+   </div> 
+  </div>    
+ </body>
+ <script type="text/javascript" src="js/jhope.min.js"></script>
+	<script type="text/javascript" src="/js/baiduState.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var $awardBtn = $('#awardBtn'),
+				data = JHope.Tool.getUrlParam();
+		    if(data){
+		    	$awardBtn.tap(function(e){
+					$.ajax({
+					  type: 'POST',
+					  url: '/service/pbs/drawAward',
+					  data: data,
+					  dataType: 'json',
+					  contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+					  success: function(data){
+						  if(data == null){
+							  return ;
+						  }
+						  var gtypes = {};
+						  gtypes[1] = 'entity.html';
+						  gtypes[2] = 'virtual.html';
+						  gtypes[3] = 'story.html';
+						  gtypes[4] = 'sale.html';
+						  
+						  var gtypes1 = {};
+						      gtypes1[1] = 'entitys.html';
+						      gtypes1[2] = 'virtuals.html';
+						      gtypes1[3] = 'storys.html';
+						      gtypes1[4] = 'sales.html';
+						      
+						  if(data['already'] == 'ok'){
+							  JHope.Tool.forwardHref(gtypes1[data['gtype']],data);
+						  }else{
+							  JHope.Tool.forwardHref(gtypes[data['gtype']],data);
+						  }
+						  
+					  }
+					});
+				});
+		    }
+		});
+	</script>
+</html>

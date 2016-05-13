@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>顺丰速运</title>
+<link rel="stylesheet" href="../../../css/common/public.css">
+<link rel="stylesheet" href="../../../css/common/sf01_JGWD.css">
+</head>
+
+<body>
+<div id="wrapper">
+
+    <!-- header s -->
+    <header>
+    	<span class="btn-topl"><a class="ui-btn btn-back" href="javascript: history.go(-1);"><i class="ui-ico-sfi ico-back"></i></a></span>
+        <h1>我的快件</h1>
+    </header>
+    <!-- header e -->
+    
+    <section>
+        <ul class="ui-fm border-top0">
+            <li class="item item-fm" style="  padding:0;">
+        	<div class="ui-tap-title">
+	        	<div class="ui-tap-btn">
+		        	<a href="#" class="ui-btn active" id="atciveMyExpress" node="1" hidefocus="true" >
+		        		<i class="ui-ico-sfi ico-my-express01" style="margin-right:5%"></i>寄给我的
+		        	</a>
+	        	</div>
+	        	<div class="ui-tap-btn2">
+	        	</div>
+	        	<div class="ui-tap-btn">
+		            <a href="#" class="ui-btn" hidefocus="true"  id="atciveSendExpress" node="2" >
+		            	<i class="ui-ico-sfi ico-send-express01" style="margin-right:5%"></i>我寄出的
+		            </a>
+	        	</div>
+        	</div>
+        	</li>
+        </ul>
+    </section>
+    
+    	 <!-- ------------------------------------寄给我的----------------------------------------- -->
+    	<div class="tap-content">
+              <div  id="myExpressContain">
+              	<div  id="myExpress">
+              	
+			    </div>
+			    <div id="mySignExpress">
+			    </div>
+              </div>
+			   
+			<!-- 继续加载 -->
+		      <div class="express-btn" id="myExpressLoadBtn" style="display:none">
+		            	<p class="text-btn" onclick="getMyExpressListForPage(1)">加载更多...</p>
+		     </div>
+		     <div  class="express-btn" id="nomyExpress" style="display:none;" >
+		                <p class="text-btn">没有更多了</p>
+		      </div>
+        </div>
+			    
+        
+        
+        
+        <!-- ------------------------------------我寄出的----------------------------------------- -->
+        <div class="tap-content" hidden="hidden">
+        	<div  id="sendExpressContain">
+        		<div id="upList"></div>
+        		<div id="downList"></div>
+        	</div>
+        	
+		         <!-- 继续加载 -->
+		    <div class="express-btn" id="sendExpressLoadBtn" style="display:none">
+		            	<p class="text-btn" onclick="getMyOrderListForPage(1)">加载更多...</p>
+		   </div>
+		   <div  class="express-btn" id="nosendExpressLoadBtn" style="display:none;" >
+	       <p class="text-btn">没有更多了</p></div>
+       	</div>
+       	
+       	<!-- 如果没有任何结果 -->
+       	<div class="tap-content1" id="noResultItem1" style="display: none;">
+            <div class="login-people">
+               <img src="/css/common/img/people01.png" width="120px" height="127px">
+               <p class="font03">寄给我的快件空空如也~</p>
+               <p class="colorgray02 font04">逛逛小哥推荐看有啥想买</p>
+        	  </div>
+              <div class="grid-btn" style="margin-top:5%">
+                <a class="ui-btn btn-submitgovisit" href="http://m.sfht.com/">去逛逛</a>
+              </div>               
+        </div>
+       		<!-- 如果没有任何结果 -->
+       	<div class="tap-content2" id="noResultItem2" style="display: none;">
+            <div class="login-people">
+               <img src="/css/common/img/people01.png" width="120px" height="127px">
+               <p class="font03">我寄出的快件空空如也~</p>
+               <p class="colorgray02 font04">赶紧让小哥忙碌起来</p>
+        	  </div>
+              <div class="grid-btn" style="margin-top:5%">
+                <a class="ui-btn btn-submitgovisit" href="/page/lanxin/order/ship.html">我要寄件</a>
+              </div>               
+        </div>
+<a href="/page/lanxin/index.html" class="cd-Home"><span class="ui-ico-sfi ico-home"></span></a>
+
+<!-- 公共页面 -->
+<div id="commonPage"></div>
+<div id="tipsMaskbox" class="tip-box" hidden="hidden">
+   	<h2>确认删除运单记录？</h2>
+    <div class="tip-content"><p>删除后将无法恢复</p></div>
+    <div class="tip-btn">
+        	<a class="tip-btn-a1" id="tip-btn-a1" href="">
+				<div class="tip-btn-a-div">取消</div>
+        	</a>
+        	<a class="tip-btn-a2" id="tip-btn-a2" href="">
+				<div class="tip-btn-a-div">确认</div>
+        	</a>
+    </div>
+</div>
+ 
+<!-- js引入 -->
+<script type="text/javascript" src="/js/common/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/js/common/util/util.js"></script>
+<script type="text/javascript" src="/js/common/util/common.js"></script>
+<script type="text/javascript" src="/js/common/baiduState.js"></script>
+<script type="text/javascript" src="/js/lanxin/member.js"></script>
+</body>
+</html>

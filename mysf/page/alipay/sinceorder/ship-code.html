@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<title>寄件二维码</title>
+<link rel="stylesheet" href="../../../css/common/global-store.css">
+<link rel="stylesheet" href="../../../css/common/ship-store.css"/>
+</head>
+
+<body style="background:#fff;">
+<div class="wrap">
+  <header> <span class="btn-topl"> <a class="ui-btn btn-back" href="javascript: history.go(-1);"><span class="back"></span></a></span>
+    <h1>寄件二维码</h1>
+  </header>
+  
+  <!-- code s-->
+  
+  <div class="module store-print">
+    <div class="module-t">
+      <h4>订单号：<span id="orderNo"></span></h4>
+    </div>
+  </div>
+  
+  <!--codes-->
+  <div class="box-code-send">
+    <div class="flex-c">
+    <div class="code-send"><img src="" id="barCode"></div>
+    </div>
+    <div class="text-code-send tc">向收派员出示二维码或者对着智能终端扫码
+即可打印运单</div>
+    
+  </div>
+  
+   <div class="box-code-send-tab">
+       <div class="code-send-tab">
+        <ul><!--划上去或聚焦的时候都是在li上加样式cur-->
+         <li class="cur"><dl class="first"><dt></dt><dd>寄件二维码</dd></dl></li>
+         <li><dl class="second"><dt></dt><dd>扫描终端</dd></dl></li>      
+        
+        </ul>
+       </div>
+   </div>
+  
+</div>
+</body>
+</html>
+<script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/js/date.js?2.0"></script>
+<script type="text/javascript" src="/js/iscroll.js?2.0"></script>
+<script type="text/javascript" src="/js/common/util/util.js"></script>
+<script type="text/javascript" src="/js/common/common.js"></script>
+<script type="text/javascript" src="/js/common/util/common.js"></script>
+<script type="text/javascript" src="/js/common/baiduState.js"></script>
+<script type="text/javascript" src="/js/alipay/sinceOrders/ship_code.js"></script>

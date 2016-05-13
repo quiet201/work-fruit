@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>查件</title>
+<link rel="stylesheet" href="../../../css/common/public.css">
+<link rel="stylesheet" href="../../../css/common/sf02.css">
+</head>
+
+<body class="sf">
+<div id="wrapper">
+
+    <!-- header s -->
+    <header>
+    	<span class="btn-topl"><a class="ui-btn btn-back" href="javascript: history.go(-1);"><i class="ui-ico-sfi ico-back"></i></a></span>
+        <h1>查件</h1>
+    </header>
+    <!-- header e -->
+    
+    <section>
+    	<form id="J_formSearchByWaybillNumber" action="/service/xiaomi/routeByNumberV1" method="post">
+    	<ul class="ui-fm border-top0">
+        	<li class="item item-fm-m" style="height: 65px;">
+            	<div class="" >
+            		<div class="query-box">
+            			<i class="ui-ico-sfi ico-search search-icon"></i>
+            			<input type="text" id="bnoTxtShow"  style="display:none">
+	                    <input type="num" id="bnoTxt"   name="waybill"   class="input-text"  placeholder="请输入12位运单号查询" 
+	                    required data-valid="\w{12}"
+							data-rule="waybillNumber" maxlength="12" onkeyup="changeBtnColor(value);"/>
+            	   		<span class="icons-SVG-12"></span>
+            			<a href="#" id="J_barcodeTrigger" class="am-list-item" style=" float:right; margin: 10px 1% 0 0;"><i class="ui-ico-sfi ico-scanning search-icon"></i></a>
+            		
+            		</div>
+	               <a class="ui-btn btn-buttom-query text-margin-left-10" href="#" id="btn" style="margin: 10px 0 10px 5px;">查询</a>
+                	<button id="queryBtn" type="submit" style="display:none">查询</button>
+                </div>
+            </li>
+        </form>
+    </section>
+    <!-- 快件信息  -->
+    <section class="grid-main">
+    	<form>
+    	<ul class="ui-fm" id="forwardMyExpress">
+            <li class="item item-fm">
+                <div class="ui-flex">
+                    <div style="width: 70%; padding: 20px 5px 15px 0">
+                    		<span class="lable-fontStyle">
+                    		<img class="ed-box" src="../../../css/common/img/expressDelivery.png" />
+                    		<div class="ed-count" id="getMyExpressCount" style="display:none"></div>
+                    		<span>我的快件</span>
+                    		</span>
+                    </div>
+                    <div class="">
+                    	<a class="ui-btn-right" data-toggle="datePicker" href="javascript:void(0);">
+                        	<span class="fill text-fontStyle">&nbsp;</span>
+                        </a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        </form>
+    </section>
+    
+    <section class="grid-main">
+    	<ul class="ui-fm" id="queryHistory" style="display:none;">
+        	<li class="item item-fm-m" >
+            	<div class="ui-div-right" style="padding: 10px 0;">
+                	<span class="placeholder">查件历史</span>
+                </div>
+            </li>
+            <!-- 查件历史 列表-->
+            <ul id="findListDiv" style="display:none;"></ul>
+            <li id="clernHistory" class="item item-fm border-top-line border-bottom0" style="display:none;">
+                <div class="ui-flex div-padding-top-buttom10">
+                    <div class="ui-text">
+                    	<a href="#" class="lable-fontStyle btn-ct">清空查询历史</a>
+                    </div>
+                </div>
+            </li>
+            <!-- 没有查件历史 -->
+            <li class="item item-fm" id="noHistoryResult" style="display:none;">
+                <div class="ui-flex div-padding-top-buttom10">
+                    <div class="inner-banner img-div">
+                    	<img src="/css/common/img/people01.png" alt="">
+                    </div>
+                </div>
+                <div class="ui-text-center">
+                		<p class="text-fontStyle">查件历史空空如也~</p>
+                </div>
+                <div class="ui-text-center text-fontStyle2 " style="padding-bottom: 55px;">
+                		<p>赶紧查个件试试！</p>
+                </div>
+            </li>
+        </ul>
+        <!-- 没有查询到快件信息 -->
+         <ul class="ui-fm"  id="noResult" style="display:none;">
+	         <li class="item item-fm">
+	                <div class="ui-flex div-padding-top-buttom10">
+	                    <div class="inner-banner img-div" >
+	                    	<img src="/css/common/img/people01.png" alt="">
+	                    </div>
+	                </div>
+	                <div class="ui-text-center">
+	                		<p class="text-fontStyle">哎呀，没有查到相关的快件信息</p>
+	                </div>
+	                <div class="ui-text-center text-fontStyle2 " style="padding-bottom: 55px;">
+	                		<p>重新输入运单号试试吧~</p>
+	                </div>
+	            </li>
+           </ul>
+    </section>
+   <a href="/page/xiaomi/index.html" class="cd-Home"><span class="ui-ico-sfi ico-home"></span></a>
+</div>
+<!-- 公共页面 -->
+<div id="commonPage"></div>
+<!-- js引入 -->
+<script type="text/javascript" src="/js/common/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/js/common/deliverydetails/zepto.js"></script>
+<script type="text/javascript" src="/js/common/deliverydetails/2bWSEvAXi1.js"></script>
+<script type="text/javascript" src="/js/common/deliverydetails/2bytu8UVLZ.js"></script>
+<script type="text/javascript" src="/js/common/deliverydetails/commonSkin.js"></script>
+<script type="text/javascript" src="/js/common/deliverydetails/swipe.js"></script>
+<script type="text/javascript" src="/js/common/deliverydetails/fastclick.js"></script>
+<script type="text/javascript" src="/js/common/util/util.js"></script>
+<script type="text/javascript" src="/js/common/util/common.js"></script>
+<script type="text/javascript" src="/js/common/baiduState.js"></script>
+<script type="text/javascript" src="/js/alipay-xiaomi/deliverydetails/query.js"></script>
+<script type="text/javascript" src="/js/xiaomi/mi.js"></script>
+<!-- <div class="ad"  id="testPosition001" class="replaces">
+             <a href="/page/alipay/advice/advice114.html">
+	     	 <img src="../../../../image/alipay/chajian_banner.jpg" >
+	      </a>
+         </div>  -->
+</body>
+</html>

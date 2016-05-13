@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" /> 
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> 
+  <meta http-equiv="Pragma" content="no-cache" /> 
+  <meta http-equiv="Expires" content="0" /> 
+  <title>顺丰PBS横扫幸福-礼品</title> 
+  <link rel="stylesheet" href="css/public.css" /> 
+  <link rel="stylesheet" href="css/prize.css" /> 
+ </head> 
+ <body> 
+  <div class="wrap"> 
+   <div class="c"> 
+    <div class="bg-content"> 
+     <!--主要内容区块s--> 
+     <div class="c"> 
+      <div class="main-content"> 
+       <!--优惠劵头s--> 
+       <div class="info-adress-t c"> 
+        <p class="prize-goods"><img src="img/xiong.png" /></p> 
+       </div> 
+       <!--优惠劵头e--> 
+       <div class="c"> 
+        <div class="content-info-adress"> 
+         <div class="c"> 
+          <input class="ipt-text" id="name" type="text" placeholder="请输入您的姓名" /> 
+         </div> 
+         <div class="c"> 
+          <input class="ipt-text" id="tel" type="tel" placeholder="请输入您的手机号码" /> 
+         </div> 
+         <div class="c"> 
+          <textarea class="txtarea-adress" id="address" type="text" placeholder="请输入您的收件地址"></textarea> 
+         </div> 
+         <div class="c mt10"> 
+          <a class="btn-receive-again" id="submit">快快来吧</a> 
+         </div> 
+        </div> 
+       </div> 
+       <!--内容正文bg-bottom e--> 
+      </div> 
+     </div> 
+    
+      
+    </div> 
+   </div> 
+    <!--主要内容区块e--> 
+   <div class="logo-hsxf-list" style="margin-top:0rem"> </div>
+   
+   <div class="footer"> <img src="img/footer_list.png">
+    <a class="btn-receive-again pz-footer-btn jiathis jiathis_tx" href="http://www.jiathis.com/share">分享幸福</a></div>
+    
+     
+  </div>
+  <script type="text/javascript" src="js/jhope.min.js"></script>
+  <script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/js/baiduState.js"></script>
+  <script type="text/javascript">
+		$(function(){
+			var dataT = JHope.Tool.getUrlParam();
+			$('#submit').tap(function(e){
+				var name = $('#name').val(),
+					tel = $('#tel').val(),
+					address = $('#address').val();
+				
+				var data ={};
+				data['name'] = name;
+				data['tel'] = tel;
+				data['address'] = address;
+				data['waycode'] = dataT['waycode'];
+				
+				if(!name){
+					alert("姓名不能为空");
+					return;
+				}
+				if(!tel){
+					alert("手机号码不能为空");
+					return;
+				}
+				if(!address){
+					alert("收件地址不能为空");
+					return;
+				}
+				$.ajax({
+				  type: 'POST',
+				  url: '/service/pbs/updatePrizeInfo',
+				  data: data,
+				  dataType: 'json',
+				  contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+				  context: $('body'),
+				  success: function(data){
+					  alert('您的地址已经提交，请耐心等待礼品送达。');
+				  }
+				});
+			});
+			$.ajax({isLoding:false,type: 'GET',url: '/service/pbs/insertPBSLog',data: {opertype:5}});
+		});
+	</script>   
+ </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>提交成功</title>
+<link rel="stylesheet" href="../../../../css/common/public.css">
+<link rel="stylesheet" href="../../../../css/common/sf03.css">
+</head>
+
+<body style="background-color:#fff;">
+<div id="wrapper">
+
+    <!-- header s -->
+    <header>
+    	<span class="btn-topl"><a class="ui-btn btn-back" href="javascript: history.go(-1);"><i class="ui-ico-sfi ico-back"></i></a></span>
+        <h1>提交成功</h1>
+    </header>
+    <!-- header e -->
+    
+    <section>
+         
+        <div><img src="../../../../css/common/img/question_award.png" width="100%"></div>
+         <div class="grid-btn">
+        	
+            <a class="ui-btn btn-buttom-c" href="#" id="seeOrder" onClick="returnIndex()">立即抽奖</a>
+        </div>
+        <div style="padding-top:15px"><img src="../../../../css/common/img/question_ruler.png" width="100%"></div>
+    </section>
+	<!-- <section> 
+        <ul>   
+            <li class="item msg-content" style="background-color: #fff;"></li>
+        </ul>
+    </section> -->
+	<!-- <section>
+        
+        <div class="grid-btn">
+        	<a class="ui-btn btn-buttom-nh" href="ship.html">继续下单</a>
+            <a class="ui-btn btn-buttom-c text-margin-left-10" href="../orderlist/orderDetails.html" id="seeOrder">订单详情</a>
+        </div>
+        
+    </section> -->
+</div>
+ <!-- <a href="/page/alipay/index.html" class="cd-Home"><span class="ui-ico-sfi ico-home"></span></a> -->
+<script type="text/javascript" src="/js/common/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/js/common/util/util.js"></script>
+<script type="text/javascript" src="/js/common/common.js"></script>
+<script type="text/javascript" src="/js/common/baiduState.js"></script>
+ 
+</body>
+</html>
+
+<script> 
+       function returnIndex(){
+    		$.ajax({
+    			type : "POST",
+    			dataType : "json",    			
+    			url : "/service/activity/getChannelCode.action",
+    			contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+    			success: function(json){
+    				var data=$.trim(json);
+    				if(data==""){
+    					window.history.go(-1);
+    				}else if(data=="1"){
+    					location.href = "/page/alipay/index.html"
+    				}else if(data=="2"){
+    					location.href = "/page/xiaomi/index.html"
+    				}else if(data=="3"){
+    					location.href = "/page/tencent/index.html"
+    				}else if(data=="4"){
+    					location.href = "/page/netease/index.html"
+    				}
+    				
+    			},
+    			error:function(XMLHttpRequest, textStatus, errorThrown){
+    				
+    			}
+    		});
+       }
+</script>

@@ -1,0 +1,203 @@
+@charset "utf-8";
+/* CSS Document */
+.bg-christmas{position:relative;min-width:320px;max-width:640px;margin:0 auto;}
+.bg-christmas1{position:relative;min-height:40rem;background:-webkit-linear-gradient(bottom,#65565e,#655664,#1f1c26,#1a1820);}
+.bg-christmas img{position: relative;width: 100%;}
+.datetime{position:absolute;top:1.3rem;left:50%;width:100%;margin-left:-50%;text-align:center; color:#fff;}
+.time span{font-size:8.9rem;}
+.date span{font-size:1.8rem;}
+.unlock{position:absolute;bottom:2rem;left:50%;width:100%;margin-left:-50%;text-align:center; line-height:5rem; font-size:2.2rem; text-align:center; -webkit-background-clip:text; background-clip:text;-webkit-text-fill-color:transparent;text-fill-color: transparent; background-color:#fff; background-image: -webkit-linear-gradient(-45deg, rgba(0, 0, 0, 0.8) 30%, #fff 50%, rgba(0, 0, 0, 0.8) 70%);background-image:linear-gradient(-45deg, rgba(0, 0, 0, 0.8) 30%, #fff 50%, rgba(0, 0, 0, 0.8) 70%);-webkit-background-blend-mode: hard-light;background-blend-mode: hard-light; background-size: 200%; -webkit-animation: shine 4s infinite;animation: shine 4s infinite;}
+ @-webkit-keyframes shine{
+	 from{background-position: 100%;}
+	  to{background-position: 0;} }
+.info-wx{position:absolute;left: 3%;top:19.5rem;padding-top:1.2rem;padding-bottom:1.2rem;width:97%;margin:0 auto;border-top:.1rem solid #b3abc2;border-bottom:.1rem solid #b3abc2;}
+.info-logo{display:block;background:url(../images/info-wx.png) no-repeat;width:2rem;height:2rem;background-size:2rem;}
+.info-text{color:#fff;font-size:1.5rem;margin-left:1.3rem;}
+.info-text p{font-size:1.4rem;color: #fff;}
+.text-small{color:#aca2b9;font-size:1.2rem;}
+.text-smallp{color:#CCC1DA!important;}
+.text-smallp a,.text-smallp:visited{color:#CCC1DA!important;}
+.mr05{margin-right:.5rem;}
+.message{position:absolute;left: 3%;top:2.8rem;}
+.message1{position:absolute;left: 3%;top:9rem;}
+.photo-old{display:block;background:url(../images/laoren.gif) no-repeat;width:4rem;height:4rem;background-size:4rem;}
+
+#left  
+{ font-size:1.3rem;
+position:relative; 
+	padding: 1rem;background: #fff;color:#000; border-radius:.8rem;
+    min-width:19rem;
+	margin-left:1rem;  
+  border:.3rem solid #fff;   /* 边框宽度为3px */  
+  
+}
+#left2
+{ display:block;position:relative; 
+	padding: 1rem;font-size:1.3rem;
+background: #fff;color:#000; border-radius:.8rem;
+
+width:20rem;
+	margin-left:1rem;  
+  border:.3rem solid #fff;   /* 边框宽度为3px */  
+  
+}   
+.sp1,.sp2  
+{  
+  display:block;  
+  height:0px;  
+  width:0px;  
+  position:absolute;  
+  font-size:0;  
+  line-height:0;  
+}  
+.sp1  
+{  
+  left:-.8rem;    /* 它的绝对值加上span的边框宽度等于div边框宽度的5倍 */  
+  top:1.2rem;   /* 它来确定尖角的位置 */  
+  border-left:0px;  
+  border-top:.6rem solid transparent;   
+  border-right:.6rem solid #fff;  
+  border-bottom:.6rem solid transparent;  
+}  
+.sp2  
+{  
+  left:.6rem;  /* 是自身边框宽度的2倍 */  
+  top:-.3rem; /* 是自身边框宽度的-1倍  */  
+  border-left:0px;  
+  border-top:.3rem solid transparent;  
+  border-right:.3rem solid white;  
+  border-bottom:.3rem solid transparent;;  
+}  
+
+
+
+.btn-change{position:absolute;display:block;bottom:-12%;left:90%;width:3rem;height:3rem;border-radius:.8rem;-webkit-animation:btn-change .3s ease-out infinite;}
+@-webkit-keyframes btn-change{
+0%{background:rgba(252,255,0,1);box-shadow: .2rem .2rem 2rem 1.4rem rgba(255,255,255,.7) inset;}	
+	}
+100%{background:rgba(252,255,0,1);box-shadow: .2rem .2rem 2rem 1.4rem rgba(255, 255, 255, 1) inset;}	
+	}
+
+
+/*安检s*/
+.text-christmas-i{-webkit-box-sizing:border-box;position:absolute;top:31%;left:50%;margin-left:-10.825rem;background:url(../images/bg-input-b.png) no-repeat;width:21.65rem;height:8.4rem;background-size:21.65rem;font-size:2.4rem;font-weight:bold;color:#07e7ba;text-align:center;padding-top:3.5rem;}
+
+.input-num{-webkit-box-sizing:border-box;padding-left:2rem;color:#07e7ba;-webkit-appearance:none;background:none;width:21.65rem;font-size:2rem;}
+.text-aj1{position:absolute; width: 100%;
+    top:30%;font-size:1.5rem;text-align:center;color:#ff3a00;}
+		
+.text-aj2{position:absolute; width: 100%;
+    top:55%;font-size:1.3rem;text-align:center;color:#fff;}
+.text-ajnote{position:absolute; width: 100%;
+    top:50%;font-size:1.5rem;text-align:center;color:#fff;}
+.text-christmas-input{-webkit-box-sizing:border-box;position:absolute;top:31%;left:50%;margin-left:-10.825rem;background:url(../images/bg-input-b.png) no-repeat;width:21.65rem;height:8.4rem;background-size:21.65rem;font-size:2.4rem;font-weight:bold;color:#07e7ba;text-align:left;padding-top:3.5rem;}
+.btn-submit-i-box{position:absolute; width: 100%;
+    top:68%;}
+.btn-submit-i{display:block;background:url(../images/btn-submit-i.png) no-repeat;width:6.4rem;height:6.9rem;background-size:6.4rem;}
+.btn-submit-active{display:block;background:url(../images/btn-submit-active.png) no-repeat;width:6.4rem;height:6.9rem;background-size:6.4rem;}
+.gift{position:absolute;bottom:2rem;right:0rem;display:block;background:url(../images/gift.png) no-repeat;width:10rem;height:10.8rem;background-size:10rem;}
+.gift-boxshow{position:absolute;bottom:2rem;right:0rem;display:block;background:url(../images/gift-boxshow.png) no-repeat;width:10rem;height:10.8rem;background-size:10rem;}
+
+.btn-prize{position: absolute;
+    display: block;
+    top:68%;
+    left:50%;
+		margin-left:-2rem;
+    background: url(../images/click.png) no-repeat;
+    width: 3rem;
+    height: 3rem;
+    background-size: 3rem;}
+.text-dz1{position: absolute;
+    display: block;
+    top:30%;
+    left:50%;width:100%;margin-left:-50%;font-size:2.4rem;text-align:center;color:#F00;}
+.text-dz2{position: absolute;
+    display: block;
+    top:40%;
+    left:50%;width:100%;margin-left:-50%;font-size:1.4rem;text-align:left;color:#F00;padding-left:3rem;}
+.box-input{display: block;
+position: absolute;
+    
+    top:48%; 
+    padding-left:3rem;width: 89%;}
+.box-input li{-webkit-box-sizing:border-box;display:block;background:url(../images/line.png) repeat-x;height:4rem;background-size:22rem;}
+.box-input li.last-child{-webkit-box-sizing:border-box;display:block;width: 90%;background:url(../images/line-last.png) repeat-x;height:5.5rem;background-size:22rem;}
+
+.box-input li label{color:#f00;font-size:1.3rem;line-height:4rem;}
+.box-input li.last-child label{display: block;color:#f00;font-size:1.3rem;width:5rem;line-height:2.5rem;}
+.box-input input{-webkit-appearance:none;background:none;color:#595959;font-size:1.2rem;margin-left:1rem;}
+.btn-adrees{position: absolute;top:90%;left:50%;margin-left:-3.4rem;display:block;-webkit-appearance:none;background: url(../images/adress-submit.png) no-repeat;
+    width: 6.8rem;
+    height: 6.8rem;
+    background-size: 6.8rem;}
+.btn-adrees:hover, .btn-adrees:active, .btn-submit-adr-active{position: absolute;top:90%;left:50%;margin-left:-3.4rem;display:block;-webkit-appearance:none;background: url(../images/btn-submit-adr-active.png) no-repeat;
+    width: 6.8rem;
+    height: 6.8rem;
+    background-size: 6.8rem;}
+.txt-area{display:block;margin-left:.5rem;padding-top:.2rem;width:80%;font-size:1.3rem;-webkit-appearance:none;background:none;color:#595959;}
+.txt-area:hover, .txt-area:focus{outline:0;border:0;}
+.code img{display:block;position: absolute;bottom:20%;left:50%;margin-left:-5rem;width:10rem;height:10rem;background-size:10rem;}
+/*活动结束的提示框s*/
+.prize-end img{width:21.8rem;height:17.2rem;background-size:21.8rem;}
+.close{opacity:0;position: absolute;display:block;z-index:10;right:2rem;top:1.3rem;width:3rem;color:#fff;}
+.close a,.close:visited{opacity:0;}
+.prize-end{position:relative;
+    left: 50%;
+    margin-left: -10.9rem;
+    top: 20%;
+    width: 21.8rem;
+    height: 17.2rem;
+    background-size: 21.8rem;}
+		
+/*活动结束的提示框e*/
+
+
+/*填信息出错的提示框s*/
+
+.text-notein{padding-top:25rem;text-align:center;font-size:1.3rem;color:#fff;width:70%;margin:0 auto;}
+.know{opacity:0;position: absolute;display:block;z-index:10;left:50%;margin-left:-4.3rem;bottom:0;width:8.6rem;height:3.5rem;color:#fff;}
+.know a, .know:visited{opacity:0;}
+.prize-note-appear{display:block;position:relative;
+    left: 50%;
+    margin-left: -10.9rem;
+   
+    width: 21.8rem;
+   height:35rem;background:url(../images/tanchu-note.png) no-repeat;
+    background-size: 21.8rem;
+		-webkit-animation:appear .2s ease-in;}
+		
+@-webkit-keyframes appear{
+	0%{opacity:0;		
+    top:-20rem;
+    
+		}
+		
+		100%{opacity:1;		
+    top:0;
+    
+		}}
+		
+		
+
+		
+/*填信息出错的提示框e*/
+
+
+
+
+.prize-box{position:absolute;top:41%;}
+.prize-title{display:block;margin:0 auto;color:#ffce59;font-size:1.2rem;text-indent:2rem;min-width:83%;max-width: 90%;}
+.orange{color:#fe3f3f;font-size:1.2rem;}
+.prize-content-box{margin-top:1%;width:100%;}
+.prize-content{margin:6% 0rem 0rem 5%;}
+.prize-content li{display:-webkit-box!important;display:-webkit-flex!important;color:#fff;font-size:1.2rem;margin:4%;}
+.circle-active{display:block;width:.7rem;height:.7rem;border-radius:.7rem;background:#FFF;}
+.circle-a{-webkit-box-sizing:border-box;display:block;width:.7rem;height:.7rem;border-radius:.7rem;background-color:transparent;border:.1rem solid #fff;}
+.circle-a, .circle-active{margin:.5rem;}
+.prize-content li.latest{color:#ffce59;}
+.prize-note{display:block;margin-top:18%;text-align:center;width:100%;font-size:1.3rem;color:#ff3232;}
+
+
+.btn-prize-submit-a{display:block;margin:4% auto 0;background:url(../images/receive-a.png) no-repeat;width:19rem;height:4.5rem;background-size:19rem;}
+.btn-prize-submit-active{display:block;margin:4% auto 0;background:url(../images/receive-active.png) no-repeat;width:19rem;height:4.5rem;background-size:19rem;}
+.btn-play{position:absolute;display:block;left:50%;bottom:19%;margin-left:-9.5rem;background:url(../images/receive-active.png) no-repeat;width:19rem;height:4.5rem;background-size:19rem;}

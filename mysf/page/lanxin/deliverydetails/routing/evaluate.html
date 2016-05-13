@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>服务评价</title>
+<link rel="stylesheet" href="/css/common/public.css">
+<link rel="stylesheet" href="/css/common/evaluate.css">
+</head>
+<style>
+.active{
+	display:block;
+}
+.unactive{
+	display:none;
+}
+</style>
+<body>
+	 <div id="wrapper">
+
+    <!-- header s -->
+    <header>
+        <span class="btn-topl">
+        <a class="ui-btn btn-back" href="javascript: history.go(-1);"><i class="ui-ico-sfi ico-back"></i></a></span>
+        <h1>服务评价</h1>
+        </span>
+    </header>
+     <!-- header e -->
+    <div class="ad" ><a href="#"><img src="/image/common/ad01.png" id="ad"></a></div> 
+     <section class="acceptd">
+     	<ul class="ui-fm">
+     		<li class="item border-top0">
+     			<p><span>运单号：</span><span id="waybill-num"></span></p>
+     			<p><span>签收时间：</span><span id="signTime"></span></p>
+     		</li>
+     	</ul>
+     </section>
+     <section class="grid-main acceptd dashed-btm">
+     	 <ul class="ui-fm">
+     	 	 <li class="flex">
+     	 	 	<div class="photo"><img id="photoUrl" src=" " width="80px"></div>
+     	 	    <div class="message">
+     	 	         <p  id="empName"></p>
+     	 	         <p><span>工号：</span><span id="empNo"></span></p>
+     	 	         <p><i class="ui-ico ico-star able"></i><i class="ui-ico ico-star able"></i><i class="ui-ico ico-star able"></i><i class="ui-ico ico-star able"></i><i class="ui-ico ico-star"></i></p>
+     	 	    </div>
+     	 	 </li>
+     	 </ul>
+     </section>
+     <section class="acceptd border-top0">
+     	<ul class="ui-fm">
+     		<li class="item border-top0" style="padding:10px 0 0 0">
+     			<span class="assess">服务评价</span>
+     			<span class="ml100" id="evaluateScore">
+     			<!--<span class="ml100" id="star"> -->
+     			<i class="ui-ico ico-star02"></i>
+     			<i class="ui-ico ico-star02"></i>
+     			<i class="ui-ico ico-star02"></i>
+     			<i class="ui-ico ico-star02"></i>
+     			<i class="ui-ico ico-star02"></i>
+     			</span>
+     		</li>
+     		<!--<section id="evaluateLabels">
+     		 <li class="item" id="Impression01" hidden="hidden">一星到三星评价标签
+     			<span>印象标签</span>
+     			<div class="clearfix">
+     				<i>态度不好</i>
+     				<i>着装不整齐</i>
+     				<i>不送上门</i>
+     				<i>物品损坏</i>
+     				<i>物流慢</i>
+     				<i class="current">价格高</i>
+     			</div>
+     			<span><input type="" name="" id="" value="" placeholder="我还想说" maxlength="30"/></span>
+     		</li>
+     		<li class="item" id="Impression02" hidden="hidden">四星到五星评价标签
+     			<span>印象标签</span>
+     			<div class="clearfix">
+     				<i>服务周到</i>
+     				<i>包装结实</i>
+     				<i>上门及时</i>
+     				<i>安全专业</i>
+     			</div>
+     			<span><input type="" name="" id="" value="" placeholder="我还想说" maxlength="30"/></span>
+     		</li> 
+     		</section>-->
+     		<li class="item" style="border-top:0" hidden="hidden" id="evaluateLabels"><!--提交成功评价标签-->
+     			<!-- <span>印象标签</span>
+     			<div class="clearfix">
+     				<i class="current">服务周到</i>
+     				<i class="current">包装结实</i>
+     				<i class="current">上门及时</i>
+     			</div>
+     			<div class="msg-div clearfix">
+              	    <div class="msg-box-h">
+                    		<p id="evaluatedtext">顺丰服务很不错呦~ 支持！</p>
+                    		<span class="msg-lt-h"></span>
+                    </div>
+                 </div> -->
+     		</li>
+     		<li>
+     		<span><input type=""  class="input" name="" id="text-comments" value="" placeholder="我还想说" maxlength="30" /></span>
+     		</li>
+     	</ul>
+     </section>
+     <section id="grid-btn"><!--提交按钮，提交成功即隐藏此层-->
+     	 <div class="grid-btn"><a href="#" class="btn-cancel"  id="subBtn"> 提交 </a></div>
+     </section>
+	</div>
+	<div class="pop-tips" hidden="true" id="errorMsg">
+    <div class="tips">
+    	<img src="/css/common/img/warning.png"><p id="errorInfo"></p>
+    </div>
+    </div>	
+</body>
+<!-- <script type="text/javascript" src="/js/common/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/js/common/util/util.js"></script>
+<script type="text/javascript" src="/js/common/util/common.js"></script>
+<script type="text/javascript" src="/js/common/baiduState.js"></script>
+<script type="text/javascript" src="/js/alipay/deliverydetails/routing/evaluate.js"></script> -->
+<!-- <script type="text/javascript" src="/js/alipay/deliverydetails/routing/evaluateWrite.js"></script> -->
+
+<!-- 公共页面 -->
+<div id="commonPage"></div>
+ <a href="/page/lanxin/index.html" class="cd-Home"><span class="ui-ico-sfi ico-home"></span></a>
+<!-- js引入 -->
+<script type="text/javascript" src="/js/common/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/js/common/util/util.js"></script>
+<script type="text/javascript" src="/js/common/util/common.js"></script>
+<script type="text/javascript" src="/js/common/baiduState.js"></script>
+<script type="text/javascript" src="/js/lanxin/deliverydetails/routing/evaluate.js"></script>
+<script type="text/javascript" src="/js/common/activity/to-luck-trigger.js"></script>  
+</html>

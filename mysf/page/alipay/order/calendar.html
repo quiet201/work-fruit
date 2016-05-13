@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>选择寄出时间</title>
+<link rel="stylesheet" href="/css/common/main.css">
+<link rel="stylesheet" href="/css/common/datepicker.css" />
+</head>
+
+<body>
+<div id="wrapper">
+    <!-- header s -->
+    <header>
+        <span class="btn-topl"><a class="ui-btn btn-back" href="javascript: history.go(-1);"><i class="ui-ico-sfi ico-back"></i></a></span>
+        <h1 class="innertitle">选择寄出时间</h1>
+    </header>
+    <!-- header e -->
+ 
+    <section class="ui-tabs ui-calendar">
+        <ul class="ui-tabs-menu" data-tabs="tabs">
+            <li class="date cur">日期</li>
+            <li class="time">时间</li>
+        </ul>
+        <div class="selected-date"><label>已选择：</label><span id="selected-date"></span></div>
+        <!-- 日期 s -->
+        <div class="ui-tabs-content dates-box" style="display:block;">
+            <div class="ui-datetime-picker">
+                <div id="datePicker"></div>
+            </div>
+        </div>
+        <!-- 日期 e -->
+        
+        <!-- 时间 s -->
+        <div class="ui-tabs-content times-box">
+         <div id="timePoint" class="item-wrapper">
+            <ul class="items">
+            <!-- <li>00: 00</li>
+            <li>00: 30</li>
+            <li>01: 00</li>
+            <li>01: 30</li>
+            <li>02: 00</li>
+            <li>02: 30</li>
+            <li>03: 00</li>
+            <li>03: 30</li>
+            <li>04: 00</li>
+            <li>04: 30</li>
+            <li>05: 00</li>
+            <li>05: 30</li>
+            <li>06: 00</li>
+            <li>06: 30</li>
+            <li>07: 00</li>
+            <li>07: 30</li> -->
+            <li>08: 00</li>
+            <li>08: 30</li>
+            <li>09: 00</li>
+            <li>09: 30</li>
+            <li>10: 00</li>
+            <li>10: 30</li>
+            <li>11: 00</li>
+            <li>11: 30</li>
+            <li>12: 00</li>
+            <li>12: 30</li>
+            <li>13: 00</li>
+            <li>13: 30</li>
+            <li>14: 00</li>
+            <li>14: 30</li>
+            <li>15: 00</li>
+            <li>15: 30</li>
+            <li>16: 00</li>
+            <li>16: 30</li>
+            <li>17: 00</li>
+            <li>17: 30</li>
+            <li>18: 00</li>
+            <li>18: 30</li>
+            <li>19: 00</li>
+            <li>19: 30</li>
+            <li>20: 00</li>
+            <li>20: 30</li>
+            <!-- <li>21: 00</li>
+            <li>21: 30</li>
+            <li>22: 00</li>
+            <li>22: 30</li>
+            <li>23: 00</li>
+            <li>23: 30</li> -->
+            </ul>
+           </div>
+        </div>
+        <!-- 时间 e --> 
+        
+    </section>
+
+
+
+</div>
+<script type="text/javascript" src="/js/common/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/js/common/util/util.js"></script>
+<script type="text/javascript" src="/js/common/moment.js"></script>
+<script type="text/javascript" src="/js/common/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="/js/common/bootstrap-datepicker.zh-CN.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var forwardUrl=getUrlValueByKey("forward");
+	var currentDate = new Date();
+	var selectDate = '';
+	var selectedTime = '';
+	$("#selected-date").text(moment(currentDate).format("YYYY-MM-DD HH:mm"));	
+	var date=new Date();
+    var statDate=new Date(date);//new Date((+date)-7*24*3600*1000);
+	
+	$("#datePicker").datepicker({
+				format: 'YYYY-MM-DD',
+				language: "zh-CN",
+				todayBtn: "linked",
+				startDate:statDate ,
+				focusDate:currentDate,
+				todayHighlight: true
+	})			//日期选择变化
+	.on('changeDate',function(ev){
+	  var startTime = ev.date.valueOf();
+	  selectDate = moment(startTime).format("YYYY-MM-DD");
+	  $("#selected-date").text(selectDate);
+	  $("[data-tabs='tabs']").find("li").removeClass("cur").end().find(".time").addClass("cur");
+	  $("[data-tabs='tabs']").siblings(".ui-tabs-content").hide();
+	  $("[data-tabs='tabs']").siblings(".times-box").show();
+	  
+   }); 
+   //时间选择变化
+   $("#timePoint li").each(function(){
+	  	$(this).click(function(){
+			$(this).siblings("li").removeClass("current").end().addClass("current");
+			var tempTime=$(this).text().replace(" ","");;
+			selectedTime = ' ' + tempTime;			
+			$("#selected-date").text(selectDate).append(selectedTime);
+			location.href=forwardUrl+"?dateTime="+selectDate+selectedTime;
+		}); 
+	  }); 
+   
+	
+	$("[data-tabs='tabs']").each(function(){
+		var parent= $(this); 
+		parent.find("li").each(function(i){
+			$(this).click(function(){
+				$(this).siblings("li").removeClass("cur").end().addClass("cur");
+				parent.siblings(".ui-tabs-content").hide();
+				parent.siblings(".ui-tabs-content").eq(i).show();
+			});
+		});
+	});
+	
+	getCommonImg("1094","N","1");
+});
+
+
+</script>
+<script type="text/javascript" src="/js/common/baiduState.js"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>运费与时效</title>
+<link rel="stylesheet" href="../../../css/common/public.css">
+<link rel="stylesheet" href="../../../css/common/sf04.css">
+<link rel="stylesheet" href="../../../css/common/tips.css">
+<link rel="stylesheet" href="/css/common/movie.css">
+</head>
+
+<body>
+<!-- 等待控件，页面加载   -->
+<div class="pop-loading" id="waitplease2" style="display:none;">
+    <div class="loading">
+    	<i class="ico"></i><p>努力加载中...</p>
+    </div>
+</div>
+<div id="wrapper">
+
+    <!-- header s -->
+    <header>
+    	<span class="btn-topl"><a class="ui-btn btn-back" href="javascript: history.go(-1);"><i class="ui-ico-sfi ico-back"></i></a></span>
+        <h1>运费与时效</h1>
+        <span class="btn-topr" ><a class="ui-btn btn-top" style="font-size:1em" href="/page/alipay/order/timing_internal.html" onclick="commonEventPush('寄件','页面统计','国际时效查询','timing_internal.html');">查国际时效</a></span>
+    </header>
+    <!-- header e -->
+    
+    <section class="grid-main">
+    	<form>
+    	<ul class="ui-fm timing-form">  
+        	<li class="item item-fm">
+                <div class="ui-flex">
+                    <div class="flex-ico"><label>原寄地</label></div>
+                    <div class="flex-con">
+                    	<a class="ui-btn-right" href="#" style="width: 80%;" onClick="getAddressDetail('/page/common/address/province.html?addrName=srcName&addrCode=srcCode&addrCountyName=acountyName&addrCountyCode=acountyCode&type=3')">
+                        	<span id="srcName" class="fill placeholder colorgrey02">选择地区</span><!--<span class="fill">广东省 深圳市 福田区</span>-->
+                        </a>
+                    </div>
+                </div>
+                <a class="ui-ico-sfi02 ico-swap ico-exchange" href="javascript:void(0);" title="切换"></a>
+            </li>      	
+        	<li class="item item-fm">
+                <div class="ui-flex">
+                    <div class="flex-ico"><label>目的地</label></div>
+                    <div class="flex-con">
+                    	<a class="ui-btn-right" href="#" style="width: 80%;" onClick="getAddressDetail('/page/common/address/province.html?addrName=destName&addrCode=destCode&addrCountyName=dcountyName&addrCountyCode=dcountyCode&type=4')">
+                        	<span  id="destName"  class="fill placeholder colorgrey02">选择地区</span><!--<span class="fill">广东省 深圳市 福田区</span>-->
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li class="item item-fm">
+                <div class="ui-flex">
+                    <div class="flex-ico"><label>重量(kg)</label></div>
+                    <div class="flex-con fm-weight" style="line-height: 44px;padding: 10px 0 10px 0;">
+                        <!-- <input type="number" name="weight" id="weight" class="placeholder input-text " value="" placeholder="快递员根据重量选择交通工具" onkeyup="return ValidateNumber(this,value);"  onblur="commonEventPush('寄件','页面统计','我要寄件','ship.html');" onchange="checkNull();"/>
+                        <span class="placeholder"></span> -->
+                        
+                        <div class="Spinner">
+							<a class="DisDe" href="javascript:void(0)" onclick="cv(-1);"><i>-</i></a>
+							<input  id="weight" class="Amount" value="1" autocomplete="off" maxlength="4">
+							<a class="Increase" href="javascript:void(0)" onclick="cv(1);"><i>+</i></a>
+						</div>
+						
+                    </div>
+                </div>
+               
+            </li>
+            <li class="item item-fm">
+                <div class="ui-flex">
+                    <div class="flex-ico"><label>寄出时间</label></div>
+                    <div class="flex-con">
+                    	<a class="ui-btn-right" href="#"  onClick="getSendingTime('/page/alipay/order/calendar.html')">
+                        	<span class="fill placeholder colorgrey01" id="dateTime">现在</span>
+                        </a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <!--  <div class="error ui-ico-sfi ico-attention" id="noteTips" style="display: none;"></div>-->
+        <div class="grid-btn">
+        	<a class="ui-btn btn-submit" href="#" id="btnQuery">查 询</a>
+        </div>
+        </form>
+    </section>
+	 <div class="table table-ship" id="show-explain-id" style="display: none;">
+	 		<table class="tab-details">
+        		<thead>
+        			<tr>
+	        			<td>产品类型</td>
+	        			<td colspan="1">预计送达时间</td>
+	        			<td>预估运费</td>
+        			</tr>
+        		</thead>
+        		<tbody class="tbody">
+        		<tr class="tr-top">
+        				<td rowspan="1" class="text-center">
+        					<i class="ui-ico-sfi ico-parcel-time"></i>
+                        </td>
+                       
+        				<td>
+        					<span class="s-time">2014-11-10(周日)16:00</span>
+        				</td>
+        				<td><p class="contract-color">22.00元</p></td>
+        			</tr>
+        			<tr class="tr-bottom">
+        			 	<td rowspan="1" class="text-center">
+                        	<span class="s-title">顺丰标快</span>
+                        </td>
+        				<td colspan="2">
+        					<p>全国及港澳台高标准的门到门快件服务</p>
+        				</td>
+        			</tr>
+        		</tbody>
+        	</table>
+        	<!-- <div class="thead">
+        		<dl class="tr-row">
+        			<dd class="th">产品类型</dd>
+        			<dd class="th">预计送达时间</dd>
+        			<dd class="th" style="float: right; margin-right: 10%;">预估运费</dd>
+        		</dl>
+        	</div>
+            <div class="tbody">
+            	<div class="tr-box" data-toggle="show-explain">
+                    <dl class="tr-row">
+                        <dd class="td text-align-center">
+                        	<i class="ui-ico-sfi ico-parcel-time"></i>
+                        	<br />
+                        	<span class="s-title">顺丰标快2</span>
+                        </dd>
+                        <dd class="td2">
+                        	<div class="d1-1">
+                        		<div class="div-left">
+                        			<p class="text-fontStyle">2014-11-10(周日)16:00-19:00</p>
+                        		</div>
+                        		<div class="div-center text-fontStyle">(周日)</div>
+                        	<div class="div-right "><p class="contract-color">22.00元</p></div>
+                        	</div>
+                        	<div class="d1-2">全国及港澳台高标准的门到门快件服务</div>
+                        </dd>
+                        
+                    </dl>
+                </div>  -->
+                <!-- 
+                <div class="tr-box" data-toggle="show-explain">
+                    <dl class="tr-row">
+                        <dd class="td text-align-center">
+                        	<i class="ui-ico-sfi ico-parcel-money"></i>
+                        	<br />
+                        	<span class="s-title">顺丰特惠</span>
+                        </dd>
+                        <dd class="td2">
+                        	<div class="d1-1">
+                        		<div class="div-left">
+                        			<p>2014-11-10</p>
+                        			<p>16:00-19:00</p>
+                        		</div>
+                        		<div class="div-center text-fontStyle">(周一)</div>
+                        		<div class="div-right "><p class="contract-color">18.00元</p></div>
+                        	</div>
+                        	<div class="d1-2">全国及港澳台经济型快递服务</div>
+                        </dd>
+                    </dl>
+                </div> 
+                
+            </div>
+                 -->
+            <div class="tr-box02" data-toggle="show-explain" style="margin-top: .1px;">
+                    <dl class="tr-row">
+                        <dd class="td" style="text-align: center;padding:5px 0;">
+                        	<a class="ui-btn btn-buttom-line3" href="#" >我要寄件</a>
+                        </dd>
+                    </dl>
+            </div>
+    </div>
+    
+</div>
+
+<div class="pop-tips" hidden="true" id="errorMsg">
+    <div class="tips">
+    	<img src="../../../css/common/img/warning.png"><p id="errorInfo"></p>
+    </div>
+    </div>
+ 
+<span id="conmment-tips" style="display:none;">系统繁忙</span>
+<!-- 公共页面 -->
+<div id="commonPage"></div>
+ <a href="/page/alipay/index.html" class="cd-Home"><span class="ui-ico-sfi ico-home"></span></a>
+<!-- js引入 -->
+<script type="text/javascript" src="/js/common/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/js/common/util/util.js"></script>
+<script type="text/javascript" src="/js/common/util/common.js"></script>
+<script type="text/javascript" src="/js/common/baiduState.js"></script>
+<script type="text/javascript" src="/js/alipay/order/timing.js"></script>
+<!-- <div class="ad"  id="testPosition001" class="replaces" hidden="hidden">
+             <a href="/page/alipay/advice/advice114.html">
+	     	 <img src="../../../../image/alipay/yunfei_banner.jpg" >
+	      </a>
+         </div>  -->
+</body>
+</html>

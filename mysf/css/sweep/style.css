@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body{font-family:Helvetica,sans-serif;margin:0;padding:0;font-size:20px;height:100%;}
+input, textarea, keygen, select, button{font-family:Helvetica,sans-serif;font-size:20px;margin:0;padding:0;}
+@media screen and (min-width:375px) {  
+    html, body{font-size:23.4375px;}
+    input, textarea, keygen, select, button{font-size:23.4375px;}
+}
+@media screen and (min-width:414px) {  
+    html, body{font-size:25.875px;}
+    input, textarea, keygen, select, button{font-size:25.875px;}
+}
+@media screen and (min-width:640px) {  
+    html, body{font-size:40px;}
+    input, textarea, keygen, select, button{font-size:40px;}
+}
+
+ul ,li{margin:0;padding:0;list-style:none;}
+.wrap{text-align: center; margin:0 auto;height:100%;background-color:#6dc3ee;}
+div.list{ background:#6dc3ee url("/image/sweep/hsxf_home.png") no-repeat  center 0; background-size: contain;}
+.msg_dh{width:100%;padding-top:6rem; text-align: center;}
+.msg_dh input {
+    width:10.15rem;
+    display: inline-block;   
+    height: 1.7rem;
+    line-height:1.7rem;
+	border:none;
+    font-size: 0.6rem;
+    text-align:left;
+	text-indent:.4rem;
+    vertical-align: top;
+}
+.prize{width:100%;margin-top:0.35rem; text-align: center;}
+.prize input{width:3.4rem;vertical-align: top;}
+.danhao{width:100%;height:2.6rem;margin-top:0.2rem;text-align: center;display:block; margin-bottom:.1rem}
+.danhao img{width:6rem;height:2.6rem; }
+.footer_home{width:100%;display:block;position:fixed;bottom:0;background:url(/image/sweep/footer_home.png) no-repeat;background-size:100%;height:10.95rem;}
+
+#button{margin-top:.5em;}
+.duijiang{font-size:1rem;margin:0rem auto;width:3.375rem;height:1.525rem;line-height:1.525rem;background-color:#e4e4e4;border-radius:0.25rem;text-align:center;border:none;color:#b6b6b6;}
+.cursorDuijiang{font-size:1rem;margin:0rem auto;width:3.4rem;height:1.525rem;line-height:1.525rem;background-color:#fff100;border-radius:0.25rem;text-align:center;border:none;color:#0fa8f4;}
+
+@media screen and (min-width:800px) and (min-height:600px){
+    .wrap .footer_home{max-height:100px;}
+}
+@media screen and (min-width:800px) and (min-height:700px){
+     .wrap .footer_home{max-height:200px;}
+}
+@media screen and (min-width:1000px) and (min-height:850px){
+    .wrap .footer_home{max-height:400px;background-size:100%;}
+	
+}

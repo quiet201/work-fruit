@@ -1,0 +1,289 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>订单详情</title>
+<link rel="stylesheet" href="../../../css/common/public.css">
+<link rel="stylesheet" href="../../../css/common/sf01-3_WJCD2-2_orderDetails.css">
+<link rel="stylesheet" href="../../../css/common/tips.css"/>
+</head>
+<body>
+<div id="wrapper">
+
+    <!-- header s -->
+    <header class="header-bottom-line">
+    	<span class="btn-topl"><a class="ui-btn btn-back" href="javascript: history.go(-1);"><i class="ui-ico-sfi ico-back"></i></a></span>
+        <h1>订单详情</h1>
+    </header>
+    <!-- header e -->
+    
+    <section class="grid-h" >
+    	<ul class="ui-fm-top0">
+        	<li class="item">
+            	<div class="ui-text">
+	                <p style="padding-top:0  ！important">订单号：<span id="bno"></span></p>
+
+	                <p id="orderStatusDiv">订单状态：<span id="orderStatus"></span></p>
+	                <p id="printOrderNoDiv" hidden="true">打印码：<span id="printOrderNo"></span></p>
+                </div>
+            </li>
+           </ul>
+   	</section>
+	
+	<section class="grid-main" style="padding-bottom:110px">
+    	<form>
+    	<ul class="ui-fm">
+        	<li class="item item-fm-m">
+            	<div class="ui-div-right" >
+                	<span class="placeholder"><i class="ui-ico-sfi02 ico-user-right"></i> 寄件人信息</span>
+                </div>
+            </li>
+        	<li class="item item-fm-m">
+            	<a class=" a-btn-msg" href="#">
+                    <div class="fill-more">
+                    	<span class="must2">
+                    	<p>
+                    		<span class="name" id="name"></span>
+                    		<span class="tel" id="tel"></span>
+                    	</p>
+                        <p class="address" id="address"></p>
+                       </span>
+                    </div>
+                </a>
+            </li>
+            <li class="item item-fm-m" id="sentInfoDiv">
+            	<div class="ui-div-right" >
+                	<span class="placeholder"><i class="ui-ico-sfi02 ico-user-left"></i> 收件人信息</span>
+                </div>
+            </li>
+            <li class="item item-fm-m" id="sentAddrDiv">
+            	<a class=" a-btn-msg" href="#">
+            		<div class="fill-more">
+                    	<span class="must2">
+                    	<p>
+                    		<span class="name" id="sentName"></span>
+                    		<span class="tel" id="sentTel"></span>
+                    	</p>
+                        <p class="address" id="sentAddress"></p>
+                       </span>
+                    </div>
+                </a>
+            </li>
+            <li class="item item-fm-m" >
+            	<div class="ui-div-right" >
+                	<span class="placeholder"><i class="ui-ico-sfi02 ico-express-msg"></i> 快件信息</span>
+                </div>
+            </li>
+            <li class="item item-fm-m">
+            	<div class="fill-more2">
+                    <div class="tr" id="sentMethodDiv">
+                    	<p class="tr-l">寄件方式：</p>
+                    	<p class="tr-r" id="sentMethod"></p>
+                    </div>
+                    <div class="tr" id="payMethodDiv">
+                    	<p class="tr-l">付款方式：</p>
+                    	<p class="tr-r" id="payMethod"></p>
+                    </div>
+                    <div class="tr">
+                    	<p class="tr-l">重量：</p>
+                    	<p class="tr-r" id="weight"></p>
+                    </div>
+                    <div class="tr" id="depositumDiv">
+                    	<p class="tr-l">寄托物：</p>
+                    	<p class="tr-r" id="depositum"></p>
+                    </div>
+                    <div class="tr" id="orderRemarkDiv">
+                    	<p class="tr-l">备注信息：</p>
+                    	<p class="tr-r" id="orderRemark"></p>
+                    </div>
+               	</div>
+            </li>
+        </form>
+    </section>
+    
+    <section class="grid-main ui-fm-bottom01" id="ElePrder">
+    	<form>
+    	<!--附近服务点寄件  显示案扭 s -->
+    	<ul class="" style="display:none;" id="status_effective">
+        	<li class="item2">
+                <a class="ui-btn btn-buttom-line3" href="javascript:void(0);" id="btnHurryToSend">附近服务点</a>
+                <a class="ui-btn btn-buttom-line3" href="javascript:void(0);"  onclick="showDiv()" id="qxOrder">取消订单</a>
+                <a class="ui-btn btn-buttom-line3 btn-cur" href=""  id="dyOrder">立即打印</a><!-- id="btnCancel" -->
+            </li>
+            </ul>
+            <!--附近服务点寄件     显示案扭 e -->
+            <!--如果是订单已失效，显示如下案扭  -->
+         <ul class="" id="status_invalid">
+        	<li class="item2">
+                <a class="ui-btn btn-buttom-line3 btn-del" href="javascript:void(0);" id="btnHurryToSend">删除</a>
+                
+            </li>
+            </ul> 
+            
+            <!--如果是订单已失效案扭   e-->  
+            
+        </form>
+    </section>
+    
+    <!--  <div class="maskbox" style="z-index:10; opacity:.9;" id="showCancel" hidden="true"><div class="tip-box">
+   	<h2>确认删除运单记录？</h2>
+    <div class="tip-content"><p>确定取消该订单？</p></div>
+    <div class="tip-btn">
+        	<a class="tip-btn-a1" href="javascript:void(0);" id="btnCancel">
+				<div class="tip-btn-a-div">取消</div>
+        	</a>
+        	<a class="tip-btn-a2" href="javascript:void(0);" id="btnOk">
+				<div class="tip-btn-a-div">确认</div>
+        	</a>
+    </div>
+  </div>-->
+  <div class="maskbox" style="z-index:10000; opacity:1;display: none;" id="showCancel" >
+  <div class="tip-box1" id="reasonDiv" hidden="true" style="margin-top:-164px;top:50%">
+   	<h2>您取消订单的原因是</h2>
+    <div class="tip-content" style="line-height:27px">
+    	           <p>
+    	                <input type="radio" class="radio" name="canFrom" id="check-1" value="1" hidden onclick="otherClick()"><label for="check-1">不想寄了</label>
+                    	
+                    </p>
+                    <p>
+                        <input type="radio" class="radio" name="canFrom" id="check-2" value="2" hidden onclick="otherClick()"><label for="check-2">收派员未及时上门取件</label>
+                    	
+                    </p>
+                    <p>
+                        <input type="radio" class="radio" name="canFrom" id="check-3" value="3" hidden onclick="otherClick()"><label for="check-3">信息填写错误，重新下单</label>
+                    	
+                    </p>
+                    <p>
+                        <input type="radio" class="radio" name="canFrom" id="check-4" value="4" hidden onclick="otherClick()"><label for="check-4">快件已寄出，订单状态未更新</label>
+                    	
+                    </p>
+                    <p>
+                        <input type="radio" class="radio" name="canFrom" id="check-5" value="5" hidden onclick="otherClick()"><label for="check-5">已通过其他方式下单</label>
+                    	
+                    </p>
+                    <p> 
+                        <input type="radio" class="radio" name="canFrom" id="check-6" value="6" hidden onclick="otherClick()"><label for="check-6">其他原因</label>
+                    	<textarea id="input-msg-div" maxlength="30" style="display:none"></textarea> 
+                    </p>
+    </div>
+    <div class="tip-btn">
+        	<a class="tip-btn-a1" href="javascript:void(0);" onclick="quitCancle()">
+				<div class="tip-btn-a-div">不取消了</div>
+        	</a>
+        	<a class="tip-btn-a2" id="sureCancle" href="javascript:void(0);" onclick="sureCancle()">
+				<div class="tip-btn-a-div" style="border-left:1px solid #CCCCCC;"  >取消订单</div>
+        	</a>
+    </div>
+</div>
+</div>
+<div class="pop-tips" hidden="true" id="errorMsg">
+    <div class="tips">
+    	<img src="../../../css/common/img/warning.png"><p id="errorInfo">请至少选择一项</p>
+    </div>
+    </div>
+</div>
+  <div class="pop-tips" hidden="true" id="errorMsg">
+    <div class="tips">
+    	<img src="../../../css/common/img/warning.png"><p id="errorInfo"></p>
+    </div>
+    </div>
+    
+    <div class="pop-tips" hidden="true" id="success">
+    <div class="tips">
+    	<img src="../../../css/common/img/success.png"><p id="MsgInfo">订单取消中，已提交系统处理</p>
+    </div>
+    </div>
+    
+    <section class="grid-main" id="hkOrder" hidden="true">
+    	<form>
+    	<ul class="ui-fm1">
+        	<li class="item2">
+                <a class="ui-btn btn-buttom-line3" href="/page/alipay/nearby/nearby_store.html?flag=hk">附近嘿客</a>
+                <!--  <a class="ui-btn btn-buttom-line3" href="javascript:void(0);" id="btnCancel" >取消预约</a> -->
+            </li>
+        </form>
+    </section>
+</div>
+<script type="text/javascript" src="/js/common/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/js/common/util/util.js"></script>
+<script type="text/javascript" src="/js/common/common.js"></script>
+<script type="text/javascript" src="/js/common/util/common.js"></script>
+<script type="text/javascript" src="/js/alipay/sinceorders/orderDetails.js"></script>
+<script type="text/javascript" src="/js/common/baiduState.js"></script>
+
+<script type="text/javascript">
+
+
+var autoTextarea = function (elem, extra, maxHeight) {
+        extra = extra || 0;
+        var isFirefox = !!document.getBoxObjectFor || 'mozInnerScreenX' in window,
+        isOpera = !!window.opera && !!window.opera.toString().indexOf('Opera'),
+                addEvent = function (type, callback) {
+                        elem.addEventListener ?
+                                elem.addEventListener(type, callback, false) :
+                                elem.attachEvent('on' + type, callback);
+                },
+                getStyle = elem.currentStyle ? function (name) {
+                        var val = elem.currentStyle[name];
+                        
+                        if (name === 'height' && val.search(/px/i) !== 1) {
+                                var rect = elem.getBoundingClientRect();
+                                return rect.bottom - rect.top -
+                                        parseFloat(getStyle('paddingTop')) -
+                                        parseFloat(getStyle('paddingBottom')) + 'px';        
+                        };
+                        
+                        return val;
+                } : function (name) {
+                                return getComputedStyle(elem, null)[name];
+                },
+                minHeight = parseFloat(getStyle('height'));
+        
+        
+        elem.style.resize = 'none';
+        
+        var change = function () {
+                var scrollTop, height,
+                        padding = 0,
+                        style = elem.style;
+                
+                if (elem._length === elem.value.length) return;
+                elem._length = elem.value.length;
+                
+                if (!isFirefox && !isOpera) {
+                        padding = parseInt(getStyle('paddingTop')) + parseInt(getStyle('paddingBottom'));
+                };
+                scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+                
+                elem.style.height = minHeight + 'px';
+                if (elem.scrollHeight > minHeight) {
+                        if (maxHeight && elem.scrollHeight > maxHeight) {
+                                height = maxHeight - padding;
+                                style.overflowY = 'auto';
+                        } else {
+                                height = elem.scrollHeight - padding;
+                                style.overflowY = 'hidden';
+                        };
+                        style.height = height + extra + 'px';
+                        scrollTop += parseInt(style.height) - elem.currHeight;
+                        document.body.scrollTop = scrollTop;
+                        document.documentElement.scrollTop = scrollTop;
+                        elem.currHeight = parseInt(style.height);
+                };
+        };
+        
+        addEvent('propertychange', change);
+        addEvent('input', change);
+        addEvent('focus', change);
+        change();
+};
+
+var imd = document.getElementById("input-msg-div");
+autoTextarea(imd);// 调用
+
+
+
+</script>
+</body>
+</html>
