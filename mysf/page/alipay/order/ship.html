@@ -5,19 +5,27 @@
 <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>寄件</title>
 <link rel="stylesheet" type="text/css" href="../../../css/style_juzhen.css?2.0">
-<script type="text/javascript" src="../../../js/jquery-1.7.2.min.js?2.0"></script>
-<!--<script type="text/javascript" src="../../../js/jquery-1.7.2.js"></script> -->
+<link rel="stylesheet" href="../../../version/M3.0/css/M_style.css">
+<!-- <link rel="stylesheet" href="../../../version/feastCss/autumn/autumn.css"> -->
+<!-- <link rel="stylesheet" href="../../../version/feastCss/double11/double11.css"> -->
+<!-- <link rel="stylesheet" href="../../../version/feastCss/christmas/christ.css"> -->
+
+<!-- <script type="text/javascript" src="../../../js/jquery-1.7.2.min.js?2.0"></script> -->
+<script type="text/javascript" src="../../../js/jquery-1.7.2.js"></script>
 <script type="text/javascript" src="../../../js/date.js?2.0"></script>
 <script type="text/javascript" src="../../../js/iscroll.js?2.0"></script>
 <script type="text/javascript" src="../../../js/jquery.tools.min.js?2.0"></script>
 
 </head>
 <body>
-	<header class="border_b">
+	<header class="border_b" style="display:none">
 		<a href="javascript: history.go(-1);"><span class="back"></span></a>
 		<h1>寄件</h1>
 		<input hidden="true" id="sentWay" value="1">
 	</header>
+    <!-- 节日头部s -->
+    <div class="feastTop"></div>
+    <!-- 节日头部e -->
 	<div class="order clearfix">
 		<dl class="contacts sent arrow clearfix" onClick="toSelectAddressBook()" >
 			<!-- 内容为空时 -->
@@ -59,7 +67,11 @@
 		</dl>
 		<!--star电子运单-->
 		<ul class="order_box mt10 clearfix">
+
 			<li class="special clearfix">
+                <!-- 节日标记 -->
+                <div class="feastMid1"></div>
+                <!-- 节日标记 -->
 				<dl class="first option_select" id="depositumDiv" showDivId="div_id_content_wpmc">
 					<dt class="arrow">物品名称</dt>
 					<!--有数据时用样式color595959,价格有数据据时用增加样式red-->
@@ -87,7 +99,7 @@
 					<dd id="weight" >1kg</dd>
 				</dl>
 			</li>
-			<li  class="special clearfix electronicElement" hidden="hidden" >
+			<li  class="special clearfix electronicElement" _hidden="hidden" >
 				<dl class="first option_select" id="paymentMethodDiv"  showDivId="div_id_content_fkfs">
 					<dt class="arrow">付款方式</dt>
 					<dd id="paymentMethod">寄件人付</dd>
@@ -116,8 +128,12 @@
 			</li>
 		</ul> -->
 		<!--end普通运单-->
-		<ul class="order_box mt10 clearfix ">
+		<ul class="order_box mt10 clearfix">
+
 			<li class="special clearfix">
+                <!-- 节日标记 -->
+                <div class="feastMid2"></div>
+                <!-- 节日标记 -->
 				<dl class="first appointment" id="js_content_jjsj" destId="dateTimeText"  onclick="selectDateAndTime()">
 					<dt class="ml55">寄件时间</dt>
 					<dd class="ml55"><!-- <input  id="dateTimeText" class="kbtn" value="现在" readonly="readonly" /> -->
@@ -127,8 +143,8 @@
                         	<span id="orderTimeTextDiv" hidden="true"></span>
                     	</a>
 					</dd>
-					
-					<!-- 
+
+					<!--
 					<a href="javascript:void(0);" onclick="selectDateAndTime()">
 						<input  id="dateTimeInput" class="kbtn" value="现在"/>
 					</a>
@@ -168,7 +184,7 @@
         				<td rowspan="1" class="text-center">
         					<i class="ui-ico-sfi ico-parcel-time"></i>
                         </td>
-                       
+
         				<td>
         					<span class="s-time">2014-11-10(周日)16:00</span>
         				</td>
@@ -181,7 +197,7 @@
         				<td colspan="2">
         					<p>全国及港澳台高标准的门到门快件服务</p>
         				</td>
-        			</tr> 
+        			</tr>
         			<!--  <tr class="tr-top">
         				<td rowspan="2" class="text-center">
         					<i class="ui-ico-sfi ico-parcel-time"></i>
@@ -226,13 +242,13 @@
                 </dl>
             </div>
         </div>
-		
-		
+
+
 		<!-- 底部提交按钮层 -->
 		<dl class="order_submit clearfix">
 			<dt id="agreementDiv">
 			    <P><span class="price-yugu">预估费用：</span><span class="red price-sub-pre" id="yuguFright">0</span><span class="red price-sub-pre" id="destyuguFright" style="display:none">0</span><span class="save-price-n">含保价<i class="save-price" id="savePrice">0元</i></span></P>
-				<div id="makeSure" class="chk-checkbox chk-checked" onclick="makeSureClick();checkNull();"><span></span></div><!-- "chk-checkbox":未选;"chk-checkbox"+"chk-checked":已选 -->同意<a id="js_content_tk" href="javascript:void(0);" onclick="showClause()">《快件运单契约条款》</a>
+				<div id="makeSure" class="chk-checkbox chk-checked" onclick="makeSureClick();checkNull();"><span></span></div><!-- "chk-checkbox":未选;"chk-checkbox"+"chk-checked":已选 -->同意<a id="js_content_tk" href="javascript:void(0);" onclick="showClause()">《快件契约条款》</a>
 			</dt>
 			<dd>
 				<a class="btn Right"  href="javascript:void(0);" id="orderConfirmBut" onclick="doSubmit();commonEventPush('寄件','页面统计','确定预约','ship.html');">确认提交</a><!-- +"current":可点 -->
@@ -245,20 +261,33 @@
 			<!-- <span class="cplx-text-header">选择产品类型</span> -->
 			<div class="order-container-top"></div>
 			<div class="clear"></div>
-			<div class="container clearfix" style="padding:.5rem 2%;">
+			<div class="container clearfix" >
 				<!-- 保价 -->
-				<div id="div_id_content_bj" class="content_bj clearfix" style="display:none;">
-					<dl class="name_element_select" destId="insuredAmount" >
-						<dt class="chidren_element_option_other" srcValueId="input_id_declared_value"><div class="pd"><input id="input_id_declared_value" maxlength="4" type="number" oninput="setInsureFee()" setValueCallBack="setInputDeclaredValue($('#input_id_declared_value'))" placeholder="请填写您的物品实际价值"><i>元</i></div></dt>
-						<dd><a class="submit Right blue" href="javascript:void(0)" onclick="setInsureFeeSuerClick()">确定</a></dd>
-				    </dl>
-					<h3>预计收取费用 <span id="span_id_insured_calculate_value" class="red">0元</span></h3>
-					<div class="prompt">
-						<p>温馨提示：</p>
-						<p>1、预估收取费用仅供参考，请以收派员收取为准</p>
-						<p>2、物品价值不能＞2万元，如需寄递价值＞2万元的物品，请拔打客服热线95338！</p>
-					</div>
+				<div id="div_id_content_bj" class="content_wpzl content_bj1 clearfix" style="display:none;">
+                    <div class="content_bjBox">
+                        <dl class="name_element_select " destId="insuredAmount" >
+                            <dt class="chidren_element_option_other" srcValueId="input_id_declared_value">
+                                <div class="pd">
+                                    <input id="input_id_declared_value" maxlength="4" type="number" oninput="setInsureFee()" setValueCallBack="setInputDeclaredValue($('#input_id_declared_value'))" placeholder="请申明您的快件价值">
+                                    <i>元</i>
+                                </div>
+                            </dt>
+                            <dd><a class="submit Right blue active" href="javascript:void(0)" onclick="setInsureFeeSuerClick()">确定</a></dd>
+                        </dl>
+                    <h3>预计收取保价费用 : <span id="span_id_insured_calculate_value" class="red">0</span>元</h3>
+
+                    </div>
+
+                    <div class="tipWord">
+                        <h5><em class="tip_Iconhearts"></em> <span>温馨提示：</span></h5>
+                        <div class="tipIntro">
+                            1.声明价值*标准服务费率（5％),预估收取费用仅供参考，实际以收派员收取为准。
+                        <br>2.快件声明价值不得超过快件实际价值，最高声明价值不超过20,000元，超过2,0000请联系95338.
+                        </div>
+                    </div>
 				</div>
+
+
 				<!-- 产品类型 -->
 				<div id="div_id_prodect_show" class="content_cplx clearfix w100" style="display:none;">
 				<!-- 产品类型 后加s-->
@@ -278,10 +307,10 @@
 												<span name='destFirstFreight' style="display:none;"></span>
 												<!-- <span name='first_freight_currency' style="display:none"></span> -->
 											</dd>
-											
+
 										</dl>
 										<div class="line-cplx"></div>
-									
+
 										<dl class="second">
 											<dd class="time-pre" name="dd_name_deliverTm">
 												预计<span name='deliverTm'>2015-10-24(周四) 12:00</span>送达
@@ -357,8 +386,8 @@
 
 							</div>
 
-							
-							
+
+
 							<div class="tips-cmlx-bottom">
 								<dl>
 									<dt>
@@ -426,7 +455,7 @@
 						</dt>
 					</dl> -->
 				</div>
-				
+
 				<div id="id_div_noProduct" class="box-tip-people dev-search-show" style="display:none">
 				      <div class="login-people  flex-c">
 				        <p><img src="../../../css/common/img/people01.png"></p>
@@ -440,41 +469,64 @@
 						<li class="chidren_element_option first current" onclick="changePayMethodClass('send')">寄件人付</li><!--选中状态-->
 						<li class="chidren_element_option" onclick="changePayMethodClass('return')">收件人付</li>
 					</ul>
+                    <div class="tipWord">
+                        <h5><em class="tip_Iconhearts"></em> <span>温馨提示：</span></h5>
+                        <div class="tipIntro">1.寄件人付指的是寄件人寄快件时顺丰向其收取快递费用。<br>2.收件人付指的是收件人收快件时顺丰向其收取快递费用。</div>
+                    </div>
 				</div>
 				<!-- 物品名称 -->
 				<div id="div_id_content_wpmc" class="content_wpmc clearfix" style="display:none;">
-					<p>物品名称</p>
+					<p style="display:none">物品名称</p>
 					<ul id="ul_id_good_name"  destId="depositum" class="clearfix name_element_select">
 						<li class="chidren_element_option current">文件</li>
-						<li class="chidren_element_option">数码产品</li>
-						<li class="chidren_element_option">生活用品</li>
-						<li class="chidren_element_option">服饰</li>
+						<li class="chidren_element_option">数码电器</li>
+						<li class="chidren_element_option">衣物首饰</li>
+						<li class="chidren_element_option">化妆品</li>
 						<li class="chidren_element_option">食品</li>
 						<li class="chidren_element_option_other" relatedShowId="dl_id_good_name_other" srcValueId="input_id_good_name_other_value" makeSuerId="id_a_good_name_other" >填其它</li>
 					</ul>
 					<dl id="dl_id_good_name_other" style="display:none">
-						<dt><div class="pd"><input id="input_id_good_name_other_value" type="text"  placeholder="最多输入10个字" maxlength="10" size="10" /></div></dt>
+						<dt><div class="pd"><input id="input_id_good_name_other_value" type="text"  placeholder="请填您要寄出的物品名称" maxlength="10" size="10" /></div></dt>
 						<dd><a id="id_a_good_name_other" class="submit Right blue" href="javascript:void();">确定</a></dd>
 				    </dl>
+                    <div class="tipWord">
+                        <h5><em class="tip_Iconhearts"></em> <span>温馨提示：</span></h5>
+                        <div class="tipIntro">1.如果寄出的物品为带电池类的数码电器，顺丰需采用陆运的方式运输。
+                        <br>2.为了保证货物在运输过程中的安全，减少货物破损和丢失情况的发生，在包装过程中，请您尽量保证货件坚固完好、便于装卸、包装密实、进行适当的易碎品防护。</div>
+                    </div>
+
 				</div>
 				<!-- 物品重量 -->
 				<div id="div_id_content_wpzl" class="content_wpzl clearfix " style="display:none;">
-					<p>物品重量</p>
+					<p style="display:none">物品重量</p>
 					<ul id="ul_id_good_weight" class="clearfix name_element_select"  destId="weight" destValueCallFun="setWeightValue()">
 						<li class="chidren_element_option current">1kg</li>
 						<li class="chidren_element_option">1.5kg</li>
 						<li class="chidren_element_option">2kg</li>
 						<li class="chidren_element_option">2.5kg</li>
 						<li class="chidren_element_option">3kg</li>
-						<li class="chidren_element_option_other" relatedShowId="dl_id_good_weight" srcValueId="input_id_good_weight_other_value" makeSuerId="a_id_good_weight_other">填其他</li>
+						<li class="chidren_element_option_other" relatedShowId="dl_id_good_weight" srcValueId="input_id_good_weight_other_value" makeSuerId="a_id_good_weight_other">其他重量</li>
 					</ul>
 					<dl id="dl_id_good_weight" style="display:none">
-						<dt><div class="pd"><input id="input_id_good_weight_other_value" type="text"  placeholder="请填写您寄出的物品重量" setValueCallBack="setWeightValue($('#input_id_good_weight_other_value'))"><i>kg</i></div></dt>
-						<dd><a id="a_id_good_weight_other" class="submit Right blue" href="javascript:void();" beforeClick="validWeight($('#input_id_good_weight_other_value'))">确定</a></dd>
+						<dt><div class="pd"><input id="input_id_good_weight_other_value" type="text"  placeholder="请填写物品重量" setValueCallBack="setWeightValue($('#input_id_good_weight_other_value'))"><i>kg</i></div></dt>
+						<dd><a id="a_id_good_weight_other" class="submit Right blue active" href="javascript:void();" beforeClick="validWeight($('#input_id_good_weight_other_value'))">确定</a></dd>
 				    </dl>
+
+                    <div class="tipWord">
+                        <h5><em class="tip_Iconhearts"></em> <span>温馨提示：</span></h5>
+                        <div class="tipIntro">1.请如实填写快件重量，便于准确估算费用<br>
+                        2.如您的物品重量超过50kg，将收取超长超重费用；如果您的物品重量超过130kg将无法选择快递产品，请致电95338咨询</div>
+                    </div>
 				</div>
 				<!-- 对小哥说 -->
 				<div id="div_id_content_dxgs" class="content_dxgs clearfix" style="display:none;">
+                    <dl>
+                        <dt>
+                            <div class="pd">
+                                <input id="input_id_dxgs_put" type="text" class="chidren_element_mulit_option_other"  placeholder="请选择标签或输入内容">
+                            </div>
+                        </dt>
+                    </dl>
 					<a id="a_id_dxgs" class="submit02 Right" href="javascript:void(0);" setValueCallBack="setDxgsText()" >确定</a>
 					<ul class="clearfix name_element_mulit_select" makeSuerId="a_id_dxgs" option_other_id="input_id_dxgs_put" destId="orderRemark" delimiter=";">
 						<li class="chidren_element_mulit_option current" onclick="showMsg(this);">请带纸箱</li>
@@ -483,19 +535,21 @@
 						<li class="chidren_element_mulit_option">请带运单</li>
 						<li class="chidren_element_mulit_option">大件物品</li>
 					</ul>
-					<dl>
-						<dt><div class="pd"><input id="input_id_dxgs_put" type="text" class="chidren_element_mulit_option_other"  placeholder="我还想说"></div></dt>
-				    </dl>
+                    <div class="tipWord">
+                        <h5><em class="tip_Iconhearts"></em> <span>温馨提示：</span></h5>
+                        <div class="tipIntro">1.如需顺丰提供纸箱，需要收取1-6元不等的费用<br>2.大件物品，如体积过大，将会按照体积费收取运费，详情请咨询收派员。</div>
+                    </div>
+
 				</div>
-				
+
 			</div>
 		</div>
 		<!-- 寄件时间   -->
 		<div id="datePlugin"></div>
-		
-		
 
-		
+
+
+
 		<!--
 		<div class="order_layer_iframe1 clearfix" style="display:none;">
 			<div class="container clearfix">
@@ -552,13 +606,13 @@
 	    	<img src="../../../css/common/img/warning.png"><p id="errorInfo"></p>
 	    </div>
 	    </div>
-	    
+
 	    <div class="pop-tips" hidden="true" id="success">
 	    <div class="tips">
 	    	<img src="../../../css/common/img/success.png"><p id="MsgInfo"></p>
 	    </div>
     </div>
-    
+
     	<input type="hidden" id="orderStartTime">
 		<input type="hidden" id="orderEndTime">
 		<!-- 日期时间选择 -->
@@ -571,23 +625,23 @@
 		    <!-- 日期 s -->
 		    <div data-tabs-content="date" class="ui-tabs-content dates-box" style="display:block;">
 		    	<ul class="ui-timelist" id="orderDateList">
-		    
+
 		    	</ul>
 		    </div>
 		    <!-- 日期 e -->
-		    
+
 		    <!-- 时间 s -->
 		    <div data-tabs-content="time" class="ui-tabs-content items-box" style="display:none;">
 		    	<div class="list-prev" onclick="prevPage()"><span class="ui-ico-sfi prev"></span></div>
 		        <div class="item-wrapper scroll">
 		    	<ul class="items" id="orderTimeList">
 		        <!--  <li>09: 00</li> -->
-		        
+
 		        </ul>
 		        </div>
 		        <div class="list-next" onclick="nextPage()"><span class="ui-ico-sfi next"></span></div>
 		    </div>
-		    <!-- 时间 e --> 
+		    <!-- 时间 e -->
 		    <input type="hidden" id="selectDateValue">
 			<input type="hidden" id="selectTimeValue">
 		    <div class="picker-btn">
@@ -600,10 +654,13 @@
 <script type="text/javascript" src="../../../js/common_ship.js"></script>
 <!-- 公共页面 -->
 <div id="commonPage"></div> <a href="/page/alipay/index.html" class="cd-Home"><span class="ui-ico-sfi ico-home"></span></a>
-<script type="text/javascript" src="/js/common/util/util.js"></script>
-<script type="text/javascript" src="/js/common/common.js"></script>
-<script type="text/javascript" src="/js/common/util/common.js"></script>
-<script type="text/javascript" src="/js/common/baiduState.js"></script>
-<script type="text/javascript" src="/js/alipay/order/juzhen_ship.js?vesion=2.0"></script>
+<!-- <script type="text/javascript" src="../../../js/common/util/util.js"></script>
+<script type="text/javascript" src="../../../js/common/common.js"></script>
+<script type="text/javascript" src="../../../js/common/util/common.js"></script>
+<script type="text/javascript" src="../../../js/common/baiduState.js"></script>
+<script type="text/javascript" src="../../../js/alipay/order/juzhen_ship.js?vesion=2.0"></script> -->
+<!-- <script type="text/javascript" src="../../../version/M3.0/js/M_plug/jquery.min.js"></script> -->
+<!-- 节日换肤 -->
+<script type="text/javascript" src="../../../version/M3.0/js/feastChange.js"></script>
 </body>
 </html>

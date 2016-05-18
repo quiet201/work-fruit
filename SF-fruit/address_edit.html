@@ -28,27 +28,28 @@
 <div class="wrap">
     <section class="userAddress" style="">
         <form name="userAddress" method="">
-            <div class="userAddrInfo HBox ">
-                <label for="userName" name="">收货人姓名</label>
-                <input class="Bflex1" id="userName" name="" type="text" placeholder="姓名" />
-            </div>
-            <div class="userAddrInfo HBox ">
-                <label for="userIphone" name="">手机号码</label>
-                <input class="Bflex1" id="userIphone"  name="" type="number" placeholder="手机号码" />
-            </div>
-            <div class="userAddrInfo HBox js_showCityBtn" id="">
-                <label for="userCity" name="" id="">省、市、区</label>
-                <input class="Bflex1 js_cityResult" id="userCity"  name="" disabled="disabled" type="text" placeholder="省、市、区" value="" />
-                <i class=" icoStyle icon-arrow iconArrow rotate90" style="margin-top: 6px; color: #ccc"></i>
-            </div>
-            <div class="userAddrInfo HBox">
-                <label for="userAddrDetail" name="">详细地址</label>
-                <textarea class="Bflex1"  id="userAddrDetail" name="" placeholder="详细地址(精确到门牌号)"></textarea>
-            </div>
-            <div class="userAddrInfo clearfix js_DefaultAddr" id="">
-                <label for="" name="" class="fl" style="width: 85%">设置默认地址</label>
-                <span class=" fr checkBox icon-rightIcon js_checkBox active" style="margin-top: 6px; height: 18px; width: 18px; line-height: 18px"></span>
-
+            <div class="addrPage">
+                <div class="userAddrInfo HBox ">
+                    <label for="userName" name="">收货人姓名</label>
+                    <input class="Bflex1" id="userName" name="" type="text" placeholder="姓名" />
+                </div>
+                <div class="userAddrInfo HBox ">
+                    <label for="userIphone" name="">手机号码</label>
+                    <input class="Bflex1" id="userIphone"  name="" type="number" placeholder="手机号码" />
+                </div>
+                <div class="userAddrInfo HBox js_showCityBtn" id="">
+                    <label for="userCity" name="" id="">省、市、区</label>
+                    <input class="Bflex1 js_cityResult" id="userCity"  name="" disabled="disabled" type="text" placeholder="省、市、区" value="" />
+                    <i class=" icoStyle icon-arrow iconArrow rotate90" style="margin-top: 6px; color: #ccc"></i>
+                </div>
+                <div class="userAddrInfo HBox">
+                    <label for="userAddrDetail" name="">详细地址</label>
+                    <textarea class="Bflex1"  id="userAddrDetail" name="" placeholder="详细地址(精确到门牌号)"></textarea>
+                </div>
+                <div class="userAddrInfo clearfix js_DefaultAddr" id="">
+                    <label for="" name="" class="fl" style="width: 85%">设置默认地址</label>
+                    <span class=" fr checkBox icon-rightIcon js_checkBox active" ></span>
+                </div>
             </div>
             <div class="userAddrInfo" style="margin-top: 2rem;">
                 <button type="submite" class="btnStyle btn_Bgred" style="margin:0 auto; width: 50%">保存</button>

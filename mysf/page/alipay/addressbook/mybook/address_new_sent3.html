@@ -47,9 +47,9 @@
                 </div>
             </li>
             <li class="item item-fm">
-                <div class="ui-flex js_seletCity">
-                    <div class="flex-ico"><span class="must2" style="display: none;"></span><label><span class="lable-fontStyle">地区</span></label></div>
-                    <div class="flex-con RelDom">
+                <div class="ui-flex">
+                    <div class="flex-ico"><span class="must2" style="display: none;"></span><label><span class="lable-fontStyle color_Gray">地区</span></label></div>
+                    <div class="flex-con RelDom js_seletCity">
                        <!--
                         <a class="ui-btn-right03" data-toggle="datePicker" href="#" id="checkedOne">
                             <div id="destination" class="fill placeholder font01" style="padding: 10px 0;">请选择地区</div>
@@ -62,11 +62,12 @@
                         <em class="iconImg_loc"><img class="iconImg" src="../../../../version/M3.0/img/icon-locred.png"></em>
                         <p>定位</p>
                     </div>
+
                 </div>
             </li>
             <li class="item item-fm">
                 <div class="ui-flex">
-                    <div class="flex-ico"><span class="must2" style="display: none;"></span><label><span class="lable-fontStyle">详细地址</span></label></div>
+                    <div class="flex-ico"><span class="must2" style="display: none;"></span><label><span class="lable-fontStyle color_Gray">详细地址</span></label></div>
                     <div class="flex-con">
                         <textarea name="addres" id="detailAdress" placeholder="详细到门牌号" class="text-add" ></textarea>
                     </div>
@@ -96,17 +97,85 @@
 
 <!-- 公共页面 -->
 <div id="commonPage"></div>
+<!-- 阴影 城市列表 -->
+<div class="shadow js_shadow" style="display: none"></div>
+<section class="searchCity VBox js_searchCity" style="display: none; height: 0;">
+    <!-- 城市搜索 -->
+    <section class="searchBox HBox BoxCenter">
+        <div class="icoStyle icon-close closeBtn js_closeBtn"></div>
+        <p class="Bflex1 seaTextArea">
+            <input class="searchText js_searchText" type="text" name="cityName" placeholder="搜索您所在的市区" />
+            <em class="icoStyle icon-clear seaClearBtn js_seaClearBtn" style="display: none"></em>
+        </p>
+    </section>
+
+    <section class="cityIscroll Bflex1 VBox ">
+        <!-- 城市列表 -->
+        <div class="cityListBox VBox Bflex1">
+            <!-- 热门城市 -->
+            <div class="hotCityBox HBox BoxCenter">
+                <p class="cityList color_Red Bflex1">
+                    <span class="js_hotCity">热门城市</span>
+                    <span class="js_provTxt" style="display:none">
+                        <em class="icoStyle icon-arrow-right"></em>
+                        <i>北京北京</i>
+                    </span>
+                    <span class="js_cityTxt" style="display:none">
+                        <em class="icoStyle icon-arrow-right"></em>
+                        <i>北京北京</i>
+                    </span>
+                    <span class="js_areaTxt" style="display:none">
+                        <em class="icoStyle icon-arrow-right"></em>
+                        <i>北京北京</i>
+                    </span>
+                </p>
+                <span class="splitline"></span>
+                <div class="locationBtn js_locaCity">
+                    <em class="iconImg_loc"><img class="iconImg" src="../../../../version/M3.0/img/icon-locred.png"></em>
+                    <p>定位</p>
+                </div>
+            </div>
+            <!-- 城市滚动 -->
+            <div class="seletCityArea VBox Bflex1">
+                <div class="swiperList Bflex1 js_swiperList" style="display:none1">
+                    <div class="Llist provList js_Llist">
+                        <ul class="provListUl"> </ul>
+                    </div>
+                    <div class="Rlist cityList js_Rlist" >
+                        <ul> </ul>
+                    </div>
+                </div>
+                <div class="swiperList Bflex1 js_swiperList" style="display:none">
+                    <div class="Llist cityList js_Llist">
+                        <ul class="cityListUl"> </ul>
+                    </div>
+                    <div class="Rlist areaList js_Rlist">
+                        <ul> </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 搜索建议 -->
+        <div class="hisList Bflex1" style="display: none">
+            <ul>
+                <li><span>广东省</span><em class="splite"></em><span>深圳市</span><em class="splite"></em><span class="color_Red">南山区</span></li>
+                <li><span>广东省</span><em class="splite"></em><span>深圳市</span><em class="splite"></em><span class="color_Red">南山区</span></li>
+                <li><span>广东省</span><em class="splite"></em><span>深圳市</span><em class="splite"></em><span class="color_Red">南山区</span></li>
+            </ul>
+        </div>
+    </section>
+</section>
 
 <!-- JS引入 -->
-<script type="text/javascript" src="/js/common/jquery-1.7.2.min.js"></script>
+<!-- <script type="text/javascript" src="/js/common/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="/js/common/util/util.js"></script>
 <script type="text/javascript" src="/js/common/util/common.js?time=new Date();"></script>
 <script type="text/javascript" src="/js/alipay/addressbook/send/address_new1.js"></script>
-<script type="text/javascript" src="/js/common/baiduState.js"></script>
-
+<script type="text/javascript" src="/js/common/baiduState.js"></script> -->
+<script type="text/javascript" src="../../../../version/M3.0/js/M_plug/jquery.min.js"></script>
 <script type="text/javascript" src="../../../../version/M3.0/js/M_plug/sea/sea.min.js"></script>
 <script type="text/javascript">
-    //seajs.use(['../../../../version/M3.0/js/M_getCity.js'],function() {});
+     seajs.use(['../../../../version/M3.0/js/M_getCity.js'],function() {});
 </script>
 <script type="text/javascript"></script>
 

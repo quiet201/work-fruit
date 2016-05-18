@@ -34,6 +34,7 @@ seajs.use('./static/v1/js/plug/swiper.jquery.min.js',function() {
 
 
         var oIndexSwiper = oIndexPage.swiper({
+            autoHeight: true,
             pagination: oIndexNav[0],
             paginationClickable: true,
             paginationBulletRender:function(index,className){
@@ -49,20 +50,22 @@ seajs.use('./static/v1/js/plug/swiper.jquery.min.js',function() {
             onSlideChangeEnd: function (swiper) {
                 //_indexPage.hide().eq(swiper.activeIndex).show();
                 _sIndex = swiper.activeIndex;
-                if(_sIndex !== 0) {
-                    if(swiperOff[_sIndex]) {
-                        slideHeight = _indexLiH*2
-                    }
-                    else {
-                        slideHeight = indexH[_sIndex];
-                    }
+                // if(_sIndex !== 0) {
+                //     if(swiperOff[_sIndex]) {
+                //         slideHeight = _indexLiH*2
+                //     }
+                //     else {
+                //         slideHeight = indexH[_sIndex];
+                //     }
 
-                }
-                else {
-                    slideHeight = _indexIHeight
-                }
-                oIndexPage.css({ 'height':slideHeight + 'px' });
+                // }
+                // else {
+                //     slideHeight = _indexIHeight
+                // }
+                // oIndexPage.css({ 'height':slideHeight + 'px' });
                 $(window).scrollTop(0);
+                oIndexSwiper.updateContainerSize();
+
                 return _sIndex;
             }
         });
@@ -71,7 +74,7 @@ seajs.use('./static/v1/js/plug/swiper.jquery.min.js',function() {
         $(window).on('scroll',function() {
             if(_sIndex !== 0) {
                 swiperOff[_sIndex] = false
-                indexH[_sIndex] = oIndexPage.outerHeight(true);
+                //indexH[_sIndex] = oIndexPage.outerHeight(true);
                 throttleIndex(IndexScrollData,window);
             }
         });
@@ -92,8 +95,8 @@ seajs.use('./static/v1/js/plug/swiper.jquery.min.js',function() {
             }
             else {
                 IndexPage[_sIndex]++;
-                _indexPage.eq(_sIndex).find('ul').append(_html)
-                oIndexPage.css({'height':_indexLiH*2*(IndexPage[_sIndex]-1)});
+               // _indexPage.eq(_sIndex).find('ul').append(_html)
+                //oIndexPage.css({'height':_indexLiH*2*(IndexPage[_sIndex]-1)});
 
             }
         }

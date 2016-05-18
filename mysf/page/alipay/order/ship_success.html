@@ -6,65 +6,129 @@
 <title>订单结果</title>
 <link rel="stylesheet" href="../../../css/common/public.css">
 <link rel="stylesheet" href="../../../css/common/sf03.css">
+<link rel="stylesheet" href="../../../version/M3.0/css/M_style.css">
 </head>
 
 <body>
 <div id="wrapper">
 
     <!-- header s -->
-    <header>
+    <header style="display: none;">
     	<span class="btn-topl"><a class="ui-btn btn-back" href="javascript: history.go(-1);"><i class="ui-ico-sfi ico-back"></i></a></span>
         <h1>订单结果</h1>
     </header>
     <!-- header e -->
-    
+
     <section>
-         <div class="ad"  id="testPosition001" class="replaces">
-             <a href="javascript:toUrlOfLog('https://www.wenjuan.com/s/QVnyia/','L01101');">
-            
-	     	 <img src="../../../../image/alipay/BANNNER1.jpg" >
-	      </a>
-         </div> 
-        <div class="ui-msg border0" >
-            <div class="msg-title"><h2 class="result-title"><i class="ui-ico-sfi ico-success"></i>下单成功!</h2></div>
+        <div class="ad"  id="testPosition001" class="replaces" style="display: none;">
+            <a href="javascript:toUrlOfLog('https://www.wenjuan.com/s/QVnyia/','L01101');">
+                <img src="../../../image/alipay/BANNNER1.jpg" >
+            </a>
         </div>
-    </section>
-	<section> 
-        <ul>   
-            <li class="item msg-content" style="background-color: #fff;"></li>
-        </ul>
-    </section>
-	<section>
-        <div class="ui-msg"  style="border-top: 0;padding: 10px 0 10px 0;">
-            <div class="detail-content" >
-                <p class="color01"><i class="ui-ico-sfi ico-user-right"></i>寄件人信息</p>
-                <p><span id="senderNameLabel"></span><span class="mar-left50" id="senderPhoneLabel"></span></p>
-                <p class="font02" id="senderAddress"></p>
-                <span id="receiveTimesDiv"><p class="color01"><i class="yuji-time ui-ico-sfi ico-time-t02"></i>预计上门时间</p>
-                <p><span id="receiveTimes"></span></p></span>
-                <span id="hkInfo" hidden="true">
-                    <p class="ccolor01 mar-top15">打印单号</p>
-                    <p class="colorgrey02" id="printOrderNo"></p>
-                </span>
+        <div class="ui-msg border0" >
+            <div class="msg-title">
+                <!-- 电子运单 -->
+                <h2 class="result-title" style="display:none">
+                    <div class="orderSuccess">
+                        <i class="ui-ico-sfi ico-success"></i>
+                        <p class="orderNum">
+                            <span>寄件下单成功!</span>
+                            <span class="color_Gray">订单号：c0125668867</span>
+                        </p>
+                    </div>
+                    <!-- 预约提示 -->
+                    <a class="reserveTip">预约寄件<i class="askIcon"></i></a>
+                </h2>
+                <!-- 服务点 -->
+                <h2 class="result-title">
+                    <div class="orderSuccess">
+                        <i class="ui-ico-sfi ico-success"></i>
+                        <p class="orderNum">
+                            <span>下单成功!</span>
+                            <span class="color_Gray">请前往服务点寄件，到店即可打印运单</span>
+                            <span class="color_Gray">订单号：c0125668867</span>
+                        </p>
+                    </div>
+                </h2>
             </div>
         </div>
-        <div class="grid-btn">
-        	<a class="ui-btn btn-buttom-nh" href="ship.html">继续下单</a>
-            <a class="ui-btn btn-buttom-c text-margin-left-10" href="../orderlist/orderDetails.html" id="seeOrder">订单详情</a>
-        </div>
-        
     </section>
+
+	<section>
+        <div class="ui-msg"  >
+            <div class="addr-msg" >
+                <p><em class="btn_BgBlack"></em><span class="cityName">北京市</span><span>雅鹿电子商务有限公司</span></p>
+            </div>
+            <div class="addr-msg" >
+                <p><em class="btn_BgRed"></em><span class="cityName">深圳市</span><span>李小龙</span></p>
+                <div class="arrowDownTip">
+                    <em class="icon-arrow-down color_Black"></em>
+                    <em class="icon-arrow-down color_Gray1"></em>
+                    <em class="icon-arrow-down color_Gray2"></em>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 服务寄件的按钮和时间 -->
+    <div class="servicePoint">
+        <div class="ewmShow">
+            <a href="#1">
+                <p>出示二维码打印运单</p>
+                <em class="ewmIcon icon-scan_ewm2 color_Gray"></em>
+                <em class="arrowRight icon-arrow-right color_Gray"></em>
+            </a>
+        </div>
+        <div class="grid-btn">
+            <a class="ui-btn btn-buttom-nh" href="ship.html">继续下单</a>
+            <a class="ui-btn btn-buttom-c text-margin-left-10" href="../orderlist/orderDetails.html" id="seeOrder">查看我的寄件</a>
+        </div>
+    </div>
+    <section class="waveLine">
+        <ul>
+            <li class="item msg-content"></li>
+        </ul>
+    </section>
+    <!-- 电子运单的按钮和时间 -->
+    <div class="e-AWB" style="display:none">
+        <section class="expectTime border_bot">
+            <p>预计 <span class="color_Red">今天 16:00-18:00</span> 上门收件</p>
+        </section>
+        <div class="grid-btn">
+            <a class="ui-btn btn-buttom-nh" href="ship.html">继续下单</a>
+            <a class="ui-btn btn-buttom-c text-margin-left-10" href="../orderlist/orderDetails.html" id="seeOrder">查看我的寄件</a>
+        </div>
+    </div>
+
+    <!-- 服务寄件的服务点地址 -->
+    <div class="addrHref">
+        <a href="#1">
+            <p>
+                <span>寄件地址附近服务点</span>
+                <span class="serAddr">软件产业基地大厦1栋C座6楼</span>
+            </p>
+            <em class="icon-locate1 locate"></em>
+            <em class="arrowRight icon-arrow-right color_Gray"></em>
+        </a>
+    </div>
 </div>
+
+<!-- 底部广告 -->
+<div class="adv-botBox">
+    <a href="#"><img src="../../../version/M3.0/img/advImg/adv_botImg.jpg"></a>
+</div>
+<div class="shadow" style="display:none"></div>
+<div style="display:none"><p>您的订单为预约寄件订单，收派员会在您预约的时间内准时上门收件。</p></div>
+
 <div id="LotteryPage"></div>
 <div class="noticesmall" id="noticesmall" hidden="turn"><a id="smallhrefId" href="#"><img id="smallImgId" src=""></a></div>
- <a href="/page/alipay/index.html" class="cd-Home"><span class="ui-ico-sfi ico-home"></span></a>
-<script type="text/javascript" src="/js/common/jquery-1.7.2.min.js"></script>
+ <a href="/page/alipay/index.html" class="cd-Home" style="display:none"><span class="ui-ico-sfi ico-home"></span></a>
+<!-- <script type="text/javascript" src="/js/common/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="/js/common/util/util.js"></script>
 <script type="text/javascript" src="/js/common/common.js"></script>
 <script type="text/javascript" src="/js/common/util/aes.js"></script>
 <script type="text/javascript" src="/js/common/baiduState.js"></script>
 <script type="text/javascript" src="/js/alipay/order/ship_success.js"></script>
 <script type="text/javascript" src="/js/common/util/common.js"></script>
-<script type="text/javascript" src="/js/common/activity/to-luck-trigger.js"></script> 
+<script type="text/javascript" src="/js/common/activity/to-luck-trigger.js"></script> -->
 </body>
 </html>

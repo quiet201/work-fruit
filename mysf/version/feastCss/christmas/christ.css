@@ -1,0 +1,18 @@
+﻿@charset "UTF-8";
+
+.clearfix:before,
+.clearfix:after {content: ""; visibility: visible; overflow: visible;}
+.arrow:after {height: 1.4rem;}
+
+
+/* 中秋样式 */
+.feastTop {height: 4rem; background-image:url(img/christ.jpg); }
+.feastMid1,.feastMid2 {background-image:url(img/feastMid1bg.png); background-repeat: no-repeat; height: 1.5rem; width: 100%; top: -0.5rem; background-position: center top; background-size: 100%; }
+.feastMid2 {background-image:url(img/feastMid2bg.png); background-size: 100%;}
+
+
+.contacts.sent:before,
+.contacts.write:before { background-image: url(img/christWord.png); background-size: 5.8rem; background-repeat: no-repeat; }
+
+.contacts.sent:before {background-position: 0.35rem 0;}
+.contacts.write:before {background-position: -2.95rem 0.1rem;}

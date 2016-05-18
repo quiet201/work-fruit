@@ -11,8 +11,9 @@ define(function(require,exports,module) {
         this.obj = new IScroll(obj,sOptions);
     };
     //刷新滚动条
-    ScrollBar.prototype.ReScroll = function () {
+    ScrollBar.prototype.ReScroll = function (fn) {
         this.obj.refresh();
+        if(fn)fn();
     };
 
     //删除滚动条
@@ -20,12 +21,13 @@ define(function(require,exports,module) {
         this.obj.destroy();
     };
     //跳转指定位置
-    ScrollBar.prototype.GotoScroll = function (clsName) {
+    ScrollBar.prototype.GotoScroll = function (clsName,fn) {
         //需要给ul加class名称才能行
         var _clsName = this.obj.scroller.className.replace(' ', '.');
         //console.log(this.obj.scroller)
-        //console.log(document.querySelector('.' + _clsName + ' li' + clsName))
-        this.obj.scrollToElement(document.querySelector('.' + _clsName), '', 0, 0);
+        //console.log(document.querySelector('.' + _clsName + ' li.' + clsName))
+        this.obj.scrollToElement(document.querySelector('.' + _clsName + ' li.' + clsName), '', 0, 0);
+        if(fn)fn();
     };
 
     //滚动结束事件

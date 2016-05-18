@@ -1,4 +1,4 @@
-﻿@charset "UTF-8";
+@charset "UTF-8";
 /*@import"M_plug/layer.css";*/
 @import"M_font.css";
 
@@ -11,8 +11,8 @@ ul, ol { list-style: none; }
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block;  margin: 0; padding: 0; border: 0;}
 
 a { color: #434343; text-decoration: none;}
-a:visited {  }
-a:hover { }
+a:visited { color: none; }
+a:hover { color: none; }
 a:focus { outline: none; }
 a:hover, a:active { outline: 0; }
 textarea {border-radius: 0;}
@@ -75,10 +75,43 @@ body {background: #F5F5F5; color: #434343;}
 
 /* 城市列表 */
 .searchCity {position: fixed; bottom: 0; background: #fff; width: 100%; left: 0; height: 90%; z-index: 110;}
-.searchCity .searchBox {background: #f5f5f5; padding: 10px}
+.searchCity .searchBox {background: #f5f5f5; padding: 10px; height: 60px; box-sizing: border-box;}
 .searchBox .closeBtn {color: #979797; text-align: center; font-size: 20px; margin-right: 8px;}
-.searchBox .searchText {border:1px solid #d3d3d3; border-radius: 5px; width: 100%; background: #fff; line-height: 36px; padding-left: 4px; padding-right: 25px;}
+.searchBox .seaTextArea { position: relative; border:1px solid #d3d3d3; border-radius: 5px; background: #fff;}
+.searchBox .searchText { width: 90%; border-radius: 5px; height: 36px; padding-left: 4px;   overflow: hidden;}
 .searchBox .seaClearBtn {position: absolute; height: 20px; width: 20px; top: 50%; right: 4px; margin-top: -10px; font-size: 18px; color: #e1e1e1; text-align: center; line-height: 20px;}
+
+/* 选择记录记录 */
+.cityListBox {}
+.cityListBox .hotCityBox {border-bottom: 1px solid #e1e1e1; height: 48px;}
+.hotCityBox .cityList {padding-left: 5px;}
+.hotCityBox .cityList .icoStyle {font-size: 14px; width: 14px; height: 22px;}
+.hotCityBox .cityList span {display: inline-block; vertical-align: middle; max-width: 70px;  white-space:nowrap;text-overflow:ellipsis; overflow: hidden;}
+.hotCityBox .cityList i {vertical-align: middle;}
+.hotCityBox .splitline {position: static; margin-top: 0;}
+.hotCityBox .splitline {height: 70%;}
+
+/* 城市列表 */
+.searchCity .cityIscroll {}
+.cityListBox .seletCityArea {}
+.seletCityArea .swiperList { height: 100%;  overflow: hidden; position: relative;}
+
+.swiperList .Llist {background: #fff; width: 30%; height: 100%;  position: absolute; left: 0; top: 0;}
+.swiperList .Rlist {background: #fff; width: 70%; height: 100%; position: absolute; right: 0; top: 0;}
+.swiperList ul {position: absolute; left: 0; width: 100%; top: 0; }
+.swiperList li {text-align: center; line-height: 49px; white-space:nowrap;text-overflow:ellipsis; overflow: hidden;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.swiperList .Rlist ul {padding:0 10px;}
+.swiperList .Rlist li {border-bottom:1px solid #e1e1e1; }
+.swiperList .Llist ul {background: #f5f5f5;}
+.swiperList .Llist li {border-bottom:1px solid #e1e1e1; border-left: 4px solid #f5f5f5}
+.swiperList .Llist li.active {background: #fff;  border-left: 4px solid #f66465}
+
+
+
 
 /* 搜索列表*/
 .hisList {}
@@ -88,17 +121,146 @@ body {background: #F5F5F5; color: #434343;}
 
 
 
+/* 寄件首页 */
+.order_box {position: relative;}
+.order_box li.special>dl>dt.arrow:after {height: 0;}
+
+/* 物品名称 重量 付款方式 保价*/
+.order_layer_iframe .content_fkfs li {border-color: #979797}
+.order_layer_iframe .content_wpmc li,
+.order_layer_iframe .content_wpzl li,
+.order_layer_iframe .content_dxgs li {border-radius: 5px; border: 1px solid #979797;}
+.order_layer_iframe .content_wpmc li.current,
+.order_layer_iframe .content_fkfs li.current,
+.order_layer_iframe .content_wpzl li.current,
+.order_layer_iframe .content_dxgs li.current {border-color: #f66465; color: #f66465; background: transparent;}
+.order_layer_iframe>.close {background:url(../img/closered.png) no-repeat; background-size: 1.6rem;}
+
+/* 物品名称  物品重量*/
+.order_layer_iframe>.container {padding:1rem 0; }
+.order-container-top {border-bottom: 0;}
+
+.order_layer_iframe .content_wpmc .pd,
+.order_layer_iframe .content_wpzl .pd,
+.order_layer_iframe .content_dxgs .pd  {border-right: 0; border-color: #e1e1e1; background:#f9f9f9; padding: 0;width: 98.8%;overflow: hidden; }
+.order_layer_iframe .content_dxgs .pd {border-right: 1px solid #e1e1e1;}
+
+.order_layer_iframe .content_wpmc .pd input,
+.order_layer_iframe .content_wpzl .pd input,
+.order_layer_iframe .content_dxgs .pd input {padding: 0.8rem 0; margin-left: 0.5rem; width: 95%; background:transparent;}
+
+.order_layer_iframe .content_wpzl dt,
+.order_layer_iframe .content_wpmc dt,
+.order_layer_iframe .content_dxgs dt{width: 8%; display: table-cell}
+.order_layer_iframe .content_wpmc dl,
+.order_layer_iframe .content_wpzl dl,
+.order_layer_iframe .content_dxgs dl {margin-bottom: 1rem; padding: 0 2rem; box-sizing: border-box;}
+.order_layer_iframe .content_wpmc dd,
+.order_layer_iframe .content_wpzl dd {width: 2%; border: 0;  background-color: #fff; }
+
+.order_layer_iframe .content_wpmc dd a,
+.order_layer_iframe .content_wpzl dd a { line-height: normal; padding:0.8rem 0; color: #e1e1e1; border: 1px solid #e1e1e1;}
+.order_layer_iframe .content_wpmc dd a.active,
+.order_layer_iframe .content_wpzl dd a.active {color: #f66465; border: 1px solid #f66465;}
+.order_layer_iframe ul{padding: 0 2rem;}
+
+/* 重量 */
+.order_layer_iframe .content_fkfs ul {padding: 0 2rem 1rem;}
+.order_layer_iframe .content_fkfs {padding: 0;}
+
+/* 保价 */
+.order_layer_iframe .content_bj1 .content_bjBox {margin-bottom:1rem; padding: 0 2rem;}
+.order_layer_iframe .content_bj1 dl {margin-bottom: 0; padding:0;}
+.order_layer_iframe .content_bj1 h3 { box-sizing: border-box; border: 1px solid #e1e1e1; border-top: 0; line-height: 3.6rem; padding-left: 0.6rem;}
+.order_layer_iframe .content_wpzl .pd input {width: 85%;}
+.order_layer_iframe .content_wpzl .pd input+i{ top: 50%; margin-top: -0.7rem; line-height: 1.4rem;}
 
 
 
+/*温馨提示*/
+.tipWord {border-top: 1px solid #e1e1e1; background-color: #fbfbfb; }
+.tipWord h5 {color: #979797; padding: 0.5rem 2rem; font-size: 1.3rem;}
+.tipWord .tipIntro {font-size: 1.1rem; color: #979797; line-height: 1.7rem; padding: 0 2rem;}
+.tipWord .tip_Iconhearts {display: inline-block; height: 2rem; width: 2rem; background:url(../img/tip_heart.png) no-repeat center center; background-size: 1.6rem; vertical-align: middle;}
+.tipWord span {display: inline-block; vertical-align: middle;}
+
+/* 对小哥说 */
+.submit02 {font-size: 1.4rem; top: 1rem;}
+
+
+/*条款*/
+.order_submit dt a {font-size: 1.1rem; color: #3c8aff;}
+
+/* 寄件事件 对小哥说 */
+.message:before {background: url(../img/talkIcon.png) no-repeat center; background-size: 2.5rem;}
+.appointment:before {background: url(../img/timeIcon.png) no-repeat center; background-size: 2.5rem;}
+
+
+/* 寄件 */
+.grid-btn .ui-btn {width: 45%;}
+.btn-buttom-nh {border-color: #434343;  color:#434343; width: 45%;}
+.btn-buttom-nh a {color:#434343;}
+.btn-buttom-c {background: #fff;   border: 1px solid #f66465;  color: #f66465; width: 45%;}
+.btn-buttom-c:visited {background: #fff;   border: 1px solid #f66465; color: #f66465}
+.btn-buttom-c a {color: #f66465}
+
+/* 成功提示 */
+.ui-msg {border-bottom-color: #fff; padding:1rem; }
+.ui-msg .addr-msg {position: relative;}
+.ui-msg .addr-msg p {color: #979797; font-size: 0.9rem; line-height: 2.8rem; }
+.ui-msg .addr-msg em {display: inline-block; vertical-align: middle; height: 0.5rem; width: 0.5rem; border-radius: 50%;}
+.ui-msg .addr-msg span {display: inline-block; vertical-align: middle; }
+.ui-msg .addr-msg .cityName {margin: 0 0.8rem; font-size: 1.05rem; color: #434343;}
+.ui-msg .arrowDownTip {position: absolute; left: -0.12rem; top: -0.7rem;}
+.ui-msg .arrowDownTip em {display: block;  font-size: 0.1rem; width: 0.8rem; line-height: 0.5rem;}
+
+.msg-title {text-align: left;}
+.result-title {font-size: 0.95rem; position: relative;}
+.result-title .orderNum {display: inline-block; vertical-align: middle; }
+.result-title .orderNum span {display: block; line-height: 1.4rem;}
+.result-title .color_Gray {font-size: 0.85rem;}
+
+/* 预约说明提示 */
+.askIcon {height: 1rem; width: 1rem; background: url(../img/askIcon.png) no-repeat center center; display: inline-block; vertical-align: middle; background-size: 100% 100%; margin-top: -0.2rem;}
+.reserveTip {font-size: 0.9rem; position: absolute; right: 0; top: 0; color: #4e92ff}
+
+.expectTime {background: #fbfbfb; text-align: center; font-size: 1rem; padding:1rem 0; margin-top: -0.5rem; position: relative; z-index: -1;}
+
+/* 服务点寄件成功 */
+.servicePoint {}
+.servicePoint .ewmShow,
+.addrHref {background-color: #fff; position: relative; padding:0 1rem; border: 1px solid #e1e1e1; border-right: 0; border-left: 0; }
+
+.servicePoint .ewmShow a,
+.addrHref a {display: block; height: 100%; width: 100%;}
+
+.servicePoint .grid-btn {background: #fff; padding: 1rem 0; width: 100%; }
+.servicePoint p {font-size: 0.9rem; line-height: 3rem; margin-right: 2.8rem; overflow: hidden; white-space:nowrap;text-overflow:ellipsis;}
+.servicePoint em,
+.addrHref em {position: absolute; right: 1rem; top: 50%; margin-top: -0.4rem; font-size: 0.8rem; text-align: center;}
+.servicePoint .ewmIcon  {right: 2.5rem; font-size: 1rem; margin-top: -0.5rem;}
+
+/* 服务点地址选择 */
+.addrHref {margin: 2rem 0;  }
+.addrHref p  {margin-left: 2rem; margin-right: 1rem; padding:0.6rem 0;}
+.addrHref p span {display: block; font-size: 0.9rem; color: #979797; line-height: 1.4rem; overflow: hidden; white-space:nowrap;text-overflow:ellipsis;}
+.addrHref p .serAddr {font-size: 1rem; color: #434343;}
+.addrHref .locate {right: auto; left: 1rem;  margin-top: -1rem; font-size: 2rem; line-height: 2rem}
 
 
 
-
-
+/* 底部广告条 */
+.adv-botBox {width: 100%; max-height: 60px; position: fixed; bottom: 0; left: 0; box-sizing: border-box;}
+.adv-botBox a {display: block; height: 100%; width: 100%:;}
+.adv-botBox img {width: 100%; height: 100%; display: block;}
 
 
 /***************************************** 公共 s  *******************************************/
+
+/* 节日横条 */
+.feastTop {width: 100%; background-size: 100% 100%; background-repeat: no-repeat; background-position: top center;  }
+.feastMid1,.feastMid2 {position: absolute; left: 0; top: 0; width: 100%;}
+
 
 /* 底部线条 */
 .border_bot {border-bottom: 1px solid #e1e1e1;}
@@ -119,15 +281,26 @@ body {background: #F5F5F5; color: #434343;}
 .btnStyle a {color:#434343;}
 .btn_BgRed {background: #f66465; color: #fff; border-color:#f66465; }
 .btn_BgRed:hover {color: #fff;}
+.btn_BgGray {background: #979797; color: #979797; border-color:#979797; }
+.btn_BgBlack {background: #434343; color: #434343; border-color:#434343;}
 .btn_BgWhite {background:#fff; color: #f66465; border-color:#f66465;}
+
+
 .btn_BorderRed {  border-color: #f66465; }
+
+.color_Black {color: #434343;}
+.color_Red {color:#f66465;}
+.color_Gray {color:#979797;}
+.color_Blue {color: #4e92ff;}
+.color_Gray1 {color:#a0a0a0;}
+.color_Gray2 {color:#d4d4d4;}
+
+
 /*.btn_BgOrg {background: #f66465; color: #fff; border-color:#f66465;}*/
 .minW140 {min-width: 140px}
 
 
-.color_Red {color:#f66465;}
-.color_Gray {color:#979797;}
-.color_Org {color:#ff9600;}
+
 
 /* 定位 */
 .fixedDom {position: fixed;}
