@@ -6,106 +6,194 @@
 <title>选择终端打印</title>
 <link rel="stylesheet" href="../../../css/common/global-store.css">
 <link rel="stylesheet" href="../../../css/common/ship-store.css"/>
+<link rel="stylesheet" href="../../../version/M3.0/css/M_style.css">
 </head>
 
 <body>
 <div class="wrap">
-  <header> <span class="btn-topl"> <a class="ui-btn btn-back" href="javascript: history.go(-1);"><span class="back"></span></a></span>
-    <h1>选择终端打印</h1>
+  <header style="display:none1">
+      <div class="HTitle HBox BoxCenter" style="display: none">
+          <a class="icon-arrow-left icoStyle" href="javascript: history.go(-1);"></a>
+          <h1 class="Bflex1">选择终端打印</h1>
+          <a class="icon-close icoStyle rotate45 " href="javascript: history.go(-1);"></a>
+      </div>
+      <!-- 打印成功 -->
+      <div class="HTitle HBox BoxCenter">
+          <a class="icon-arrow-left icoStyle" href="javascript: history.go(-1);"></a>
+          <h1 class="Bflex1">打印成功</h1>
+          <a class="icon-close icoStyle rotate45 " href="javascript: history.go(-1);"></a>
+      </div>
+      <!-- 打印失败 -->
+      <div class="HTitle HBox BoxCenter">
+          <a class="icon-arrow-left icoStyle" href="javascript: history.go(-1);"></a>
+          <h1 class="Bflex1">打印失败</h1>
+          <a class="icon-close icoStyle rotate45 " href="javascript: history.go(-1);"></a>
+      </div>
   </header>
-  
+
   <!-- code s-->
-  
   <div class="module store-print">
-    <div class="module-t">
-      <h4>订单号：<span id="bno"></span></h4>
-    </div>
+        <div class="module-t">
+            <em class="icon-order"></em>
+            <h4 class="">订单号：<span id="bno">C000028415</span></h4>
+        </div>
   </div>
-  
+
+  <div class="ui-msgArea">
+      <section class="ui-msgBox jjAddrInfo">
+          <div class="ui-msg ">
+              <div class="addr-msg">
+                  <p><em class="btn_BgBlack"></em><span class="cityName">北京市</span><span>雅鹿电子商务有限公司</span></p>
+              </div>
+              <div class="addr-msg">
+                  <p><em class="btn_BgRed"></em><span class="cityName">深圳市</span><span>李小龙</span></p>
+                  <div class="arrowDownTip">
+                      <em class="icon-arrow-down color_Black"></em>
+                      <em class="icon-arrow-down color_Gray1"></em>
+                      <em class="icon-arrow-down color_Gray2"></em>
+                  </div>
+              </div>
+          </div>
+
+
+      </section>
+      <section class="waveLine">
+          <ul>
+              <li class="msg-content"></li>
+          </ul>
+      </section>
+  </div>
+
   <!--codes-->
-  
+
   <div class="module store-latest-use">
     <div class="module-t">
       <h4>最近使用终端</h4>
     </div>
-    
-    <!--有终端s-->
-    <div class="box-module-c" >
-    <div class="module-c" id="data_order">
-    
-    <!--选中状态，dl上面的样式为cur-->
-      
-     <!--    <dl >
-         <span hidden="hidden">1</span>
-         <dd class="box-radio-device"><input type="radio" class="radio-device"></dd>
-        <dt>
-          <label class="store-name-device cell">1号打印终端</label>
-        </dt>
-        <dd class="store-adress">白石龙一区100栋</dd>
-      </dl>
-     <dl>
-     <span hidden="hidden">2</span>
-         <dd class="box-radio-device"><input type="radio" class="radio-device"></dd>
-        <dt>
-         <label class="store-name-device cell">1号打印终端</label>
-        </dt>
-        <dd class="store-adress">白石龙一区100栋</dd>
-      </dl>
-      <dl>
-      <span hidden="hidden">1</span>
-         <dd class="box-radio-device"><input type="radio" class="radio-device"></dd>
-        <dt>
-          <label class="store-name-device cell">1号打印终端</label>
-        </dt>
-        <dd class="store-adress">白石龙一区100栋</dd>
-      </dl>  -->
-    </div>
-    
-    
-   <ul class="grid-btn-timing">
-      <li class="btn-cancel btn-current" id="btnSubmit">立即打印</li>
-      <!--btn-cancel为默认       btn-current为用户选完了-->
-    </ul>
-    
-    </div>
-     
-  
-    <!--有终端e--> 
-    
-    <!--无终端s-->
-    
-      <div class="box-module-c" style="display:none;" id="no_date">
-    <div class="module-c">
-      <div class="box-tip-people">
-        <div class="login-people  flex-c">
-          <p><img src="css/img/people01.png"></p>
-        </div>
-        <p class="text-tip-people">哎哟！最近没有使用过终端</p>
-        <div class="flex-c">
-        <p><a class="text-tip-ccc" href="javascript:;">请扫一扫终端打印运单</a></p></div>
-      </div>
-    </div>
-    </div>
-    <!--无终端e-->
-    
-    
-    <div class="box-sweep-print">
-    <a href="javascript:void(0);" id="J_barcodeTrigger">
-      <P class="sweep-print"><span class="icon-sweep"></span><span class="text-sweep-print">扫一扫终端打印</span></P>
-      <p class="content-btn-right right"></p>
-    </a>
-    </div>
-    
-     </div>
-    
 
-  
-  
-  
+    <!--有终端s-->
+    <div class="box-module-c" style="display:none1;">
+        <div class="module-c" id="data_order">
+            <ul>
+                <!-- li 添加 active 表示选中 -->
+                <li class="active HBox BoxCenter">
+                    <p class="icon-check iconCheck"></p>
+                    <p class="Bflex1 printInfo">
+                      <span class="store-adress ">1号打印终端</span>
+                      <span class="store-name-device">白石龙一区100栋</span>
+                    </p>
+                </li>
+                <li class=" HBox BoxCenter">
+                    <p class="icon-check iconCheck"></p>
+                    <p class="Bflex1 printInfo">
+                      <span class="store-adress ">1号打印终端</span>
+                      <span class="store-name-device">白石龙一区100栋</span>
+                    </p>
+                </li>
+                <li class=" HBox BoxCenter">
+                    <p class="icon-check iconCheck"></p>
+                    <p class="Bflex1 printInfo">
+                      <span class="store-adress ">1号打印终端</span>
+                      <span class="store-name-device">白石龙一区100栋</span>
+                    </p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grid-btn-timing">
+            <ul >
+                <li class=" btn_BgRed btn_BgCancel btnStyle" id="btnSubmit">立即打印</li>
+                <!-- btn_BgCancel为默认       btn_BgRed为用户选完了-->
+            </ul>
+        </div>
+    </div>
+    <!--有终端 e-->
+
+    <!--无终端 s-->
+    <div class="box-module-c" style="display:none1;" id="no_date">
+        <div class="module-c">
+            <div class="box-tip-people">
+                <div class="login-people  flex-c">
+                  <p><img src="../../../version/M3.0/img/ex-person/none.png"></p>
+                </div>
+                <p class="text-tip-people">哎哟！最近没有使用过终端</p>
+                <div class="flex-c">
+                    <p>
+                        <a class="text-tip-ccc" href="javascript:;">请扫一扫终端打印运单</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--无终端 e-->
+
+    <!--成功 s-->
+    <div class="box-module-c" style="display:none1;" >
+        <div class="module-c">
+            <div class="box-tip-people">
+                <div class="login-people  flex-c">
+                  <p><img src="../../../version/M3.0/img/ex-person/success.png"></p>
+                </div>
+                <p class="text-tip-people">运单打印成功</p>
+                <div class="flex-c">
+                    <p>
+                        <a class="text-tip-ccc" href="javascript:;">请将运单号和快件一起交给顺丰小哥完成寄件</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="grid-btn-timing">
+            <ul >
+                <li class="btnStyle btn_BgWhite" id="btnSubmit">继续打印</li>
+                <!-- btn_BgCancel为默认       btn_BgRed为用户选完了-->
+            </ul>
+        </div>
+    </div>
+    <!--成功 e-->
+
+
+    <!--失败 s-->
+    <div class="box-module-c" style="display:none1;" >
+        <div class="module-c">
+            <div class="box-tip-people">
+                <div class="login-people  flex-c">
+                  <p><img src="../../../version/M3.0/img/ex-person/fail.png"></p>
+                </div>
+                <p class="text-tip-people">运单打印失败</p>
+                <div class="flex-c">
+                    <p>
+                        <a class="text-tip-ccc" href="javascript:;">请重新打印吧</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="grid-btn-timing">
+            <ul >
+                <li class="btnStyle btn_BgWhite" id="btnSubmit">重新打印</li>
+                <!-- btn_BgCancel为默认       btn_BgRed为用户选完了-->
+            </ul>
+        </div>
+    </div>
+    <!--失败 e-->
+  </div>
+
+
+    <div class="servicePoint selet-print">
+        <div class="ewmShow">
+            <a href="javascript:void(0);" id="J_barcodeTrigger">
+                <p>扫一扫终端打印</p>
+                <em class="ewmIcon icon-scan_ewm color_Gray"></em>
+                <em class="arrowRight icon-arrow-right color_Gray"></em>
+            </a>
+        </div>
+    </div>
+
+
+
 </div>
 </body>
 </html>
-<script type="text/javascript" src="/js/common/jquery-1.7.2.min.js"></script>
+<!-- <script type="text/javascript" src="/js/common/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="/js/common/deliverydetails/zepto.js"></script>
 <script type="text/javascript" src="/js/common/deliverydetails/2bWSEvAXi1.js"></script>
 <script type="text/javascript" src="/js/common/deliverydetails/2bytu8UVLZ.js"></script>
@@ -117,3 +205,4 @@
 <script type="text/javascript" src="/js/common/util/common.js"></script>
 <script type="text/javascript" src="/js/alipay/sinceOrders/shipStorePrint.js"></script>
 <script type="text/javascript" src="/js/common/baiduState.js"></script>
+ -->

@@ -4,52 +4,84 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
 <title>寄件二维码</title>
+
 <link rel="stylesheet" href="../../../css/common/global-store.css">
 <link rel="stylesheet" href="../../../css/common/ship-store.css"/>
+<link rel="stylesheet" href="../../../version/M3.0/css/M_style.css">
 </head>
 
-<body style="background:#fff;">
+<body>
 <div class="wrap">
-  <header> <span class="btn-topl"> <a class="ui-btn btn-back" href="javascript: history.go(-1);"><span class="back"></span></a></span>
-    <h1>寄件二维码</h1>
-  </header>
-  
+    <header style="display: none">
+        <span class="btn-topl"> <a class="ui-btn btn-back" href="javascript: history.go(-1);"><span class="back"></span></a></span>
+        <h1>寄件二维码</h1>
+    </header>
+
   <!-- code s-->
-  
-  <div class="module store-print">
-    <div class="module-t">
-      <h4>订单号：<span id="orderNo"></span></h4>
+
+    <div class="module store-print" style="display:none">
+        <div class="module-t">
+            <em class="icon-order"></em>
+            <h4 class="">订单号：<span id="orderNo">C000028415</span></h4>
+        </div>
     </div>
-  </div>
-  
-  <!--codes-->
-  <div class="box-code-send">
-    <div class="flex-c">
-    <div class="code-send"><img src="" id="barCode"></div>
+
+    <div class="ui-msgArea">
+        <section class="ui-msgBox jjAddrInfo">
+            <div class="ui-msg ">
+                <div class="addr-msg">
+                    <p><em class="btn_BgBlack"></em><span class="cityName">北京市</span><span>雅鹿电子商务有限公司</span></p>
+                </div>
+                <div class="addr-msg">
+                    <p><em class="btn_BgRed"></em><span class="cityName">深圳市</span><span>李小龙</span></p>
+                    <div class="arrowDownTip">
+                        <em class="icon-arrow-down color_Black"></em>
+                        <em class="icon-arrow-down color_Gray1"></em>
+                        <em class="icon-arrow-down color_Gray2"></em>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+        <section class="waveLine">
+            <ul>
+                <li class="msg-content"></li>
+            </ul>
+        </section>
     </div>
-    <div class="text-code-send tc">向收派员出示二维码或者对着智能终端扫码
-即可打印运单</div>
-    
-  </div>
-  
-   <div class="box-code-send-tab">
-       <div class="code-send-tab">
-        <ul><!--划上去或聚焦的时候都是在li上加样式cur-->
-         <li class="cur"><dl class="first"><dt></dt><dd>寄件二维码</dd></dl></li>
-         <li><dl class="second"><dt></dt><dd>扫描终端</dd></dl></li>      
-        
+
+    <!--codes-->
+    <div class="box-code-send">
+        <div class="flex-c">
+            <div class="code-send"><img src="" id="barCode"></div>
+        </div>
+
+        <div class="tipWord">
+            <h5><em class="tip_Iconhearts"></em> <span>温馨提示：</span></h5>
+            <div class="tipIntro"><em class="point">•</em>向收派员出示二维码或者对着智能打印终端扫码即可打印运单 </div>
+        </div>
+    </div>
+
+
+
+    <div class="scanControl">
+        <ul class="HBox BoxCenter">
+            <li class="Bflex1"><a href="#1"><em class="icon-scan_ewm2"></em><span>寄件二维码</span></a></li>
+            <li class="Bflex1"><a href="ship-store-print.html"><em class="icon-scan_ewm"></em><span>扫智能终端</span></a></li>
         </ul>
-       </div>
-   </div>
-  
+    </div>
+
+
 </div>
 </body>
 </html>
-<script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="/js/date.js?2.0"></script>
+<!-- <script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script> -->
+<!-- <script type="text/javascript" src="/js/date.js?2.0"></script>
 <script type="text/javascript" src="/js/iscroll.js?2.0"></script>
 <script type="text/javascript" src="/js/common/util/util.js"></script>
 <script type="text/javascript" src="/js/common/common.js"></script>
 <script type="text/javascript" src="/js/common/util/common.js"></script>
 <script type="text/javascript" src="/js/common/baiduState.js"></script>
 <script type="text/javascript" src="/js/alipay/sinceOrders/ship_code.js"></script>
+ -->

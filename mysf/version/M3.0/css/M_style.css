@@ -6,6 +6,7 @@ body,button, input, select, textarea { font: 14px 'Microsoft YaHei','SimHei',Hel
 h1, h2, h3, h4, h5, h6 { font-size: 100%; }
 em,i{font-style:normal;}
 
+
 ul, ol { list-style: none; }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block;  margin: 0; padding: 0; border: 0;}
@@ -123,7 +124,8 @@ body {background: #F5F5F5; color: #434343;}
 
 /* 寄件首页 */
 .order_box {position: relative;}
-.order_box li.special>dl>dt.arrow:after {height: 0;}
+.order_box li.special>dl>dt {line-height: 1.8rem; position: relative; }
+.order_box li.special>dl>dt.arrow:after {height: 0; }
 
 /* 物品名称 重量 付款方式 保价*/
 .order_layer_iframe .content_fkfs li {border-color: #979797}
@@ -155,6 +157,9 @@ body {background: #F5F5F5; color: #434343;}
 .order_layer_iframe .content_wpmc dl,
 .order_layer_iframe .content_wpzl dl,
 .order_layer_iframe .content_dxgs dl {margin-bottom: 1rem; padding: 0 2rem; box-sizing: border-box;}
+
+.order_box li.special>dl>dd {font-size: 1.2rem;}
+#js_content_cplx i {font-size: 1.2rem;}
 .order_layer_iframe .content_wpmc dd,
 .order_layer_iframe .content_wpzl dd {width: 2%; border: 0;  background-color: #fff; }
 
@@ -175,6 +180,8 @@ body {background: #F5F5F5; color: #434343;}
 .order_layer_iframe .content_wpzl .pd input {width: 85%;}
 .order_layer_iframe .content_wpzl .pd input+i{ top: 50%; margin-top: -0.7rem; line-height: 1.4rem;}
 
+#js_content_cplx i {color:#434343;}
+
 
 
 /*温馨提示*/
@@ -183,6 +190,7 @@ body {background: #F5F5F5; color: #434343;}
 .tipWord .tipIntro {font-size: 1.1rem; color: #979797; line-height: 1.7rem; padding: 0 2rem;}
 .tipWord .tip_Iconhearts {display: inline-block; height: 2rem; width: 2rem; background:url(../img/tip_heart.png) no-repeat center center; background-size: 1.6rem; vertical-align: middle;}
 .tipWord span {display: inline-block; vertical-align: middle;}
+.point {margin: 0 4px; line-height: 1.1rem;}
 
 /* 对小哥说 */
 .submit02 {font-size: 1.4rem; top: 1rem;}
@@ -205,7 +213,8 @@ body {background: #F5F5F5; color: #434343;}
 .btn-buttom-c a {color: #f66465}
 
 /* 成功提示 */
-.ui-msg {border-bottom-color: #fff; padding:1rem; }
+.ui-msgBox {padding:0 1rem; background: #fff}
+.ui-msg {border-bottom-color: #fff; }
 .ui-msg .addr-msg {position: relative;}
 .ui-msg .addr-msg p {color: #979797; font-size: 0.9rem; line-height: 2.8rem; }
 .ui-msg .addr-msg em {display: inline-block; vertical-align: middle; height: 0.5rem; width: 0.5rem; border-radius: 50%;}
@@ -227,10 +236,10 @@ body {background: #F5F5F5; color: #434343;}
 .expectTime {background: #fbfbfb; text-align: center; font-size: 1rem; padding:1rem 0; margin-top: -0.5rem; position: relative; z-index: -1;}
 
 /* 服务点寄件成功 */
-.servicePoint {}
+.servicePoint{background-color: #fff; padding:0 1rem; }
 .servicePoint .ewmShow,
-.addrHref {background-color: #fff; position: relative; padding:0 1rem; border: 1px solid #e1e1e1; border-right: 0; border-left: 0; }
-
+.addrHref {background-color: #fff; position: relative; border: 1px solid #e1e1e1; border-right: 0; border-left: 0; }
+.addrHref {padding:0 1rem; }
 .servicePoint .ewmShow a,
 .addrHref a {display: block; height: 100%; width: 100%;}
 
@@ -238,7 +247,44 @@ body {background: #F5F5F5; color: #434343;}
 .servicePoint p {font-size: 0.9rem; line-height: 3rem; margin-right: 2.8rem; overflow: hidden; white-space:nowrap;text-overflow:ellipsis;}
 .servicePoint em,
 .addrHref em {position: absolute; right: 1rem; top: 50%; margin-top: -0.4rem; font-size: 0.8rem; text-align: center;}
-.servicePoint .ewmIcon  {right: 2.5rem; font-size: 1rem; margin-top: -0.5rem;}
+.servicePoint .ewmIcon  {right: 2.5rem; font-size: 1rem; line-height: 1rem; margin-top: -0.5rem;}
+
+/* 打印终端 */
+.selet-print { border: 1px solid #e1e1e1; border-right: 0; border-left: 0; margin-top: 1rem; }
+.selet-print .ewmShow {border: 0;}
+.selet-print p {font-size: 1.4rem; line-height: 4rem;}
+.selet-print .ewmIcon {font-size: 1.6rem; line-height: 1.6rem; margin-top: -0.8rem;}
+.grid-btn-timing li.btnStyle {width: 50%; margin: 0 auto;}
+.grid-btn-timing {padding-bottom: 2rem; margin-bottom: 0; }
+
+/* 终端信息 */
+.module-t {border-color: #e1e1e1; background: #fff;}
+.store-latest-use .module-t  {border:0; height: auto;}
+.store-latest-use .module-t h4, .store-nearby .module-t h4 {background: #fff; color: #434343; }
+.store-latest-use .module-t h4 {margin: 0 1rem; border-bottom: 1px solid #e1e1e1;}
+.store-latest-use .module-t {border-top: 0;}
+.store-latest-use {margin-top: 0; margin-bottom: 2rem; border-top: 1px solid #e1e1e1;}
+.store-latest-use .box-module-c {background: #fff; padding: 0 1rem;}
+.module-c ul {padding: 0;}
+.module-c li {border-bottom: 1px solid #e1e1e1;}
+.module-c li .iconCheck {background: #fff; color: #fff; border: 1px solid #979797; height: 2rem; width: 2rem; line-height: 2rem; text-align: center; border-radius: 50%; box-sizing: border-box; margin-right: 1rem;}
+.module-c li.active .iconCheck {background: #f66465; color: #fff; border-color: #f66465}
+.module-c .printInfo {padding:1rem 0; }
+.module-c .printInfo  span {display: block; }
+
+.text-tip-people {padding-bottom: 0; font-size: 1.4rem;}
+
+.login-people p {width: 50%; height: 100%; margin: 0.5rem auto; overflow: hidden;}
+.login-people p img {display: block; height: 100%; width: 100%; padding: 0; margin: 0;}
+
+.flex-c a.text-tip-ccc {color: #979797}
+
+/* 顶部标题 */
+.HTitle {padding: 0 1.5rem; border-bottom: 1px solid #e1e1e1;}
+.HTitle .icoStyle {height: 1.6rem; width:1.6rem; line-height: 1.6rem; font-size: 1.6rem; color: #434343; }
+.HTitle h1 {font-size: 1.6rem;}
+/*  */
+
 
 /* 服务点地址选择 */
 .addrHref {margin: 2rem 0;  }
@@ -247,6 +293,7 @@ body {background: #F5F5F5; color: #434343;}
 .addrHref p .serAddr {font-size: 1rem; color: #434343;}
 .addrHref .locate {right: auto; left: 1rem;  margin-top: -1rem; font-size: 2rem; line-height: 2rem}
 
+.arrow02:after {height: 1.5rem; margin-top: -0.75rem;}
 
 
 /* 底部广告条 */
@@ -254,6 +301,35 @@ body {background: #F5F5F5; color: #434343;}
 .adv-botBox a {display: block; height: 100%; width: 100%:;}
 .adv-botBox img {width: 100%; height: 100%; display: block;}
 
+
+
+/* 二维码扫描 */
+.ui-msgArea {padding-bottom: 1rem; }
+.jjAddrInfo .addr-msg em {height: 0.8rem; width: 0.8rem; }
+.jjAddrInfo .addr-msg p {font-size: 1.3rem; line-height: 3.5rem; padding:0 2rem;}
+.jjAddrInfo .addr-msg em {}
+.jjAddrInfo .addr-msg span {font-size: 1.2rem; color: #979797;}
+.jjAddrInfo .addr-msg .cityName {font-size: 1.4rem;}
+.jjAddrInfo  .arrowDownTip {left: 1.9rem}
+.jjAddrInfo .arrowDownTip em {margin-top: -0.2rem;}
+
+.box-code-send { background: #fff; margin: 1rem; padding:0; border: 1px solid #e1e1e1; margin-bottom: 10rem;}
+.box-code-send .flex-c {background: #fff;  }
+.box-code-send .flex-c img {display: block; margin: 2rem auto;}
+.box-code-send  .tipWord {padding: 0.5rem 0;}
+.scanControl {position: fixed; z-index: 100; bottom: 0; left: 0; width: 100%; background: #fff; border-top: 1px solid #bebebe;}
+.scanControl li {text-align: center;}
+.scanControl li a {display: block; height: 100%; width: 100%;}
+.scanControl li em,
+.scanControl li span {display: block;}
+.scanControl li em {font-size: 1.6rem; border: 1px solid #434343; border-radius: 50%; line-height: 3rem; margin: 1rem auto 0; width: 3rem; height: 3rem;}
+.scanControl li span {line-height: 3rem; font-size: 1.4rem;}
+.scanControl li:first-child {border-right: 1px solid #bebebe;}
+
+.store-print {background: #fff; padding:0 1rem;}
+.store-print .module-t {background: #fff; position: relative;}
+.store-print .module-t em {position: absolute; font-size: 1.6rem; top: 50%; margin-top: -0.8rem; }
+.store-print .module-t h4 {padding-left: 2rem; padding-right: 0;}
 
 /***************************************** 公共 s  *******************************************/
 
@@ -284,7 +360,7 @@ body {background: #F5F5F5; color: #434343;}
 .btn_BgGray {background: #979797; color: #979797; border-color:#979797; }
 .btn_BgBlack {background: #434343; color: #434343; border-color:#434343;}
 .btn_BgWhite {background:#fff; color: #f66465; border-color:#f66465;}
-
+.btn_BgCancel {background:#979797; color: #fff; border-color:#e1e1e1;}
 
 .btn_BorderRed {  border-color: #f66465; }
 
@@ -298,6 +374,14 @@ body {background: #F5F5F5; color: #434343;}
 
 /*.btn_BgOrg {background: #f66465; color: #fff; border-color:#f66465;}*/
 .minW140 {min-width: 140px}
+
+/*波浪线*/
+.waveLine {}
+.msg-content {
+    padding: 5px 0;
+    background: transparent url(../img/semi_circle03.png) repeat-x;
+    font-family: "Microsoft YaHei";
+}
 
 
 
@@ -416,7 +500,13 @@ body {background: #F5F5F5; color: #434343;}
     -webkit-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     -o-transform: rotate(90deg);
-    transform: rotate(  90deg);
+    transform: rotate(90deg);
+}
+.rotate45 {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 
