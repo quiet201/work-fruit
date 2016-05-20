@@ -1,0 +1,17 @@
+﻿@charset "UTF-8";
+
+.clearfix:before,
+.clearfix:after {content: ""; visibility: visible; overflow: visible;}
+.arrow:after {height: 1.4rem;}
+
+
+/* 中秋样式 */
+.feastTop {height: 3.5rem; background-image:url(img/db11.jpg); }
+.feastMid1 {background-image:url(img/db11Word.png); background-repeat: no-repeat; height: 3rem; width: 3.5rem; left: auto; right: 0rem; top: 0.1rem; background-position: -4.5rem -9rem; background-size: 8rem;}
+.feastMid2 {}
+
+.contacts.sent:before,
+.contacts.write:before { background-image: url(img/db11Word.png); background-size: 7rem; background-repeat: no-repeat; }
+
+.contacts.sent:before {background-position: 0 0.2rem;}
+.contacts.write:before {background-position: -3.7rem 0.2rem;}

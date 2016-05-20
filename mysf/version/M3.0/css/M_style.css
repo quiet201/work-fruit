@@ -200,8 +200,10 @@ body {background: #F5F5F5; color: #434343;}
 .order_submit dt a {font-size: 1.1rem; color: #3c8aff;}
 
 /* 寄件事件 对小哥说 */
-.message:before {background: url(../img/talkIcon.png) no-repeat center; background-size: 2.5rem;}
-.appointment:before {background: url(../img/timeIcon.png) no-repeat center; background-size: 2.5rem;}
+.message:before {background: url(../img/talkIcon.png) no-repeat center center; background-size: 2.5rem;}
+.message.active:before {background: url(../img/talkIcon_over.png) no-repeat center center; background-size: 2.5rem;}
+.appointment:before {background: url(../img/timeIcon.png) no-repeat center center; background-size: 2.5rem;}
+.appointment.active:before {background: url(../img/timeIcon_over.png) no-repeat center center; background-size: 2.5rem;}
 
 
 /* 寄件 */
@@ -212,9 +214,54 @@ body {background: #F5F5F5; color: #434343;}
 .btn-buttom-c:visited {background: #fff;   border: 1px solid #f66465; color: #f66465}
 .btn-buttom-c a {color: #f66465}
 
+
+/* 产品类型选择 */
+.SF-seletDay {position: relative; height: auto; overflow: hidden; margin-bottom: 1rem;}
+.SF-seletDay ul {padding: 0 1rem;/* position: absolute; left: 0; top: 0; width: 100%;*/ box-sizing: border-box;}
+.SF-seletDay li {border:1px solid #979797;  position: relative; z-index: 0; padding: 1.5rem 0; box-sizing: border-box; margin: 1rem 0;}
+.SF-seletDay li span {display: block; }
+.SF-seletDay li em {border:1px solid #979797; border-radius: 50%; height: 1rem; width: 1rem; position: absolute; left: 50%; margin-left: -0.5rem; background: #fff; z-index: 5; box-sizing: border-box;}
+.SF-seletDay li .tipBox {position: absolute; top: -1px; bottom: -1px; left: 25%;  overflow: hidden;  width: 1rem; }
+
+
+.SF-seletDay .halfCircleT {top: -0.5rem;}
+.SF-seletDay .halfCircleB {bottom: -0.5rem;}
+.SF-seletDay .splitline {border-left:1px dashed #979797; background: transparent; height: 4rem; width: 1px;  box-sizing: border-box;  left: 50%; margin-left: -1px; margin-top: -2rem;}
+.SF-seletDay .SF-seleted {position: absolute; right: 0; top: 50%; margin-top: -0.9rem; width: 8%; background: #fff; color: #fff; border-top-left-radius: 25px; border-bottom-left-radius: 25px; line-height: 1.8rem; text-indent: 0.5rem;}
+
+.SF-seletDay .SF-seletday {width: 27%; text-align: center; font-size: 1.2rem; }
+.SF-seletDay .SF-seletTime { font-size: 1.1rem; margin-left: 4.5%; }
+.SF-seletDay .SF-seletTime .color_Gray {font-size: 1rem; }
+
+/* 过期 */
+.SF-seletDay li.act_out,
+.SF-seletDay li.act_out em,
+.SF-seletDay li.act_out .splitline {border-color: #e1e1e1}
+.SF-seletDay li.act_out span,
+.SF-seletDay li.act_out i {color: #e1e1e1}
+/* 选中 */
+.SF-seletDay li.act_in,
+.SF-seletDay li.act_in em,
+.SF-seletDay li.act_in .splitline {border-color: #f66465; }
+.SF-seletDay li.act_in .SF-seleted {background: #f66465; }
+
+
+/* 寄件地址 */
+.order_layer_iframe .seletAddr {}
+.order_layer_iframe .seletAddr .addrArea {position: relative; height: 18rem; overflow: hidden;}
+.order_layer_iframe .seletAddr ul {padding: 0 1rem; position: absolute; top: 0; left: 0; width: 100%; box-sizing: border-box;}
+
+.order_layer_iframe .seletAddr .addrInfo {padding: 1rem 0}
+.submit02, .submit02:visited {color:#f66465}
+.order_layer_iframe .seletAddr .newaddr {}
+.order_layer_iframe .seletAddr .editaddr {right: 8rem;}
+
+
+
+
 /* 成功提示 */
 .ui-msgBox {padding:0 1rem; background: #fff}
-.ui-msg {border-bottom-color: #fff; }
+.ui-msg {border-bottom-color: #fff; padding: 0;}
 .ui-msg .addr-msg {position: relative;}
 .ui-msg .addr-msg p {color: #979797; font-size: 0.9rem; line-height: 2.8rem; }
 .ui-msg .addr-msg em {display: inline-block; vertical-align: middle; height: 0.5rem; width: 0.5rem; border-radius: 50%;}
@@ -223,9 +270,10 @@ body {background: #F5F5F5; color: #434343;}
 .ui-msg .arrowDownTip {position: absolute; left: -0.12rem; top: -0.7rem;}
 .ui-msg .arrowDownTip em {display: block;  font-size: 0.1rem; width: 0.8rem; line-height: 0.5rem;}
 
-.msg-title {text-align: left;}
-.result-title {font-size: 0.95rem; position: relative;}
-.result-title .orderNum {display: inline-block; vertical-align: middle; }
+.msg-title {text-align: left; padding:1rem 0 0 0;}
+.result-title {font-size: 0.95rem; position: relative; padding-bottom: 1rem;}
+.result-title .ico-success {display: block;}
+.result-title .orderNum { vertical-align: middle; }
 .result-title .orderNum span {display: block; line-height: 1.4rem;}
 .result-title .color_Gray {font-size: 0.85rem;}
 
@@ -243,11 +291,12 @@ body {background: #F5F5F5; color: #434343;}
 .servicePoint .ewmShow a,
 .addrHref a {display: block; height: 100%; width: 100%;}
 
-.servicePoint .grid-btn {background: #fff; padding: 1rem 0; width: 100%; }
+.servicePoint .grid-btn,
+.e-AWB .grid-btn  {background: #fff; padding: 1rem 0; width: 100%; }
 .servicePoint p {font-size: 0.9rem; line-height: 3rem; margin-right: 2.8rem; overflow: hidden; white-space:nowrap;text-overflow:ellipsis;}
 .servicePoint em,
 .addrHref em {position: absolute; right: 1rem; top: 50%; margin-top: -0.4rem; font-size: 0.8rem; text-align: center;}
-.servicePoint .ewmIcon  {right: 2.5rem; font-size: 1rem; line-height: 1rem; margin-top: -0.5rem;}
+.servicePoint .ewmIcon  {right: 2rem; font-size: 1rem; line-height: 1rem; margin-top: -0.5rem;}
 
 /* 打印终端 */
 .selet-print { border: 1px solid #e1e1e1; border-right: 0; border-left: 0; margin-top: 1rem; }
@@ -287,7 +336,7 @@ body {background: #F5F5F5; color: #434343;}
 
 
 /* 服务点地址选择 */
-.addrHref {margin: 2rem 0;  }
+.addrHref {margin: 2rem 0 6rem;  }
 .addrHref p  {margin-left: 2rem; margin-right: 1rem; padding:0.6rem 0;}
 .addrHref p span {display: block; font-size: 0.9rem; color: #979797; line-height: 1.4rem; overflow: hidden; white-space:nowrap;text-overflow:ellipsis;}
 .addrHref p .serAddr {font-size: 1rem; color: #434343;}
@@ -330,6 +379,93 @@ body {background: #F5F5F5; color: #434343;}
 .store-print .module-t {background: #fff; position: relative;}
 .store-print .module-t em {position: absolute; font-size: 1.6rem; top: 50%; margin-top: -0.8rem; }
 .store-print .module-t h4 {padding-left: 2rem; padding-right: 0;}
+
+
+
+/* 服务点首页 */
+.grid-section {margin-bottom: 10rem;}
+
+.store-title-t {border-bottom: 1px solid #e1e1e1}
+.store-title-t h4 {font-size: 1.5rem; }
+.store-title-t h4 span {font-size: 1.2rem;}
+.store-title-c {padding: 1rem 0;  }
+.store-title-c img {display: block; width: 100%;}
+
+/* 没网点 */
+.store-nearby .box-module-c {padding: 0 1rem 2rem; border-bottom: 0;}
+.box-tip-people .tip-store {margin: 0 auto; width: 60%; height: 80%;}
+.box-tip-people .tip-store img { width: 100%; height: auto; display: block;}
+.text-tip-store {font-size: 1.4rem;}
+
+.storeBtn {position: fixed; bottom: 0; width: 100%; left: 0; background: #fff;}
+.storeBtn .grid-btn-timing {padding: 1rem 0; margin: 0; border-top: 1px solid #e1e1e1;}
+.grid-btn-timing li.btn_BgWhite {background:#fff; color: #f66465; border:1px solid #f66465;}
+.grid-btn-timing li.btn_BgWhite a,
+.grid-btn-timing li.btn_BgWhite a:visited  {color: #f66465;}
+
+/* 有网点 */
+.store-nearby .module-t {border-bottom: 0;}
+.store-nearby .module-t h4 {}
+
+/* 网点列表 */
+.module-c {padding: 0 1rem;}
+.storeList {border-top: 1px solid #e1e1e1; position: relative;}
+.storeList ul {}
+.storeList li {position: relative; padding: 1rem 0;}
+.storeList li span {color: #979797}
+.storeList li .storeImg {width: 5rem; height: 5rem; margin-right: 1rem}
+.storeList li .storeImg img {display: block; height: 100%; width: 100%; margin: 0 auto;}
+
+.storeList li .storeInfo {}
+.storeList li:last-child {border-bottom: 0;}
+.storeInfo h4 {font-size: 1.4rem; width: 80%; overflow: hidden; white-space:nowrap;text-overflow:ellipsis;}
+.storeInfo p {overflow: hidden; white-space:nowrap;text-overflow:ellipsis;}
+.storeInfo .storeType {margin: 0.5rem 0; }
+
+.storeType .icoStyle {height: 1.4rem; width: 1.4rem; line-height: 1.4rem; margin-right: 0.5rem; border-radius: 0.3rem; overflow: hidden;}
+.storeType .icon_zi .icoStyle {background: url(../img/ex-person/icon-zi.png) no-repeat center center; background-size: contain;}
+.storeType .icon_he .icoStyle {background: url(../img/ex-person/icon-he.png) no-repeat center center; background-size: contain;}
+.storeType .icon_hei .icoStyle {background: url(../img/ex-person/icon-hei.png) no-repeat center center; background-size: contain;}
+.storeType .icon_other .icoStyle {background: url(../img/ex-person/icon-other.png) no-repeat center center; background-size: contain; height: 2rem; width: 2.5rem;}
+.storeInfo .storeType span {vertical-align: middle; display: inline-block;}
+
+.storeList li .storeService {position: absolute; top: 1.3rem; right: 0; }
+.storeService span {display: block; font-size: 1.4rem; text-align: right;}
+.storeService .iconArea {margin-top: 0.4rem;}
+.storeService .icoStyle {font-size: 0.8rem; width: 1.4rem; height: 1.2rem; line-height: 1.2rem;}
+
+
+/* 网点详情 */
+.storeDetails {}
+/* 网点介绍 */
+.storeIntro {background: #fff; padding: 1rem; border-bottom: 1px solid #e1e1e1;}
+.storeIntro .storeImg {height: 8rem; width: 8rem; margin-right: 1rem;}
+.storeIntro .storeImg img {display: block; width: 100%; height: 100%; }
+.storeIntro .storeStyle {}
+.storeStyle .storeName {padding-bottom: 1rem}
+.storeName h4 {overflow: hidden; white-space:nowrap;text-overflow:ellipsis; font-size: 1.6rem; margin-right: 0.5rem}
+.storeName .storeType span {font-size: 1.2rem; vertical-align: middle; color: #979797;}
+
+.storeStyle .storeService {}
+.storeStyle .storeService li {width: 50%; float: left; text-align:left; padding-top: 0.5rem;}
+.storeStyle .storeService span {display: inline-block; vertical-align: middle; font-size: 1.2rem;}
+.storeStyle .storeService .icoStyle {margin-right: 0.5rem}
+
+/* 网点地址 */
+.storeDetails .storeAddr,
+.storeDetails .storeContact { margin-top: 1rem; background: #fff; padding: 0 1rem; border:1px solid #e1e1e1; border-left: 0; border-right: 0;}
+.storeDetails .storeAddr li,
+.storeDetails .storeContact li {border-bottom: 1px solid #e1e1e1; padding: 1rem 0; }
+.storeDetails .storeAddr li:last-child,
+.storeDetails .storeContact li:last-child {border-bottom:0}
+.storeDetails .storeAddr p:first-child,
+.storeDetails .storeContact p:first-child {width: 25%; font-size: 1.4rem;}
+.storeDetails .storeAddr span {line-height: 2rem; font-size: 1.4rem;}
+.storeDetails .storeContact p { }
+
+.storeDetails .storeAddr em {display: block;}
+
+
 
 /***************************************** 公共 s  *******************************************/
 

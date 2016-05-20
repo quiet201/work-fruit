@@ -14,12 +14,12 @@
 
     <!-- header s -->
     <header style="display: none;">
-    	<span class="btn-topl"><a class="ui-btn btn-back" href="javascript: history.go(-1);"><i class="ui-ico-sfi ico-back"></i></a></span>
+      <span class="btn-topl"><a class="ui-btn btn-back" href="javascript: history.go(-1);"><i class="ui-ico-sfi ico-back"></i></a></span>
         <h1>订单结果</h1>
     </header>
     <!-- header e -->
 
-    <section>
+    <section class="ui-msgBox">
         <div class="ad"  id="testPosition001" class="replaces" style="display: none;">
             <a href="javascript:toUrlOfLog('https://www.wenjuan.com/s/QVnyia/','L01101');">
                 <img src="../../../image/alipay/BANNNER1.jpg" >
@@ -28,10 +28,10 @@
         <div class="ui-msg border0" >
             <div class="msg-title">
                 <!-- 电子运单 -->
-                <h2 class="result-title" style="display:none">
-                    <div class="orderSuccess">
+                <h2 class="result-title" style="display:none1">
+                    <div class="orderSuccess HBox BoxCenter">
                         <i class="ui-ico-sfi ico-success"></i>
-                        <p class="orderNum">
+                        <p class="orderNum Bflex1">
                             <span>寄件下单成功!</span>
                             <span class="color_Gray">订单号：c0125668867</span>
                         </p>
@@ -41,9 +41,9 @@
                 </h2>
                 <!-- 服务点 -->
                 <h2 class="result-title">
-                    <div class="orderSuccess">
+                    <div class="orderSuccess HBox BoxCenter">
                         <i class="ui-ico-sfi ico-success"></i>
-                        <p class="orderNum">
+                        <p class="orderNum Bflex1">
                             <span>下单成功!</span>
                             <span class="color_Gray">请前往服务点寄件，到店即可打印运单</span>
                             <span class="color_Gray">订单号：c0125668867</span>
@@ -53,8 +53,7 @@
             </div>
         </div>
     </section>
-
-	<section>
+    <section class="ui-msgBox">
         <div class="ui-msg"  >
             <div class="addr-msg" >
                 <p><em class="btn_BgBlack"></em><span class="cityName">北京市</span><span>雅鹿电子商务有限公司</span></p>
@@ -72,7 +71,7 @@
     <!-- 服务寄件的按钮和时间 -->
     <div class="servicePoint">
         <div class="ewmShow">
-            <a href="#1">
+            <a href="ship-code.html">
                 <p>出示二维码打印运单</p>
                 <em class="ewmIcon icon-scan_ewm2 color_Gray"></em>
                 <em class="arrowRight icon-arrow-right color_Gray"></em>
@@ -89,7 +88,7 @@
         </ul>
     </section>
     <!-- 电子运单的按钮和时间 -->
-    <div class="e-AWB" style="display:none">
+    <div class="e-AWB" style="display:none1">
         <section class="expectTime border_bot">
             <p>预计 <span class="color_Red">今天 16:00-18:00</span> 上门收件</p>
         </section>
@@ -101,7 +100,7 @@
 
     <!-- 服务寄件的服务点地址 -->
     <div class="addrHref">
-        <a href="#1">
+        <a href="../addressbook/mybook/address_edit_sent3.html">
             <p>
                 <span>寄件地址附近服务点</span>
                 <span class="serAddr">软件产业基地大厦1栋C座6楼</span>
@@ -117,7 +116,7 @@
     <a href="#"><img src="../../../version/M3.0/img/advImg/adv_botImg.jpg"></a>
 </div>
 <div class="shadow" style="display:none"></div>
-<div style="display:none"><p>您的订单为预约寄件订单，收派员会在您预约的时间内准时上门收件。</p></div>
+<div style="display:none1"><p>您的订单为预约寄件订单，收派员会在您预约的时间内准时上门收件。</p></div>
 
 <div id="LotteryPage"></div>
 <div class="noticesmall" id="noticesmall" hidden="turn"><a id="smallhrefId" href="#"><img id="smallImgId" src=""></a></div>

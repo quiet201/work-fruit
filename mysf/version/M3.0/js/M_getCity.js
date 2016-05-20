@@ -1,10 +1,10 @@
 seajs.config({
     alias: {
-      'hammer' : '../../../../version/M3.0/js/M_plug/hammer.min.js',
-      'iscroll': '../../../../version/M3.0/js/M_plug/iscroll.min.js',
+      'hammer' : '../../../version/M3.0/js/M_plug/hammer.min.js',
+      'iscroll': '../../../version/M3.0/js/M_plug/iscroll.min.js',
       //'layer'  :'../../../../version/M3.0/js/M_plug/layer/layer.js',
-      'public' :'../../../../version/M3.0/js/M_public.js',
-      'city' :'../../../../version/M3.0/js/city.data-3.js',
+      'public' :'../../../version/M3.0/js/M_public.js',
+      'city' :'../../../version/M3.0/js/city.data-3.js',
     }
 });
 
